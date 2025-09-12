@@ -201,9 +201,9 @@ export default function Home() {
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
       <section id="home" className="pt-28 lg:pt-32">
-        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-x-0 gap-x-0">
+        <div className="mx-auto max-w-7xl px-3 grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-x-0 gap-x-0">
           {/* Left rail (hidden on mobile) */}
-          <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start pl-8">
+          <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start pl-12">
             <div className="flex flex-col gap-4">
               {/* Identity card */}
               <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-[70%] ml-auto">
@@ -223,10 +223,14 @@ export default function Home() {
 
               {/* Service quick menu: Development */}
               <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <div className="flex items-baseline justify-between mb-3">
-                  <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Development</h3>
+                <a
+                  href="#services"
+                  onClick={() => setContextSlug(null)}
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                >
+                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Development</span>
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                </div>
+                </a>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
                   <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
@@ -238,10 +242,14 @@ export default function Home() {
 
               {/* Service quick menu: Consulting */}
               <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <div className="flex items-baseline justify-between mb-3">
-                  <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Consulting</h3>
+                <a
+                  href="#services"
+                  onClick={() => setContextSlug(null)}
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                >
+                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Consulting</span>
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                </div>
+                </a>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
                   <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
@@ -253,10 +261,14 @@ export default function Home() {
 
               {/* Service quick menu: Training */}
               <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <div className="flex items-baseline justify-between mb-3">
-                  <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Training</h3>
+                <a
+                  href="#services"
+                  onClick={() => setContextSlug(null)}
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                >
+                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Training</span>
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                </div>
+                </a>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
                   <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
@@ -269,7 +281,7 @@ export default function Home() {
           </aside>
 
           {/* Right hero */}
-          <div className="relative lg:col-span-8 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center lg:-ml-6">
+          <div className="relative lg:col-span-8 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center lg:-ml-10">
             <video
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
