@@ -1,94 +1,503 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import { useState, useEffect } from 'react';
+import { 
+  Menu, X, Play, ShoppingCart, ArrowRight, CheckCircle, 
+  Star, Mail, Phone, MapPin, Github, Linkedin, Twitter, 
+  Instagram, ChevronDown, Users, Code, Palette, Cloud,
+  Target, Zap, Award, TrendingUp
+} from 'lucide-react';
+
+interface Service {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  features: string[];
+}
+
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image?: string;
+  gradient: string;
+}
+
+interface Testimonial {
+  id: number;
+  text: string;
+  author: string;
+  role: string;
+  company: string;
+  rating: number;
+}
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [activeProject, setActiveProject] = useState<number | null>(null);
+  const [selectedService, setSelectedService] = useState<number>(0);
 
-        <div className={styles.ctas}>
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const services: Service[] = [
+    {
+      title: 'Web Development',
+      description: 'Custom websites and web applications built with modern technologies',
+      icon: <Code className="w-6 h-6" />,
+      features: ['React/Next.js', 'TypeScript', 'Node.js', 'API Integration']
+    },
+    {
+      title: 'UI/UX Design',
+      description: 'Beautiful, intuitive interfaces that users love',
+      icon: <Palette className="w-6 h-6" />,
+      features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems']
+    },
+    {
+      title: 'Cloud Solutions',
+      description: 'Scalable infrastructure for modern applications',
+      icon: <Cloud className="w-6 h-6" />,
+      features: ['AWS/Azure', 'Docker/K8s', 'CI/CD', 'Monitoring']
+    },
+    {
+      title: 'Consulting',
+      description: 'Strategic guidance for digital transformation',
+      icon: <Target className="w-6 h-6" />,
+      features: ['Tech Strategy', 'Architecture', 'Best Practices', 'Training']
+    }
+  ];
+
+  const projects: Project[] = [
+    { id: 1, title: 'FinTech Platform', category: 'Finance', description: 'Modern banking solution', gradient: 'from-purple-600 to-pink-600' },
+    { id: 2, title: 'E-Commerce Hub', category: 'Retail', description: 'Next-gen shopping experience', gradient: 'from-blue-600 to-purple-600' },
+    { id: 3, title: 'Healthcare Portal', category: 'Medical', description: 'Telemedicine platform', gradient: 'from-teal-600 to-blue-600' },
+    { id: 4, title: 'AI Dashboard', category: 'Analytics', description: 'Real-time insights', gradient: 'from-orange-600 to-red-600' },
+    { id: 5, title: 'Social App', category: 'Social', description: 'Community platform', gradient: 'from-pink-600 to-rose-600' },
+    { id: 6, title: 'EdTech System', category: 'Education', description: 'Learning management', gradient: 'from-green-600 to-teal-600' }
+  ];
+
+  const testimonials: Testimonial[] = [
+    {
+      id: 1,
+      text: "They transformed our entire digital presence. The results exceeded all expectations.",
+      author: "Sarah Chen",
+      role: "CEO",
+      company: "TechStart Inc.",
+      rating: 5
+    },
+    {
+      id: 2,
+      text: "Exceptional team with deep technical expertise and creative vision.",
+      author: "Michael Rodriguez",
+      role: "CTO",
+      company: "Innovation Labs",
+      rating: 5
+    },
+    {
+      id: 3,
+      text: "The best technology partner we've ever worked with. Highly recommended!",
+      author: "Emily Johnson",
+      role: "Product Manager",
+      company: "Digital Corp",
+      rating: 5
+    }
+  ];
+
+  const navItems = ['Home', 'Services', 'Portfolio', 'About', 'Contact'];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+{/* Navigation */}
+<nav
+  className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+    scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
+  }`}
+>
+  <div className="mx-auto max-w-7xl px-6">
+    <div className="flex items-center justify-between">
+      {/* Brand */}
+      <div className="flex items-baseline gap-2">
+        <h1 className={`text-2xl font-extrabold tracking-tight ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+          Avada
+        </h1>
+        <span className={`text-2xl font-light ${scrolled ? 'text-gray-800' : 'text-white/90'}`}>
+          Portfolio
+        </span>
+      </div>
+
+      {/* Desktop menu */}
+      <div className="hidden lg:flex items-center gap-8">
+        {navItems.map((item) => (
           <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            className={`text-sm font-medium transition-colors ${
+              scrolled ? 'text-gray-700 hover:text-purple-600' : 'text-white hover:text-purple-200'
+            }`}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            {item}
           </a>
+        ))}
+        <a
+          href="#contact"
+          className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
+            scrolled
+              ? 'bg-purple-600 text-white hover:bg-purple-700'
+              : 'bg-white text-purple-700 hover:shadow-lg'
+          }`}
+        >
+          Get Started
+        </a>
+      </div>
+
+      {/* Mobile burger */}
+      <button
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        className={`lg:hidden ${scrolled ? 'text-gray-900' : 'text-white'}`}
+        aria-label="Toggle menu"
+      >
+        {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+    </div>
+
+    {/* Mobile menu */}
+    {mobileMenuOpen && (
+      <div className="lg:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
+        <div className="flex flex-col">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 text-gray-700 hover:text-purple-600 transition"
+            >
+              {item}
+            </a>
+          ))}
           <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
+            href="#contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-2 px-5 py-2 rounded-full text-sm font-semibold bg-purple-600 text-white text-center"
           >
-            Read our docs
+            Get Started
           </a>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </div>
+    )}
+  </div>
+</nav>
+
+      {/* Hero Section */}
+     {/* Hero Section (Avada-style split layout) */}
+<section id="home" className="pt-28 lg:pt-32">
+  <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+    {/* Left rail (hidden on mobile) */}
+    <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start">
+      <div className="flex flex-col gap-8">
+        {/* Identity card */}
+        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-[70%] mx-auto">
+          <h2 className="text-2xl font-extrabold leading-tight">Avada<br/>Portfolio</h2>
+          <p className="text-sm text-gray-500 mt-2">Friday, September 12<br/>New York City</p>
+
+          <div className="flex items-center gap-4 mt-6 text-gray-600">
+            <button className="inline-flex items-center justify-center w-10 h-10 rounded-xl border hover:bg-gray-50 transition">
+              <Menu className="w-5 h-5" />
+            </button>
+            <a href="#" className="hover:text-gray-900 transition"><Twitter className="w-5 h-5" /></a>
+            <a href="#" className="hover:text-gray-900 transition"><Instagram className="w-5 h-5" /></a>
+            <a href="#" className="hover:text-gray-900 transition"><Github className="w-5 h-5" /></a>
+            <a href="#" className="hover:text-gray-900 transition"><Linkedin className="w-5 h-5" /></a>
+          </div>
+
+          <div className="mt-6 p-5 rounded-xl bg-purple-50">
+            <p className="text-gray-900 text-lg font-semibold">
+              Merging usability and beauty to amplify your online identity.
+            </p>
+            <span className="mt-3 inline-flex items-center text-xs font-medium text-gray-600 rounded-full bg-white px-3 py-1">ABOUT</span>
+          </div>
+        </div>
+
+        {/* Service quick menu: Development */}
+        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] mx-auto">
+          <span className="absolute right-4 top-4 text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
+          <h3 className="text-3xl font-extrabold mb-4">Development</h3>
+          <ul className="divide-y divide-gray-300/70">
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</a></li>
+          </ul>
+        </div>
+
+        {/* Service quick menu: Consulting */}
+        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] mx-auto">
+          <span className="absolute right-4 top-4 text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
+          <h3 className="text-3xl font-extrabold mb-4">Consulting</h3>
+          <ul className="divide-y divide-gray-300/70">
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</a></li>
+          </ul>
+        </div>
+
+        {/* Service quick menu: Training */}
+        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] mx-auto">
+          <span className="absolute right-4 top-4 text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
+          <h3 className="text-3xl font-extrabold mb-4">Training</h3>
+          <ul className="divide-y divide-gray-300/70">
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</a></li>
+            <li><a href="#services" className="block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    {/* Right hero */}
+    <div className="relative lg:col-span-8 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/hero-poster.jpg"
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      <div className="relative z-10 p-8 md:p-12 lg:p-16 text-white">
+        <p className="text-white/80 text-sm uppercase tracking-wider mb-4">Welcome to Excellence</p>
+
+        <h1 className="leading-[0.9] font-extrabold tracking-tight text-[14vw] md:text-8xl lg:text-[10rem]">
+          Powering<br /><span className="text-white/90">New Brands</span>
+        </h1>
+
+        <div className="mt-6 text-2xl max-w-xl text-white/90">
+          Your gateway to unforgettable digital experiences.
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <a className="group px-8 py-4 bg-white text-purple-700 rounded-full font-semibold hover:shadow-2xl transition-all cursor-pointer">
+            Start Your Project
+            <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a className="group px-8 py-4 bg-transparent border-2 border-white rounded-full font-semibold hover:bg-white hover:text-purple-700 transition-all flex items-center gap-2 cursor-pointer">
+            <Play className="w-5 h-5" />
+            Watch Reel
+          </a>
+        </div>
+
+        <div className="mt-12 grid grid-cols-3 gap-6 text-white/80">
+          <div><p className="text-4xl font-bold">10+</p><p className="text-xs uppercase tracking-wider">Years</p></div>
+          <div><p className="text-4xl font-bold">500+</p><p className="text-xs uppercase tracking-wider">Projects</p></div>
+          <div><p className="text-4xl font-bold">98%</p><p className="text-xs uppercase tracking-wider">Satisfaction</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* Services Section */}
+      <section id="services" className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">What We Do</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Our Services</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive solutions tailored to elevate your digital presence
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, idx) => (
+              <div 
+                key={idx}
+                onClick={() => setSelectedService(idx)}
+                className={`bg-white p-8 rounded-2xl cursor-pointer transition-all ${
+                  selectedService === idx 
+                    ? 'shadow-2xl scale-105 border-2 border-purple-600' 
+                    : 'shadow-lg hover:shadow-xl'
+                }`}
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="flex items-center text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Our Work</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Featured Projects</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Showcasing our best digital experiences that merge creativity with functionality
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div 
+                key={project.id}
+                onClick={() => setActiveProject(project.id)}
+                className="group cursor-pointer"
+              >
+                <div className="relative overflow-hidden rounded-2xl">
+                  <div className={`h-64 bg-gradient-to-br ${project.gradient} transform group-hover:scale-110 transition-transform duration-500`}></div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity text-white text-center">
+                      <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                      <p className="mb-4">{project.category}</p>
+                      <button className="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-black transition">
+                        View Project
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">What Clients Say</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="bg-white p-8 rounded-2xl shadow-lg">
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 italic">&ldquo;{testimonial.text}&rdquo;</p>
+                <div>
+                  <p className="font-semibold">{testimonial.author}</p>
+                  <p className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
+          <p className="text-xl mb-12 text-white/90">Let&apos;s create something extraordinary together</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="px-8 py-4 bg-white text-purple-600 rounded-full font-semibold hover:shadow-2xl transition-all">
+              Get Free Consultation
+            </button>
+            <button className="px-8 py-4 bg-transparent border-2 border-white rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all">
+              View More Projects
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Avada Portfolio</h3>
+              <p className="text-gray-400">Creating digital excellence since 2014</p>
+              <div className="flex space-x-4 mt-6">
+                <a href="#" className="text-gray-400 hover:text-white transition">
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition">Web Development</a></li>
+                <li><a href="#" className="hover:text-white transition">Mobile Apps</a></li>
+                <li><a href="#" className="hover:text-white transition">UI/UX Design</a></li>
+                <li><a href="#" className="hover:text-white transition">Consulting</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition">About</a></li>
+                <li><a href="#" className="hover:text-white transition">Team</a></li>
+                <li><a href="#" className="hover:text-white transition">Careers</a></li>
+                <li><a href="#" className="hover:text-white transition">Blog</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  hello@avada.com
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  +1 (555) 123-4567
+                </li>
+                <li className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  New York, NY
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 Avada Portfolio. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
