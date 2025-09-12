@@ -203,8 +203,8 @@ export default function Home() {
       <section id="home" className="pt-28 lg:pt-32">
         <div className="mx-auto max-w-7xl px-3 grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-x-0 gap-x-0">
           {/* Left rail (hidden on mobile) */}
-          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start">
-            <div className="flex flex-col gap-4 pl-6">
+          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start pl-4 md:pl-6">
+            <div className="flex flex-col gap-4">
               {/* Identity card */}
               <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
                 <h2 className="text-2xl font-extrabold leading-tight">Avada<br />Portfolio</h2>
