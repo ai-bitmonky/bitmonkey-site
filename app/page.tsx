@@ -201,7 +201,7 @@ export default function Home() {
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
       <section id="home" className="pt-28 lg:pt-32">
-        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-1">
+        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-x-0 gap-x-0">
           {/* Left rail (hidden on mobile) */}
           <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start pl-4">
             <div className="flex flex-col gap-4">
@@ -223,8 +223,10 @@ export default function Home() {
 
               {/* Service quick menu: Development */}
               <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <span className="absolute right-4 top-4 text-[10px] md:text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
-                <h3 className="text-2xl md:text-3xl font-extrabold mb-4">Development</h3>
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="text-xl md:text-2xl font-extrabold">Development</h3>
+                  <span className="text-xl md:text-2xl font-semibold text-gray-600">Services</span>
+                </div>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
                   <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
@@ -236,8 +238,10 @@ export default function Home() {
 
               {/* Service quick menu: Consulting */}
               <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <span className="absolute right-4 top-4 text-[10px] md:text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
-                <h3 className="text-2xl md:text-3xl font-extrabold mb-4">Consulting</h3>
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="text-xl md:text-2xl font-extrabold">Consulting</h3>
+                  <span className="text-xl md:text-2xl font-semibold text-gray-600">Services</span>
+                </div>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
                   <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
@@ -249,8 +253,10 @@ export default function Home() {
 
               {/* Service quick menu: Training */}
               <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <span className="absolute right-4 top-4 text-[10px] md:text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
-                <h3 className="text-2xl md:text-3xl font-extrabold mb-4">Training</h3>
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="text-xl md:text-2xl font-extrabold">Training</h3>
+                  <span className="text-xl md:text-2xl font-semibold text-gray-600">Services</span>
+                </div>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
                   <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
@@ -263,7 +269,7 @@ export default function Home() {
           </aside>
 
           {/* Right hero */}
-          <div className="relative lg:col-span-8 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center">
+          <div className="relative lg:col-span-8 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center lg:-ml-1">
             <video
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
@@ -278,10 +284,10 @@ export default function Home() {
 
             <div className="absolute inset-0 bg-black/30"></div>
 
-            <div className="relative z-10 p-8 md:p-12 lg:p-16 text-white">
-              <div className="text-3xl md:text-5xl font-semibold max-w-2xl">
+            <div className="absolute z-10 bottom-6 md:bottom-10 left-6 md:left-10 right-6 md:right-10 text-white">
+              <p className="text-2xl md:text-4xl font-semibold max-w-3xl leading-tight">
                 Your partner in digital transformation journey.
-              </div>
+              </p>
             </div>
           </div>
         </div>
@@ -431,7 +437,7 @@ export default function Home() {
               </div>
               <div>
                 <h2 className="text-4xl font-bold mb-4">Overview</h2>
-                <p className="text-lg text-gray-600">High-level summary for {contextSlug?.replace(/-/g, ' ')}. Drop a GIF at <code>/public/gifs/{{contextSlug}}-overview.gif</code> to illustrate.</p>
+                <p className="text-lg text-gray-600">High-level summary for {contextSlug?.replace(/-/g, ' ')}. Drop a GIF at <code>{`/public/gifs/${contextSlug}-overview.gif`}</code> to illustrate.</p>
               </div>
             </div>
           </section>
