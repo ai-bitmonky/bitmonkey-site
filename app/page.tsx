@@ -201,12 +201,12 @@ export default function Home() {
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
       <section id="home" className="pt-28 lg:pt-32">
-        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-x-0 gap-x-0">
+        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-1">
           {/* Left rail (hidden on mobile) */}
-          <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start pl-4">
+          <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start pl-8">
             <div className="flex flex-col gap-4">
               {/* Identity card */}
-              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-[70%] ml-auto">
+              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-[96%] ml-auto">
                 <h2 className="text-2xl font-extrabold leading-tight">Avada<br />Portfolio</h2>
                 <p className="text-sm text-gray-500 mt-2">Friday, September 12<br />New York City</p>
 
@@ -222,10 +222,10 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Development */}
-              <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <div className="flex items-baseline justify-between mb-2">
-                  <h3 className="text-xl md:text-2xl font-extrabold">Development</h3>
-                  <span className="text-xl md:text-2xl font-semibold text-gray-600">Services</span>
+              <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[96%] ml-auto">
+                <div className="flex items-baseline justify-between mb-3">
+                  <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Development</h3>
+                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
                 </div>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
@@ -237,10 +237,10 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Consulting */}
-              <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <div className="flex items-baseline justify-between mb-2">
-                  <h3 className="text-xl md:text-2xl font-extrabold">Consulting</h3>
-                  <span className="text-xl md:text-2xl font-semibold text-gray-600">Services</span>
+              <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-[96%] ml-auto">
+                <div className="flex items-baseline justify-between mb-3">
+                  <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Consulting</h3>
+                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
                 </div>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
@@ -252,10 +252,10 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Training */}
-              <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
-                <div className="flex items-baseline justify-between mb-2">
-                  <h3 className="text-xl md:text-2xl font-extrabold">Training</h3>
-                  <span className="text-xl md:text-2xl font-semibold text-gray-600">Services</span>
+              <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-[96%] ml-auto">
+                <div className="flex items-baseline justify-between mb-3">
+                  <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Training</h3>
+                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
                 </div>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
@@ -269,7 +269,7 @@ export default function Home() {
           </aside>
 
           {/* Right hero */}
-          <div className="relative lg:col-span-8 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center lg:-ml-1">
+          <div className="relative lg:col-span-8 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center">
             <video
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
@@ -284,9 +284,9 @@ export default function Home() {
 
             <div className="absolute inset-0 bg-black/30"></div>
 
-            <div className="absolute z-10 bottom-6 md:bottom-10 left-6 md:left-10 right-6 md:right-10 text-white">
+            <div className="absolute z-10 top-6 md:top-10 left-6 md:left-10 right-6 md:right-10 text-white">
               <p className="text-2xl md:text-4xl font-semibold max-w-3xl leading-tight">
-                Your partner in digital transformation journey.
+                Your digital transformation journey partner.
               </p>
             </div>
           </div>
@@ -437,7 +437,7 @@ export default function Home() {
               </div>
               <div>
                 <h2 className="text-4xl font-bold mb-4">Overview</h2>
-                <p className="text-lg text-gray-600">High-level summary for {contextSlug?.replace(/-/g, ' ')}. Drop a GIF at <code>{`/public/gifs/${contextSlug}-overview.gif`}</code> to illustrate.</p>
+                <p className="text-lg text-gray-600">High-level summary for {contextSlug?.replace(/-/g, ' ')}. Drop a GIF at <code>/public/gifs/{{contextSlug}}-overview.gif</code> to illustrate.</p>
               </div>
             </div>
           </section>
