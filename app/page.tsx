@@ -203,10 +203,10 @@ export default function Home() {
       <section id="home" className="pt-28 lg:pt-32">
         <div className="mx-auto max-w-7xl px-3 grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-x-0 gap-x-0">
           {/* Left rail (hidden on mobile) */}
-          <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start pl-12">
-            <div className="flex flex-col gap-4">
+          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start">
+            <div className="flex flex-col gap-4 pl-6">
               {/* Identity card */}
-              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-[70%] ml-auto">
+              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
                 <h2 className="text-2xl font-extrabold leading-tight">Avada<br />Portfolio</h2>
                 <p className="text-sm text-gray-500 mt-2">Friday, September 12<br />New York City</p>
 
@@ -222,7 +222,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Development */}
-              <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
+              <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full">
                 <a
                   href="#services"
                   onClick={() => setContextSlug(null)}
@@ -241,7 +241,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Consulting */}
-              <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
+              <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-full">
                 <a
                   href="#services"
                   onClick={() => setContextSlug(null)}
@@ -260,7 +260,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Training */}
-              <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
+              <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-full">
                 <a
                   href="#services"
                   onClick={() => setContextSlug(null)}
@@ -281,7 +281,7 @@ export default function Home() {
           </aside>
 
           {/* Right hero */}
-          <div className="relative lg:col-span-8 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center lg:-ml-10">
+          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center">
             <video
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
