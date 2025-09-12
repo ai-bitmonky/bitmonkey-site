@@ -199,9 +199,9 @@ export default function Home() {
   <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
     {/* Left rail (hidden on mobile) */}
     <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start">
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4">
         {/* Identity card */}
-        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-[70%] mx-auto">
+        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-[70%] ml-auto">
           <h2 className="text-2xl font-extrabold leading-tight">Avada<br/>Portfolio</h2>
           <p className="text-sm text-gray-500 mt-2">Friday, September 12<br/>New York City</p>
 
@@ -214,17 +214,10 @@ export default function Home() {
             <a href="#" className="hover:text-gray-900 transition"><Github className="w-5 h-5" /></a>
             <a href="#" className="hover:text-gray-900 transition"><Linkedin className="w-5 h-5" /></a>
           </div>
-
-          <div className="mt-6 p-5 rounded-xl bg-purple-50">
-            <p className="text-gray-900 text-lg font-semibold">
-              Merging usability and beauty to amplify your online identity.
-            </p>
-            <span className="mt-3 inline-flex items-center text-xs font-medium text-gray-600 rounded-full bg-white px-3 py-1">ABOUT</span>
-          </div>
         </div>
 
         {/* Service quick menu: Development */}
-        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] mx-auto">
+        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
           <span className="absolute right-4 top-4 text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
           <h3 className="text-3xl font-extrabold mb-4">Development</h3>
           <ul className="divide-y divide-gray-300/70">
@@ -237,7 +230,7 @@ export default function Home() {
         </div>
 
         {/* Service quick menu: Consulting */}
-        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] mx-auto">
+        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
           <span className="absolute right-4 top-4 text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
           <h3 className="text-3xl font-extrabold mb-4">Consulting</h3>
           <ul className="divide-y divide-gray-300/70">
@@ -250,7 +243,7 @@ export default function Home() {
         </div>
 
         {/* Service quick menu: Training */}
-        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] mx-auto">
+        <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-[70%] ml-auto">
           <span className="absolute right-4 top-4 text-xs font-semibold tracking-wider bg-gray-200 text-gray-800 rounded-full px-3 py-1">SERVICES</span>
           <h3 className="text-3xl font-extrabold mb-4">Training</h3>
           <ul className="divide-y divide-gray-300/70">
