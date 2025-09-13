@@ -201,9 +201,9 @@ export default function Home() {
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
       <section id="home" className="pt-28 lg:pt-32">
-        <div className="mx-auto max-w-7xl px-3 grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-x-0 gap-x-0">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12">
           {/* Left rail (hidden on mobile) */}
-          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start pl-4 md:pl-6">
+          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start px-6">
             <div className="flex flex-col gap-4">
               {/* Identity card */}
               <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
@@ -281,7 +281,7 @@ export default function Home() {
           </aside>
 
           {/* Right hero */}
-          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center">
+          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center mr-6">
             <video
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
