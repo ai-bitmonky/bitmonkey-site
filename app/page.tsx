@@ -285,7 +285,7 @@ export default function Home() {
           </div>
 
           {/* Right hero */}
-          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center">
+          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center" style={{marginRight: '1rem'}}>
             <video
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
