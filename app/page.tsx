@@ -200,10 +200,12 @@ export default function Home() {
 
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
-      <section id="home" className="pt-28 lg:pt-32 px-6">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Left rail (hidden on mobile) */}
-          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start">
+      <section id="home" className="pt-28 lg:pt-32">
+        <div className="mx-auto max-w-screen-2xl px-4 lg:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-4">
+          {/* Left rail column (adds outer padding from the page edge) */}
+          <div className="hidden lg:block lg:col-span-3">
+            <aside className="sticky top-24 self-start pl-3 pr-2">
             <div className="flex flex-col gap-4">
               {/* Identity card */}
               <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
@@ -278,7 +280,8 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-          </aside>
+            </aside>
+          </div>
 
           {/* Right hero */}
           <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center">
@@ -302,7 +305,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+          </div> {/* end grid */}
+        </div>   {/* end padded wrapper */}
       </section>
 
       {/* Sections */}
