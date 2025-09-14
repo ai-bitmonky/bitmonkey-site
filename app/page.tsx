@@ -158,8 +158,14 @@ export default function Home() {
                     key={item}
                     href={`#${id}`}
                     className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors"
-                    onClick={() => {
-                      if (item === 'Home') setContextSlug(null);
+                    onClick={(e) => {
+                      if (item === 'Home') {
+                        setContextSlug(null);
+                      } else if (item === 'Services') {
+                        e.preventDefault();
+                        setContextSlug(null);
+                        document.getElementById('our-services')?.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }}
                   >
                     {item}
@@ -188,8 +194,14 @@ export default function Home() {
                     <a
                       key={item}
                       href={`#${id}`}
-                      onClick={() => {
-                        if (item === 'Home') setContextSlug(null);
+                      onClick={(e) => {
+                        if (item === 'Home') {
+                          setContextSlug(null);
+                        } else if (item === 'Services') {
+                          e.preventDefault();
+                          setContextSlug(null);
+                          document.getElementById('our-services')?.scrollIntoView({ behavior: 'smooth' });
+                        }
                         setMobileMenuOpen(false);
                       }}
                       className="py-2 text-gray-700 hover:text-purple-600 transition"
@@ -335,6 +347,85 @@ export default function Home() {
       {/* Sections */}
       {!contextSlug ? (
         <>
+          {/* Our Services Section */}
+          <section id="our-services" className="pt-48 pb-24 bg-white">
+            <div className="container mx-auto max-w-7xl px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
+                {/* Text Content - 30% */}
+                <div className="lg:col-span-3 space-y-6" style={{marginLeft: '1rem'}}>
+                  <div>
+                    <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Our Services</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
+                      Comprehensive Digital Solutions
+                    </h2>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    We deliver end-to-end technology solutions that drive business transformation and accelerate growth.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Development Services</h4>
+                        <p className="text-sm text-gray-600">Modern applications with cutting-edge technologies</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Consulting Services</h4>
+                        <p className="text-sm text-gray-600">Strategic guidance for digital transformation</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Training Services</h4>
+                        <p className="text-sm text-gray-600">Expert-led training programs and certifications</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4">
+                    <button className="px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all">
+                      Explore Our Services
+                    </button>
+                  </div>
+                </div>
+
+                {/* Video Content - 70% */}
+                <div className="lg:col-span-7">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black" style={{marginRight: '0.5rem'}}>
+                    <video
+                      className="w-full h-full object-cover aspect-video"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster="/services-poster.jpg"
+                    >
+                      <source src="/services.mp4" type="video/mp4" />
+                      <div className="w-full h-96 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-semibold">
+                        Services Video Placeholder
+                      </div>
+                    </video>
+
+                    <div className="absolute inset-0 bg-black/20"></div>
+
+                    <div className="absolute bottom-6 left-6 text-white">
+                      <p className="text-sm opacity-90">Transforming businesses through technology</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Development Services Section */}
           <section id="development-services" className="py-24 bg-gray-50">
             <div className="container mx-auto px-6">
