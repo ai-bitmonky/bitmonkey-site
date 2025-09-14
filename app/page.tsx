@@ -131,7 +131,7 @@ export default function Home() {
       <nav
         className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg py-4"
       >
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl px-6" style={{paddingLeft: '1rem', paddingRight: '0.5rem'}}>
           <div className="flex items-center justify-between">
             {/* Brand */}
             <div className="flex items-baseline gap-2">
@@ -285,7 +285,7 @@ export default function Home() {
           </div>
 
           {/* Right hero */}
-          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center" style={{marginRight: '1rem'}}>
+          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center" style={{marginRight: '0.5rem'}}>
             <video
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
