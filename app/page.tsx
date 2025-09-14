@@ -348,7 +348,7 @@ export default function Home() {
       {!contextSlug ? (
         <>
           {/* Our Services Section */}
-          <section id="our-services" className="pt-48 pb-24 bg-white">
+          <section id="our-services" className="pt-80 pb-24 bg-white" style={{marginTop: '4rem'}}>
             <div className="container mx-auto max-w-7xl px-6">
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
