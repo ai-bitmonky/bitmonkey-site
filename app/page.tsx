@@ -111,8 +111,14 @@ export default function Home() {
   // Top navigation items: base vs context (left-menu-selected) views
   const [contextSlug, setContextSlug] = useState<string | null>(null);
   const baseNav = ['Home', 'Services', 'Portfolio', 'Resources'];
-  const contextNav = ['Overview', 'Capabilities', 'Case Studies', 'Contact'];
-  const currentNav = contextSlug ? contextNav : baseNav;
+
+  const getContextNav = (slug: string | null) => {
+    if (!slug) return baseNav;
+    const serviceName = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    return ['Overview', 'Capabilities', 'Case Studies', 'Contact'];
+  };
+
+  const currentNav = getContextNav(contextSlug);
 
   // Helper for left-menu click: simulate context section
   const handleLeftNav = (slug: string) => {
@@ -227,8 +233,12 @@ export default function Home() {
               {/* Service quick menu: Development */}
               <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full">
                 <a
-                  href="#services"
-                  onClick={() => setContextSlug(null)}
+                  href="#development-services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setContextSlug(null);
+                    document.getElementById('development-services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
                 >
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Development</span>
@@ -246,8 +256,12 @@ export default function Home() {
               {/* Service quick menu: Consulting */}
               <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-full">
                 <a
-                  href="#services"
-                  onClick={() => setContextSlug(null)}
+                  href="#consulting-services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setContextSlug(null);
+                    document.getElementById('consulting-services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
                 >
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Consulting</span>
@@ -265,8 +279,12 @@ export default function Home() {
               {/* Service quick menu: Training */}
               <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-full">
                 <a
-                  href="#services"
-                  onClick={() => setContextSlug(null)}
+                  href="#training-services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setContextSlug(null);
+                    document.getElementById('training-services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
                 >
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Training</span>
@@ -313,8 +331,120 @@ export default function Home() {
       {/* Sections */}
       {!contextSlug ? (
         <>
-          {/* Services Section */}
-          <section id="services" className="py-24 bg-gray-50">
+          {/* Development Services Section */}
+          <section id="development-services" className="py-24 bg-gray-50">
+            <div className="container mx-auto px-6">
+              <div className="text-center mb-16">
+                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Development</span>
+                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Development Services</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Building modern applications with cutting-edge technologies
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {services.map((service, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => setSelectedService(idx)}
+                    className={`bg-white p-8 rounded-2xl cursor-pointer transition-all ${
+                      selectedService === idx
+                        ? 'shadow-2xl scale-105 border-2 border-purple-600'
+                        : 'shadow-lg hover:shadow-xl'
+                    }`}
+                  >
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                    <p className="text-gray-600 mb-4">{service.description}</p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, i) => (
+                        <li key={i} className="flex items-center text-sm text-gray-600">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Consulting Services Section */}
+          <section id="consulting-services" className="py-24 bg-white">
+            <div className="container mx-auto px-6">
+              <div className="text-center mb-16">
+                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Consulting</span>
+                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Consulting Services</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Strategic guidance for digital transformation and technology adoption
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-gray-50 p-8 rounded-2xl">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Target className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Digital Strategy</h3>
+                  <p className="text-gray-600 mb-4">Comprehensive digital transformation roadmaps</p>
+                </div>
+                <div className="bg-gray-50 p-8 rounded-2xl">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Technology Advisory</h3>
+                  <p className="text-gray-600 mb-4">Expert guidance on technology choices and architecture</p>
+                </div>
+                <div className="bg-gray-50 p-8 rounded-2xl">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <TrendingUp className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Process Optimization</h3>
+                  <p className="text-gray-600 mb-4">Streamline workflows and improve efficiency</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Training Services Section */}
+          <section id="training-services" className="py-24 bg-gray-50">
+            <div className="container mx-auto px-6">
+              <div className="text-center mb-16">
+                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Training</span>
+                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Training Services</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Upskill your team with cutting-edge technology training programs
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Code className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Development Bootcamps</h3>
+                  <p className="text-gray-600 mb-4">Intensive training in modern development practices</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-teal-600 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Cloud className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Cloud Certifications</h3>
+                  <p className="text-gray-600 mb-4">AWS, Azure, and GCP certification programs</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-600 to-orange-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Leadership Training</h3>
+                  <p className="text-gray-600 mb-4">Tech leadership and team management skills</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Original Services Section */}
+          <section id="services" className="py-24 bg-white">
             <div className="container mx-auto px-6">
               <div className="text-center mb-16">
                 <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">What We Do</span>
@@ -447,44 +577,240 @@ export default function Home() {
       ) : (
         <>
           {/* Context-specific sections shown when a left menu item is chosen */}
-          <section id="overview" className="py-24 bg-white">
-            <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center">
-              <div className="rounded-2xl overflow-hidden shadow">
-                <img src={`/gifs/${contextSlug}-overview.gif`} alt="Overview" className="w-full h-full object-cover" />
-              </div>
-              <div>
-                <h2 className="text-4xl font-bold mb-4">Overview</h2>
-                <p className="text-lg text-gray-600">High-level summary for {contextSlug?.replace(/-/g, ' ')}. Drop a GIF at <code>{`/public/gifs/${contextSlug}-overview.gif`}</code> to illustrate.</p>
+          <section id="overview" className="pt-28 lg:pt-32 pb-24 bg-white">
+            <div className="container mx-auto max-w-7xl px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                {/* Left rail - keep the same side menu */}
+                <div className="hidden lg:block lg:col-span-3">
+                  <aside className="sticky top-24 self-start" style={{marginLeft: '1rem'}}>
+                    <div className="flex flex-col gap-4">
+                      {/* Identity card */}
+                      <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
+                        <h2 className="text-2xl font-extrabold leading-tight">Avada<br />Portfolio</h2>
+                        <p className="text-sm text-gray-500 mt-2">Friday, September 12<br />New York City</p>
+                      </div>
+
+                      {/* Service quick menu: Development */}
+                      <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full">
+                        <a
+                          href="#development-services"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setContextSlug(null);
+                            document.getElementById('development-services')?.scrollIntoView({ behavior: 'smooth' });
+                          }}
+                          className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                        >
+                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Development</span>
+                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
+                        </a>
+                        <ul className="divide-y divide-gray-300/70">
+                          <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
+                          <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
+                          <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
+                          <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
+                          <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
+                        </ul>
+                      </div>
+
+                      {/* Service quick menu: Consulting */}
+                      <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-full">
+                        <a
+                          href="#consulting-services"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setContextSlug(null);
+                            document.getElementById('consulting-services')?.scrollIntoView({ behavior: 'smooth' });
+                          }}
+                          className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                        >
+                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Consulting</span>
+                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
+                        </a>
+                        <ul className="divide-y divide-gray-300/70">
+                          <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
+                          <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
+                          <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
+                          <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
+                          <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
+                        </ul>
+                      </div>
+
+                      {/* Service quick menu: Training */}
+                      <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-full">
+                        <a
+                          href="#training-services"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setContextSlug(null);
+                            document.getElementById('training-services')?.scrollIntoView({ behavior: 'smooth' });
+                          }}
+                          className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                        >
+                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Training</span>
+                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
+                        </a>
+                        <ul className="divide-y divide-gray-300/70">
+                          <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
+                          <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
+                          <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
+                          <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
+                          <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+
+                {/* Right content area */}
+                <div className="relative lg:col-span-9" style={{marginRight: '0.5rem'}}>
+                  <div className="bg-white rounded-3xl p-8 shadow-sm">
+                    <div className="mb-8">
+                      <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Service Overview</span>
+                      <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
+                        {contextSlug?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                      </h1>
+                      <p className="text-xl text-gray-600">
+                        Comprehensive solutions tailored for {contextSlug?.replace(/-/g, ' ')} needs.
+                      </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-2xl font-bold mb-4">What We Deliver</h3>
+                        <ul className="space-y-3">
+                          <li className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                            <span>Strategic planning and roadmap development</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                            <span>Technical architecture and design</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                            <span>Implementation and deployment</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                            <span>Ongoing support and maintenance</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold mb-4">Key Benefits</h3>
+                        <ul className="space-y-3">
+                          <li className="flex items-start gap-3">
+                            <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
+                            <span>Accelerated time to market</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
+                            <span>Reduced development costs</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
+                            <span>Scalable and maintainable solutions</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
+                            <span>Expert guidance and best practices</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
+
           <section id="capabilities" className="py-24 bg-gray-50">
-            <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center">
-              <div className="rounded-2xl overflow-hidden shadow">
-                <img src={`/gifs/${contextSlug}-capabilities.gif`} alt="Capabilities" className="w-full h-full object-cover" />
+            <div className="container mx-auto px-6">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold mb-4">Our Capabilities</h2>
+                <p className="text-lg text-gray-600">What we deliver for {contextSlug?.replace(/-/g, ' ')} projects</p>
               </div>
-              <div>
-                <h2 className="text-4xl font-bold mb-4">Capabilities</h2>
-                <p className="text-lg text-gray-600">What we deliver for {contextSlug?.replace(/-/g, ' ')}—architecture, tooling, and delivery approach.</p>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Code className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Technical Excellence</h3>
+                  <p className="text-gray-600">Cutting-edge technologies and proven methodologies</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Expert Team</h3>
+                  <p className="text-gray-600">Experienced professionals with deep domain knowledge</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Proven Results</h3>
+                  <p className="text-gray-600">Track record of successful project deliveries</p>
+                </div>
               </div>
             </div>
           </section>
+
           <section id="case-studies" className="py-24 bg-white">
-            <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center">
-              <div className="rounded-2xl overflow-hidden shadow">
-                <img src={`/gifs/${contextSlug}-case-studies.gif`} alt="Case studies" className="w-full h-full object-cover" />
-              </div>
-              <div>
+            <div className="container mx-auto px-6">
+              <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
-                <p className="text-lg text-gray-600">Selected outcomes and impact metrics aligned to {contextSlug?.replace(/-/g, ' ')}.</p>
+                <p className="text-lg text-gray-600">Success stories from {contextSlug?.replace(/-/g, ' ')} projects</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
+                  <h3 className="text-2xl font-bold mb-4">Fortune 500 Transformation</h3>
+                  <p className="text-gray-700 mb-6">Modernized legacy systems for a major financial institution, resulting in 40% performance improvement and $2M annual savings.</p>
+                  <div className="flex gap-4">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-purple-600">40%</div>
+                      <div className="text-sm text-gray-600">Performance Gain</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-purple-600">$2M</div>
+                      <div className="text-sm text-gray-600">Annual Savings</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
+                  <h3 className="text-2xl font-bold mb-4">Startup Scale Success</h3>
+                  <p className="text-gray-700 mb-6">Built scalable architecture that supported 10x user growth for a fast-growing SaaS platform.</p>
+                  <div className="flex gap-4">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600">10x</div>
+                      <div className="text-sm text-gray-600">User Growth</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600">99.9%</div>
+                      <div className="text-sm text-gray-600">Uptime</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
-          <section id="contact" className="py-24 bg-gray-50">
+
+          <section id="contact" className="py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white">
             <div className="container mx-auto px-6 text-center">
-              <h2 className="text-4xl font-bold mb-4">Let&apos;s Talk</h2>
-              <p className="text-lg text-gray-600 mb-8">Tell us about your {contextSlug?.replace(/-/g, ' ')} needs.</p>
-              <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-purple-600 text-white font-semibold inline-block">Email Us</a>
+              <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
+              <p className="text-lg mb-8 text-white/90">Let's discuss your {contextSlug?.replace(/-/g, ' ')} project needs</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all">
+                  Start Your Project
+                </a>
+                <button
+                  onClick={() => setContextSlug(null)}
+                  className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all"
+                >
+                  Back to Services
+                </button>
+              </div>
             </div>
           </section>
         </>
