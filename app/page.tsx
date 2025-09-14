@@ -173,6 +173,18 @@ export default function Home() {
                             behavior: 'smooth'
                           });
                         }
+                      } else if (item === 'Portfolio') {
+                        e.preventDefault();
+                        setContextSlug(null);
+                        const element = document.getElementById('our-portfolio');
+                        if (element) {
+                          const elementPosition = element.offsetTop;
+                          const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                          });
+                        }
                       }
                     }}
                   >
@@ -209,6 +221,18 @@ export default function Home() {
                           e.preventDefault();
                           setContextSlug(null);
                           const element = document.getElementById('our-services');
+                          if (element) {
+                            const elementPosition = element.offsetTop;
+                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: 'smooth'
+                            });
+                          }
+                        } else if (item === 'Portfolio') {
+                          e.preventDefault();
+                          setContextSlug(null);
+                          const element = document.getElementById('our-portfolio');
                           if (element) {
                             const elementPosition = element.offsetTop;
                             const offsetPosition = elementPosition - 80; // Account for nav height and positioning
@@ -370,7 +394,7 @@ export default function Home() {
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6" style={{marginLeft: '1rem'}}>
                   <div>
-                    <span className="text-purple-600 font-semibold text-xl uppercase tracking-wider">Our Services</span>
+                    <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Services</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
                       Comprehensive Digital Solutions
                     </h2>
@@ -428,6 +452,81 @@ export default function Home() {
                       <source src="/services.mp4" type="video/mp4" />
                       <div className="w-full h-96 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-semibold">
                         Services Video Placeholder
+                      </div>
+                    </video>
+
+                    <div className="absolute inset-0 bg-black/20"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Our Portfolio Section */}
+          <section id="our-portfolio" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+            <div className="container mx-auto max-w-7xl px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
+                {/* Text Content - 30% */}
+                <div className="lg:col-span-3 space-y-6" style={{marginLeft: '1rem'}}>
+                  <div>
+                    <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Portfolio</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
+                      Showcase of Excellence
+                    </h2>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Explore our portfolio of successful digital transformations and innovative solutions across various industries.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Enterprise Solutions</h4>
+                        <p className="text-sm text-gray-600">Large-scale applications for global organizations</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Startup Innovations</h4>
+                        <p className="text-sm text-gray-600">Cutting-edge solutions for emerging businesses</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Digital Transformation</h4>
+                        <p className="text-sm text-gray-600">Complete modernization of legacy systems</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4">
+                    <button className="px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all">
+                      View All Projects
+                    </button>
+                  </div>
+                </div>
+
+                {/* Video Content - 70% */}
+                <div className="lg:col-span-7">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black" style={{marginRight: '0.5rem'}}>
+                    <video
+                      className="w-full h-full object-cover aspect-video"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster="/portfolio-poster.jpg"
+                    >
+                      <source src="/portfolio.mp4" type="video/mp4" />
+                      <div className="w-full h-96 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white text-xl font-semibold">
+                        Portfolio Video Placeholder
                       </div>
                     </video>
 
