@@ -370,8 +370,8 @@ export default function Home() {
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6" style={{marginLeft: '1rem'}}>
                   <div>
-                    <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Our Services</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
+                    <span className="text-purple-600 font-semibold text-xl uppercase tracking-wider">Our Services</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
                       Comprehensive Digital Solutions
                     </h2>
                   </div>
