@@ -246,10 +246,12 @@ export default function Home() {
                 </a>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
-                  <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
-                  <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
-                  <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud Engineering</button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">AI-ML &amp; Automation</button></li>
+                  <li><button onClick={() => handleLeftNav('data-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data &amp; Analytics</button></li>
+                  <li><button onClick={() => handleLeftNav('devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">DevSecOps</button></li>
+                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Quality Assurance</button></li>
+                  <li><button onClick={() => handleLeftNav('sre-operations')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">SRE &amp; Operations</button></li>
                 </ul>
               </div>
 
@@ -268,11 +270,12 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
                 </a>
                 <ul className="divide-y divide-gray-300/70">
-                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
-                  <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
-                  <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
-                  <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
+                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Digital Transformation</button></li>
+                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Enterprise Architecture</button></li>
+                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Digital Strategy &amp; Roadmaps</button></li>
+                  <li><button onClick={() => handleLeftNav('governance')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Governance</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud Advisory</button></li>
+                  <li><button onClick={() => handleLeftNav('security-compliance')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Security &amp; Compliance</button></li>
                 </ul>
               </div>
 
@@ -291,11 +294,12 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
                 </a>
                 <ul className="divide-y divide-gray-300/70">
-                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
-                  <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
-                  <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
-                  <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
+                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Full‑Stack Developer</button></li>
+                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">DevOps Engineer</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud Architect</button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">AI/ML Engineer</button></li>
+                  <li><button onClick={() => handleLeftNav('bootcamps')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Bootcamps</button></li>
+                  <li><button onClick={() => handleLeftNav('certifications')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Certifications</button></li>
                 </ul>
               </div>
             </div>
