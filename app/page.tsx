@@ -167,7 +167,7 @@ export default function Home() {
                         const element = document.getElementById('our-services');
                         if (element) {
                           const elementPosition = element.offsetTop;
-                          const offsetPosition = elementPosition - 100; // Account for nav height and positioning
+                          const offsetPosition = elementPosition - 80; // Account for nav height and positioning
                           window.scrollTo({
                             top: offsetPosition,
                             behavior: 'smooth'
@@ -211,7 +211,7 @@ export default function Home() {
                           const element = document.getElementById('our-services');
                           if (element) {
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 100; // Account for nav height and positioning
+                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -432,10 +432,6 @@ export default function Home() {
                     </video>
 
                     <div className="absolute inset-0 bg-black/20"></div>
-
-                    <div className="absolute bottom-6 left-6 text-white">
-                      <p className="text-sm opacity-90">Transforming businesses through technology</p>
-                    </div>
                   </div>
                 </div>
               </div>
