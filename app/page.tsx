@@ -164,7 +164,15 @@ export default function Home() {
                       } else if (item === 'Services') {
                         e.preventDefault();
                         setContextSlug(null);
-                        document.getElementById('our-services')?.scrollIntoView({ behavior: 'smooth' });
+                        const element = document.getElementById('our-services');
+                        if (element) {
+                          const elementPosition = element.offsetTop;
+                          const offsetPosition = elementPosition - 100; // Account for nav height and positioning
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                          });
+                        }
                       }
                     }}
                   >
@@ -200,7 +208,15 @@ export default function Home() {
                         } else if (item === 'Services') {
                           e.preventDefault();
                           setContextSlug(null);
-                          document.getElementById('our-services')?.scrollIntoView({ behavior: 'smooth' });
+                          const element = document.getElementById('our-services');
+                          if (element) {
+                            const elementPosition = element.offsetTop;
+                            const offsetPosition = elementPosition - 100; // Account for nav height and positioning
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: 'smooth'
+                            });
+                          }
                         }
                         setMobileMenuOpen(false);
                       }}
