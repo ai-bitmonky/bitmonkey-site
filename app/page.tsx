@@ -541,8 +541,8 @@ export default function Home() {
           <section id="development-services" className="py-24 bg-gray-50">
             <div className="container mx-auto px-6">
               <div className="text-center mb-16">
-                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Development</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Development Services</h2>
+                <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Development Services</span>
+                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Modern Application Development</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Building modern applications with cutting-edge technologies
                 </p>
@@ -581,8 +581,8 @@ export default function Home() {
           <section id="consulting-services" className="py-24 bg-white">
             <div className="container mx-auto px-6">
               <div className="text-center mb-16">
-                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Consulting</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Consulting Services</h2>
+                <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Consulting Services</span>
+                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Strategic Digital Guidance</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Strategic guidance for digital transformation and technology adoption
                 </p>
@@ -617,8 +617,8 @@ export default function Home() {
           <section id="training-services" className="py-24 bg-gray-50">
             <div className="container mx-auto px-6">
               <div className="text-center mb-16">
-                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Training</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Training Services</h2>
+                <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Training Services</span>
+                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Professional Development Programs</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Upskill your team with cutting-edge technology training programs
                 </p>
