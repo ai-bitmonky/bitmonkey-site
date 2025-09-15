@@ -324,7 +324,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Development */}
-              <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full">
+              <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -352,7 +352,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Consulting */}
-              <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-full">
+              <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
                 <a
                   href="#consulting-services"
                   onClick={(e) => {
@@ -376,7 +376,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Training */}
-              <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-full">
+              <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
                 <a
                   href="#training-services"
                   onClick={(e) => {
