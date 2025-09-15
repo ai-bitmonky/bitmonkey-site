@@ -15,7 +15,7 @@ export default function Home() {
 
   // Top navigation items: base vs context (left-menu-selected) views
   const [contextSlug, setContextSlug] = useState<string | null>(null);
-  const baseNav = ['Home', 'Services', 'Portfolio', 'Resources'];
+  const baseNav = ['Home', 'Services', 'Portfolio', 'Resources', 'Why BitMonkey?'];
 
   const getContextNav = (slug: string | null) => {
     if (!slug) return baseNav;
@@ -92,6 +92,18 @@ export default function Home() {
                         e.preventDefault();
                         setContextSlug(null);
                         const element = document.getElementById('our-portfolio');
+                        if (element) {
+                          const elementPosition = element.offsetTop;
+                          const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                          });
+                        }
+                      } else if (item === 'Why BitMonkey?') {
+                        e.preventDefault();
+                        setContextSlug(null);
+                        const element = document.getElementById('why-bitmonkey');
                         if (element) {
                           const elementPosition = element.offsetTop;
                           const offsetPosition = elementPosition - 80; // Account for nav height and positioning
@@ -524,6 +536,122 @@ export default function Home() {
                       <source src="/portfolio.mp4" type="video/mp4" />
                       <div className="w-full h-96 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white text-xl font-semibold">
                         Portfolio Video Placeholder
+                      </div>
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Why BitMonkey Section */}
+          <section id="why-bitmonkey" className="pt-32 pb-24 bg-white" style={{marginTop: '4rem'}}>
+            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+              <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
+                {/* Text Content - 30% */}
+                <div className="lg:col-span-3 space-y-6">
+                  <div>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Why Choose Us</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
+                      Why BitMonkey?
+                    </h2>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Customer-centric, data-driven approach with agile delivery and next-gen tech stack for fast outcomes.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Customer-Centric & Data-Driven</h4>
+                        <p className="text-sm text-gray-600">Next-gen tech stack for rapid outcomes</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">API-First Architecture</h4>
+                        <p className="text-sm text-gray-600">Microservices/serverless for scalability</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Multi/Hybrid-Cloud Ready</h4>
+                        <p className="text-sm text-gray-600">Reliable scaling across cloud environments</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Automation-First DevSecOps</h4>
+                        <p className="text-sm text-gray-600">Automated pipelines with built-in security</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Security & Quality Built-In</h4>
+                        <p className="text-sm text-gray-600">Day-one security with governance frameworks</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Center of Excellence (COE)</h4>
+                        <p className="text-sm text-gray-600">Tools, accelerators, and best practices</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Statistics */}
+                  <div className="grid grid-cols-2 gap-4 pt-4">
+                    <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg">
+                      <div className="text-2xl font-bold text-purple-600">500+</div>
+                      <div className="text-xs text-gray-600">Projects</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg">
+                      <div className="text-2xl font-bold text-blue-600">95%</div>
+                      <div className="text-xs text-gray-600">Satisfaction</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-green-50 to-teal-50 rounded-lg">
+                      <div className="text-2xl font-bold text-green-600">15+</div>
+                      <div className="text-xs text-gray-600">Years Exp</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-orange-50 to-red-50 rounded-lg">
+                      <div className="text-2xl font-bold text-orange-600">24/7</div>
+                      <div className="text-xs text-gray-600">Support</div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4">
+                    <button className="px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all">
+                      Get Started Today
+                    </button>
+                  </div>
+                </div>
+
+                {/* Video Content - 70% */}
+                <div className="lg:col-span-7">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
+                    <video
+                      className="w-full h-full object-contain aspect-video"
+                      autoPlay
+                      muted
+                      playsInline
+                      preload="auto"
+                      poster="/why-bitmonkey-poster.jpg"
+                    >
+                      <source src="/why-bitmonkey.mp4" type="video/mp4" />
+                      <div className="w-full h-96 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-semibold">
+                        Why BitMonkey Video Placeholder
                       </div>
                     </video>
                   </div>
