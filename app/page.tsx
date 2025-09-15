@@ -137,7 +137,7 @@ export default function Home() {
       <nav
         className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg py-4"
       >
-        <div className="mx-auto max-w-7xl px-6" style={{paddingLeft: '1rem', paddingRight: '0.5rem'}}>
+        <div className="mx-auto max-w-7xl px-6" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="flex items-center justify-between">
             {/* Brand */}
             <div className="flex items-center gap-3">
@@ -300,12 +300,12 @@ export default function Home() {
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
     <section id="home" className={contextSlug === 'development-services' ? "pt-32 lg:pt-40" : "pt-28 lg:pt-32"}> 
-        <div className="container mx-auto max-w-7xl px-6">
+        <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left rail column (adds outer padding from the page edge) */}
          <div className="hidden lg:block lg:col-span-3">
 
-  <aside className="sticky top-24 self-start" style={{marginLeft: '1rem'}}>
+  <aside className="sticky top-24 self-start">
             <div className="flex flex-col gap-4">
               {/* Identity card */}
               <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
@@ -403,7 +403,7 @@ export default function Home() {
           </div>
 
           {/* Right hero - changes based on context */}
-          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-white bg-cover bg-center" style={{marginRight: '0.5rem'}}>
+          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-white bg-cover bg-center">
             <video
               className="absolute inset-0 w-full h-full object-contain"
               autoPlay
@@ -416,16 +416,6 @@ export default function Home() {
               <source src={contextSlug === 'development-services' ? "/development.mp4" : "/hero.mp4"} type="video/mp4" />
             </video>
 
-            {contextSlug !== 'development-services' && (
-              <>
-                <div className="absolute inset-0 bg-black/30"></div>
-                <div className="absolute z-10 top-6 md:top-10 left-6 md:left-10 right-6 md:right-10 text-white">
-                  <p className="text-2xl md:text-4xl font-semibold max-w-3xl leading-tight">
-                    Your digital transformation journey partner.
-                  </p>
-                </div>
-              </>
-            )}
           </div>
           </div> {/* end grid */}
         </div>   {/* end padded wrapper */}
@@ -435,11 +425,11 @@ export default function Home() {
       {!contextSlug ? (
         <>
           {/* Our Services Section */}
-          <section id="our-services" className="pt-80 pb-24 bg-white" style={{marginTop: '4rem'}}>
-            <div className="container mx-auto max-w-7xl px-6">
+          <section id="our-services" className="pt-32 pb-24 bg-white" style={{marginTop: '4rem'}}>
+            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
-                <div className="lg:col-span-3 space-y-6" style={{marginLeft: '1rem'}}>
+                <div className="lg:col-span-3 space-y-6">
                   <div>
                     <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Services</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
@@ -486,7 +476,7 @@ export default function Home() {
 
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white" style={{marginRight: '0.5rem'}}>
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
                     <video
                       className="w-full h-full object-contain aspect-video"
                       autoPlay
@@ -507,11 +497,11 @@ export default function Home() {
           </section>
 
           {/* Our Portfolio Section */}
-          <section id="our-portfolio" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
-            <div className="container mx-auto max-w-7xl px-6">
+          <section id="our-portfolio" className="pt-32 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
-                <div className="lg:col-span-3 space-y-6" style={{marginLeft: '1rem'}}>
+                <div className="lg:col-span-3 space-y-6">
                   <div>
                     <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Portfolio</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
@@ -558,7 +548,7 @@ export default function Home() {
 
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white" style={{marginRight: '0.5rem'}}>
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
                     <video
                       className="w-full h-full object-contain aspect-video"
                       autoPlay
@@ -583,7 +573,7 @@ export default function Home() {
         <>
           {/* Context-specific sections - replace home content */}
           <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
-            <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '0.5rem'}}>
+            <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <div className="text-center mb-16">
                 <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Capabilities</span>
                 <h2 className="text-4xl font-bold mb-4 mt-4">Development Services Portfolio</h2>
@@ -651,18 +641,20 @@ export default function Home() {
                   </ul>
                 </div>
 
-                {/* DevSecOps */}
+                {/* DevSecOps & SRE */}
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                   <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Target className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">DevSecOps</h3>
-                  <p className="text-gray-600 mb-4">Secure development and deployment practices</p>
+                  <h3 className="text-xl font-bold mb-3">DevSecOps & SRE</h3>
+                  <p className="text-gray-600 mb-4">Secure development, deployment, and site reliability engineering</p>
                   <ul className="text-sm text-gray-500 space-y-1">
                     <li>• CI/CD Pipelines</li>
                     <li>• Security Scanning</li>
-                    <li>• Compliance Automation</li>
-                    <li>• Infrastructure Security</li>
+                    <li>• System Monitoring</li>
+                    <li>• Incident Response</li>
+                    <li>• Performance Optimization</li>
+                    <li>• Capacity Planning</li>
                   </ul>
                 </div>
 
@@ -681,26 +673,12 @@ export default function Home() {
                   </ul>
                 </div>
 
-                {/* SRE & Operations */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="w-14 h-14 bg-gradient-to-br from-teal-600 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6">
-                    <Users className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">SRE & Operations</h3>
-                  <p className="text-gray-600 mb-4">Site reliability engineering and operational excellence</p>
-                  <ul className="text-sm text-gray-500 space-y-1">
-                    <li>• System Monitoring</li>
-                    <li>• Incident Response</li>
-                    <li>• Performance Optimization</li>
-                    <li>• Capacity Planning</li>
-                  </ul>
-                </div>
               </div>
             </div>
           </section>
 
           <section id="case-studies" className="pt-80 pb-24 bg-white" style={{marginTop: '4rem'}}>
-            <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '0.5rem'}}>
+            <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
                 <p className="text-lg text-gray-600">Success stories from development services projects</p>
@@ -739,7 +717,7 @@ export default function Home() {
           </section>
 
           <section id="contact" className="pt-80 pb-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white" style={{marginTop: '4rem'}}>
-            <div className="container mx-auto max-w-7xl px-6 text-center" style={{marginLeft: '1rem', marginRight: '0.5rem'}}>
+            <div className="container mx-auto max-w-7xl px-6 text-center" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
               <p className="text-lg mb-8 text-white/90">Let's discuss your development services project needs</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
