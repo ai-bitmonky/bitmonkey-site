@@ -320,14 +320,64 @@ export default function Home() {
               muted
               playsInline
               preload="auto"
-              poster={contextSlug === 'development-services' ? "/development-poster.jpg" :
-                     contextSlug === 'consulting-services' ? "/consulting-poster.jpg" :
-                     contextSlug === 'training-services' ? "/training-poster.jpg" : "/hero-poster.jpg"}
+              poster={
+                // Development Services
+                contextSlug === 'development-services' ? "/development-poster.jpg" :
+                contextSlug === 'app-dev-modernization' ? "/app-dev-poster.jpg" :
+                contextSlug === 'cloud-engineering' ? "/cloud-engineering-poster.jpg" :
+                contextSlug === 'ai-ml-automation' ? "/ai-ml-poster.jpg" :
+                contextSlug === 'data-analytics' ? "/data-analytics-poster.jpg" :
+                contextSlug === 'devsecops' ? "/devsecops-poster.jpg" :
+                contextSlug === 'quality-assurance' ? "/qa-poster.jpg" :
+                contextSlug === 'sre-operations' ? "/sre-poster.jpg" :
+                // Consulting Services
+                contextSlug === 'consulting-services' ? "/consulting-poster.jpg" :
+                contextSlug === 'digital-transformation' ? "/digital-transformation-poster.jpg" :
+                contextSlug === 'enterprise-architecture' ? "/enterprise-architecture-poster.jpg" :
+                contextSlug === 'digital-strategy-roadmaps' ? "/digital-strategy-poster.jpg" :
+                contextSlug === 'governance' ? "/governance-poster.jpg" :
+                contextSlug === 'cloud-advisory' ? "/cloud-advisory-poster.jpg" :
+                contextSlug === 'security-compliance' ? "/security-compliance-poster.jpg" :
+                // Training Services
+                contextSlug === 'training-services' ? "/training-poster.jpg" :
+                contextSlug === 'full-stack-developer' ? "/fullstack-poster.jpg" :
+                contextSlug === 'devops-engineer' ? "/devops-poster.jpg" :
+                contextSlug === 'cloud-architect' ? "/cloud-architect-poster.jpg" :
+                contextSlug === 'ai-ml-engineer' ? "/ai-ml-engineer-poster.jpg" :
+                contextSlug === 'bootcamps' ? "/bootcamps-poster.jpg" :
+                contextSlug === 'certifications' ? "/certifications-poster.jpg" :
+                "/hero-poster.jpg"
+              }
               key={contextSlug || 'default'}
             >
-              <source src={contextSlug === 'development-services' ? "/development.mp4" :
-                          contextSlug === 'consulting-services' ? "/consulting.mp4" :
-                          contextSlug === 'training-services' ? "/training.mp4" : "/hero.mp4"} type="video/mp4" />
+              <source src={
+                // Development Services
+                contextSlug === 'development-services' ? "/development.mp4" :
+                contextSlug === 'app-dev-modernization' ? "/app-dev.mp4" :
+                contextSlug === 'cloud-engineering' ? "/cloud-engineering.mp4" :
+                contextSlug === 'ai-ml-automation' ? "/ai-ml.mp4" :
+                contextSlug === 'data-analytics' ? "/data-analytics.mp4" :
+                contextSlug === 'devsecops' ? "/devsecops.mp4" :
+                contextSlug === 'quality-assurance' ? "/qa.mp4" :
+                contextSlug === 'sre-operations' ? "/sre.mp4" :
+                // Consulting Services
+                contextSlug === 'consulting-services' ? "/consulting.mp4" :
+                contextSlug === 'digital-transformation' ? "/digital-transformation.mp4" :
+                contextSlug === 'enterprise-architecture' ? "/enterprise-architecture.mp4" :
+                contextSlug === 'digital-strategy-roadmaps' ? "/digital-strategy.mp4" :
+                contextSlug === 'governance' ? "/governance.mp4" :
+                contextSlug === 'cloud-advisory' ? "/cloud-advisory.mp4" :
+                contextSlug === 'security-compliance' ? "/security-compliance.mp4" :
+                // Training Services
+                contextSlug === 'training-services' ? "/training.mp4" :
+                contextSlug === 'full-stack-developer' ? "/fullstack.mp4" :
+                contextSlug === 'devops-engineer' ? "/devops.mp4" :
+                contextSlug === 'cloud-architect' ? "/cloud-architect.mp4" :
+                contextSlug === 'ai-ml-engineer' ? "/ai-ml-engineer.mp4" :
+                contextSlug === 'bootcamps' ? "/bootcamps.mp4" :
+                contextSlug === 'certifications' ? "/certifications.mp4" :
+                "/hero.mp4"
+              } type="video/mp4" />
             </video>
 
           </div>
