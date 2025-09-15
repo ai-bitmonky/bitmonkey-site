@@ -486,6 +486,332 @@ export default function Home() {
       ) : (
         <>
           {/* Context-specific sections - replace home content */}
+          {/* Individual Development Service Pages */}
+          {contextSlug === 'app-dev-modernization' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">App Development & Modernization</h2>
+                  <p className="text-lg text-gray-600">Transform your business with modern application development and legacy system modernization</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Custom web application development with React, Angular, and Vue.js</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Enterprise backend solutions with Node.js, .NET, and Java</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cross-platform mobile app development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Legacy system migration and modernization</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />API development and integration</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Progressive Web Apps (PWAs)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Technologies We Use</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Frontend</h4>
+                        <p className="text-sm text-gray-600">React, Angular, Vue.js, TypeScript, Next.js</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Backend</h4>
+                        <p className="text-sm text-gray-600">Node.js, .NET Core, Java Spring, Python</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Mobile</h4>
+                        <p className="text-sm text-gray-600">React Native, Flutter, Ionic</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Database</h4>
+                        <p className="text-sm text-gray-600">MongoDB, PostgreSQL, MySQL, Redis</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'cloud-engineering' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Cloud Engineering</h2>
+                  <p className="text-lg text-gray-600">Build scalable, resilient cloud infrastructure and platform engineering solutions</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cloud architecture design and implementation</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Container orchestration with Kubernetes</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Serverless computing and microservices</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Infrastructure as Code (IaC)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Auto-scaling and load balancing</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cost optimization strategies</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Cloud Platforms</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">Amazon Web Services</h4>
+                        <p className="text-sm text-gray-600">EC2, EKS, Lambda, S3, RDS, CloudFormation</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">Microsoft Azure</h4>
+                        <p className="text-sm text-gray-600">AKS, Functions, Storage, SQL Database, ARM Templates</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">Google Cloud Platform</h4>
+                        <p className="text-sm text-gray-600">GKE, Cloud Functions, Cloud Storage, BigQuery</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'ai-ml-automation' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">AI-ML & Automation</h2>
+                  <p className="text-lg text-gray-600">Harness the power of artificial intelligence and machine learning for intelligent automation</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Custom machine learning model development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Intelligent process automation (RPA)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Natural language processing solutions</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Computer vision and image recognition</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Predictive analytics and forecasting</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />MLOps and model deployment</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">AI/ML Technologies</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Frameworks</h4>
+                        <p className="text-sm text-gray-600">TensorFlow, PyTorch, Scikit-learn, OpenAI</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Languages</h4>
+                        <p className="text-sm text-gray-600">Python, R, Julia, Scala</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Automation</h4>
+                        <p className="text-sm text-gray-600">UiPath, Automation Anywhere, Power Automate</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Deployment</h4>
+                        <p className="text-sm text-gray-600">MLflow, Kubeflow, Docker, Kubernetes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'data-analytics' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Data & Analytics</h2>
+                  <p className="text-lg text-gray-600">Transform your data into actionable insights with advanced analytics and business intelligence</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Data warehouse design and implementation</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />ETL/ELT pipeline development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Business intelligence dashboards</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Real-time streaming analytics</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Data governance and quality</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Advanced analytics and reporting</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Data Technologies</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">Analytics</h4>
+                        <p className="text-sm text-gray-600">Tableau, Power BI, Looker, QlikView</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">Big Data</h4>
+                        <p className="text-sm text-gray-600">Hadoop, Spark, Kafka, Elasticsearch</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">Databases</h4>
+                        <p className="text-sm text-gray-600">PostgreSQL, MongoDB, Snowflake, BigQuery</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">Processing</h4>
+                        <p className="text-sm text-gray-600">Apache Airflow, dbt, Fivetran, Stitch</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'devsecops' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">DevSecOps</h2>
+                  <p className="text-lg text-gray-600">Integrate security into every stage of your development lifecycle</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Secure CI/CD pipeline implementation</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Automated security testing and scanning</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Container security and compliance</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Infrastructure security automation</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Security monitoring and alerting</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Compliance automation (SOX, HIPAA, PCI)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Security Tools</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">SAST/DAST</h4>
+                        <p className="text-sm text-gray-600">SonarQube, Checkmarx, Veracode, OWASP ZAP</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">Container</h4>
+                        <p className="text-sm text-gray-600">Twistlock, Aqua, Falco, OPA Gatekeeper</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">Infrastructure</h4>
+                        <p className="text-sm text-gray-600">Terraform, Ansible, Chef, CloudFormation</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">Monitoring</h4>
+                        <p className="text-sm text-gray-600">Splunk, ELK Stack, Prometheus, Grafana</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'quality-assurance' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Quality Assurance</h2>
+                  <p className="text-lg text-gray-600">Ensure software quality with comprehensive testing strategies and automation</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Test automation framework development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Performance and load testing</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />API and integration testing</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Mobile app testing (iOS/Android)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Security and penetration testing</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />User acceptance testing coordination</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Testing Tools</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">Automation</h4>
+                        <p className="text-sm text-gray-600">Selenium, Cypress, Playwright, Appium</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">Performance</h4>
+                        <p className="text-sm text-gray-600">JMeter, K6, LoadRunner, Gatling</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">API Testing</h4>
+                        <p className="text-sm text-gray-600">Postman, REST Assured, SoapUI</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">Management</h4>
+                        <p className="text-sm text-gray-600">TestRail, Jira, Azure DevOps, Allure</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'sre-operations' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">SRE & Operations</h2>
+                  <p className="text-lg text-gray-600">Ensure system reliability, performance, and operational excellence</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Site reliability engineering practices</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />24/7 system monitoring and alerting</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Incident response and resolution</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Performance optimization and tuning</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Capacity planning and scaling</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Disaster recovery and business continuity</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Operations Tools</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Monitoring</h4>
+                        <p className="text-sm text-gray-600">Prometheus, Grafana, Datadog, New Relic</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Logging</h4>
+                        <p className="text-sm text-gray-600">ELK Stack, Fluentd, Splunk, Loki</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Incident</h4>
+                        <p className="text-sm text-gray-600">PagerDuty, Opsgenie, VictorOps</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Automation</h4>
+                        <p className="text-sm text-gray-600">Ansible, Puppet, Chef, Terraform</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
           {contextSlug === 'development-services' && (
             <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
               <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
@@ -697,6 +1023,281 @@ export default function Home() {
             </section>
           )}
 
+          {/* Individual Consulting Service Pages */}
+          {contextSlug === 'digital-transformation' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Digital Transformation</h2>
+                  <p className="text-lg text-gray-600">Lead your organization through comprehensive digital transformation initiatives</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Digital transformation roadmap development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Change management and cultural transformation</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Process optimization and automation</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Technology adoption strategies</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Digital capabilities assessment</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />ROI measurement and success metrics</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Transformation Areas</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Customer Experience</h4>
+                        <p className="text-sm text-gray-600">Digital channels, personalization, omnichannel strategies</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Operations</h4>
+                        <p className="text-sm text-gray-600">Process automation, workflow optimization, efficiency gains</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Business Model</h4>
+                        <p className="text-sm text-gray-600">New revenue streams, digital products, platform strategies</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'enterprise-architecture' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Enterprise Architecture</h2>
+                  <p className="text-lg text-gray-600">Design scalable, future-ready enterprise architecture solutions</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Enterprise architecture design and planning</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />System integration strategy and execution</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Application portfolio optimization</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Technology standards and governance</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Scalability and performance planning</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Legacy system modernization strategy</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Architecture Frameworks</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">TOGAF</h4>
+                        <p className="text-sm text-gray-600">Enterprise architecture framework</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">Zachman</h4>
+                        <p className="text-sm text-gray-600">Architecture modeling framework</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">DoDAF</h4>
+                        <p className="text-sm text-gray-600">Department of Defense framework</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">SABSA</h4>
+                        <p className="text-sm text-gray-600">Security architecture methodology</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'digital-strategy-roadmaps' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Digital Strategy & Roadmaps</h2>
+                  <p className="text-lg text-gray-600">Develop comprehensive digital strategies and implementation roadmaps</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Digital strategy formulation and planning</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Technology roadmap development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Investment prioritization and planning</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Market analysis and competitive intelligence</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />ROI analysis and business case development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Implementation milestone planning</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Strategic Focus Areas</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Innovation</h4>
+                        <p className="text-sm text-gray-600">Emerging technologies, R&D planning</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Growth</h4>
+                        <p className="text-sm text-gray-600">Market expansion, new capabilities</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Efficiency</h4>
+                        <p className="text-sm text-gray-600">Cost optimization, process improvement</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Risk</h4>
+                        <p className="text-sm text-gray-600">Risk mitigation, compliance planning</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'governance' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Governance</h2>
+                  <p className="text-lg text-gray-600">Establish robust IT governance and compliance frameworks</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />IT governance framework design</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Risk management and assessment</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Compliance framework development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Policy and procedure development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Audit and assurance programs</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Decision-making governance structures</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Governance Standards</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">COBIT</h4>
+                        <p className="text-sm text-gray-600">IT management and governance</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">ITIL</h4>
+                        <p className="text-sm text-gray-600">IT service management</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">ISO 27001</h4>
+                        <p className="text-sm text-gray-600">Information security management</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">SOX</h4>
+                        <p className="text-sm text-gray-600">Financial compliance</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'cloud-advisory' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Cloud Advisory</h2>
+                  <p className="text-lg text-gray-600">Strategic cloud consulting and migration advisory services</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cloud strategy development and planning</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cloud migration assessment and roadmap</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Multi-cloud and hybrid cloud strategies</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cloud cost optimization and FinOps</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Vendor selection and negotiation support</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cloud governance and security frameworks</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Cloud Platforms</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">AWS Advisory</h4>
+                        <p className="text-sm text-gray-600">Architecture, migration, cost optimization</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">Azure Advisory</h4>
+                        <p className="text-sm text-gray-600">Strategy, implementation, hybrid solutions</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">Google Cloud Advisory</h4>
+                        <p className="text-sm text-gray-600">Data analytics, AI/ML, infrastructure</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'security-compliance' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Security & Compliance</h2>
+                  <p className="text-lg text-gray-600">Comprehensive security strategy and regulatory compliance consulting</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Security assessment and gap analysis</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Compliance framework implementation</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Risk assessment and mitigation strategies</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Security architecture design</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Incident response planning</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Security awareness and training programs</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Compliance Standards</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">SOX</h4>
+                        <p className="text-sm text-gray-600">Sarbanes-Oxley compliance</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">HIPAA</h4>
+                        <p className="text-sm text-gray-600">Healthcare data protection</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">PCI DSS</h4>
+                        <p className="text-sm text-gray-600">Payment card security</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">GDPR</h4>
+                        <p className="text-sm text-gray-600">Data privacy compliance</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
           {contextSlug === 'training-services' && (
             <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
               <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
@@ -795,6 +1396,269 @@ export default function Home() {
                       <li>• Google Cloud</li>
                       <li>• Kubernetes (CKA/CKAD)</li>
                     </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Individual Training Service Pages */}
+          {contextSlug === 'full-stack-developer' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Training Program</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Full-Stack Developer</h2>
+                  <p className="text-lg text-gray-600">Master modern web development from frontend to backend with our comprehensive training program</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What You'll Learn</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Frontend development with React, Angular, and Vue.js</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Backend development with Node.js, Python, and Java</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Database design and management (SQL and NoSQL)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />RESTful API development and integration</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Version control with Git and collaboration tools</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Deployment and DevOps fundamentals</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Program Details</h3>
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Duration: 16 weeks</h4>
+                        <p className="text-sm text-gray-600">Full-time intensive program with hands-on projects</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Format: Hybrid</h4>
+                        <p className="text-sm text-gray-600">Online lectures + in-person labs and mentoring</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Projects: 5 Portfolio Projects</h4>
+                        <p className="text-sm text-gray-600">Build real-world applications for your portfolio</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'devops-engineer' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Training Program</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">DevOps Engineer</h2>
+                  <p className="text-lg text-gray-600">Become proficient in DevOps practices, automation, and infrastructure management</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What You'll Learn</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />CI/CD pipeline design and implementation</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Containerization with Docker and Kubernetes</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Infrastructure as Code (Terraform, Ansible)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cloud platforms (AWS, Azure, GCP)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Monitoring and logging solutions</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Security and compliance in DevOps</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Certification Path</h3>
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">AWS DevOps</h4>
+                        <p className="text-sm text-gray-600">Prepare for AWS DevOps Professional certification</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">Kubernetes (CKA)</h4>
+                        <p className="text-sm text-gray-600">Certified Kubernetes Administrator</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-blue-600 mb-2">Docker</h4>
+                        <p className="text-sm text-gray-600">Docker Certified Associate</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'cloud-architect' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Training Program</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Cloud Architect</h2>
+                  <p className="text-lg text-gray-600">Design and implement scalable cloud solutions across major cloud platforms</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What You'll Learn</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cloud architecture design principles</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Multi-cloud and hybrid cloud strategies</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Security and compliance in the cloud</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cost optimization and FinOps</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Disaster recovery and business continuity</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Performance optimization and scaling</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Certification Tracks</h3>
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">AWS Solutions Architect</h4>
+                        <p className="text-sm text-gray-600">Professional level certification</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Azure Solutions Architect</h4>
+                        <p className="text-sm text-gray-600">Expert level certification</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-green-600 mb-2">Google Cloud Architect</h4>
+                        <p className="text-sm text-gray-600">Professional Cloud Architect</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'ai-ml-engineer' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Training Program</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">AI/ML Engineer</h2>
+                  <p className="text-lg text-gray-600">Master machine learning and artificial intelligence technologies</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What You'll Learn</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Machine learning algorithms and techniques</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Deep learning and neural networks</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Natural language processing (NLP)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Computer vision and image processing</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />MLOps and model deployment</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Data engineering for ML</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Technology Stack</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">Python</h4>
+                        <p className="text-sm text-gray-600">Core ML/AI programming language</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">TensorFlow</h4>
+                        <p className="text-sm text-gray-600">Deep learning framework</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">PyTorch</h4>
+                        <p className="text-sm text-gray-600">Research-focused ML framework</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-indigo-600 mb-2">Kubernetes</h4>
+                        <p className="text-sm text-gray-600">ML model orchestration</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'bootcamps' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Training Program</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Intensive Coding Bootcamps</h2>
+                  <p className="text-lg text-gray-600">Accelerated learning programs designed for career transition and skill advancement</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Bootcamp Programs</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />12-week intensive full-stack development</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />8-week data science and analytics</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />10-week DevOps and cloud engineering</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />14-week AI/ML specialization</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />6-week cybersecurity fundamentals</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Career placement assistance included</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Support & Benefits</h3>
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">Industry Mentorship</h4>
+                        <p className="text-sm text-gray-600">1-on-1 guidance from industry professionals</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">Job Placement</h4>
+                        <p className="text-sm text-gray-600">85% job placement rate within 6 months</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-red-600 mb-2">Portfolio Development</h4>
+                        <p className="text-sm text-gray-600">Build 3-5 production-ready projects</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'certifications' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Certification Programs</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Industry-Recognized Certifications</h2>
+                  <p className="text-lg text-gray-600">Prepare for and achieve top industry certifications with expert guidance</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Available Certifications</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />AWS Solutions Architect (Associate & Professional)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Microsoft Azure Architect Expert</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Google Cloud Professional Architect</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Certified Kubernetes Administrator (CKA)</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />CISSP and CompTIA Security+</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Project Management Professional (PMP)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">Preparation Features</h3>
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">95% Pass Rate</h4>
+                        <p className="text-sm text-gray-600">Industry-leading exam pass rates</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">Practice Exams</h4>
+                        <p className="text-sm text-gray-600">Unlimited practice tests and mock exams</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-orange-600 mb-2">Expert Instructors</h4>
+                        <p className="text-sm text-gray-600">Certified professionals as instructors</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
