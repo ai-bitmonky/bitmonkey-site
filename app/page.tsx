@@ -431,7 +431,7 @@ export default function Home() {
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6">
                   <div>
-                    <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Services</span>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Services</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
                       Comprehensive Digital Solutions
                     </h2>
@@ -503,7 +503,7 @@ export default function Home() {
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6">
                   <div>
-                    <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Portfolio</span>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Portfolio</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
                       Showcase of Excellence
                     </h2>
@@ -575,7 +575,7 @@ export default function Home() {
           <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
             <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <div className="text-center mb-16">
-                <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Capabilities</span>
+                <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
                 <h2 className="text-4xl font-bold mb-4 mt-4">Development Services Portfolio</h2>
                 <p className="text-lg text-gray-600">Comprehensive development solutions across modern technology stacks</p>
               </div>
