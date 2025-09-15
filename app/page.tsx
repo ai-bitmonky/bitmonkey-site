@@ -146,7 +146,7 @@ export default function Home() {
                 <span className="text-white font-bold text-lg">BM</span>
               </div>
               <h1 className="text-xl font-extrabold tracking-tight text-gray-900">
-                BitMonkey IT
+                BitMonkey IT Services Pvt Ltd
               </h1>
             </div>
 
@@ -309,7 +309,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               {/* Identity card */}
               <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
-                <h2 className="text-lg font-extrabold leading-tight">BitMonkey IT</h2>
+                <h2 className="text-lg font-extrabold leading-tight">BitMonkey IT<br />Services Pvt Ltd</h2>
                 <p className="text-sm text-gray-500 mt-2">Friday, September 12<br />New Delhi</p>
 
                 <div className="flex items-center gap-4 mt-6 text-gray-600">
@@ -763,7 +763,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <h3 className="text-xl font-bold mb-4">BitMonkey IT</h3>
+              <h3 className="text-xl font-bold mb-4">BitMonkey IT Services Pvt Ltd</h3>
               <p className="text-gray-400">Creating digital excellence since 2014</p>
               <div className="flex space-x-4 mt-6">
                 <a href="#" className="text-gray-400 hover:text-white transition">
@@ -821,7 +821,7 @@ export default function Home() {
           </div>
           
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 BitMonkey IT. All rights reserved.</p>
+            <p>&copy; 2024 BitMonkey IT Services Pvt Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>
