@@ -386,12 +386,11 @@ export default function Home() {
           </div>
 
           {/* Right hero - changes based on context */}
-          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-cover bg-center" style={{marginRight: '0.5rem', backgroundImage: contextSlug !== 'development-services' ? "url('/hero-poster.jpg')" : undefined}}>
+          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-white bg-cover bg-center" style={{marginRight: '0.5rem'}}>
             <video
-              className={`absolute inset-0 w-full h-full ${contextSlug === 'development-services' ? 'object-contain' : 'object-cover'}`}
+              className="absolute inset-0 w-full h-full object-contain"
               autoPlay
               muted
-              loop
               playsInline
               preload="auto"
               poster={contextSlug === 'development-services' ? "/development-poster.jpg" : "/hero-poster.jpg"}
@@ -470,12 +469,11 @@ export default function Home() {
 
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black" style={{marginRight: '0.5rem'}}>
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white" style={{marginRight: '0.5rem'}}>
                     <video
-                      className="w-full h-full object-cover aspect-video"
+                      className="w-full h-full object-contain aspect-video"
                       autoPlay
                       muted
-                      loop
                       playsInline
                       preload="auto"
                       poster="/services-poster.jpg"
@@ -485,8 +483,6 @@ export default function Home() {
                         Services Video Placeholder
                       </div>
                     </video>
-
-                    <div className="absolute inset-0 bg-black/20"></div>
                   </div>
                 </div>
               </div>
@@ -545,12 +541,11 @@ export default function Home() {
 
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black" style={{marginRight: '0.5rem'}}>
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white" style={{marginRight: '0.5rem'}}>
                     <video
-                      className="w-full h-full object-cover aspect-video"
+                      className="w-full h-full object-contain aspect-video"
                       autoPlay
                       muted
-                      loop
                       playsInline
                       preload="auto"
                       poster="/portfolio-poster.jpg"
@@ -560,8 +555,6 @@ export default function Home() {
                         Portfolio Video Placeholder
                       </div>
                     </video>
-
-                    <div className="absolute inset-0 bg-black/20"></div>
                   </div>
                 </div>
               </div>
