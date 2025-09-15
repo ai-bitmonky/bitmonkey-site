@@ -1,112 +1,17 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { 
-  Menu, X, Play, ShoppingCart, ArrowRight, CheckCircle, 
-  Star, Mail, Phone, MapPin, Github, Linkedin, Twitter, 
-  Instagram, ChevronDown, Users, Code, Palette, Cloud,
+import { useState } from 'react';
+import {
+  Menu, X, CheckCircle,
+  Mail, Phone, MapPin, Github, Linkedin, Twitter,
+  Instagram, Users, Code, Cloud,
   Target, Zap, Award, TrendingUp
 } from 'lucide-react';
 
-interface Service {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  features: string[];
-}
-
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  image?: string;
-  gradient: string;
-}
-
-interface Testimonial {
-  id: number;
-  text: string;
-  author: string;
-  role: string;
-  company: string;
-  rating: number;
-}
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-  const [activeProject, setActiveProject] = useState<number | null>(null);
-  const [selectedService, setSelectedService] = useState<number>(0);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const services: Service[] = [
-    {
-      title: 'Web Development',
-      description: 'Custom websites and web applications built with modern technologies',
-      icon: <Code className="w-6 h-6" />,
-      features: ['React/Next.js', 'TypeScript', 'Node.js', 'API Integration']
-    },
-    {
-      title: 'UI/UX Design',
-      description: 'Beautiful, intuitive interfaces that users love',
-      icon: <Palette className="w-6 h-6" />,
-      features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems']
-    },
-    {
-      title: 'Cloud Solutions',
-      description: 'Scalable infrastructure for modern applications',
-      icon: <Cloud className="w-6 h-6" />,
-      features: ['AWS/Azure', 'Docker/K8s', 'CI/CD', 'Monitoring']
-    },
-    {
-      title: 'Consulting',
-      description: 'Strategic guidance for digital transformation',
-      icon: <Target className="w-6 h-6" />,
-      features: ['Tech Strategy', 'Architecture', 'Best Practices', 'Training']
-    }
-  ];
-
-  const projects: Project[] = [
-    { id: 1, title: 'FinTech Platform', category: 'Finance', description: 'Modern banking solution', gradient: 'from-purple-600 to-pink-600' },
-    { id: 2, title: 'E-Commerce Hub', category: 'Retail', description: 'Next-gen shopping experience', gradient: 'from-blue-600 to-purple-600' },
-    { id: 3, title: 'Healthcare Portal', category: 'Medical', description: 'Telemedicine platform', gradient: 'from-teal-600 to-blue-600' },
-    { id: 4, title: 'AI Dashboard', category: 'Analytics', description: 'Real-time insights', gradient: 'from-orange-600 to-red-600' },
-    { id: 5, title: 'Social App', category: 'Social', description: 'Community platform', gradient: 'from-pink-600 to-rose-600' },
-    { id: 6, title: 'EdTech System', category: 'Education', description: 'Learning management', gradient: 'from-green-600 to-teal-600' }
-  ];
-
-  const testimonials: Testimonial[] = [
-    {
-      id: 1,
-      text: "They transformed our entire digital presence. The results exceeded all expectations.",
-      author: "Sarah Chen",
-      role: "CEO",
-      company: "TechStart Inc.",
-      rating: 5
-    },
-    {
-      id: 2,
-      text: "Exceptional team with deep technical expertise and creative vision.",
-      author: "Michael Rodriguez",
-      role: "CTO",
-      company: "Innovation Labs",
-      rating: 5
-    },
-    {
-      id: 3,
-      text: "The best technology partner we've ever worked with. Highly recommended!",
-      author: "Emily Johnson",
-      role: "Product Manager",
-      company: "Digital Corp",
-      rating: 5
-    }
-  ];
 
   // Top navigation items: base vs context (left-menu-selected) views
   const [contextSlug, setContextSlug] = useState<string | null>(null);
@@ -114,7 +19,6 @@ export default function Home() {
 
   const getContextNav = (slug: string | null) => {
     if (!slug) return baseNav;
-    const serviceName = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     return ['Home', 'Overview', 'Capabilities', 'Case Studies', 'Contact'];
   };
 
@@ -126,6 +30,16 @@ export default function Home() {
     // simulate new page (URL) but stay on SPA
     if (typeof window !== 'undefined') {
       window.history.pushState({}, '', `/services/${slug}`);
+      const el = document.getElementById('home');
+      el?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Helper to handle service page navigation
+  const handleServicePageNav = (serviceType: string) => {
+    setContextSlug(serviceType);
+    if (typeof window !== 'undefined') {
+      window.history.pushState({}, '', `/services/${serviceType}`);
       const el = document.getElementById('home');
       el?.scrollIntoView({ behavior: 'smooth' });
     }
@@ -299,7 +213,7 @@ export default function Home() {
 
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
-    <section id="home" className={contextSlug === 'development-services' ? "pt-32 lg:pt-40" : "pt-28 lg:pt-32"}> 
+    <section id="home" className={contextSlug ? "pt-32 lg:pt-40" : "pt-28 lg:pt-32"}> 
         <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left rail column (adds outer padding from the page edge) */}
@@ -353,18 +267,16 @@ export default function Home() {
 
               {/* Service quick menu: Consulting */}
               <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
-                <a
-                  href="#consulting-services"
+                <button
                   onClick={(e) => {
                     e.preventDefault();
-                    setContextSlug(null);
-                    document.getElementById('consulting-services')?.scrollIntoView({ behavior: 'smooth' });
+                    handleServicePageNav('consulting-services');
                   }}
-                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors w-full text-left"
                 >
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Consulting</span>
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                </a>
+                </button>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('digital-transformation')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Digital Transformation</button></li>
                   <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Enterprise Architecture</button></li>
@@ -377,18 +289,16 @@ export default function Home() {
 
               {/* Service quick menu: Training */}
               <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
-                <a
-                  href="#training-services"
+                <button
                   onClick={(e) => {
                     e.preventDefault();
-                    setContextSlug(null);
-                    document.getElementById('training-services')?.scrollIntoView({ behavior: 'smooth' });
+                    handleServicePageNav('training-services');
                   }}
-                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors w-full text-left"
                 >
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Training</span>
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                </a>
+                </button>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('full-stack-developer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Full‑Stack Developer</button></li>
                   <li><button onClick={() => handleLeftNav('devops-engineer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">DevOps Engineer</button></li>
@@ -410,10 +320,14 @@ export default function Home() {
               muted
               playsInline
               preload="auto"
-              poster={contextSlug === 'development-services' ? "/development-poster.jpg" : "/hero-poster.jpg"}
+              poster={contextSlug === 'development-services' ? "/development-poster.jpg" :
+                     contextSlug === 'consulting-services' ? "/consulting-poster.jpg" :
+                     contextSlug === 'training-services' ? "/training-poster.jpg" : "/hero-poster.jpg"}
               key={contextSlug || 'default'}
             >
-              <source src={contextSlug === 'development-services' ? "/development.mp4" : "/hero.mp4"} type="video/mp4" />
+              <source src={contextSlug === 'development-services' ? "/development.mp4" :
+                          contextSlug === 'consulting-services' ? "/consulting.mp4" :
+                          contextSlug === 'training-services' ? "/training.mp4" : "/hero.mp4"} type="video/mp4" />
             </video>
 
           </div>
@@ -572,13 +486,14 @@ export default function Home() {
       ) : (
         <>
           {/* Context-specific sections - replace home content */}
-          <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
-            <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
-                <h2 className="text-4xl font-bold mb-4 mt-4">Development Services Portfolio</h2>
-                <p className="text-lg text-gray-600">Comprehensive development solutions across modern technology stacks</p>
-              </div>
+          {contextSlug === 'development-services' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Development Services Portfolio</h2>
+                  <p className="text-lg text-gray-600">Comprehensive development solutions across modern technology stacks</p>
+                </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* App Dev & Modernization */}
@@ -673,56 +588,345 @@ export default function Home() {
                   </ul>
                 </div>
 
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          )}
 
+          {contextSlug === 'consulting-services' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Consulting Services Portfolio</h2>
+                  <p className="text-lg text-gray-600">Strategic guidance for digital transformation and business innovation</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* Digital Transformation */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Target className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Digital Transformation</h3>
+                    <p className="text-gray-600 mb-4">End-to-end transformation strategy and execution</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• Transformation Roadmaps</li>
+                      <li>• Change Management</li>
+                      <li>• Process Optimization</li>
+                      <li>• Technology Adoption</li>
+                    </ul>
+                  </div>
+
+                  {/* Enterprise Architecture */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Users className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Enterprise Architecture</h3>
+                    <p className="text-gray-600 mb-4">Scalable and sustainable system architecture design</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• System Design</li>
+                      <li>• Integration Strategy</li>
+                      <li>• Scalability Planning</li>
+                      <li>• Technology Standards</li>
+                    </ul>
+                  </div>
+
+                  {/* Digital Strategy & Roadmaps */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <TrendingUp className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Digital Strategy & Roadmaps</h3>
+                    <p className="text-gray-600 mb-4">Strategic planning and implementation roadmaps</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• Strategic Planning</li>
+                      <li>• Technology Roadmaps</li>
+                      <li>• Investment Planning</li>
+                      <li>• ROI Analysis</li>
+                    </ul>
+                  </div>
+
+                  {/* Governance */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Award className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Governance</h3>
+                    <p className="text-gray-600 mb-4">IT governance and compliance frameworks</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• IT Governance</li>
+                      <li>• Risk Management</li>
+                      <li>• Compliance Frameworks</li>
+                      <li>• Policy Development</li>
+                    </ul>
+                  </div>
+
+                  {/* Cloud Advisory */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Cloud className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Cloud Advisory</h3>
+                    <p className="text-gray-600 mb-4">Cloud strategy and migration consulting</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• Cloud Strategy</li>
+                      <li>• Migration Planning</li>
+                      <li>• Cost Optimization</li>
+                      <li>• Vendor Selection</li>
+                    </ul>
+                  </div>
+
+                  {/* Security & Compliance */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <CheckCircle className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Security & Compliance</h3>
+                    <p className="text-gray-600 mb-4">Comprehensive security strategy and compliance</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• Security Assessment</li>
+                      <li>• Compliance Audits</li>
+                      <li>• Risk Assessment</li>
+                      <li>• Security Frameworks</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'training-services' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Training Services Portfolio</h2>
+                  <p className="text-lg text-gray-600">Expert-led training programs and professional certifications</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* Full Stack Developer */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Code className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Full Stack Developer</h3>
+                    <p className="text-gray-600 mb-4">Complete web development training from frontend to backend</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• React/Angular/Vue.js</li>
+                      <li>• Node.js/Python/Java</li>
+                      <li>• Database Design</li>
+                      <li>• API Development</li>
+                    </ul>
+                  </div>
+
+                  {/* DevOps Engineer */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Target className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">DevOps Engineer</h3>
+                    <p className="text-gray-600 mb-4">Infrastructure automation and deployment pipelines</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• CI/CD Pipelines</li>
+                      <li>• Docker/Kubernetes</li>
+                      <li>• Infrastructure as Code</li>
+                      <li>• Monitoring & Logging</li>
+                    </ul>
+                  </div>
+
+                  {/* Cloud Architect */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Cloud className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Cloud Architect</h3>
+                    <p className="text-gray-600 mb-4">Design and implement scalable cloud solutions</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• AWS/Azure/GCP</li>
+                      <li>• Cloud Architecture</li>
+                      <li>• Cost Optimization</li>
+                      <li>• Security Best Practices</li>
+                    </ul>
+                  </div>
+
+                  {/* AI/ML Engineer */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Zap className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">AI/ML Engineer</h3>
+                    <p className="text-gray-600 mb-4">Machine learning and artificial intelligence development</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• Machine Learning</li>
+                      <li>• Deep Learning</li>
+                      <li>• Data Science</li>
+                      <li>• MLOps</li>
+                    </ul>
+                  </div>
+
+                  {/* Bootcamps */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Users className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Bootcamps</h3>
+                    <p className="text-gray-600 mb-4">Intensive coding bootcamps for rapid skill development</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• 12-week Programs</li>
+                      <li>• Project-based Learning</li>
+                      <li>• Job Placement Support</li>
+                      <li>• Industry Mentorship</li>
+                    </ul>
+                  </div>
+
+                  {/* Certifications */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
+                      <Award className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Certifications</h3>
+                    <p className="text-gray-600 mb-4">Industry-recognized professional certifications</p>
+                    <ul className="text-sm text-gray-500 space-y-1">
+                      <li>• AWS Certifications</li>
+                      <li>• Microsoft Azure</li>
+                      <li>• Google Cloud</li>
+                      <li>• Kubernetes (CKA/CKAD)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Case Studies Section - Dynamic based on service type */}
           <section id="case-studies" className="pt-80 pb-24 bg-white" style={{marginTop: '4rem'}}>
             <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
-                <p className="text-lg text-gray-600">Success stories from development services projects</p>
+                <p className="text-lg text-gray-600">
+                  {contextSlug === 'development-services' && 'Success stories from development services projects'}
+                  {contextSlug === 'consulting-services' && 'Strategic transformations and consulting successes'}
+                  {contextSlug === 'training-services' && 'Training program outcomes and career transformations'}
+                </p>
               </div>
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
-                  <h3 className="text-2xl font-bold mb-4">Fortune 500 Transformation</h3>
-                  <p className="text-gray-700 mb-6">Modernized legacy systems for a major financial institution, resulting in 40% performance improvement and $2M annual savings.</p>
-                  <div className="flex gap-4">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-purple-600">40%</div>
-                      <div className="text-sm text-gray-600">Performance Gain</div>
+                {contextSlug === 'development-services' && (
+                  <>
+                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
+                      <h3 className="text-2xl font-bold mb-4">Fortune 500 Transformation</h3>
+                      <p className="text-gray-700 mb-6">Modernized legacy systems for a major financial institution, resulting in 40% performance improvement and $2M annual savings.</p>
+                      <div className="flex gap-4">
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-purple-600">40%</div>
+                          <div className="text-sm text-gray-600">Performance Gain</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-purple-600">$2M</div>
+                          <div className="text-sm text-gray-600">Annual Savings</div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-purple-600">$2M</div>
-                      <div className="text-sm text-gray-600">Annual Savings</div>
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
+                      <h3 className="text-2xl font-bold mb-4">Startup Scale Success</h3>
+                      <p className="text-gray-700 mb-6">Built scalable architecture that supported 10x user growth for a fast-growing SaaS platform.</p>
+                      <div className="flex gap-4">
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-blue-600">10x</div>
+                          <div className="text-sm text-gray-600">User Growth</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-blue-600">99.9%</div>
+                          <div className="text-sm text-gray-600">Uptime</div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                  <h3 className="text-2xl font-bold mb-4">Startup Scale Success</h3>
-                  <p className="text-gray-700 mb-6">Built scalable architecture that supported 10x user growth for a fast-growing SaaS platform.</p>
-                  <div className="flex gap-4">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-600">10x</div>
-                      <div className="text-sm text-gray-600">User Growth</div>
+                  </>
+                )}
+                {contextSlug === 'consulting-services' && (
+                  <>
+                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
+                      <h3 className="text-2xl font-bold mb-4">Enterprise Digital Transformation</h3>
+                      <p className="text-gray-700 mb-6">Led comprehensive digital transformation for a retail giant, achieving 50% operational efficiency improvement and $5M cost reduction.</p>
+                      <div className="flex gap-4">
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-purple-600">50%</div>
+                          <div className="text-sm text-gray-600">Efficiency Gain</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-purple-600">$5M</div>
+                          <div className="text-sm text-gray-600">Cost Reduction</div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-600">99.9%</div>
-                      <div className="text-sm text-gray-600">Uptime</div>
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
+                      <h3 className="text-2xl font-bold mb-4">Cloud Migration Strategy</h3>
+                      <p className="text-gray-700 mb-6">Designed and executed cloud migration strategy for a healthcare provider, reducing infrastructure costs by 60%.</p>
+                      <div className="flex gap-4">
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-blue-600">60%</div>
+                          <div className="text-sm text-gray-600">Cost Reduction</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-blue-600">3 months</div>
+                          <div className="text-sm text-gray-600">Migration Time</div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </>
+                )}
+                {contextSlug === 'training-services' && (
+                  <>
+                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
+                      <h3 className="text-2xl font-bold mb-4">Corporate Upskilling Program</h3>
+                      <p className="text-gray-700 mb-6">Trained 200+ developers for a tech company&apos;s digital transformation, with 95% completion rate and 80% internal promotions.</p>
+                      <div className="flex gap-4">
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-purple-600">200+</div>
+                          <div className="text-sm text-gray-600">Developers Trained</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-purple-600">95%</div>
+                          <div className="text-sm text-gray-600">Completion Rate</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
+                      <h3 className="text-2xl font-bold mb-4">Career Transition Bootcamp</h3>
+                      <p className="text-gray-700 mb-6">Helped 150+ professionals transition to tech careers through our intensive bootcamp, with 85% job placement rate.</p>
+                      <div className="flex gap-4">
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-blue-600">150+</div>
+                          <div className="text-sm text-gray-600">Career Transitions</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-blue-600">85%</div>
+                          <div className="text-sm text-gray-600">Job Placement</div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </section>
 
+          {/* Contact Section - Dynamic based on service type */}
           <section id="contact" className="pt-80 pb-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white" style={{marginTop: '4rem'}}>
             <div className="container mx-auto max-w-7xl px-6 text-center" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-              <p className="text-lg mb-8 text-white/90">Let's discuss your development services project needs</p>
+              <p className="text-lg mb-8 text-white/90">
+                {contextSlug === 'development-services' && "Let&apos;s discuss your development services project needs"}
+                {contextSlug === 'consulting-services' && "Let&apos;s explore your digital transformation opportunities"}
+                {contextSlug === 'training-services' && "Let&apos;s design a training program for your team"}
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all">
-                  Start Your Project
+                  {contextSlug === 'development-services' && 'Start Your Project'}
+                  {contextSlug === 'consulting-services' && 'Schedule Consultation'}
+                  {contextSlug === 'training-services' && 'Explore Training'}
                 </a>
                 <button
                   onClick={() => setContextSlug(null)}
