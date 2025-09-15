@@ -185,6 +185,18 @@ export default function Home() {
                             behavior: 'smooth'
                           });
                         }
+                      } else if (contextSlug) {
+                        // Handle navigation within context-specific pages
+                        e.preventDefault();
+                        const element = document.getElementById(id);
+                        if (element) {
+                          const elementPosition = element.offsetTop;
+                          const offsetPosition = elementPosition - 80; // Account for nav height
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                          });
+                        }
                       }
                     }}
                   >
@@ -241,6 +253,18 @@ export default function Home() {
                               behavior: 'smooth'
                             });
                           }
+                        } else if (contextSlug) {
+                          // Handle navigation within context-specific pages
+                          e.preventDefault();
+                          const element = document.getElementById(id);
+                          if (element) {
+                            const elementPosition = element.offsetTop;
+                            const offsetPosition = elementPosition - 80; // Account for nav height
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: 'smooth'
+                            });
+                          }
                         }
                         setMobileMenuOpen(false);
                       }}
@@ -258,7 +282,7 @@ export default function Home() {
 
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
-    <section id="home" className="pt-28 lg:pt-32"> 
+    <section id="home" className={contextSlug === 'development-services' ? "pt-32 lg:pt-40" : "pt-28 lg:pt-32"}> 
         <div className="container mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left rail column (adds outer padding from the page edge) */}
@@ -284,18 +308,21 @@ export default function Home() {
 
               {/* Service quick menu: Development */}
               <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full">
-                <a
-                  href="#development-services"
+                <button
                   onClick={(e) => {
                     e.preventDefault();
-                    setContextSlug(null);
-                    document.getElementById('development-services')?.scrollIntoView({ behavior: 'smooth' });
+                    setContextSlug('development-services');
+                    if (typeof window !== 'undefined') {
+                      window.history.pushState({}, '', '/services/development-services');
+                      const el = document.getElementById('overview');
+                      el?.scrollIntoView({ behavior: 'smooth' });
+                    }
                   }}
-                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors w-full text-left"
                 >
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Development</span>
                   <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                </a>
+                </button>
                 <ul className="divide-y divide-gray-300/70">
                   <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
                   <li><button onClick={() => handleLeftNav('cloud-engineering')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud Engineering</button></li>
@@ -358,27 +385,31 @@ export default function Home() {
             </aside>
           </div>
 
-          {/* Right hero */}
-          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-[url('/hero-poster.jpg')] bg-cover bg-center" style={{marginRight: '0.5rem'}}>
+          {/* Right hero - changes based on context */}
+          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-black bg-cover bg-center" style={{marginRight: '0.5rem', backgroundImage: contextSlug !== 'development-services' ? "url('/hero-poster.jpg')" : undefined}}>
             <video
-              className="absolute inset-0 w-full h-full object-cover"
+              className={`absolute inset-0 w-full h-full ${contextSlug === 'development-services' ? 'object-contain' : 'object-cover'}`}
               autoPlay
               muted
               loop
               playsInline
               preload="auto"
-              poster="/hero-poster.jpg"
+              poster={contextSlug === 'development-services' ? "/development-poster.jpg" : "/hero-poster.jpg"}
+              key={contextSlug || 'default'}
             >
-              <source src="/hero.mp4" type="video/mp4" />
+              <source src={contextSlug === 'development-services' ? "/development.mp4" : "/hero.mp4"} type="video/mp4" />
             </video>
 
-            <div className="absolute inset-0 bg-black/30"></div>
-
-            <div className="absolute z-10 top-6 md:top-10 left-6 md:left-10 right-6 md:right-10 text-white">
-              <p className="text-2xl md:text-4xl font-semibold max-w-3xl leading-tight">
-                Your digital transformation journey partner.
-              </p>
-            </div>
+            {contextSlug !== 'development-services' && (
+              <>
+                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute z-10 top-6 md:top-10 left-6 md:left-10 right-6 md:right-10 text-white">
+                  <p className="text-2xl md:text-4xl font-semibold max-w-3xl leading-tight">
+                    Your digital transformation journey partner.
+                  </p>
+                </div>
+              </>
+            )}
           </div>
           </div> {/* end grid */}
         </div>   {/* end padded wrapper */}
@@ -537,437 +568,132 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Development Services Section */}
-          <section id="development-services" className="py-24 bg-gray-50">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Development Services</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Modern Application Development</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Building modern applications with cutting-edge technologies
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {services.map((service, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => setSelectedService(idx)}
-                    className={`bg-white p-8 rounded-2xl cursor-pointer transition-all ${
-                      selectedService === idx
-                        ? 'shadow-2xl scale-105 border-2 border-purple-600'
-                        : 'shadow-lg hover:shadow-xl'
-                    }`}
-                  >
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Consulting Services Section */}
-          <section id="consulting-services" className="py-24 bg-white">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Consulting Services</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Strategic Digital Guidance</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Strategic guidance for digital transformation and technology adoption
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="bg-gray-50 p-8 rounded-2xl">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white mb-6">
-                    <Target className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Digital Strategy</h3>
-                  <p className="text-gray-600 mb-4">Comprehensive digital transformation roadmaps</p>
-                </div>
-                <div className="bg-gray-50 p-8 rounded-2xl">
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
-                    <Users className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Technology Advisory</h3>
-                  <p className="text-gray-600 mb-4">Expert guidance on technology choices and architecture</p>
-                </div>
-                <div className="bg-gray-50 p-8 rounded-2xl">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
-                    <TrendingUp className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Process Optimization</h3>
-                  <p className="text-gray-600 mb-4">Streamline workflows and improve efficiency</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Training Services Section */}
-          <section id="training-services" className="py-24 bg-gray-50">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Training Services</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Professional Development Programs</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Upskill your team with cutting-edge technology training programs
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
-                    <Code className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Development Bootcamps</h3>
-                  <p className="text-gray-600 mb-4">Intensive training in modern development practices</p>
-                </div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
-                  <div className="w-14 h-14 bg-gradient-to-br from-teal-600 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6">
-                    <Cloud className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Cloud Certifications</h3>
-                  <p className="text-gray-600 mb-4">AWS, Azure, and GCP certification programs</p>
-                </div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
-                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-600 to-orange-600 rounded-xl flex items-center justify-center text-white mb-6">
-                    <Award className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Leadership Training</h3>
-                  <p className="text-gray-600 mb-4">Tech leadership and team management skills</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Original Services Section */}
-          <section id="services" className="py-24 bg-white">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">What We Do</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Our Services</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Comprehensive solutions tailored to elevate your digital presence
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {services.map((service, idx) => (
-                  <div 
-                    key={idx}
-                    onClick={() => setSelectedService(idx)}
-                    className={`bg-white p-8 rounded-2xl cursor-pointer transition-all ${
-                      selectedService === idx 
-                        ? 'shadow-2xl scale-105 border-2 border-purple-600' 
-                        : 'shadow-lg hover:shadow-xl'
-                    }`}
-                  >
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Portfolio Section */}
-          <section id="portfolio" className="py-24 bg-white">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Our Work</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">Featured Projects</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Showcasing our best digital experiences that merge creativity with functionality
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project) => (
-                  <div 
-                    key={project.id}
-                    onClick={() => setActiveProject(project.id)}
-                    className="group cursor-pointer"
-                  >
-                    <div className="relative overflow-hidden rounded-2xl">
-                      <div className={`h-64 bg-gradient-to-br ${project.gradient} transform group-hover:scale-110 transition-transform duration-500`}></div>
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-center justify-center">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity text-white text-center">
-                          <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                          <p className="mb-4">{project.category}</p>
-                          <button className="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-black transition">
-                            View Project
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Resources Section */}
-          <section id="resources" className="py-24 bg-gray-50">
-            <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center">
-              <div className="rounded-2xl overflow-hidden shadow">
-                {/* Drop your GIF at /public/resources.gif */}
-                <img src="/resources.gif" alt="Resources" className="w-full h-full object-cover" />
-              </div>
-              <div>
-                <h2 className="text-4xl font-bold mb-4">Resources</h2>
-                <p className="text-lg text-gray-600">Guides, playbooks, and demos to help you plan, build, and ship.</p>
-              </div>
-            </div>
-          </section>
-
-          {/* Testimonials Section */}
-          <section className="py-24 bg-gradient-to-br from-purple-50 to-pink-50">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">What Clients Say</h2>
-              </div>
-              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                {testimonials.map((testimonial) => (
-                  <div key={testimonial.id} className="bg-white p-8 rounded-2xl shadow-lg">
-                    <div className="flex mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 mb-6 italic">&ldquo;{testimonial.text}&rdquo;</p>
-                    <div>
-                      <p className="font-semibold">{testimonial.author}</p>
-                      <p className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white">
-            <div className="container mx-auto px-6 text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
-              <p className="text-xl mb-12 text-white/90">Let&apos;s create something extraordinary together</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-white text-purple-600 rounded-full font-semibold hover:shadow-2xl transition-all">
-                  Get Free Consultation
-                </button>
-                <button className="px-8 py-4 bg-transparent border-2 border-white rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all">
-                  View More Projects
-                </button>
-              </div>
-            </div>
-          </section>
         </>
       ) : (
         <>
-          {/* Context-specific sections shown when a left menu item is chosen */}
-          <section id="overview" className="pt-28 lg:pt-32 pb-24 bg-white">
-            <div className="container mx-auto max-w-7xl px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                {/* Left rail - keep the same side menu */}
-                <div className="hidden lg:block lg:col-span-3">
-                  <aside className="sticky top-24 self-start" style={{marginLeft: '1rem'}}>
-                    <div className="flex flex-col gap-4">
-                      {/* Identity card */}
-                      <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
-                        <h2 className="text-2xl font-extrabold leading-tight">Avada<br />Portfolio</h2>
-                        <p className="text-sm text-gray-500 mt-2">Friday, September 12<br />New York City</p>
-                      </div>
-
-                      {/* Service quick menu: Development */}
-                      <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full">
-                        <a
-                          href="#development-services"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setContextSlug(null);
-                            document.getElementById('development-services')?.scrollIntoView({ behavior: 'smooth' });
-                          }}
-                          className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
-                        >
-                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Development</span>
-                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                        </a>
-                        <ul className="divide-y divide-gray-300/70">
-                          <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
-                          <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
-                          <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
-                          <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
-                          <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
-                        </ul>
-                      </div>
-
-                      {/* Service quick menu: Consulting */}
-                      <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-full">
-                        <a
-                          href="#consulting-services"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setContextSlug(null);
-                            document.getElementById('consulting-services')?.scrollIntoView({ behavior: 'smooth' });
-                          }}
-                          className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
-                        >
-                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Consulting</span>
-                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                        </a>
-                        <ul className="divide-y divide-gray-300/70">
-                          <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
-                          <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
-                          <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
-                          <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
-                          <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
-                        </ul>
-                      </div>
-
-                      {/* Service quick menu: Training */}
-                      <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-full">
-                        <a
-                          href="#training-services"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setContextSlug(null);
-                            document.getElementById('training-services')?.scrollIntoView({ behavior: 'smooth' });
-                          }}
-                          className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors"
-                        >
-                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Training</span>
-                          <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
-                        </a>
-                        <ul className="divide-y divide-gray-300/70">
-                          <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
-                          <li><button onClick={() => handleLeftNav('api-microservices')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">API &amp; Microservices</button></li>
-                          <li><button onClick={() => handleLeftNav('cloud-devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud &amp; DevSecOps</button></li>
-                          <li><button onClick={() => handleLeftNav('data-ai-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data, AI &amp; Analytics</button></li>
-                          <li><button onClick={() => handleLeftNav('qa-testing')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">QA &amp; Testing</button></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </aside>
-                </div>
-
-                {/* Right content area */}
-                <div className="relative lg:col-span-9" style={{marginRight: '0.5rem'}}>
-                  <div className="bg-white rounded-3xl p-8 shadow-sm">
-                    <div className="mb-8">
-                      <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Service Overview</span>
-                      <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-                        {contextSlug?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                      </h1>
-                      <p className="text-xl text-gray-600">
-                        Comprehensive solutions tailored for {contextSlug?.replace(/-/g, ' ')} needs.
-                      </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-4">What We Deliver</h3>
-                        <ul className="space-y-3">
-                          <li className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                            <span>Strategic planning and roadmap development</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                            <span>Technical architecture and design</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                            <span>Implementation and deployment</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                            <span>Ongoing support and maintenance</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold mb-4">Key Benefits</h3>
-                        <ul className="space-y-3">
-                          <li className="flex items-start gap-3">
-                            <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
-                            <span>Accelerated time to market</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
-                            <span>Reduced development costs</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
-                            <span>Scalable and maintainable solutions</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
-                            <span>Expert guidance and best practices</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="capabilities" className="py-24 bg-gray-50">
-            <div className="container mx-auto px-6">
+          {/* Context-specific sections - replace home content */}
+          <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+            <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '0.5rem'}}>
               <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold mb-4">Our Capabilities</h2>
-                <p className="text-lg text-gray-600">What we deliver for {contextSlug?.replace(/-/g, ' ')} projects</p>
+                <span className="text-purple-600 font-bold text-2xl uppercase tracking-wider">Our Capabilities</span>
+                <h2 className="text-4xl font-bold mb-4 mt-4">Development Services Portfolio</h2>
+                <p className="text-lg text-gray-600">Comprehensive development solutions across modern technology stacks</p>
               </div>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* App Dev & Modernization */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                   <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Code className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Technical Excellence</h3>
-                  <p className="text-gray-600">Cutting-edge technologies and proven methodologies</p>
+                  <h3 className="text-xl font-bold mb-3">App Dev & Modernization</h3>
+                  <p className="text-gray-600 mb-4">Modern application development and legacy system modernization</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>• React/Angular/Vue.js</li>
+                    <li>• Node.js/.NET/Java</li>
+                    <li>• Mobile App Development</li>
+                    <li>• Legacy Migration</li>
+                  </ul>
                 </div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
+
+                {/* Cloud Engineering */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Cloud className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Cloud Engineering</h3>
+                  <p className="text-gray-600 mb-4">Scalable cloud infrastructure and platform engineering</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>• AWS/Azure/GCP</li>
+                    <li>• Kubernetes/Docker</li>
+                    <li>• Serverless Architecture</li>
+                    <li>• Infrastructure as Code</li>
+                  </ul>
+                </div>
+
+                {/* AI-ML & Automation */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Zap className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">AI-ML & Automation</h3>
+                  <p className="text-gray-600 mb-4">Intelligent automation and machine learning solutions</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>• Machine Learning Models</li>
+                    <li>• Process Automation</li>
+                    <li>• AI Integration</li>
+                    <li>• Predictive Analytics</li>
+                  </ul>
+                </div>
+
+                {/* Data & Analytics */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <TrendingUp className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Data & Analytics</h3>
+                  <p className="text-gray-600 mb-4">Advanced data engineering and business intelligence</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>• Data Warehousing</li>
+                    <li>• ETL/ELT Pipelines</li>
+                    <li>• Business Intelligence</li>
+                    <li>• Real-time Analytics</li>
+                  </ul>
+                </div>
+
+                {/* DevSecOps */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <Target className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">DevSecOps</h3>
+                  <p className="text-gray-600 mb-4">Secure development and deployment practices</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>• CI/CD Pipelines</li>
+                    <li>• Security Scanning</li>
+                    <li>• Compliance Automation</li>
+                    <li>• Infrastructure Security</li>
+                  </ul>
+                </div>
+
+                {/* Quality Assurance */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
+                    <CheckCircle className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Quality Assurance</h3>
+                  <p className="text-gray-600 mb-4">Comprehensive testing and quality assurance</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>• Automated Testing</li>
+                    <li>• Performance Testing</li>
+                    <li>• Security Testing</li>
+                    <li>• User Acceptance Testing</li>
+                  </ul>
+                </div>
+
+                {/* SRE & Operations */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-14 h-14 bg-gradient-to-br from-teal-600 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Users className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Expert Team</h3>
-                  <p className="text-gray-600">Experienced professionals with deep domain knowledge</p>
-                </div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
-                    <Award className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Proven Results</h3>
-                  <p className="text-gray-600">Track record of successful project deliveries</p>
+                  <h3 className="text-xl font-bold mb-3">SRE & Operations</h3>
+                  <p className="text-gray-600 mb-4">Site reliability engineering and operational excellence</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>• System Monitoring</li>
+                    <li>• Incident Response</li>
+                    <li>• Performance Optimization</li>
+                    <li>• Capacity Planning</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </section>
 
-          <section id="case-studies" className="py-24 bg-white">
-            <div className="container mx-auto px-6">
+          <section id="case-studies" className="pt-80 pb-24 bg-white" style={{marginTop: '4rem'}}>
+            <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '0.5rem'}}>
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
-                <p className="text-lg text-gray-600">Success stories from {contextSlug?.replace(/-/g, ' ')} projects</p>
+                <p className="text-lg text-gray-600">Success stories from development services projects</p>
               </div>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
@@ -1002,10 +728,10 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="contact" className="py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white">
-            <div className="container mx-auto px-6 text-center">
+          <section id="contact" className="pt-80 pb-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white" style={{marginTop: '4rem'}}>
+            <div className="container mx-auto max-w-7xl px-6 text-center" style={{marginLeft: '1rem', marginRight: '0.5rem'}}>
               <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-              <p className="text-lg mb-8 text-white/90">Let's discuss your {contextSlug?.replace(/-/g, ' ')} project needs</p>
+              <p className="text-lg mb-8 text-white/90">Let's discuss your development services project needs</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all">
                   Start Your Project
@@ -1014,7 +740,7 @@ export default function Home() {
                   onClick={() => setContextSlug(null)}
                   className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all"
                 >
-                  Back to Services
+                  Back to Home
                 </button>
               </div>
             </div>
