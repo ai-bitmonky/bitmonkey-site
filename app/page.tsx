@@ -49,10 +49,11 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav
-        className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg py-6"
+        className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg"
+        style={{height: '88px'}}
       >
-        <div className="mx-auto max-w-7xl px-6" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
-          <div className="flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-6 h-full" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+          <div className="flex items-center justify-between h-full">
             {/* Brand */}
             <div className="flex items-center gap-3">
               {/* Logo placeholder */}
@@ -228,13 +229,13 @@ export default function Home() {
 
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
-    <section id="home" className={contextSlug ? "pt-40 lg:pt-48" : "pt-36 lg:pt-40"}> 
+    <section id="home" style={{paddingTop: '104px'}}> 
         <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left rail column (adds outer padding from the page edge) */}
          <div className="hidden lg:block lg:col-span-3">
 
-  <aside className="sticky top-32 self-start">
+  <aside className="sticky self-start" style={{top: '104px'}}>
             <div className="flex flex-col gap-4">
 
               {/* Service quick menu: Development */}
