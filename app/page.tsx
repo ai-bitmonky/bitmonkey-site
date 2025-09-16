@@ -49,19 +49,22 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav
-        className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg py-4"
+        className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg py-6"
       >
         <div className="mx-auto max-w-7xl px-6" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="flex items-center justify-between">
             {/* Brand */}
             <div className="flex items-center gap-3">
               {/* Logo placeholder */}
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">BM</span>
               </div>
-              <h1 className="text-xl font-extrabold tracking-tight text-gray-900">
-                BitMonkey IT Services Pvt Ltd
-              </h1>
+              <div>
+                <h1 className="text-xl font-extrabold tracking-tight text-gray-900">
+                  BitMonkey IT Services Pvt Ltd
+                </h1>
+                <p className="text-xs text-gray-500 mt-1">Friday, September 12 • New Delhi</p>
+              </div>
             </div>
 
             {/* Desktop menu */}
@@ -225,29 +228,14 @@ export default function Home() {
 
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
-    <section id="home" className={contextSlug ? "pt-32 lg:pt-40" : "pt-28 lg:pt-32"}> 
+    <section id="home" className={contextSlug ? "pt-40 lg:pt-48" : "pt-36 lg:pt-40"}> 
         <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left rail column (adds outer padding from the page edge) */}
          <div className="hidden lg:block lg:col-span-3">
 
-  <aside className="sticky top-24 self-start">
+  <aside className="sticky top-32 self-start">
             <div className="flex flex-col gap-4">
-              {/* Identity card */}
-              <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
-                <h2 className="text-lg font-extrabold leading-tight">BitMonkey IT<br />Services Pvt Ltd</h2>
-                <p className="text-sm text-gray-500 mt-2">Friday, September 12<br />New Delhi</p>
-
-                <div className="flex items-center gap-4 mt-6 text-gray-600">
-                  <button className="inline-flex items-center justify-center w-10 h-10 rounded-xl border hover:bg-gray-50 transition">
-                    <Menu className="w-5 h-5" />
-                  </button>
-                  <a href="#" className="hover:text-gray-900 transition"><Twitter className="w-5 h-5" /></a>
-                  <a href="#" className="hover:text-gray-900 transition"><Instagram className="w-5 h-5" /></a>
-                  <a href="#" className="hover:text-gray-900 transition"><Github className="w-5 h-5" /></a>
-                  <a href="#" className="hover:text-gray-900 transition"><Linkedin className="w-5 h-5" /></a>
-                </div>
-              </div>
 
               {/* Service quick menu: Development */}
               <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
