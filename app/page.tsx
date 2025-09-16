@@ -120,7 +120,7 @@ export default function Home() {
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-[1000px] bg-white rounded-xl shadow-xl border border-gray-200 p-6 z-50">
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1000px] bg-white rounded-xl shadow-xl border border-gray-200 p-6 z-50">
                           <div className="grid grid-cols-3 gap-4">
 
                             {/* Training Services - Left Column */}
@@ -194,13 +194,14 @@ export default function Home() {
                               </div>
                             </div>
 
-                            {/* Development Services - Center Column */}
-                            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 border border-purple-200">
-                              <h3 className="text-base font-bold text-purple-700 mb-4 flex items-center gap-2 border-b border-purple-200 pb-2">
-                                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                  <Code className="w-4 h-4 text-white" />
+                            {/* Development Services - Center Column (Primary) */}
+                            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 border-2 border-purple-300 ring-2 ring-purple-200 ring-opacity-50">
+                              <h3 className="text-lg font-bold text-purple-700 mb-4 flex items-center gap-2 border-b-2 border-purple-300 pb-2">
+                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
+                                  <Code className="w-5 h-5 text-white" />
                                 </div>
                                 Development Services
+                                <span className="ml-auto text-xs bg-purple-600 text-white px-2 py-1 rounded-full font-medium">PRIMARY</span>
                               </h3>
                               <div className="space-y-1">
                                 <button
