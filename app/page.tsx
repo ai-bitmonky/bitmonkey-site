@@ -120,284 +120,265 @@ export default function Home() {
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-xl shadow-xl border border-gray-200 p-6 z-50">
-                          <div className="grid grid-cols-3 gap-8">
+                        <div className="absolute top-full left-0 mt-2 w-[900px] bg-white rounded-xl shadow-xl border border-gray-200 p-6 z-50">
+                          <div className="grid grid-cols-3 gap-6">
 
                             {/* Development Services */}
-                            <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                  <Code className="w-3 h-3 text-white" />
+                            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 border border-purple-200">
+                              <h3 className="text-base font-bold text-purple-700 mb-4 flex items-center gap-2 border-b border-purple-200 pb-2">
+                                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                  <Code className="w-4 h-4 text-white" />
                                 </div>
                                 Development Services
                               </h3>
-                              <div className="space-y-2">
+                              <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('app-dev-modernization')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                    <Code className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                    <Code className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">App Dev & Modernization</p>
-                                    <p className="text-xs text-gray-500">Modern applications</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-engineering')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                                    <Cloud className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-md flex items-center justify-center">
+                                    <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Cloud Engineering</p>
-                                    <p className="text-xs text-gray-500">Cloud solutions</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('ai-ml-automation')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
-                                    <Brain className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                    <Brain className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">AI-ML & Automation</p>
-                                    <p className="text-xs text-gray-500">Intelligent automation</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('data-analytics')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                                    <Database className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
+                                    <Database className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Data & Analytics</p>
-                                    <p className="text-xs text-gray-500">Data insights</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('devsecops')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                    <Shield className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-md flex items-center justify-center">
+                                    <Shield className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">DevSecOps</p>
-                                    <p className="text-xs text-gray-500">Security integration</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('quality-assurance')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
-                                    <TestTube className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-md flex items-center justify-center">
+                                    <TestTube className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Quality Assurance</p>
-                                    <p className="text-xs text-gray-500">Testing excellence</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('sre-operations')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
-                                    <Server className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md flex items-center justify-center">
+                                    <Server className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">SRE & Operations</p>
-                                    <p className="text-xs text-gray-500">Reliable operations</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('center-of-excellence')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-blue-500 rounded-lg flex items-center justify-center">
-                                    <Award className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-blue-500 rounded-md flex items-center justify-center">
+                                    <Award className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Center of Excellence</p>
-                                    <p className="text-xs text-gray-500">Best practices</p>
                                   </div>
                                 </button>
                               </div>
                             </div>
 
                             {/* Consulting Services */}
-                            <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                                  <Briefcase className="w-3 h-3 text-white" />
+                            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 border border-blue-200">
+                              <h3 className="text-base font-bold text-blue-700 mb-4 flex items-center gap-2 border-b border-blue-200 pb-2">
+                                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                                  <Briefcase className="w-4 h-4 text-white" />
                                 </div>
                                 Consulting Services
                               </h3>
-                              <div className="space-y-2">
+                              <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('digital-transformation')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                                    <Target className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                    <Target className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Digital Transformation</p>
-                                    <p className="text-xs text-gray-500">Business transformation</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('enterprise-architecture')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                    <Building className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                    <Building className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Enterprise Architecture</p>
-                                    <p className="text-xs text-gray-500">System design</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('digital-strategy-roadmaps')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
-                                    <Map className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                    <Map className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Strategy & Roadmaps</p>
-                                    <p className="text-xs text-gray-500">Strategic planning</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('governance')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                                    <Settings className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
+                                    <Settings className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Governance</p>
-                                    <p className="text-xs text-gray-500">Framework design</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-advisory')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
-                                    <Cloud className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-md flex items-center justify-center">
+                                    <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Cloud Advisory</p>
-                                    <p className="text-xs text-gray-500">Cloud strategy</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('security-compliance')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                    <Lock className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-md flex items-center justify-center">
+                                    <Lock className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Security & Compliance</p>
-                                    <p className="text-xs text-gray-500">Risk management</p>
                                   </div>
                                 </button>
                               </div>
                             </div>
 
                             {/* Training Services */}
-                            <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                                <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
-                                  <GraduationCap className="w-3 h-3 text-white" />
+                            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-4 border border-green-200">
+                              <h3 className="text-base font-bold text-green-700 mb-4 flex items-center gap-2 border-b border-green-200 pb-2">
+                                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                                  <GraduationCap className="w-4 h-4 text-white" />
                                 </div>
                                 Training Services
                               </h3>
-                              <div className="space-y-2">
+                              <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('full-stack-developer')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                                    <Code className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                    <Code className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Full-Stack Developer</p>
-                                    <p className="text-xs text-gray-500">Complete development</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('devops-engineer')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                                    <Settings className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-md flex items-center justify-center">
+                                    <Settings className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">DevOps Engineer</p>
-                                    <p className="text-xs text-gray-500">Operations expertise</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-architect')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
-                                    <Cloud className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                    <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Cloud Architect</p>
-                                    <p className="text-xs text-gray-500">Cloud design</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('ai-ml-engineer')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                                    <Brain className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
+                                    <Brain className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">AI/ML Engineer</p>
-                                    <p className="text-xs text-gray-500">Machine learning</p>
                                   </div>
                                 </button>
 
                                 <button
                                   onClick={() => handleLeftNav('certifications')}
-                                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 w-full text-left transition-colors"
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
                                 >
-                                  <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
-                                    <GraduationCap className="w-4 h-4 text-white" />
+                                  <div className="w-6 h-6 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-md flex items-center justify-center">
+                                    <GraduationCap className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Certifications</p>
-                                    <p className="text-xs text-gray-500">Professional credentials</p>
                                   </div>
                                 </button>
                               </div>
