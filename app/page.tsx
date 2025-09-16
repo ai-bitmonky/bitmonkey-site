@@ -421,25 +421,151 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                      <div>
+                      <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Development Services</h4>
                         <p className="text-sm text-gray-600">Modern applications with cutting-edge technologies</p>
+
+                        {/* Mobile sub-menu links */}
+                        <div className="lg:hidden mt-2 ml-2 space-y-1">
+                          <button
+                            onClick={() => handleLeftNav('app-dev-modernization')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • App Dev & Modernization
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('cloud-engineering')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Cloud Engineering
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('ai-ml-automation')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • AI-ML & Automation
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('data-analytics')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Data & Analytics
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('devsecops')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • DevSecOps
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('quality-assurance')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Quality Assurance
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('sre-operations')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • SRE & Operations
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('center-of-excellence')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Center Of Excellence
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                      <div>
+                      <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Consulting Services</h4>
                         <p className="text-sm text-gray-600">Strategic guidance for digital transformation</p>
+
+                        {/* Mobile sub-menu links */}
+                        <div className="lg:hidden mt-2 ml-2 space-y-1">
+                          <button
+                            onClick={() => handleLeftNav('digital-transformation')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Digital Transformation
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('enterprise-architecture')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Enterprise Architecture
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('digital-strategy-roadmaps')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Digital Strategy & Roadmaps
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('governance')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Governance
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('cloud-advisory')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Cloud Advisory
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('security-compliance')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Security & Compliance
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                      <div>
+                      <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Training Services</h4>
                         <p className="text-sm text-gray-600">Expert-led training programs and certifications</p>
+
+                        {/* Mobile sub-menu links */}
+                        <div className="lg:hidden mt-2 ml-2 space-y-1">
+                          <button
+                            onClick={() => handleLeftNav('full-stack-developer')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Full-Stack Developer
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('devops-engineer')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • DevOps Engineer
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('cloud-architect')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Cloud Architect
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('ai-ml-engineer')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • AI/ML Engineer
+                          </button>
+                          <button
+                            onClick={() => handleLeftNav('certifications')}
+                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
+                          >
+                            • Certifications
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
