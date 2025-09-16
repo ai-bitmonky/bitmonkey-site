@@ -5,7 +5,10 @@ import {
   Menu, X, CheckCircle,
   Mail, Phone, MapPin, Github, Linkedin, Twitter,
   Instagram, Users, Code, Cloud,
-  Target, Zap, Award, TrendingUp
+  Target, Zap, Award, TrendingUp,
+  Smartphone, Database, Shield, TestTube,
+  Settings, Briefcase, Building, Map,
+  Lock, GraduationCap, Server, Brain
 } from 'lucide-react';
 
 
@@ -425,56 +428,113 @@ export default function Home() {
                         <h4 className="font-semibold text-gray-900">Development Services</h4>
                         <p className="text-sm text-gray-600">Modern applications with cutting-edge technologies</p>
 
-                        {/* Mobile sub-menu links */}
-                        <div className="lg:hidden mt-2 ml-2 space-y-1">
-                          <button
-                            onClick={() => handleLeftNav('app-dev-modernization')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • App Dev & Modernization
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('cloud-engineering')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Cloud Engineering
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('ai-ml-automation')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • AI-ML & Automation
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('data-analytics')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Data & Analytics
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('devsecops')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • DevSecOps
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('quality-assurance')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Quality Assurance
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('sre-operations')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • SRE & Operations
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('center-of-excellence')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Center Of Excellence
-                          </button>
+                        {/* Mobile service menu */}
+                        <div className="lg:hidden mt-4 bg-gray-50 rounded-lg p-4 border">
+                          <div className="grid grid-cols-2 gap-2">
+                            <button
+                              onClick={() => handleLeftNav('app-dev-modernization')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                <Code className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">App Dev</h5>
+                                <p className="text-xs text-gray-500">Modernization</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('cloud-engineering')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                                <Cloud className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Cloud</h5>
+                                <p className="text-xs text-gray-500">Engineering</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('ai-ml-automation')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                                <Brain className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">AI-ML</h5>
+                                <p className="text-xs text-gray-500">Automation</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('data-analytics')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                                <Database className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Data</h5>
+                                <p className="text-xs text-gray-500">Analytics</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('devsecops')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                <Shield className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">DevSecOps</h5>
+                                <p className="text-xs text-gray-500">Security</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('quality-assurance')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
+                                <TestTube className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Quality</h5>
+                                <p className="text-xs text-gray-500">Assurance</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('sre-operations')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+                                <Server className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">SRE</h5>
+                                <p className="text-xs text-gray-500">Operations</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('center-of-excellence')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-blue-500 rounded-lg flex items-center justify-center">
+                                <Award className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Center</h5>
+                                <p className="text-xs text-gray-500">Excellence</p>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -485,44 +545,87 @@ export default function Home() {
                         <h4 className="font-semibold text-gray-900">Consulting Services</h4>
                         <p className="text-sm text-gray-600">Strategic guidance for digital transformation</p>
 
-                        {/* Mobile sub-menu links */}
-                        <div className="lg:hidden mt-2 ml-2 space-y-1">
-                          <button
-                            onClick={() => handleLeftNav('digital-transformation')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Digital Transformation
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('enterprise-architecture')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Enterprise Architecture
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('digital-strategy-roadmaps')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Digital Strategy & Roadmaps
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('governance')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Governance
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('cloud-advisory')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Cloud Advisory
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('security-compliance')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Security & Compliance
-                          </button>
+                        {/* Mobile service menu */}
+                        <div className="lg:hidden mt-4 bg-gray-50 rounded-lg p-4 border">
+                          <div className="grid grid-cols-2 gap-2">
+                            <button
+                              onClick={() => handleLeftNav('digital-transformation')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                                <Target className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Digital</h5>
+                                <p className="text-xs text-gray-500">Transform</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('enterprise-architecture')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                <Building className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Enterprise</h5>
+                                <p className="text-xs text-gray-500">Architecture</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('digital-strategy-roadmaps')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                                <Map className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Strategy</h5>
+                                <p className="text-xs text-gray-500">Roadmaps</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('governance')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                                <Settings className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Governance</h5>
+                                <p className="text-xs text-gray-500">Framework</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('cloud-advisory')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
+                                <Cloud className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Cloud</h5>
+                                <p className="text-xs text-gray-500">Advisory</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('security-compliance')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                <Lock className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Security</h5>
+                                <p className="text-xs text-gray-500">Compliance</p>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -533,38 +636,74 @@ export default function Home() {
                         <h4 className="font-semibold text-gray-900">Training Services</h4>
                         <p className="text-sm text-gray-600">Expert-led training programs and certifications</p>
 
-                        {/* Mobile sub-menu links */}
-                        <div className="lg:hidden mt-2 ml-2 space-y-1">
-                          <button
-                            onClick={() => handleLeftNav('full-stack-developer')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Full-Stack Developer
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('devops-engineer')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • DevOps Engineer
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('cloud-architect')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Cloud Architect
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('ai-ml-engineer')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • AI/ML Engineer
-                          </button>
-                          <button
-                            onClick={() => handleLeftNav('certifications')}
-                            className="block text-xs text-purple-600 hover:text-purple-800 transition-colors"
-                          >
-                            • Certifications
-                          </button>
+                        {/* Mobile service menu */}
+                        <div className="lg:hidden mt-4 bg-gray-50 rounded-lg p-4 border">
+                          <div className="grid grid-cols-2 gap-2">
+                            <button
+                              onClick={() => handleLeftNav('full-stack-developer')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                                <Code className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Full-Stack</h5>
+                                <p className="text-xs text-gray-500">Developer</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('devops-engineer')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                                <Settings className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">DevOps</h5>
+                                <p className="text-xs text-gray-500">Engineer</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('cloud-architect')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                                <Cloud className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Cloud</h5>
+                                <p className="text-xs text-gray-500">Architect</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('ai-ml-engineer')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                                <Brain className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">AI/ML</h5>
+                                <p className="text-xs text-gray-500">Engineer</p>
+                              </div>
+                            </button>
+
+                            <button
+                              onClick={() => handleLeftNav('certifications')}
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border col-span-2"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
+                                <GraduationCap className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="text-left">
+                                <h5 className="text-xs font-semibold text-gray-900">Professional Certifications</h5>
+                                <p className="text-xs text-gray-500">Industry-recognized credentials</p>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
