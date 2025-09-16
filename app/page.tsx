@@ -120,12 +120,12 @@ export default function Home() {
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white bg-opacity-85 backdrop-blur-sm rounded-xl shadow-xl border border-gray-200 py-6 pl-6 pr-0 z-50">
+                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 py-6 pl-6 pr-0 z-50 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none">
                           <div className="grid gap-3" style={{gridTemplateColumns: '0.211fr 0.218fr 0.165fr'}}>
 
                             {/* Consulting Services - Left Column */}
-                            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 bg-opacity-60 backdrop-blur-sm rounded-lg p-4 border border-blue-200">
-                              <h3 className="text-base font-bold text-blue-700 mb-4 flex items-center gap-2 border-b border-blue-200 pb-2">
+                            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/5 before:to-indigo-500/5 before:rounded-xl before:pointer-events-none">
+                              <h3 className="text-base font-bold text-blue-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10">
                                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
                                   <Briefcase className="w-4 h-4 text-white" />
                                 </div>
@@ -134,7 +134,7 @@ export default function Home() {
                               <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('digital-transformation')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
                                     <Target className="w-3 h-3 text-white" />
@@ -146,7 +146,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('enterprise-architecture')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
                                     <Building className="w-3 h-3 text-white" />
@@ -158,7 +158,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('digital-strategy-roadmaps')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
                                     <Map className="w-3 h-3 text-white" />
@@ -170,7 +170,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('governance')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
                                     <Settings className="w-3 h-3 text-white" />
@@ -182,7 +182,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-advisory')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-md flex items-center justify-center">
                                     <Cloud className="w-3 h-3 text-white" />
@@ -194,7 +194,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('security-compliance')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-md flex items-center justify-center">
                                     <Lock className="w-3 h-3 text-white" />
@@ -207,8 +207,8 @@ export default function Home() {
                             </div>
 
                             {/* Development Services - Center Column (Primary) */}
-                            <div className="bg-gradient-to-br from-purple-50 to-pink-50 bg-opacity-60 backdrop-blur-sm rounded-lg p-4 border-2 border-purple-300 ring-2 ring-purple-200 ring-opacity-50">
-                              <h3 className="text-lg font-bold text-purple-700 mb-4 flex items-center gap-2 border-b-2 border-purple-300 pb-2">
+                            <div className="bg-white/15 backdrop-blur-md rounded-xl p-4 border-2 border-white/30 shadow-xl hover:bg-white/20 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-purple-500/10 before:to-pink-500/10 before:rounded-xl before:pointer-events-none ring-2 ring-white/20">
+                              <h3 className="text-lg font-bold text-purple-900 mb-4 flex items-center gap-2 border-b-2 border-white/40 pb-2 relative z-10">
                                 <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
                                   <Code className="w-5 h-5 text-white" />
                                 </div>
@@ -217,7 +217,7 @@ export default function Home() {
                               <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('app-dev-modernization')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
                                     <Code className="w-3 h-3 text-white" />
@@ -229,7 +229,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-engineering')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-md flex items-center justify-center">
                                     <Cloud className="w-3 h-3 text-white" />
@@ -241,7 +241,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('ai-ml-automation')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
                                     <Brain className="w-3 h-3 text-white" />
@@ -253,7 +253,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('data-analytics')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
                                     <Database className="w-3 h-3 text-white" />
@@ -265,7 +265,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('devsecops')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-md flex items-center justify-center">
                                     <Shield className="w-3 h-3 text-white" />
@@ -277,7 +277,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('quality-assurance')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-md flex items-center justify-center">
                                     <TestTube className="w-3 h-3 text-white" />
@@ -289,7 +289,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('sre-operations')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md flex items-center justify-center">
                                     <Server className="w-3 h-3 text-white" />
@@ -301,7 +301,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('center-of-excellence')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-blue-500 rounded-md flex items-center justify-center">
                                     <Award className="w-3 h-3 text-white" />
@@ -314,8 +314,8 @@ export default function Home() {
                             </div>
 
                             {/* Training Services - Right Column */}
-                            <div className="bg-gradient-to-br from-green-50 to-teal-50 bg-opacity-60 backdrop-blur-sm rounded-lg p-4 border border-green-200">
-                              <h3 className="text-base font-bold text-green-700 mb-4 flex items-center gap-2 border-b border-green-200 pb-2">
+                            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/5 before:to-teal-500/5 before:rounded-xl before:pointer-events-none">
+                              <h3 className="text-base font-bold text-green-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10">
                                 <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
                                   <GraduationCap className="w-4 h-4 text-white" />
                                 </div>
@@ -324,7 +324,7 @@ export default function Home() {
                               <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('full-stack-developer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-md flex items-center justify-center">
                                     <Code className="w-3 h-3 text-white" />
@@ -336,7 +336,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('devops-engineer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-md flex items-center justify-center">
                                     <Settings className="w-3 h-3 text-white" />
@@ -348,7 +348,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-architect')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
                                     <Cloud className="w-3 h-3 text-white" />
@@ -360,7 +360,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('ai-ml-engineer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
                                     <Brain className="w-3 h-3 text-white" />
@@ -372,7 +372,7 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('certifications')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-md flex items-center justify-center">
                                     <GraduationCap className="w-3 h-3 text-white" />
