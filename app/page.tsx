@@ -705,12 +705,12 @@ export default function Home() {
                 <div className="lg:col-span-3 space-y-6">
                   <div>
                     <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Services</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block" style={{fontSize: '1.75rem'}}>
                       Comprehensive Digital Solutions
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-lg text-gray-600 leading-relaxed hidden lg:block">
                     We deliver end-to-end technology solutions that drive business transformation and accelerate growth.
                   </p>
 
