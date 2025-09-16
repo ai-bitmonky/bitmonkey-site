@@ -620,7 +620,7 @@ export default function Home() {
           </div>
 
           {/* Right hero - changes based on context */}
-          <div className="relative lg:col-span-9 min-h-[80vh] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black bg-cover bg-center">
+          <div className="relative lg:col-span-9 min-h-[64vh] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black bg-cover bg-center">
             <video
               className="absolute inset-0 w-full h-full object-contain"
               autoPlay
