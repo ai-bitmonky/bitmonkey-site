@@ -545,7 +545,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
 
               {/* Service quick menu: Development */}
-              <div className="bg-gray-100 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 md:p-6 relative w-full border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-purple-500/10 before:to-pink-500/10 before:rounded-2xl before:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -556,63 +556,72 @@ export default function Home() {
                       el?.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors w-full text-left"
+                  className="flex items-center justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-purple-900 transition-colors w-full text-left relative z-10"
                 >
-                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Development</span>
-                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                    <Code className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-xl md:text-2xl font-extrabold text-purple-900 tracking-tight">Development</span>
+                  <span className="text-xl md:text-2xl font-extrabold text-purple-900 tracking-tight">Services</span>
                 </button>
-                <ul className="divide-y divide-gray-300/70">
-                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">App Dev &amp; Modernization</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud Engineering</button></li>
-                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">AI-ML &amp; Automation</button></li>
-                  <li><button onClick={() => handleLeftNav('data-analytics')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Data &amp; Analytics</button></li>
-                  <li><button onClick={() => handleLeftNav('devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">DevSecOps</button></li>
-                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Quality Assurance</button></li>
-                  <li><button onClick={() => handleLeftNav('sre-operations')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">SRE &amp; Operations</button></li>
-                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Center Of Excellence</button></li>
+                <ul className="divide-y divide-white/20">
+                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">App Dev &amp; Modernization</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Cloud Engineering</button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">AI-ML &amp; Automation</button></li>
+                  <li><button onClick={() => handleLeftNav('data-analytics')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Data &amp; Analytics</button></li>
+                  <li><button onClick={() => handleLeftNav('devsecops')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">DevSecOps</button></li>
+                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Quality Assurance</button></li>
+                  <li><button onClick={() => handleLeftNav('sre-operations')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">SRE &amp; Operations</button></li>
+                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Center Of Excellence</button></li>
                 </ul>
               </div>
 
               {/* Service quick menu: Consulting */}
-              <div className="bg-indigo-50 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 md:p-6 relative w-full border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/10 before:to-indigo-500/10 before:rounded-2xl before:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
                     handleServicePageNav('consulting-services');
                   }}
-                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors w-full text-left"
+                  className="flex items-center justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-blue-900 transition-colors w-full text-left relative z-10"
                 >
-                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Consulting</span>
-                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                    <Briefcase className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-xl md:text-2xl font-extrabold text-blue-900 tracking-tight">Consulting</span>
+                  <span className="text-xl md:text-2xl font-extrabold text-blue-900 tracking-tight">Services</span>
                 </button>
-                <ul className="divide-y divide-gray-300/70">
-                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Digital Transformation</button></li>
-                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Enterprise Architecture</button></li>
-                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Digital Strategy &amp; Roadmaps</button></li>
-                  <li><button onClick={() => handleLeftNav('governance')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Governance</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud Advisory</button></li>
-                  <li><button onClick={() => handleLeftNav('security-compliance')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Security &amp; Compliance</button></li>
+                <ul className="divide-y divide-white/20">
+                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Digital Transformation</button></li>
+                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Enterprise Architecture</button></li>
+                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Digital Strategy &amp; Roadmaps</button></li>
+                  <li><button onClick={() => handleLeftNav('governance')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Governance</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Cloud Advisory</button></li>
+                  <li><button onClick={() => handleLeftNav('security-compliance')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Security &amp; Compliance</button></li>
                 </ul>
               </div>
 
               {/* Service quick menu: Training */}
-              <div className="bg-rose-50 rounded-2xl p-5 md:p-6 relative w-full" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 md:p-6 relative w-full border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/10 before:to-teal-500/10 before:rounded-2xl before:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
                     handleServicePageNav('training-services');
                   }}
-                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-gray-300/70 hover:text-purple-700 transition-colors w-full text-left"
+                  className="flex items-center justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-green-900 transition-colors w-full text-left relative z-10"
                 >
-                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Training</span>
-                  <span className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">Services</span>
+                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                    <GraduationCap className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-xl md:text-2xl font-extrabold text-green-900 tracking-tight">Training</span>
+                  <span className="text-xl md:text-2xl font-extrabold text-green-900 tracking-tight">Services</span>
                 </button>
-                <ul className="divide-y divide-gray-300/70">
-                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Full‑Stack Developer</button></li>
-                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">DevOps Engineer</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud Architect</button></li>
-                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">AI/ML Engineer</button></li>
-                  <li><button onClick={() => handleLeftNav('certifications')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Certifications</button></li>
+                <ul className="divide-y divide-white/20">
+                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Full‑Stack Developer</button></li>
+                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">DevOps Engineer</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Cloud Architect</button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">AI/ML Engineer</button></li>
+                  <li><button onClick={() => handleLeftNav('certifications')} className="w-full text-left block py-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/10 rounded-lg transition-all duration-300 relative z-10">Certifications</button></li>
                 </ul>
               </div>
             </div>
