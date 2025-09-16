@@ -342,6 +342,7 @@ export default function Home() {
                 contextSlug === 'devsecops' ? "/devsecops-poster.jpg" :
                 contextSlug === 'quality-assurance' ? "/qa-poster.jpg" :
                 contextSlug === 'sre-operations' ? "/sre-poster.jpg" :
+                contextSlug === 'center-of-excellence' ? "/center-of-excellence-poster.jpg" :
                 // Consulting Services
                 contextSlug === 'consulting-services' ? "/consulting-poster.jpg" :
                 contextSlug === 'digital-transformation' ? "/digital-transformation-poster.jpg" :
@@ -372,6 +373,7 @@ export default function Home() {
                 contextSlug === 'devsecops' ? "/devsecops.mp4" :
                 contextSlug === 'quality-assurance' ? "/qa.mp4" :
                 contextSlug === 'sre-operations' ? "/sre.mp4" :
+                contextSlug === 'center-of-excellence' ? "/center-of-excellence.mp4" :
                 // Consulting Services
                 contextSlug === 'consulting-services' ? "/consulting.mp4" :
                 contextSlug === 'digital-transformation' ? "/digital-transformation.mp4" :
@@ -983,6 +985,89 @@ export default function Home() {
                         <h4 className="font-semibold text-purple-600 mb-2">Automation</h4>
                         <p className="text-sm text-gray-600">Ansible, Puppet, Chef, Terraform</p>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {contextSlug === 'center-of-excellence' && (
+            <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+              <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+                <div className="text-center mb-16">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4">Center Of Excellence</h2>
+                  <p className="text-lg text-gray-600">Accelerate innovation with our comprehensive COE framework, tools, and best practices</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 mb-16">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">What We Offer</h3>
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Standardized development frameworks and accelerators</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Reusable component libraries and design systems</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Best practice documentation and knowledge sharing</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Automated code quality and security standards</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cross-team collaboration and mentoring programs</li>
+                      <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Innovation labs and proof-of-concept development</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-6">COE Components</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Frameworks</h4>
+                        <p className="text-sm text-gray-600">Standardized development, testing, and deployment frameworks</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Accelerators</h4>
+                        <p className="text-sm text-gray-600">Pre-built solutions, templates, and starter kits</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Tools</h4>
+                        <p className="text-sm text-gray-600">Automated testing, deployment, and monitoring tools</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Standards</h4>
+                        <p className="text-sm text-gray-600">Coding standards, security guidelines, and best practices</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Knowledge Base</h4>
+                        <p className="text-sm text-gray-600">Documentation, tutorials, and training materials</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg shadow">
+                        <h4 className="font-semibold text-purple-600 mb-2">Innovation</h4>
+                        <p className="text-sm text-gray-600">Research labs, POCs, and emerging technology adoption</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Benefits Section */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg mb-8">
+                  <h3 className="text-2xl font-bold mb-6 text-center">COE Benefits</h3>
+                  <div className="grid md:grid-cols-3 gap-8">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <TrendingUp className="w-8 h-8" />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Faster Delivery</h4>
+                      <p className="text-sm text-gray-600">Reduce development time by 40-60% with reusable components</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <Award className="w-8 h-8" />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Higher Quality</h4>
+                      <p className="text-sm text-gray-600">Consistent quality through standardized practices and tools</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <Users className="w-8 h-8" />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Knowledge Sharing</h4>
+                      <p className="text-sm text-gray-600">Cross-team collaboration and continuous learning culture</p>
                     </div>
                   </div>
                 </div>
