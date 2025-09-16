@@ -120,10 +120,81 @@ export default function Home() {
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-[900px] bg-white rounded-xl shadow-xl border border-gray-200 p-6 z-50">
-                          <div className="grid grid-cols-3 gap-6">
+                        <div className="absolute top-full left-0 mt-2 w-[1000px] bg-white rounded-xl shadow-xl border border-gray-200 p-6 z-50">
+                          <div className="grid grid-cols-3 gap-4">
 
-                            {/* Development Services */}
+                            {/* Training Services - Left Column */}
+                            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-4 border border-green-200">
+                              <h3 className="text-base font-bold text-green-700 mb-4 flex items-center gap-2 border-b border-green-200 pb-2">
+                                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                                  <GraduationCap className="w-4 h-4 text-white" />
+                                </div>
+                                Training Services
+                              </h3>
+                              <div className="space-y-1">
+                                <button
+                                  onClick={() => handleLeftNav('full-stack-developer')}
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                >
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                    <Code className="w-3 h-3 text-white" />
+                                  </div>
+                                  <div>
+                                    <p className="text-sm font-medium text-gray-900">Full-Stack Developer</p>
+                                  </div>
+                                </button>
+
+                                <button
+                                  onClick={() => handleLeftNav('devops-engineer')}
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                >
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-md flex items-center justify-center">
+                                    <Settings className="w-3 h-3 text-white" />
+                                  </div>
+                                  <div>
+                                    <p className="text-sm font-medium text-gray-900">DevOps Engineer</p>
+                                  </div>
+                                </button>
+
+                                <button
+                                  onClick={() => handleLeftNav('cloud-architect')}
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                >
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                    <Cloud className="w-3 h-3 text-white" />
+                                  </div>
+                                  <div>
+                                    <p className="text-sm font-medium text-gray-900">Cloud Architect</p>
+                                  </div>
+                                </button>
+
+                                <button
+                                  onClick={() => handleLeftNav('ai-ml-engineer')}
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                >
+                                  <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
+                                    <Brain className="w-3 h-3 text-white" />
+                                  </div>
+                                  <div>
+                                    <p className="text-sm font-medium text-gray-900">AI/ML Engineer</p>
+                                  </div>
+                                </button>
+
+                                <button
+                                  onClick={() => handleLeftNav('certifications')}
+                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
+                                >
+                                  <div className="w-6 h-6 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-md flex items-center justify-center">
+                                    <GraduationCap className="w-3 h-3 text-white" />
+                                  </div>
+                                  <div>
+                                    <p className="text-sm font-medium text-gray-900">Certifications</p>
+                                  </div>
+                                </button>
+                              </div>
+                            </div>
+
+                            {/* Development Services - Center Column */}
                             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 border border-purple-200">
                               <h3 className="text-base font-bold text-purple-700 mb-4 flex items-center gap-2 border-b border-purple-200 pb-2">
                                 <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
@@ -308,77 +379,6 @@ export default function Home() {
                                   </div>
                                   <div>
                                     <p className="text-sm font-medium text-gray-900">Security & Compliance</p>
-                                  </div>
-                                </button>
-                              </div>
-                            </div>
-
-                            {/* Training Services */}
-                            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-4 border border-green-200">
-                              <h3 className="text-base font-bold text-green-700 mb-4 flex items-center gap-2 border-b border-green-200 pb-2">
-                                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
-                                  <GraduationCap className="w-4 h-4 text-white" />
-                                </div>
-                                Training Services
-                              </h3>
-                              <div className="space-y-1">
-                                <button
-                                  onClick={() => handleLeftNav('full-stack-developer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
-                                >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-md flex items-center justify-center">
-                                    <Code className="w-3 h-3 text-white" />
-                                  </div>
-                                  <div>
-                                    <p className="text-sm font-medium text-gray-900">Full-Stack Developer</p>
-                                  </div>
-                                </button>
-
-                                <button
-                                  onClick={() => handleLeftNav('devops-engineer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
-                                >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-md flex items-center justify-center">
-                                    <Settings className="w-3 h-3 text-white" />
-                                  </div>
-                                  <div>
-                                    <p className="text-sm font-medium text-gray-900">DevOps Engineer</p>
-                                  </div>
-                                </button>
-
-                                <button
-                                  onClick={() => handleLeftNav('cloud-architect')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
-                                >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
-                                    <Cloud className="w-3 h-3 text-white" />
-                                  </div>
-                                  <div>
-                                    <p className="text-sm font-medium text-gray-900">Cloud Architect</p>
-                                  </div>
-                                </button>
-
-                                <button
-                                  onClick={() => handleLeftNav('ai-ml-engineer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
-                                >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
-                                    <Brain className="w-3 h-3 text-white" />
-                                  </div>
-                                  <div>
-                                    <p className="text-sm font-medium text-gray-900">AI/ML Engineer</p>
-                                  </div>
-                                </button>
-
-                                <button
-                                  onClick={() => handleLeftNav('certifications')}
-                                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm w-full text-left transition-all"
-                                >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-md flex items-center justify-center">
-                                    <GraduationCap className="w-3 h-3 text-white" />
-                                  </div>
-                                  <div>
-                                    <p className="text-sm font-medium text-gray-900">Certifications</p>
                                   </div>
                                 </button>
                               </div>
