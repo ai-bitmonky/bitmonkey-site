@@ -120,11 +120,11 @@ export default function Home() {
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white rounded-xl shadow-xl border border-gray-200 py-6 pl-6 pr-0 z-50">
+                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white bg-opacity-85 backdrop-blur-sm rounded-xl shadow-xl border border-gray-200 py-6 pl-6 pr-0 z-50">
                           <div className="grid gap-3" style={{gridTemplateColumns: '0.165fr 0.218fr 0.211fr'}}>
 
                             {/* Training Services - Left Column */}
-                            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-4 border border-green-200">
+                            <div className="bg-gradient-to-br from-green-50 to-teal-50 bg-opacity-60 backdrop-blur-sm rounded-lg p-4 border border-green-200">
                               <h3 className="text-base font-bold text-green-700 mb-4 flex items-center gap-2 border-b border-green-200 pb-2">
                                 <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
                                   <GraduationCap className="w-4 h-4 text-white" />
@@ -195,7 +195,7 @@ export default function Home() {
                             </div>
 
                             {/* Development Services - Center Column (Primary) */}
-                            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 border-2 border-purple-300 ring-2 ring-purple-200 ring-opacity-50">
+                            <div className="bg-gradient-to-br from-purple-50 to-pink-50 bg-opacity-60 backdrop-blur-sm rounded-lg p-4 border-2 border-purple-300 ring-2 ring-purple-200 ring-opacity-50">
                               <h3 className="text-lg font-bold text-purple-700 mb-4 flex items-center gap-2 border-b-2 border-purple-300 pb-2">
                                 <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
                                   <Code className="w-5 h-5 text-white" />
@@ -302,7 +302,7 @@ export default function Home() {
                             </div>
 
                             {/* Consulting Services */}
-                            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 border border-blue-200">
+                            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 bg-opacity-60 backdrop-blur-sm rounded-lg p-4 border border-blue-200">
                               <h3 className="text-base font-bold text-blue-700 mb-4 flex items-center gap-2 border-b border-blue-200 pb-2">
                                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
                                   <Briefcase className="w-4 h-4 text-white" />
