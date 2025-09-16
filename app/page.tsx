@@ -65,6 +65,16 @@ export default function Home() {
                   BitMonkey IT Services Pvt Ltd
                 </h1>
                 <p className="text-xs text-gray-500 mt-1">Friday, September 12 • New Delhi</p>
+
+                <div className="flex items-center gap-3 mt-2 text-gray-600">
+                  <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition">
+                    <Menu className="w-3 h-3" />
+                  </button>
+                  <a href="#" className="hover:text-gray-900 transition"><Twitter className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition"><Instagram className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition"><Github className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition"><Linkedin className="w-3 h-3" /></a>
+                </div>
               </div>
             </div>
 
