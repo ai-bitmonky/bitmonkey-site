@@ -545,7 +545,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
 
               {/* Service quick menu: Development */}
-              <div className="bg-white/8 backdrop-blur-md rounded-2xl p-5 md:p-6 relative w-full border border-white/20 shadow-lg hover:bg-white/12 transition-all duration-300 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-purple-500/10 before:to-pink-500/10 before:rounded-2xl before:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/5 after:to-pink-500/5 after:rounded-2xl after:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -574,7 +574,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Consulting */}
-              <div className="bg-white/8 backdrop-blur-md rounded-2xl p-5 md:p-6 relative w-full border border-white/20 shadow-lg hover:bg-white/12 transition-all duration-300 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/10 before:to-indigo-500/10 before:rounded-2xl before:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-blue-500/5 after:to-indigo-500/5 after:rounded-2xl after:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -596,7 +596,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Training */}
-              <div className="bg-white/8 backdrop-blur-md rounded-2xl p-5 md:p-6 relative w-full border border-white/20 shadow-lg hover:bg-white/12 transition-all duration-300 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/10 before:to-teal-500/10 before:rounded-2xl before:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-green-500/5 after:to-teal-500/5 after:rounded-2xl after:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
