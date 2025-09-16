@@ -556,11 +556,8 @@ export default function Home() {
                       el?.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="flex items-center justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-purple-900 transition-colors w-full text-left relative z-10"
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-purple-900 transition-colors w-full text-left relative z-10"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                    <Code className="w-4 h-4 text-white" />
-                  </div>
                   <span className="text-xl md:text-2xl font-extrabold text-purple-900 tracking-tight">Development</span>
                   <span className="text-xl md:text-2xl font-extrabold text-purple-900 tracking-tight">Services</span>
                 </button>
@@ -583,11 +580,8 @@ export default function Home() {
                     e.preventDefault();
                     handleServicePageNav('consulting-services');
                   }}
-                  className="flex items-center justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-blue-900 transition-colors w-full text-left relative z-10"
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-blue-900 transition-colors w-full text-left relative z-10"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                    <Briefcase className="w-4 h-4 text-white" />
-                  </div>
                   <span className="text-xl md:text-2xl font-extrabold text-blue-900 tracking-tight">Consulting</span>
                   <span className="text-xl md:text-2xl font-extrabold text-blue-900 tracking-tight">Services</span>
                 </button>
@@ -608,11 +602,8 @@ export default function Home() {
                     e.preventDefault();
                     handleServicePageNav('training-services');
                   }}
-                  className="flex items-center justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-green-900 transition-colors w-full text-left relative z-10"
+                  className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-green-900 transition-colors w-full text-left relative z-10"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
-                    <GraduationCap className="w-4 h-4 text-white" />
-                  </div>
                   <span className="text-xl md:text-2xl font-extrabold text-green-900 tracking-tight">Training</span>
                   <span className="text-xl md:text-2xl font-extrabold text-green-900 tracking-tight">Services</span>
                 </button>
