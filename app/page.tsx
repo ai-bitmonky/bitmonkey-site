@@ -201,7 +201,6 @@ export default function Home() {
                                   <Code className="w-5 h-5 text-white" />
                                 </div>
                                 Development Services
-                                <span className="ml-auto text-xs bg-purple-600 text-white px-2 py-1 rounded-full font-medium">PRIMARY</span>
                               </h3>
                               <div className="space-y-1">
                                 <button
