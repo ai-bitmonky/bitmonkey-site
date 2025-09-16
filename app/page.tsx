@@ -1074,11 +1074,6 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="pt-4">
-                    <button className="px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all">
-                      View All Projects
-                    </button>
-                  </div>
                 </div>
 
                 {/* Video Content - 70% */}
@@ -1190,11 +1185,6 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="pt-4">
-                    <button className="px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all">
-                      Get Started Today
-                    </button>
-                  </div>
                 </div>
 
                 {/* Video Content - 70% */}
