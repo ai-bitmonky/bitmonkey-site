@@ -120,7 +120,7 @@ export default function Home() {
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1000px] bg-white rounded-xl shadow-xl border border-gray-200 p-6 z-50">
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1000px] bg-white rounded-xl shadow-xl border border-gray-200 py-6 pl-6 pr-2 z-50">
                           <div className="grid gap-3" style={{gridTemplateColumns: '0.165fr 0.218fr 0.211fr'}}>
 
                             {/* Training Services - Left Column */}
