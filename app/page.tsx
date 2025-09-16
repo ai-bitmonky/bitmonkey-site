@@ -2625,68 +2625,9 @@ export default function Home() {
       )}
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <h3 className="text-xl font-bold mb-4">BitMonkey IT Services Pvt Ltd</h3>
-              <p className="text-gray-400">Creating digital excellence since 2014</p>
-              <div className="flex space-x-4 mt-6">
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition">Web Development</a></li>
-                <li><a href="#" className="hover:text-white transition">Mobile Apps</a></li>
-                <li><a href="#" className="hover:text-white transition">UI/UX Design</a></li>
-                <li><a href="#" className="hover:text-white transition">Consulting</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition">About</a></li>
-                <li><a href="#" className="hover:text-white transition">Team</a></li>
-                <li><a href="#" className="hover:text-white transition">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center gap-2">
-                  <Mail className="w-4 h-4" />
-                  hello@avada.com
-                </li>
-                <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  +1 (555) 123-4567
-                </li>
-                <li className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  New Delhi, India
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <div className="text-center text-gray-400">
             <p>&copy; 2024 BitMonkey IT Services Pvt Ltd. All rights reserved.</p>
           </div>
         </div>
