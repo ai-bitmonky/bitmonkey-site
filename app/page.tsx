@@ -341,7 +341,7 @@ export default function Home() {
                 contextSlug === 'devsecops' ? "/devsecops-poster.jpg" :
                 contextSlug === 'quality-assurance' ? "/qa-poster.jpg" :
                 contextSlug === 'sre-operations' ? "/sre-poster.jpg" :
-                contextSlug === 'center-of-excellence' ? "/center-of-excellence-poster.jpg" :
+                contextSlug === 'center-of-excellence' ? "/coe-poster.jpg" :
                 // Consulting Services
                 contextSlug === 'consulting-services' ? "/consulting-poster.jpg" :
                 contextSlug === 'digital-transformation' ? "/digital-transformation-poster.jpg" :
@@ -372,7 +372,7 @@ export default function Home() {
                 contextSlug === 'devsecops' ? "/devsecops.mp4" :
                 contextSlug === 'quality-assurance' ? "/qa.mp4" :
                 contextSlug === 'sre-operations' ? "/sre.mp4" :
-                contextSlug === 'center-of-excellence' ? "/center-of-excellence.mp4" :
+                contextSlug === 'center-of-excellence' ? "/coe.mp4" :
                 // Consulting Services
                 contextSlug === 'consulting-services' ? "/consulting.mp4" :
                 contextSlug === 'digital-transformation' ? "/digital-transformation.mp4" :
