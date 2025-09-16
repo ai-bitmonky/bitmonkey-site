@@ -1676,7 +1676,7 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 gap-12 mb-16">
                   <div>
-                    <h3 className="text-2xl font-bold mb-6">What You'll Learn</h3>
+                    <h3 className="text-2xl font-bold mb-6">What You&apos;ll Learn</h3>
                     <ul className="space-y-4 text-gray-600">
                       <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Frontend development with React, Angular, and Vue.js</li>
                       <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Backend development with Node.js, Python, and Java</li>
@@ -1719,7 +1719,7 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 gap-12 mb-16">
                   <div>
-                    <h3 className="text-2xl font-bold mb-6">What You'll Learn</h3>
+                    <h3 className="text-2xl font-bold mb-6">What You&apos;ll Learn</h3>
                     <ul className="space-y-4 text-gray-600">
                       <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />CI/CD pipeline design and implementation</li>
                       <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Containerization with Docker and Kubernetes</li>
@@ -1762,7 +1762,7 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 gap-12 mb-16">
                   <div>
-                    <h3 className="text-2xl font-bold mb-6">What You'll Learn</h3>
+                    <h3 className="text-2xl font-bold mb-6">What You&apos;ll Learn</h3>
                     <ul className="space-y-4 text-gray-600">
                       <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Cloud architecture design principles</li>
                       <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Multi-cloud and hybrid cloud strategies</li>
@@ -1805,7 +1805,7 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 gap-12 mb-16">
                   <div>
-                    <h3 className="text-2xl font-bold mb-6">What You'll Learn</h3>
+                    <h3 className="text-2xl font-bold mb-6">What You&apos;ll Learn</h3>
                     <ul className="space-y-4 text-gray-600">
                       <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Machine learning algorithms and techniques</li>
                       <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />Deep learning and neural networks</li>
