@@ -274,6 +274,7 @@ export default function Home() {
                   <li><button onClick={() => handleLeftNav('devsecops')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">DevSecOps</button></li>
                   <li><button onClick={() => handleLeftNav('quality-assurance')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Quality Assurance</button></li>
                   <li><button onClick={() => handleLeftNav('sre-operations')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">SRE &amp; Operations</button></li>
+                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Center Of Excellence</button></li>
                 </ul>
               </div>
 
@@ -316,7 +317,6 @@ export default function Home() {
                   <li><button onClick={() => handleLeftNav('devops-engineer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">DevOps Engineer</button></li>
                   <li><button onClick={() => handleLeftNav('cloud-architect')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Cloud Architect</button></li>
                   <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">AI/ML Engineer</button></li>
-                  <li><button onClick={() => handleLeftNav('bootcamps')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Bootcamps</button></li>
                   <li><button onClick={() => handleLeftNav('certifications')} className="w-full text-left block py-3 text-base hover:text-purple-700 hover:underline">Certifications</button></li>
                 </ul>
               </div>
