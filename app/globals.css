@@ -389,3 +389,41 @@ a {
   opacity: 1;
   visibility: visible;
 }
+
+/* Text-only underline for menu items */
+.underline-reveal-text {
+  position: relative;
+  text-decoration: none !important;
+}
+
+.underline-reveal-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: translateX(-100%) !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.underline-reveal-text:hover::after {
+  background: #8b5cf6;
+  height: 2px;
+  transform: translateX(0) !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* For flex menu items - apply underline only to text content */
+.menu-item-underline .underline-reveal-text::after {
+  left: auto;
+  right: auto;
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}

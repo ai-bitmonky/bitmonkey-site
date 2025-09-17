@@ -740,14 +740,14 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-purple-900 tracking-tight">Services</span>
                 </button>
                 <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div>App Dev & Modernization</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div>Cloud Engineering</button></li>
-                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div>AI-ML & Automation</button></li>
-                  <li><button onClick={() => handleLeftNav('data-analytics')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Database className="w-3 h-3 text-white" /></div>Data & Analytics</button></li>
-                  <li><button onClick={() => handleLeftNav('devsecops')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Shield className="w-3 h-3 text-white" /></div>DevSecOps</button></li>
-                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><TestTube className="w-3 h-3 text-white" /></div>Quality Assurance</button></li>
-                  <li><button onClick={() => handleLeftNav('sre-operations')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Server className="w-3 h-3 text-white" /></div>SRE & Operations</button></li>
-                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Award className="w-3 h-3 text-white" /></div>Center Of Excellence</button></li>
+                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">App Dev & Modernization</span></button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Engineering</span></button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">AI-ML & Automation</span></button></li>
+                  <li><button onClick={() => handleLeftNav('data-analytics')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Database className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Data & Analytics</span></button></li>
+                  <li><button onClick={() => handleLeftNav('devsecops')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Shield className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">DevSecOps</span></button></li>
+                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><TestTube className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Quality Assurance</span></button></li>
+                  <li><button onClick={() => handleLeftNav('sre-operations')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Server className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">SRE & Operations</span></button></li>
+                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Award className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Center Of Excellence</span></button></li>
                 </ul>
               </div>
 
@@ -764,12 +764,12 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-blue-900 tracking-tight">Services</span>
                 </button>
                 <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Target className="w-3 h-3 text-white" /></div>Digital Transformation</button></li>
-                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Building className="w-3 h-3 text-white" /></div>Enterprise Architecture</button></li>
-                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Map className="w-3 h-3 text-white" /></div>Digital Strategy & Roadmaps</button></li>
-                  <li><button onClick={() => handleLeftNav('governance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div>Governance</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div>Cloud Advisory</button></li>
-                  <li><button onClick={() => handleLeftNav('security-compliance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Lock className="w-3 h-3 text-white" /></div>Security & Compliance</button></li>
+                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Target className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Digital Transformation</span></button></li>
+                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Building className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Enterprise Architecture</span></button></li>
+                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Map className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Digital Strategy & Roadmaps</span></button></li>
+                  <li><button onClick={() => handleLeftNav('governance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Governance</span></button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Advisory</span></button></li>
+                  <li><button onClick={() => handleLeftNav('security-compliance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Lock className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Security & Compliance</span></button></li>
                 </ul>
               </div>
 
@@ -786,11 +786,11 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-green-900 tracking-tight">Services</span>
                 </button>
                 <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div>Full‑Stack Developer</button></li>
-                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div>DevOps Engineer</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div>Cloud Architect</button></li>
-                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div>AI/ML Engineer</button></li>
-                  <li><button onClick={() => handleLeftNav('certifications')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><GraduationCap className="w-3 h-3 text-white" /></div>Certifications</button></li>
+                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Full‑Stack Developer</span></button></li>
+                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">DevOps Engineer</span></button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Architect</span></button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">AI/ML Engineer</span></button></li>
+                  <li><button onClick={() => handleLeftNav('certifications')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><GraduationCap className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Certifications</span></button></li>
                 </ul>
               </div>
             </div>
@@ -921,7 +921,7 @@ export default function Home() {
                                 <Code className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">App Dev</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">App Dev</h5>
                                 <p className="text-xs text-gray-500">Modernization</p>
                               </div>
                             </button>
@@ -934,7 +934,7 @@ export default function Home() {
                                 <Cloud className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Cloud</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Cloud</h5>
                                 <p className="text-xs text-gray-500">Engineering</p>
                               </div>
                             </button>
@@ -947,7 +947,7 @@ export default function Home() {
                                 <Brain className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">AI-ML</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">AI-ML</h5>
                                 <p className="text-xs text-gray-500">Automation</p>
                               </div>
                             </button>
@@ -960,7 +960,7 @@ export default function Home() {
                                 <Database className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Data</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Data</h5>
                                 <p className="text-xs text-gray-500">Analytics</p>
                               </div>
                             </button>
@@ -973,7 +973,7 @@ export default function Home() {
                                 <Shield className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">DevSecOps</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">DevSecOps</h5>
                                 <p className="text-xs text-gray-500">Security</p>
                               </div>
                             </button>
@@ -986,7 +986,7 @@ export default function Home() {
                                 <TestTube className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Quality</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Quality</h5>
                                 <p className="text-xs text-gray-500">Assurance</p>
                               </div>
                             </button>
@@ -999,7 +999,7 @@ export default function Home() {
                                 <Server className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">SRE</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">SRE</h5>
                                 <p className="text-xs text-gray-500">Operations</p>
                               </div>
                             </button>
@@ -1012,7 +1012,7 @@ export default function Home() {
                                 <Award className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Center</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Center</h5>
                                 <p className="text-xs text-gray-500">Excellence</p>
                               </div>
                             </button>
@@ -1038,7 +1038,7 @@ export default function Home() {
                                 <Target className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Digital</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Digital</h5>
                                 <p className="text-xs text-gray-500">Transform</p>
                               </div>
                             </button>
@@ -1051,7 +1051,7 @@ export default function Home() {
                                 <Building className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Enterprise</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Enterprise</h5>
                                 <p className="text-xs text-gray-500">Architecture</p>
                               </div>
                             </button>
@@ -1064,7 +1064,7 @@ export default function Home() {
                                 <Map className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Strategy</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Strategy</h5>
                                 <p className="text-xs text-gray-500">Roadmaps</p>
                               </div>
                             </button>
@@ -1077,7 +1077,7 @@ export default function Home() {
                                 <Settings className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Governance</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Governance</h5>
                                 <p className="text-xs text-gray-500">Framework</p>
                               </div>
                             </button>
@@ -1090,7 +1090,7 @@ export default function Home() {
                                 <Cloud className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Cloud</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Cloud</h5>
                                 <p className="text-xs text-gray-500">Advisory</p>
                               </div>
                             </button>
@@ -1103,7 +1103,7 @@ export default function Home() {
                                 <Lock className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Security</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Security</h5>
                                 <p className="text-xs text-gray-500">Compliance</p>
                               </div>
                             </button>
@@ -1129,7 +1129,7 @@ export default function Home() {
                                 <Code className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Full-Stack</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Full-Stack</h5>
                                 <p className="text-xs text-gray-500">Developer</p>
                               </div>
                             </button>
@@ -1142,7 +1142,7 @@ export default function Home() {
                                 <Settings className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">DevOps</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">DevOps</h5>
                                 <p className="text-xs text-gray-500">Engineer</p>
                               </div>
                             </button>
@@ -1155,7 +1155,7 @@ export default function Home() {
                                 <Cloud className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Cloud</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Cloud</h5>
                                 <p className="text-xs text-gray-500">Architect</p>
                               </div>
                             </button>
@@ -1168,7 +1168,7 @@ export default function Home() {
                                 <Brain className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">AI/ML</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">AI/ML</h5>
                                 <p className="text-xs text-gray-500">Engineer</p>
                               </div>
                             </button>
@@ -1181,7 +1181,7 @@ export default function Home() {
                                 <GraduationCap className="w-4 h-4 text-white" />
                               </div>
                               <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900">Professional Certifications</h5>
+                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Professional Certifications</h5>
                                 <p className="text-xs text-gray-500">Industry-recognized credentials</p>
                               </div>
                             </button>
