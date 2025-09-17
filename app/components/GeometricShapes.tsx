@@ -3,12 +3,13 @@
 import React from 'react';
 
 interface GeometricShapeProps {
-  type: 'blob' | 'grid' | 'lines' | 'dots' | 'triangle' | 'circle' | 'hexagon';
+  type: 'blob' | 'grid' | 'lines' | 'dots' | 'triangle' | 'circle' | 'hexagon' | 'geometric-grid' | 'diagonal-lines' | 'circuit-pattern' | 'mesh-grid';
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   color?: string;
   animate?: boolean;
   position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'center';
+  opacity?: number;
 }
 
 const GeometricShape: React.FC<GeometricShapeProps> = ({
@@ -17,7 +18,8 @@ const GeometricShape: React.FC<GeometricShapeProps> = ({
   size = 'md',
   color = 'rgba(99, 102, 241, 0.1)',
   animate = true,
-  position = 'center'
+  position = 'center',
+  opacity = 1
 }) => {
   const sizeClasses = {
     sm: 'w-16 h-16',
@@ -169,13 +171,92 @@ const GeometricShape: React.FC<GeometricShapeProps> = ({
           </svg>
         );
 
+      case 'geometric-grid':
+        return (
+          <svg viewBox="0 0 400 400" className="w-full h-full" style={{ opacity }}>
+            <defs>
+              <pattern id="geometric-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="20" cy="20" r="1.5" fill={color} />
+                <line x1="20" y1="0" x2="20" y2="40" stroke={color} strokeWidth="0.5" opacity="0.6" />
+                <line x1="0" y1="20" x2="40" y2="20" stroke={color} strokeWidth="0.5" opacity="0.6" />
+              </pattern>
+              <pattern id="grid-overlay" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <rect width="80" height="80" fill="url(#geometric-grid)" />
+                <circle cx="40" cy="40" r="3" fill={color} className={animate ? 'animate-pulse' : ''} />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid-overlay)" />
+          </svg>
+        );
+
+      case 'diagonal-lines':
+        return (
+          <svg viewBox="0 0 400 400" className="w-full h-full" style={{ opacity }}>
+            <defs>
+              <pattern id="diagonal-pattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="15" x2="30" y2="15" stroke={color} strokeWidth="1" />
+                <line x1="15" y1="0" x2="15" y2="30" stroke={color} strokeWidth="0.5" opacity="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#diagonal-pattern)" className={animate ? 'animate-pulse' : ''} />
+          </svg>
+        );
+
+      case 'circuit-pattern':
+        return (
+          <svg viewBox="0 0 400 400" className="w-full h-full" style={{ opacity }}>
+            <defs>
+              <pattern id="circuit" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                {/* Vertical lines */}
+                <line x1="20" y1="0" x2="20" y2="60" stroke={color} strokeWidth="1" />
+                <line x1="40" y1="0" x2="40" y2="60" stroke={color} strokeWidth="1" />
+                {/* Horizontal lines */}
+                <line x1="0" y1="20" x2="60" y2="20" stroke={color} strokeWidth="1" />
+                <line x1="0" y1="40" x2="60" y2="40" stroke={color} strokeWidth="1" />
+                {/* Connection nodes */}
+                <circle cx="20" cy="20" r="2" fill={color} />
+                <circle cx="40" cy="40" r="2" fill={color} />
+                <circle cx="20" cy="40" r="1.5" fill={color} opacity="0.7" />
+                <circle cx="40" cy="20" r="1.5" fill={color} opacity="0.7" />
+                {/* Small connecting segments */}
+                <line x1="20" y1="20" x2="40" y2="20" stroke={color} strokeWidth="2" opacity="0.8" />
+                <line x1="20" y1="40" x2="40" y2="40" stroke={color} strokeWidth="2" opacity="0.8" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#circuit)" className={animate ? 'animate-pulse' : ''} />
+          </svg>
+        );
+
+      case 'mesh-grid':
+        return (
+          <svg viewBox="0 0 400 400" className="w-full h-full" style={{ opacity }}>
+            <defs>
+              <pattern id="mesh" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                {/* Main grid */}
+                <rect width="50" height="50" fill="none" stroke={color} strokeWidth="0.5" />
+                {/* Diagonal cross lines */}
+                <line x1="0" y1="0" x2="50" y2="50" stroke={color} strokeWidth="0.3" opacity="0.6" />
+                <line x1="50" y1="0" x2="0" y2="50" stroke={color} strokeWidth="0.3" opacity="0.6" />
+                {/* Center point */}
+                <circle cx="25" cy="25" r="1" fill={color} opacity="0.8" />
+                {/* Corner points */}
+                <circle cx="0" cy="0" r="0.5" fill={color} />
+                <circle cx="50" cy="0" r="0.5" fill={color} />
+                <circle cx="0" cy="50" r="0.5" fill={color} />
+                <circle cx="50" cy="50" r="0.5" fill={color} />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#mesh)" className={animate ? 'animate-pulse' : ''} />
+          </svg>
+        );
+
       default:
         return null;
     }
   };
 
   return (
-    <div className={`${sizeClasses[size]} ${positionClasses[position]} ${className} pointer-events-none z-0`}>
+    <div className={`${sizeClasses[size]} ${positionClasses[position]} ${className} pointer-events-none z-0`} style={{ opacity }}>
       {renderShape()}
     </div>
   );

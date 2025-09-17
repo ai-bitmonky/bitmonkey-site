@@ -896,7 +896,8 @@ export default function Home() {
                 { type: 'blob', size: 'xl', color: 'rgba(147, 51, 234, 0.08)', position: 'top-left', animate: true },
                 { type: 'circle', size: 'lg', color: 'rgba(79, 70, 229, 0.06)', position: 'top-right', animate: true },
                 { type: 'dots', size: 'md', color: 'rgba(168, 85, 247, 0.05)', position: 'bottom-left', animate: true },
-                { type: 'lines', size: 'lg', color: 'rgba(59, 130, 246, 0.04)', position: 'bottom-right', animate: true }
+                { type: 'geometric-grid', size: 'xl', color: 'rgba(99, 102, 241, 0.03)', position: 'center', animate: true, opacity: 0.6 },
+                { type: 'diagonal-lines', size: 'lg', color: 'rgba(147, 51, 234, 0.04)', position: 'bottom-right', animate: true, opacity: 0.8 }
               ]}
             >
               <div></div>
@@ -913,8 +914,10 @@ export default function Home() {
           <section id="our-services" className="pt-32 pb-24 bg-white relative overflow-hidden" style={{marginTop: '4rem'}}>
             <GeometricAccent
               shapes={[
+                { type: 'circuit-pattern', size: 'xl', color: 'rgba(99, 102, 241, 0.02)', position: 'center', animate: true, opacity: 0.4 },
                 { type: 'grid', size: 'lg', color: 'rgba(99, 102, 241, 0.04)', position: 'top-left', animate: true },
                 { type: 'hexagon', size: 'md', color: 'rgba(147, 51, 234, 0.06)', position: 'top-right', animate: true },
+                { type: 'mesh-grid', size: 'lg', color: 'rgba(79, 70, 229, 0.03)', position: 'bottom-left', animate: true, opacity: 0.7 },
                 { type: 'triangle', size: 'sm', color: 'rgba(79, 70, 229, 0.05)', position: 'bottom-right', animate: true }
               ]}
             >
@@ -1237,7 +1240,9 @@ export default function Home() {
               shapes={[
                 { type: 'blob', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-right', animate: true },
                 { type: 'dots', size: 'xl', color: 'rgba(59, 130, 246, 0.03)', position: 'bottom-left', animate: true },
-                { type: 'circle', size: 'md', color: 'rgba(99, 102, 241, 0.04)', position: 'center', animate: true }
+                { type: 'diagonal-lines', size: 'xl', color: 'rgba(99, 102, 241, 0.02)', position: 'center', animate: true, opacity: 0.5 },
+                { type: 'geometric-grid', size: 'lg', color: 'rgba(147, 51, 234, 0.03)', position: 'top-left', animate: true, opacity: 0.6 },
+                { type: 'circle', size: 'md', color: 'rgba(99, 102, 241, 0.04)', position: 'bottom-right', animate: true }
               ]}
             >
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
@@ -3006,9 +3011,10 @@ export default function Home() {
             <GeometricAccent
               shapes={[
                 { type: 'blob', size: 'xl', color: 'rgba(255, 255, 255, 0.08)', position: 'top-left', animate: true },
-                { type: 'lines', size: 'lg', color: 'rgba(255, 255, 255, 0.05)', position: 'top-right', animate: true },
+                { type: 'circuit-pattern', size: 'xl', color: 'rgba(255, 255, 255, 0.03)', position: 'center', animate: true, opacity: 0.4 },
+                { type: 'geometric-grid', size: 'lg', color: 'rgba(255, 255, 255, 0.04)', position: 'top-right', animate: true, opacity: 0.6 },
                 { type: 'hexagon', size: 'md', color: 'rgba(255, 255, 255, 0.06)', position: 'bottom-left', animate: true },
-                { type: 'dots', size: 'lg', color: 'rgba(255, 255, 255, 0.04)', position: 'bottom-right', animate: true }
+                { type: 'diagonal-lines', size: 'lg', color: 'rgba(255, 255, 255, 0.02)', position: 'bottom-right', animate: true, opacity: 0.7 }
               ]}
             >
             <div className="container mx-auto max-w-7xl px-6 text-center" style={{marginLeft: '1rem', marginRight: '1rem'}}>
@@ -3038,12 +3044,22 @@ export default function Home() {
       )}
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container mx-auto px-6">
-          <div className="text-center text-gray-400">
-            <p>&copy; 2024 BitMonkey IT Services Pvt Ltd. All rights reserved.</p>
+      <footer className="bg-gray-900 text-white py-8 relative overflow-hidden">
+        <GeometricAccent
+          shapes={[
+            { type: 'mesh-grid', size: 'xl', color: 'rgba(99, 102, 241, 0.05)', position: 'center', animate: true, opacity: 0.3 },
+            { type: 'circuit-pattern', size: 'lg', color: 'rgba(147, 51, 234, 0.04)', position: 'top-left', animate: true, opacity: 0.4 },
+            { type: 'geometric-grid', size: 'md', color: 'rgba(79, 70, 229, 0.06)', position: 'top-right', animate: true, opacity: 0.5 },
+            { type: 'dots', size: 'sm', color: 'rgba(168, 85, 247, 0.07)', position: 'bottom-left', animate: true },
+            { type: 'diagonal-lines', size: 'lg', color: 'rgba(59, 130, 246, 0.03)', position: 'bottom-right', animate: true, opacity: 0.6 }
+          ]}
+        >
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center text-gray-400">
+              <p>&copy; 2024 BitMonkey IT Services Pvt Ltd. All rights reserved.</p>
+            </div>
           </div>
-        </div>
+        </GeometricAccent>
       </footer>
     </div>
   );
