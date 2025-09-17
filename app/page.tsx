@@ -81,7 +81,11 @@ export default function Home() {
     if (typeof window !== 'undefined') {
       window.history.pushState({}, '', `/services/${slug}`);
       const el = document.getElementById('home');
-      el?.scrollIntoView({ behavior: 'smooth' });
+      if (el) {
+        const yOffset = -120; // Height of fixed nav plus buffer
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     }
   };
 
@@ -91,17 +95,43 @@ export default function Home() {
     if (typeof window !== 'undefined') {
       window.history.pushState({}, '', `/services/${serviceType}`);
       const el = document.getElementById('home');
-      el?.scrollIntoView({ behavior: 'smooth' });
+      if (el) {
+        const yOffset = -120; // Height of fixed nav plus buffer
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     }
   };
+
+  // Add global click handler for anchor links
+  useEffect(() => {
+    const handleAnchorClick = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A') {
+        const href = target.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetElement = document.getElementById(href.substring(1));
+          if (targetElement) {
+            const yOffset = -120;
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
       <CursorEffects />
       {/* Navigation */}
       <nav
-        className="hologram-border iridescent fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg"
-        style={{height: '88px'}}
+        className="iridescent fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md"
+        style={{height: '88px', boxSizing: 'border-box', boxShadow: 'none'}}
       >
         <div className="mx-auto max-w-7xl px-6 h-full" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="flex items-center justify-between h-full">
@@ -162,7 +192,7 @@ export default function Home() {
                             const element = document.getElementById('our-services');
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 80;
+                              const offsetPosition = elementPosition - 120;
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -533,7 +563,7 @@ export default function Home() {
                           const element = document.getElementById('our-portfolio');
                           if (element) {
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                            const offsetPosition = elementPosition - 120; // Account for nav height and positioning
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -549,7 +579,7 @@ export default function Home() {
                           if (element) {
                             console.log('Found case studies element at:', element.offsetTop);
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 100; // Account for nav height and positioning
+                            const offsetPosition = elementPosition - 120; // Account for nav height and positioning
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -570,7 +600,7 @@ export default function Home() {
                           const element = document.getElementById('why-bitmonkey');
                           if (element) {
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                            const offsetPosition = elementPosition - 120; // Account for nav height and positioning
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -590,7 +620,7 @@ export default function Home() {
                           const element = document.getElementById(id);
                           if (element) {
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 80; // Account for nav height
+                            const offsetPosition = elementPosition - 120; // Account for nav height
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -645,7 +675,7 @@ export default function Home() {
                             const element = document.getElementById('our-services');
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                              const offsetPosition = elementPosition - 120; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -660,7 +690,7 @@ export default function Home() {
                             const element = document.getElementById('our-portfolio');
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                              const offsetPosition = elementPosition - 120; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -677,7 +707,7 @@ export default function Home() {
                             if (element) {
                               console.log('Found case studies element at:', element.offsetTop);
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 100; // Account for nav height and positioning
+                              const offsetPosition = elementPosition - 120; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -698,7 +728,7 @@ export default function Home() {
                             const element = document.getElementById('why-bitmonkey');
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                              const offsetPosition = elementPosition - 120; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -718,7 +748,7 @@ export default function Home() {
                             const element = document.getElementById(id);
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 80; // Account for nav height
+                              const offsetPosition = elementPosition - 120; // Account for nav height
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -739,16 +769,13 @@ export default function Home() {
           )}
         </div>
       </nav>
-
-      {/* Hero Section */}
-      {/* Hero Section (Avada-style split layout) */}
-    <section id="home" style={{paddingTop: '104px'}}> 
+    <section id="home" className="pt-[88px]"> 
         <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left rail column (adds outer padding from the page edge) */}
          <div className="hidden lg:block lg:col-span-3">
 
-  <aside className="sticky self-start" style={{top: '104px'}}>
+  <aside className="sticky self-start" style={{top: '88px'}}>
             <div className="flex flex-col gap-4">
 
               {/* Service quick menu: Development */}
@@ -760,7 +787,11 @@ export default function Home() {
                     if (typeof window !== 'undefined') {
                       window.history.pushState({}, '', '/services/development-services');
                       const el = document.getElementById('overview');
-                      el?.scrollIntoView({ behavior: 'smooth' });
+                      if (el) {
+                        const yOffset = -120; // Height of fixed nav plus buffer
+                        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                      }
                     }
                   }}
                   className="flex items-baseline justify-start gap-3 mb-2 pb-2 border-b border-white/30 hover:text-purple-900 transition-colors w-full text-left relative z-10"

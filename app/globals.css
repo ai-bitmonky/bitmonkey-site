@@ -31,6 +31,34 @@ body {
   margin: 0;
 }
 
+/* Force zero margins on nav and main content */
+nav {
+  margin: 0 !important;
+}
+
+section {
+  margin: 0 !important;
+}
+
+/* Fix anchor scroll positioning for fixed nav */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add invisible spacer before main sections */
+section#our-services::before,
+section#our-portfolio::before,
+section#case-studies::before,
+section#why-bitmonkey::before,
+section#capabilities::before,
+section#contact::before {
+  content: "";
+  display: block;
+  height: 120px;
+  margin-top: -120px;
+  visibility: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -869,17 +897,13 @@ a {
 /* Holographic border effect */
 .hologram-border {
   position: relative;
-  background: transparent;
-  border: 2px solid transparent;
   border-radius: inherit;
-  background-clip: padding-box;
 }
 
 .hologram-border::before {
   content: "";
   position: absolute;
-  inset: 0;
-  padding: 2px;
+  inset: -2px;
   background: linear-gradient(
     45deg,
     #ff006e,
@@ -891,9 +915,8 @@ a {
   );
   background-size: 400% 400%;
   border-radius: inherit;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: xor;
-  -webkit-mask-composite: xor;
+  z-index: -1;
+  opacity: 0.6;
   animation: hologram-flow 4s linear infinite;
 }
 
@@ -925,6 +948,8 @@ a {
     transparent
   );
   transition: left 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .iridescent:hover::before {
