@@ -76,3 +76,19 @@ a {
 .scroll-animate.fade-in-up.animate-in {
   transform: translateY(0);
 }
+
+/* Animation Delays */
+.scroll-animate.fade-in-up-delay-500 {
+  transform: translateY(30px);
+  transition-delay: 0.5s;
+}
+
+.scroll-animate.fade-in-up-delay-1000 {
+  transform: translateY(30px);
+  transition-delay: 1s;
+}
+
+.scroll-animate.fade-in-up-delay-500.animate-in,
+.scroll-animate.fade-in-up-delay-1000.animate-in {
+  transform: translateY(0);
+}

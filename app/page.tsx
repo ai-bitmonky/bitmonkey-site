@@ -31,17 +31,29 @@ export default function Home() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-in');
-          observer.unobserve(entry.target);
+          // Don't unobserve so animations can retrigger if needed
         }
       });
     }, observerOptions);
 
-    // Reset any existing animations and observe all elements with scroll-animate class
-    const animateElements = document.querySelectorAll('.scroll-animate');
-    animateElements.forEach((el) => {
-      el.classList.remove('animate-in'); // Reset animation state
-      observer.observe(el);
-    });
+    // Small delay to ensure DOM is ready after contextSlug change
+    setTimeout(() => {
+      // Reset any existing animations and observe all elements with scroll-animate class
+      const animateElements = document.querySelectorAll('.scroll-animate');
+      animateElements.forEach((el) => {
+        el.classList.remove('animate-in'); // Reset animation state
+        observer.observe(el);
+
+        // Check if element is already in view and trigger animation immediately
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (rect.top < windowHeight * 0.9 && rect.bottom > 0) {
+          setTimeout(() => {
+            el.classList.add('animate-in');
+          }, 100);
+        }
+      });
+    }, 10);
 
     return () => observer.disconnect();
   }, [contextSlug]); // Re-run when contextSlug changes
