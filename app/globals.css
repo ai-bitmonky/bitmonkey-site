@@ -681,3 +681,56 @@ a {
   transform: translateZ(0);
   will-change: transform;
 }
+
+/* Gradient Borders */
+.gradient-border {
+  position: relative;
+  background: white;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.gradient-border-blue::before {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+.gradient-border-green::before {
+  background: linear-gradient(135deg, #10b981, #14b8a6);
+}
+
+.gradient-border-purple::before {
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+}
+
+.gradient-border-hover {
+  transition: all 0.3s ease;
+}
+
+.gradient-border-hover:hover::before {
+  padding: 3px;
+  background: linear-gradient(135deg, #a855f7, #ec4899, #3b82f6);
+  animation: gradient-rotate 2s linear infinite;
+}
+
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

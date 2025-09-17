@@ -1016,7 +1016,7 @@ export default function Home() {
                           <div className="grid grid-cols-2 gap-2">
                             <button
                               onClick={() => handleLeftNav('digital-transformation')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
                                 <Target className="w-4 h-4 text-white" />
@@ -1029,7 +1029,7 @@ export default function Home() {
 
                             <button
                               onClick={() => handleLeftNav('enterprise-architecture')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
                                 <Building className="w-4 h-4 text-white" />
@@ -1042,7 +1042,7 @@ export default function Home() {
 
                             <button
                               onClick={() => handleLeftNav('digital-strategy-roadmaps')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
                                 <Map className="w-4 h-4 text-white" />
@@ -1055,7 +1055,7 @@ export default function Home() {
 
                             <button
                               onClick={() => handleLeftNav('governance')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
                                 <Settings className="w-4 h-4 text-white" />
@@ -1068,7 +1068,7 @@ export default function Home() {
 
                             <button
                               onClick={() => handleLeftNav('cloud-advisory')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
                                 <Cloud className="w-4 h-4 text-white" />
@@ -1081,7 +1081,7 @@ export default function Home() {
 
                             <button
                               onClick={() => handleLeftNav('security-compliance')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
                                 <Lock className="w-4 h-4 text-white" />
@@ -1107,7 +1107,7 @@ export default function Home() {
                           <div className="grid grid-cols-2 gap-2">
                             <button
                               onClick={() => handleLeftNav('full-stack-developer')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center">
                                 <Code className="w-4 h-4 text-white" />
@@ -1120,7 +1120,7 @@ export default function Home() {
 
                             <button
                               onClick={() => handleLeftNav('devops-engineer')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
                                 <Settings className="w-4 h-4 text-white" />
@@ -1133,7 +1133,7 @@ export default function Home() {
 
                             <button
                               onClick={() => handleLeftNav('cloud-architect')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
                                 <Cloud className="w-4 h-4 text-white" />
@@ -1146,7 +1146,7 @@ export default function Home() {
 
                             <button
                               onClick={() => handleLeftNav('ai-ml-engineer')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
+                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 gradient-border gradient-border-hover"
                             >
                               <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
                                 <Brain className="w-4 h-4 text-white" />
@@ -1260,7 +1260,7 @@ export default function Home() {
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7 scroll-animate fade-in-right">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow">
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay
@@ -1374,7 +1374,7 @@ export default function Home() {
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow">
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay
@@ -2791,14 +2791,14 @@ export default function Home() {
                 {contextSlug === 'training-services' && "Let&apos;s design a training program for your team"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all underline-reveal">
+                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all underline-reveal gradient-border gradient-border-hover">
                   {contextSlug === 'development-services' && 'Start Your Project'}
                   {contextSlug === 'consulting-services' && 'Schedule Consultation'}
                   {contextSlug === 'training-services' && 'Explore Training'}
                 </a>
                 <button
                   onClick={() => setContextSlug(null)}
-                  className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all"
+                  className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all gradient-border gradient-border-hover"
                 >
                   Back to Home
                 </button>
