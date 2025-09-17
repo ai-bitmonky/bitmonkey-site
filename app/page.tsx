@@ -105,8 +105,12 @@ export default function Home() {
             {/* Brand */}
             <div className="flex items-center gap-3">
               {/* Logo placeholder */}
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center magnetic-pull hover-highlight click-ripple">
-                <span className="text-white font-bold text-lg">BM</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center magnetic-pull hover-highlight click-ripple overflow-hidden">
+                <img
+                  src="/bitmonkey-logo.JPG"
+                  alt="BitMonkey IT Services Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <h1 className="text-xl font-extrabold tracking-tight text-gray-900">
@@ -810,7 +814,6 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover z-10"
               autoPlay
               muted
-              loop
               playsInline
               preload="metadata"
               controls={false}
