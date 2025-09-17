@@ -17,6 +17,9 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState<boolean>(false);
 
+  // Top navigation items: base vs context (left-menu-selected) views
+  const [contextSlug, setContextSlug] = useState<string | null>(null);
+
   // Initialize scroll animations
   useEffect(() => {
     const observerOptions = {
@@ -33,16 +36,15 @@ export default function Home() {
       });
     }, observerOptions);
 
-    // Observe all elements with scroll-animate class
+    // Reset any existing animations and observe all elements with scroll-animate class
     const animateElements = document.querySelectorAll('.scroll-animate');
-    animateElements.forEach((el) => observer.observe(el));
+    animateElements.forEach((el) => {
+      el.classList.remove('animate-in'); // Reset animation state
+      observer.observe(el);
+    });
 
     return () => observer.disconnect();
-  }, []);
-
-
-  // Top navigation items: base vs context (left-menu-selected) views
-  const [contextSlug, setContextSlug] = useState<string | null>(null);
+  }, [contextSlug]); // Re-run when contextSlug changes
   const baseNav = ['Home', 'Services', 'Portfolio', 'Resources', 'Why BitMonkey?'];
 
   const getContextNav = (slug: string | null) => {
@@ -125,15 +127,18 @@ export default function Home() {
                         onClick={(e) => {
                           e.preventDefault();
                           setContextSlug(null);
-                          const element = document.getElementById('our-services');
-                          if (element) {
-                            const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 80;
-                            window.scrollTo({
-                              top: offsetPosition,
-                              behavior: 'smooth'
-                            });
-                          }
+                          // Wait for re-render before scrolling
+                          setTimeout(() => {
+                            const element = document.getElementById('our-services');
+                            if (element) {
+                              const elementPosition = element.offsetTop;
+                              const offsetPosition = elementPosition - 80;
+                              window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                              });
+                            }
+                          }, 50);
                         }}
                       >
                         Services
@@ -421,31 +426,60 @@ export default function Home() {
                     className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors"
                     onClick={(e) => {
                       if (item === 'Home') {
+                        e.preventDefault();
                         setContextSlug(null);
+                        // Wait for re-render before scrolling to top
+                        setTimeout(() => {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                          });
+                        }, 50);
                       } else if (item === 'Portfolio') {
                         e.preventDefault();
                         setContextSlug(null);
-                        const element = document.getElementById('our-portfolio');
-                        if (element) {
-                          const elementPosition = element.offsetTop;
-                          const offsetPosition = elementPosition - 80; // Account for nav height and positioning
-                          window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                          });
-                        }
+                        // Wait for re-render before scrolling
+                        setTimeout(() => {
+                          const element = document.getElementById('our-portfolio');
+                          if (element) {
+                            const elementPosition = element.offsetTop;
+                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: 'smooth'
+                            });
+                          }
+                        }, 50);
+                      } else if (item === 'Resources') {
+                        e.preventDefault();
+                        setContextSlug(null);
+                        // Wait for re-render before scrolling
+                        setTimeout(() => {
+                          const element = document.getElementById('contact');
+                          if (element) {
+                            const elementPosition = element.offsetTop;
+                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: 'smooth'
+                            });
+                          }
+                        }, 50);
                       } else if (item === 'Why BitMonkey?') {
                         e.preventDefault();
                         setContextSlug(null);
-                        const element = document.getElementById('why-bitmonkey');
-                        if (element) {
-                          const elementPosition = element.offsetTop;
-                          const offsetPosition = elementPosition - 80; // Account for nav height and positioning
-                          window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                          });
-                        }
+                        // Wait for re-render before scrolling
+                        setTimeout(() => {
+                          const element = document.getElementById('why-bitmonkey');
+                          if (element) {
+                            const elementPosition = element.offsetTop;
+                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: 'smooth'
+                            });
+                          }
+                        }, 50);
                       } else if (contextSlug) {
                         // Handle navigation within context-specific pages
                         e.preventDefault();
@@ -497,31 +531,75 @@ export default function Home() {
                       href={`#${id}`}
                       onClick={(e) => {
                         if (item === 'Home') {
+                          e.preventDefault();
                           setContextSlug(null);
+                          // Wait for re-render before scrolling to top
+                          setTimeout(() => {
+                            window.scrollTo({
+                              top: 0,
+                              behavior: 'smooth'
+                            });
+                          }, 50);
                         } else if (item === 'Services') {
                           e.preventDefault();
                           setContextSlug(null);
-                          const element = document.getElementById('our-services');
-                          if (element) {
-                            const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
-                            window.scrollTo({
-                              top: offsetPosition,
-                              behavior: 'smooth'
-                            });
-                          }
+                          // Wait for re-render before scrolling
+                          setTimeout(() => {
+                            const element = document.getElementById('our-services');
+                            if (element) {
+                              const elementPosition = element.offsetTop;
+                              const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                              window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                              });
+                            }
+                          }, 50);
                         } else if (item === 'Portfolio') {
                           e.preventDefault();
                           setContextSlug(null);
-                          const element = document.getElementById('our-portfolio');
-                          if (element) {
-                            const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
-                            window.scrollTo({
-                              top: offsetPosition,
-                              behavior: 'smooth'
-                            });
-                          }
+                          // Wait for re-render before scrolling
+                          setTimeout(() => {
+                            const element = document.getElementById('our-portfolio');
+                            if (element) {
+                              const elementPosition = element.offsetTop;
+                              const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                              window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                              });
+                            }
+                          }, 50);
+                        } else if (item === 'Resources') {
+                          e.preventDefault();
+                          setContextSlug(null);
+                          // Wait for re-render before scrolling
+                          setTimeout(() => {
+                            const element = document.getElementById('contact');
+                            if (element) {
+                              const elementPosition = element.offsetTop;
+                              const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                              window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                              });
+                            }
+                          }, 50);
+                        } else if (item === 'Why BitMonkey?') {
+                          e.preventDefault();
+                          setContextSlug(null);
+                          // Wait for re-render before scrolling
+                          setTimeout(() => {
+                            const element = document.getElementById('why-bitmonkey');
+                            if (element) {
+                              const elementPosition = element.offsetTop;
+                              const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                              window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                              });
+                            }
+                          }, 50);
                         } else if (contextSlug) {
                           // Handle navigation within context-specific pages
                           e.preventDefault();
