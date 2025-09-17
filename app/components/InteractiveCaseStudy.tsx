@@ -99,7 +99,7 @@ export default function InteractiveCaseStudy({ caseStudies }: InteractiveCaseStu
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="w-full">
       {/* Case Study Navigation */}
       <div className="flex items-center justify-between mb-8">
         <div className="flex gap-2">
@@ -148,7 +148,7 @@ export default function InteractiveCaseStudy({ caseStudies }: InteractiveCaseStu
 
         <div
           ref={sliderRef}
-          className="relative w-full h-96 rounded-2xl overflow-hidden cursor-grab active:cursor-grabbing border-4 border-white shadow-2xl"
+          className="relative w-full h-96 rounded-3xl overflow-hidden cursor-grab active:cursor-grabbing shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
