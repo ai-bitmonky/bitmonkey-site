@@ -78,7 +78,7 @@ export default function HoverImageMorph({
               }}
             />
             <div
-              className={`w-full h-full ${previousImage.fallbackGradient} items-center justify-center text-white text-xl font-semibold hidden`}
+              className={`w-full h-full ${previousImage.fallbackGradient} flex items-center justify-center text-white text-xl font-semibold`}
               style={{ display: 'none' }}
             >
               {previousImage.alt}
@@ -107,7 +107,7 @@ export default function HoverImageMorph({
               }}
             />
             <div
-              className={`w-full h-full ${activeImage.fallbackGradient} items-center justify-center text-white text-xl font-semibold hidden`}
+              className={`w-full h-full ${activeImage.fallbackGradient} flex items-center justify-center text-white text-xl font-semibold`}
               style={{ display: 'none' }}
             >
               {activeImage.alt}

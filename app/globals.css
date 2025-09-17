@@ -40,23 +40,9 @@ section {
   margin: 0 !important;
 }
 
-/* Fix anchor scroll positioning for fixed nav */
+/* Simple and reliable fixed nav offset */
 html {
   scroll-behavior: smooth;
-}
-
-/* Add invisible spacer before main sections */
-section#our-services::before,
-section#our-portfolio::before,
-section#case-studies::before,
-section#why-bitmonkey::before,
-section#capabilities::before,
-section#contact::before {
-  content: "";
-  display: block;
-  height: 120px;
-  margin-top: -120px;
-  visibility: hidden;
 }
 
 a {

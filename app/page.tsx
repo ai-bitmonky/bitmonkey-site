@@ -82,7 +82,7 @@ export default function Home() {
       window.history.pushState({}, '', `/services/${slug}`);
       const el = document.getElementById('home');
       if (el) {
-        const yOffset = -120; // Height of fixed nav plus buffer
+        const yOffset = -100; // Height of fixed nav plus buffer
         const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
@@ -96,34 +96,13 @@ export default function Home() {
       window.history.pushState({}, '', `/services/${serviceType}`);
       const el = document.getElementById('home');
       if (el) {
-        const yOffset = -120; // Height of fixed nav plus buffer
+        const yOffset = -100; // Height of fixed nav plus buffer
         const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }
   };
 
-  // Add global click handler for anchor links
-  useEffect(() => {
-    const handleAnchorClick = (e: Event) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'A') {
-        const href = target.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          e.preventDefault();
-          const targetElement = document.getElementById(href.substring(1));
-          if (targetElement) {
-            const yOffset = -120;
-            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-          }
-        }
-      }
-    };
-
-    document.addEventListener('click', handleAnchorClick);
-    return () => document.removeEventListener('click', handleAnchorClick);
-  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -192,7 +171,8 @@ export default function Home() {
                             const element = document.getElementById('our-services');
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 120;
+                              const contentStart = elementPosition + 80; // Minimal padding to show section start
+                              const offsetPosition = contentStart - 80;
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -563,7 +543,8 @@ export default function Home() {
                           const element = document.getElementById('our-portfolio');
                           if (element) {
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 120; // Account for nav height and positioning
+                            const contentStart = elementPosition + 80; // Minimal padding to show section start
+                            const offsetPosition = contentStart - 80; // Account for nav height and positioning
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -579,7 +560,8 @@ export default function Home() {
                           if (element) {
                             console.log('Found case studies element at:', element.offsetTop);
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 120; // Account for nav height and positioning
+                            const contentStart = elementPosition + 80; // Minimal padding to show section start
+                            const offsetPosition = contentStart - 80; // Account for nav height and positioning
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -600,7 +582,8 @@ export default function Home() {
                           const element = document.getElementById('why-bitmonkey');
                           if (element) {
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 120; // Account for nav height and positioning
+                            const contentStart = elementPosition + 80; // Minimal padding to show section start
+                            const offsetPosition = contentStart - 80; // Account for nav height and positioning
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -620,7 +603,8 @@ export default function Home() {
                           const element = document.getElementById(id);
                           if (element) {
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 120; // Account for nav height
+                            const contentStart = elementPosition + 80; // Minimal padding to show section start
+                            const offsetPosition = contentStart - 80; // Account for nav height
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
@@ -675,7 +659,8 @@ export default function Home() {
                             const element = document.getElementById('our-services');
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 120; // Account for nav height and positioning
+                              const contentStart = elementPosition + 80; // Minimal padding to show section start
+                              const offsetPosition = contentStart - 80; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -690,7 +675,8 @@ export default function Home() {
                             const element = document.getElementById('our-portfolio');
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 120; // Account for nav height and positioning
+                              const contentStart = elementPosition + 80; // Minimal padding to show section start
+                              const offsetPosition = contentStart - 80; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -707,7 +693,8 @@ export default function Home() {
                             if (element) {
                               console.log('Found case studies element at:', element.offsetTop);
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 120; // Account for nav height and positioning
+                              const contentStart = elementPosition + 80; // Minimal padding to show section start
+                              const offsetPosition = contentStart - 80; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -728,7 +715,8 @@ export default function Home() {
                             const element = document.getElementById('why-bitmonkey');
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 120; // Account for nav height and positioning
+                              const contentStart = elementPosition + 80; // Minimal padding to show section start
+                              const offsetPosition = contentStart - 80; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -748,7 +736,8 @@ export default function Home() {
                             const element = document.getElementById(id);
                             if (element) {
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 120; // Account for nav height
+                              const contentStart = elementPosition + 80; // Minimal padding to show section start
+                              const offsetPosition = contentStart - 80; // Account for nav height
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
@@ -788,7 +777,7 @@ export default function Home() {
                       window.history.pushState({}, '', '/services/development-services');
                       const el = document.getElementById('overview');
                       if (el) {
-                        const yOffset = -120; // Height of fixed nav plus buffer
+                        const yOffset = -100; // Height of fixed nav plus buffer
                         const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
                         window.scrollTo({ top: y, behavior: 'smooth' });
                       }
@@ -942,7 +931,7 @@ export default function Home() {
       {!contextSlug ? (
         <>
           {/* Our Services Section */}
-          <section id="our-services" className="pt-32 pb-24 bg-white relative overflow-hidden" style={{marginTop: '4rem'}}>
+          <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '8rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'circuit-pattern', size: 'xl', color: 'rgba(99, 102, 241, 0.02)', position: 'center', animate: true, opacity: 0.4 },
@@ -1266,7 +1255,7 @@ export default function Home() {
           </section>
 
           {/* Our Portfolio Section */}
-          <section id="our-portfolio" className="pt-32 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '4rem'}}>
+          <section id="our-portfolio" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '8rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'blob', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-right', animate: true },
@@ -1345,7 +1334,7 @@ export default function Home() {
           </section>
 
           {/* Interactive Case Study Galleries Section */}
-          <section id="case-studies" className="pt-32 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '4rem'}}>
+          <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '8rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'dots', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-left', animate: true },
@@ -2888,7 +2877,7 @@ export default function Home() {
           )}
 
           {/* Case Studies Section - Dynamic based on service type */}
-          <section id="case-studies" className="pt-32 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '4rem'}}>
+          <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '8rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'dots', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-left', animate: true },
