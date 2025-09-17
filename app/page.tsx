@@ -13,6 +13,7 @@ import {
 import ScrollAnimation from './components/ScrollAnimation';
 import CursorEffects from './components/CursorEffects';
 import GeometricAccent from './components/GeometricShapes';
+import BentoGrid from './components/BentoGrid';
 
 
 export default function Home() {
@@ -875,7 +876,9 @@ export default function Home() {
                 { type: 'dots', size: 'md', color: 'rgba(168, 85, 247, 0.05)', position: 'bottom-left', animate: true },
                 { type: 'lines', size: 'lg', color: 'rgba(59, 130, 246, 0.04)', position: 'bottom-right', animate: true }
               ]}
-            />
+            >
+              <div></div>
+            </GeometricAccent>
           </div>
           </div> {/* end grid */}
         </div>   {/* end padded wrapper */}
@@ -915,113 +918,85 @@ export default function Home() {
                         <h4 className="font-semibold text-gray-900">Development Services</h4>
                         <p className="text-sm text-gray-600">Modern applications with cutting-edge technologies</p>
 
-                        {/* Mobile service menu */}
+                        {/* Mobile service menu - Bento Grid */}
                         <div className="lg:hidden mt-4 bg-gray-50 rounded-lg p-4 border">
-                          <div className="grid grid-cols-2 gap-2">
-                            <button
-                              onClick={() => handleLeftNav('app-dev-modernization')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                <Code className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">App Dev</h5>
-                                <p className="text-xs text-gray-500">Modernization</p>
-                              </div>
-                            </button>
-
-                            <button
-                              onClick={() => handleLeftNav('cloud-engineering')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                                <Cloud className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Cloud</h5>
-                                <p className="text-xs text-gray-500">Engineering</p>
-                              </div>
-                            </button>
-
-                            <button
-                              onClick={() => handleLeftNav('ai-ml-automation')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
-                                <Brain className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">AI-ML</h5>
-                                <p className="text-xs text-gray-500">Automation</p>
-                              </div>
-                            </button>
-
-                            <button
-                              onClick={() => handleLeftNav('data-analytics')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                                <Database className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Data</h5>
-                                <p className="text-xs text-gray-500">Analytics</p>
-                              </div>
-                            </button>
-
-                            <button
-                              onClick={() => handleLeftNav('devsecops')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                <Shield className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">DevSecOps</h5>
-                                <p className="text-xs text-gray-500">Security</p>
-                              </div>
-                            </button>
-
-                            <button
-                              onClick={() => handleLeftNav('quality-assurance')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
-                                <TestTube className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Quality</h5>
-                                <p className="text-xs text-gray-500">Assurance</p>
-                              </div>
-                            </button>
-
-                            <button
-                              onClick={() => handleLeftNav('sre-operations')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
-                                <Server className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">SRE</h5>
-                                <p className="text-xs text-gray-500">Operations</p>
-                              </div>
-                            </button>
-
-                            <button
-                              onClick={() => handleLeftNav('center-of-excellence')}
-                              className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-purple-50 border"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-blue-500 rounded-lg flex items-center justify-center">
-                                <Award className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-semibold text-gray-900 underline-reveal-text">Center</h5>
-                                <p className="text-xs text-gray-500">Excellence</p>
-                              </div>
-                            </button>
-                          </div>
+                          <BentoGrid
+                            items={[
+                              {
+                                id: 'app-dev',
+                                title: 'App Development',
+                                subtitle: 'Modernization',
+                                icon: <Code className="w-4 h-4 text-white" />,
+                                gradient: 'bg-gradient-to-br from-purple-500 to-pink-500',
+                                onClick: () => handleLeftNav('app-dev-modernization'),
+                                size: 'lg',
+                                featured: true
+                              },
+                              {
+                                id: 'cloud',
+                                title: 'Cloud',
+                                subtitle: 'Engineering',
+                                icon: <Cloud className="w-3 h-3 text-white" />,
+                                gradient: 'bg-gradient-to-br from-blue-500 to-cyan-500',
+                                onClick: () => handleLeftNav('cloud-engineering'),
+                                size: 'sm'
+                              },
+                              {
+                                id: 'ai-ml',
+                                title: 'AI-ML',
+                                subtitle: 'Automation',
+                                icon: <Brain className="w-3 h-3 text-white" />,
+                                gradient: 'bg-gradient-to-br from-green-500 to-teal-500',
+                                onClick: () => handleLeftNav('ai-ml-automation'),
+                                size: 'sm'
+                              },
+                              {
+                                id: 'data',
+                                title: 'Data',
+                                subtitle: 'Analytics',
+                                icon: <Database className="w-4 h-4 text-white" />,
+                                gradient: 'bg-gradient-to-br from-orange-500 to-red-500',
+                                onClick: () => handleLeftNav('data-analytics'),
+                                size: 'md'
+                              },
+                              {
+                                id: 'devsecops',
+                                title: 'DevSecOps',
+                                subtitle: 'Security',
+                                icon: <Shield className="w-3 h-3 text-white" />,
+                                gradient: 'bg-gradient-to-br from-red-500 to-pink-500',
+                                onClick: () => handleLeftNav('devsecops'),
+                                size: 'sm'
+                              },
+                              {
+                                id: 'qa',
+                                title: 'Quality',
+                                subtitle: 'Assurance',
+                                icon: <TestTube className="w-3 h-3 text-white" />,
+                                gradient: 'bg-gradient-to-br from-yellow-500 to-orange-500',
+                                onClick: () => handleLeftNav('quality-assurance'),
+                                size: 'sm'
+                              },
+                              {
+                                id: 'sre',
+                                title: 'SRE',
+                                subtitle: 'Operations',
+                                icon: <Server className="w-3 h-3 text-white" />,
+                                gradient: 'bg-gradient-to-br from-indigo-500 to-purple-500',
+                                onClick: () => handleLeftNav('sre-operations'),
+                                size: 'sm'
+                              },
+                              {
+                                id: 'coe',
+                                title: 'Center of Excellence',
+                                subtitle: 'Best Practices',
+                                icon: <Award className="w-4 h-4 text-white" />,
+                                gradient: 'bg-gradient-to-br from-teal-500 to-blue-500',
+                                onClick: () => handleLeftNav('center-of-excellence'),
+                                size: 'md'
+                              }
+                            ]}
+                          />
                         </div>
                       </div>
                     </div>
