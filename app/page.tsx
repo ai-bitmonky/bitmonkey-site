@@ -17,6 +17,7 @@ import BentoGrid from './components/BentoGrid';
 import TiltCard from './components/TiltCard';
 import AnimatedCounter from './components/AnimatedCounter';
 import InteractiveCaseStudy from './components/InteractiveCaseStudy';
+import HoverImageMorph from './components/HoverImageMorph';
 
 
 export default function Home() {
@@ -25,6 +26,49 @@ export default function Home() {
 
   // Top navigation items: base vs context (left-menu-selected) views
   const [contextSlug, setContextSlug] = useState<string | null>(null);
+
+  // Hover image morphing state
+  const [activeServiceImage, setActiveServiceImage] = useState<string>('default');
+
+  // Service images for hover morphing
+  const serviceImages = [
+    {
+      id: 'default',
+      src: '/services/default-services.jpg',
+      alt: 'Our Comprehensive Services',
+      fallbackGradient: 'bg-gradient-to-br from-purple-600 to-pink-600'
+    },
+    {
+      id: 'development',
+      src: '/services/development-services.jpg',
+      alt: 'Development Services',
+      fallbackGradient: 'bg-gradient-to-br from-purple-500 to-pink-500'
+    },
+    {
+      id: 'consulting',
+      src: '/services/consulting-services.jpg',
+      alt: 'Consulting Services',
+      fallbackGradient: 'bg-gradient-to-br from-blue-500 to-indigo-500'
+    },
+    {
+      id: 'training',
+      src: '/services/training-services.jpg',
+      alt: 'Training Services',
+      fallbackGradient: 'bg-gradient-to-br from-yellow-500 to-orange-500'
+    },
+    {
+      id: 'cloud',
+      src: '/services/cloud-engineering.jpg',
+      alt: 'Cloud Engineering',
+      fallbackGradient: 'bg-gradient-to-br from-blue-500 to-cyan-500'
+    },
+    {
+      id: 'ai-ml',
+      src: '/services/ai-ml-automation.jpg',
+      alt: 'AI-ML Automation',
+      fallbackGradient: 'bg-gradient-to-br from-green-500 to-teal-500'
+    }
+  ];
 
   // Initialize scroll animations
   useEffect(() => {
@@ -933,7 +977,11 @@ export default function Home() {
                   </p>
 
                   <div className="space-y-4 scroll-animate fade-in-up">
-                    <div className="flex items-start gap-3 scroll-animate fade-in-up-delay-1000 hover-highlight magnetic-pull">
+                    <div
+                      className="flex items-start gap-3 scroll-animate fade-in-up-delay-1000 hover-highlight magnetic-pull"
+                      onMouseEnter={() => setActiveServiceImage('development')}
+                      onMouseLeave={() => setActiveServiceImage('default')}
+                    >
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Development Services</h4>
@@ -1022,7 +1070,11 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 hover-highlight magnetic-pull">
+                    <div
+                      className="flex items-start gap-3 hover-highlight magnetic-pull"
+                      onMouseEnter={() => setActiveServiceImage('consulting')}
+                      onMouseLeave={() => setActiveServiceImage('default')}
+                    >
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Consulting Services</h4>
@@ -1113,7 +1165,11 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 hover-highlight magnetic-pull">
+                    <div
+                      className="flex items-start gap-3 hover-highlight magnetic-pull"
+                      onMouseEnter={() => setActiveServiceImage('training')}
+                      onMouseLeave={() => setActiveServiceImage('default')}
+                    >
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Training Services</h4>
@@ -1199,23 +1255,16 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Video Content - 70% */}
+                {/* Morphing Image Content - 70% */}
                 <div className="lg:col-span-7">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
-                      <video
-                        className="w-full h-full object-contain aspect-video"
-                        autoPlay
-                        muted
-                        playsInline
-                        preload="auto"
-                        poster="/services-poster.jpg"
-                      >
-                        <source src="/services.mp4" type="video/mp4" />
-                        <div className="w-full h-96 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-semibold">
-                          Services Video Placeholder
-                        </div>
-                      </video>
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover aspect-video">
+                      <HoverImageMorph
+                        images={serviceImages}
+                        defaultImageId="default"
+                        activeImageId={activeServiceImage}
+                        className="w-full h-full"
+                      />
                     </div>
                   </TiltCard>
                 </div>
