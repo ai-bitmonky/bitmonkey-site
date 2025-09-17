@@ -15,6 +15,7 @@ import CursorEffects from './components/CursorEffects';
 import GeometricAccent from './components/GeometricShapes';
 import BentoGrid from './components/BentoGrid';
 import TiltCard from './components/TiltCard';
+import AnimatedCounter from './components/AnimatedCounter';
 
 
 export default function Home() {
@@ -1353,22 +1354,40 @@ export default function Home() {
 
                   {/* Statistics */}
                   <div className="grid grid-cols-2 gap-4 pt-4 scroll-animate fade-in-up-delay-1200">
-                    <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg">
-                      <div className="text-2xl font-bold text-purple-600">500+</div>
-                      <div className="text-xs text-gray-600">Projects</div>
-                    </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">95%</div>
-                      <div className="text-xs text-gray-600">Satisfaction</div>
-                    </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-green-50 to-teal-50 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600">15+</div>
-                      <div className="text-xs text-gray-600">Years Exp</div>
-                    </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-orange-50 to-red-50 rounded-lg">
-                      <div className="text-2xl font-bold text-orange-600">24/7</div>
-                      <div className="text-xs text-gray-600">Support</div>
-                    </div>
+                    <AnimatedCounter
+                      value={500}
+                      suffix="+"
+                      label="Projects Completed"
+                      color="text-purple-600"
+                      bgGradient="bg-gradient-to-br from-purple-50 to-pink-50"
+                      duration={2500}
+                    />
+                    <AnimatedCounter
+                      value={95}
+                      suffix="%"
+                      label="Client Satisfaction"
+                      color="text-blue-600"
+                      bgGradient="bg-gradient-to-br from-blue-50 to-indigo-50"
+                      showProgress={true}
+                      progressMax={100}
+                      duration={2000}
+                    />
+                    <AnimatedCounter
+                      value={15}
+                      suffix="+"
+                      label="Years Experience"
+                      color="text-green-600"
+                      bgGradient="bg-gradient-to-br from-green-50 to-teal-50"
+                      duration={1800}
+                    />
+                    <AnimatedCounter
+                      value={24}
+                      suffix="/7"
+                      label="Support Available"
+                      color="text-orange-600"
+                      bgGradient="bg-gradient-to-br from-orange-50 to-red-50"
+                      duration={1500}
+                    />
                   </div>
 
                 </div>
@@ -2745,28 +2764,48 @@ export default function Home() {
                       <h3 className="text-2xl font-bold mb-4">Corporate Upskilling Program</h3>
                       <p className="text-gray-700 mb-6">Trained 200+ developers for a tech company&apos;s digital transformation, with 95% completion rate and 80% internal promotions.</p>
                       <div className="flex gap-4">
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-purple-600">200+</div>
-                          <div className="text-sm text-gray-600">Developers Trained</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-purple-600">95%</div>
-                          <div className="text-sm text-gray-600">Completion Rate</div>
-                        </div>
+                        <AnimatedCounter
+                          value={200}
+                          suffix="+"
+                          label="Developers Trained"
+                          color="text-purple-600"
+                          bgGradient="bg-gradient-to-br from-purple-50 to-pink-50"
+                          duration={2000}
+                        />
+                        <AnimatedCounter
+                          value={95}
+                          suffix="%"
+                          label="Completion Rate"
+                          color="text-purple-600"
+                          bgGradient="bg-gradient-to-br from-purple-50 to-pink-50"
+                          showProgress={true}
+                          progressMax={100}
+                          duration={2200}
+                        />
                       </div>
                     </div>
                     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
                       <h3 className="text-2xl font-bold mb-4">Career Transition Bootcamp</h3>
                       <p className="text-gray-700 mb-6">Helped 150+ professionals transition to tech careers through our intensive bootcamp, with 85% job placement rate.</p>
                       <div className="flex gap-4">
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-blue-600">150+</div>
-                          <div className="text-sm text-gray-600">Career Transitions</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-blue-600">85%</div>
-                          <div className="text-sm text-gray-600">Job Placement</div>
-                        </div>
+                        <AnimatedCounter
+                          value={150}
+                          suffix="+"
+                          label="Career Transitions"
+                          color="text-blue-600"
+                          bgGradient="bg-gradient-to-br from-blue-50 to-indigo-50"
+                          duration={2300}
+                        />
+                        <AnimatedCounter
+                          value={85}
+                          suffix="%"
+                          label="Job Placement"
+                          color="text-blue-600"
+                          bgGradient="bg-gradient-to-br from-blue-50 to-indigo-50"
+                          showProgress={true}
+                          progressMax={100}
+                          duration={2100}
+                        />
                       </div>
                     </div>
                   </>
