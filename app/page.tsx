@@ -97,7 +97,7 @@ export default function Home() {
                       onMouseLeave={() => setServicesDropdownOpen(false)}
                     >
                       <button
-                        className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors flex items-center gap-1"
+                        className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-all duration-300 flex items-center gap-1 hover:scale-105 active:scale-95 group"
                         onClick={(e) => {
                           e.preventDefault();
                           setContextSlug(null);
@@ -113,20 +113,20 @@ export default function Home() {
                         }}
                       >
                         Services
-                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </button>
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 py-6 pl-6 pr-0 z-50 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none">
+                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 py-6 pl-6 pr-0 z-50 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none animate-in fade-in slide-in-from-top-4 duration-300">
                           <div className="grid gap-3" style={{gridTemplateColumns: '0.211fr 0.218fr 0.165fr'}}>
 
                             {/* Consulting Services - Left Column */}
-                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:bg-white/12 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/5 before:to-indigo-500/5 before:rounded-xl before:pointer-events-none">
-                              <h3 className="text-base font-bold text-blue-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10">
-                                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:bg-white/12 hover:shadow-xl hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/5 before:to-indigo-500/5 before:rounded-xl before:pointer-events-none group">
+                              <h3 className="text-base font-bold text-blue-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10 group-hover:text-blue-700 transition-colors duration-300">
+                                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                                   <Briefcase className="w-4 h-4 text-white" />
                                 </div>
                                 Consulting Services
@@ -134,9 +134,9 @@ export default function Home() {
                               <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('digital-transformation')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Target className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -146,9 +146,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('enterprise-architecture')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Building className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -158,9 +158,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('digital-strategy-roadmaps')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Map className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -170,9 +170,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('governance')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Settings className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -182,9 +182,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-advisory')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -194,9 +194,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('security-compliance')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Lock className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -207,9 +207,9 @@ export default function Home() {
                             </div>
 
                             {/* Development Services - Center Column (Primary) */}
-                            <div className="bg-white/15 backdrop-blur-md rounded-xl p-4 border-2 border-white/30 shadow-xl hover:bg-white/20 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-purple-500/10 before:to-pink-500/10 before:rounded-xl before:pointer-events-none ring-2 ring-white/20">
-                              <h3 className="text-lg font-bold text-purple-900 mb-4 flex items-center gap-2 border-b-2 border-white/40 pb-2 relative z-10">
-                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
+                            <div className="bg-white/15 backdrop-blur-md rounded-xl p-4 border-2 border-white/30 shadow-xl hover:bg-white/20 hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-purple-500/10 before:to-pink-500/10 before:rounded-xl before:pointer-events-none ring-2 ring-white/20 group">
+                              <h3 className="text-lg font-bold text-purple-900 mb-4 flex items-center gap-2 border-b-2 border-white/40 pb-2 relative z-10 group-hover:text-purple-700 transition-colors duration-300">
+                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                                   <Code className="w-5 h-5 text-white" />
                                 </div>
                                 Development Services
@@ -217,9 +217,9 @@ export default function Home() {
                               <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('app-dev-modernization')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Code className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -229,9 +229,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-engineering')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -241,9 +241,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('ai-ml-automation')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Brain className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -253,9 +253,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('data-analytics')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Database className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -265,9 +265,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('devsecops')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Shield className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -277,9 +277,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('quality-assurance')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <TestTube className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -289,9 +289,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('sre-operations')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Server className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -301,9 +301,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('center-of-excellence')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Award className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -314,9 +314,9 @@ export default function Home() {
                             </div>
 
                             {/* Training Services - Right Column */}
-                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:bg-white/12 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/5 before:to-teal-500/5 before:rounded-xl before:pointer-events-none">
-                              <h3 className="text-base font-bold text-green-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10">
-                                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:bg-white/12 hover:shadow-xl hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/5 before:to-teal-500/5 before:rounded-xl before:pointer-events-none group">
+                              <h3 className="text-base font-bold text-green-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10 group-hover:text-green-700 transition-colors duration-300">
+                                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                                   <GraduationCap className="w-4 h-4 text-white" />
                                 </div>
                                 Training Services
@@ -324,9 +324,9 @@ export default function Home() {
                               <div className="space-y-1">
                                 <button
                                   onClick={() => handleLeftNav('full-stack-developer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Code className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -336,9 +336,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('devops-engineer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Settings className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -348,9 +348,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('cloud-architect')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -360,9 +360,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('ai-ml-engineer')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Brain className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -372,9 +372,9 @@ export default function Home() {
 
                                 <button
                                   onClick={() => handleLeftNav('certifications')}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 w-full text-left transition-all duration-300 relative z-10"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <GraduationCap className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -562,14 +562,14 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-purple-900 tracking-tight">Services</span>
                 </button>
                 <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"><Code className="w-3 h-3 text-white" /></div>App Dev & Modernization</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"><Cloud className="w-3 h-3 text-white" /></div>Cloud Engineering</button></li>
-                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"><Brain className="w-3 h-3 text-white" /></div>AI-ML & Automation</button></li>
-                  <li><button onClick={() => handleLeftNav('data-analytics')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"><Database className="w-3 h-3 text-white" /></div>Data & Analytics</button></li>
-                  <li><button onClick={() => handleLeftNav('devsecops')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"><Shield className="w-3 h-3 text-white" /></div>DevSecOps</button></li>
-                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"><TestTube className="w-3 h-3 text-white" /></div>Quality Assurance</button></li>
-                  <li><button onClick={() => handleLeftNav('sre-operations')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"><Server className="w-3 h-3 text-white" /></div>SRE & Operations</button></li>
-                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"><Award className="w-3 h-3 text-white" /></div>Center Of Excellence</button></li>
+                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div>App Dev & Modernization</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div>Cloud Engineering</button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div>AI-ML & Automation</button></li>
+                  <li><button onClick={() => handleLeftNav('data-analytics')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Database className="w-3 h-3 text-white" /></div>Data & Analytics</button></li>
+                  <li><button onClick={() => handleLeftNav('devsecops')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Shield className="w-3 h-3 text-white" /></div>DevSecOps</button></li>
+                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><TestTube className="w-3 h-3 text-white" /></div>Quality Assurance</button></li>
+                  <li><button onClick={() => handleLeftNav('sre-operations')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Server className="w-3 h-3 text-white" /></div>SRE & Operations</button></li>
+                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Award className="w-3 h-3 text-white" /></div>Center Of Excellence</button></li>
                 </ul>
               </div>
 
@@ -586,12 +586,12 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-blue-900 tracking-tight">Services</span>
                 </button>
                 <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center"><Target className="w-3 h-3 text-white" /></div>Digital Transformation</button></li>
-                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center"><Building className="w-3 h-3 text-white" /></div>Enterprise Architecture</button></li>
-                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center"><Map className="w-3 h-3 text-white" /></div>Digital Strategy & Roadmaps</button></li>
-                  <li><button onClick={() => handleLeftNav('governance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center"><Settings className="w-3 h-3 text-white" /></div>Governance</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center"><Cloud className="w-3 h-3 text-white" /></div>Cloud Advisory</button></li>
-                  <li><button onClick={() => handleLeftNav('security-compliance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center"><Lock className="w-3 h-3 text-white" /></div>Security & Compliance</button></li>
+                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Target className="w-3 h-3 text-white" /></div>Digital Transformation</button></li>
+                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Building className="w-3 h-3 text-white" /></div>Enterprise Architecture</button></li>
+                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Map className="w-3 h-3 text-white" /></div>Digital Strategy & Roadmaps</button></li>
+                  <li><button onClick={() => handleLeftNav('governance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div>Governance</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div>Cloud Advisory</button></li>
+                  <li><button onClick={() => handleLeftNav('security-compliance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Lock className="w-3 h-3 text-white" /></div>Security & Compliance</button></li>
                 </ul>
               </div>
 
@@ -608,11 +608,11 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-green-900 tracking-tight">Services</span>
                 </button>
                 <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center"><Code className="w-3 h-3 text-white" /></div>Full‑Stack Developer</button></li>
-                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center"><Settings className="w-3 h-3 text-white" /></div>DevOps Engineer</button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center"><Cloud className="w-3 h-3 text-white" /></div>Cloud Architect</button></li>
-                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center"><Brain className="w-3 h-3 text-white" /></div>AI/ML Engineer</button></li>
-                  <li><button onClick={() => handleLeftNav('certifications')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 rounded-lg transition-all duration-300 relative z-10 w-full text-left"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center"><GraduationCap className="w-3 h-3 text-white" /></div>Certifications</button></li>
+                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div>Full‑Stack Developer</button></li>
+                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div>DevOps Engineer</button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div>Cloud Architect</button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div>AI/ML Engineer</button></li>
+                  <li><button onClick={() => handleLeftNav('certifications')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><GraduationCap className="w-3 h-3 text-white" /></div>Certifications</button></li>
                 </ul>
               </div>
             </div>
@@ -704,7 +704,7 @@ export default function Home() {
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6">
                   <div>
-                    <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Services</span>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block" style={{fontSize: '2.2rem'}}>Our Services</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block" style={{fontSize: '1.75rem'}}>
                       Comprehensive Digital Solutions
                     </h2>
