@@ -2845,135 +2845,153 @@ export default function Home() {
           )}
 
           {/* Case Studies Section - Dynamic based on service type */}
-          <section className="pt-80 pb-24 bg-white" style={{marginTop: '4rem'}}>
-            <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
+          <section id="case-studies" className="pt-32 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '4rem'}}>
+            <GeometricAccent
+              shapes={[
+                { type: 'dots', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-left', animate: true },
+                { type: 'circle', size: 'md', color: 'rgba(59, 130, 246, 0.03)', position: 'bottom-right', animate: true }
+              ]}
+            >
+            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
-                <p className="text-lg text-gray-600">
-                  {contextSlug === 'development-services' && 'Success stories from development services projects'}
-                  {contextSlug === 'consulting-services' && 'Strategic transformations and consulting successes'}
-                  {contextSlug === 'training-services' && 'Training program outcomes and career transformations'}
-                </p>
+                <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Case Studies</span>
+                <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
+                  <span className="highlight-reveal">Interactive Project Showcases</span>
+                </h2>
               </div>
-              <div className="grid md:grid-cols-2 gap-8">
-                {contextSlug === 'development-services' && (
-                  <>
-                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
-                      <h3 className="text-2xl font-bold mb-4">Fortune 500 Transformation</h3>
-                      <p className="text-gray-700 mb-6">Modernized legacy systems for a major financial institution, resulting in 40% performance improvement and $2M annual savings.</p>
-                      <div className="flex gap-4">
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-purple-600">40%</div>
-                          <div className="text-sm text-gray-600">Performance Gain</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-purple-600">$2M</div>
-                          <div className="text-sm text-gray-600">Annual Savings</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                      <h3 className="text-2xl font-bold mb-4">Startup Scale Success</h3>
-                      <p className="text-gray-700 mb-6">Built scalable architecture that supported 10x user growth for a fast-growing SaaS platform.</p>
-                      <div className="flex gap-4">
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-blue-600">10x</div>
-                          <div className="text-sm text-gray-600">User Growth</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-blue-600">99.9%</div>
-                          <div className="text-sm text-gray-600">Uptime</div>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
-                {contextSlug === 'consulting-services' && (
-                  <>
-                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
-                      <h3 className="text-2xl font-bold mb-4">Enterprise Digital Transformation</h3>
-                      <p className="text-gray-700 mb-6">Led comprehensive digital transformation for a retail giant, achieving 50% operational efficiency improvement and $5M cost reduction.</p>
-                      <div className="flex gap-4">
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-purple-600">50%</div>
-                          <div className="text-sm text-gray-600">Efficiency Gain</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-purple-600">$5M</div>
-                          <div className="text-sm text-gray-600">Cost Reduction</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                      <h3 className="text-2xl font-bold mb-4">Cloud Migration Strategy</h3>
-                      <p className="text-gray-700 mb-6">Designed and executed cloud migration strategy for a healthcare provider, reducing infrastructure costs by 60%.</p>
-                      <div className="flex gap-4">
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-blue-600">60%</div>
-                          <div className="text-sm text-gray-600">Cost Reduction</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-blue-600">3 months</div>
-                          <div className="text-sm text-gray-600">Migration Time</div>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
-                {contextSlug === 'training-services' && (
-                  <>
-                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
-                      <h3 className="text-2xl font-bold mb-4">Corporate Upskilling Program</h3>
-                      <p className="text-gray-700 mb-6">Trained 200+ developers for a tech company&apos;s digital transformation, with 95% completion rate and 80% internal promotions.</p>
-                      <div className="flex gap-4">
-                        <AnimatedCounter
-                          value={200}
-                          suffix="+"
-                          label="Developers Trained"
-                          color="text-purple-600"
-                          bgGradient="bg-gradient-to-br from-purple-50 to-pink-50"
-                          duration={2000}
-                        />
-                        <AnimatedCounter
-                          value={95}
-                          suffix="%"
-                          label="Completion Rate"
-                          color="text-purple-600"
-                          bgGradient="bg-gradient-to-br from-purple-50 to-pink-50"
-                          showProgress={true}
-                          progressMax={100}
-                          duration={2200}
-                        />
-                      </div>
-                    </div>
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                      <h3 className="text-2xl font-bold mb-4">Career Transition Bootcamp</h3>
-                      <p className="text-gray-700 mb-6">Helped 150+ professionals transition to tech careers through our intensive bootcamp, with 85% job placement rate.</p>
-                      <div className="flex gap-4">
-                        <AnimatedCounter
-                          value={150}
-                          suffix="+"
-                          label="Career Transitions"
-                          color="text-blue-600"
-                          bgGradient="bg-gradient-to-br from-blue-50 to-indigo-50"
-                          duration={2300}
-                        />
-                        <AnimatedCounter
-                          value={85}
-                          suffix="%"
-                          label="Job Placement"
-                          color="text-blue-600"
-                          bgGradient="bg-gradient-to-br from-blue-50 to-indigo-50"
-                          showProgress={true}
-                          progressMax={100}
-                          duration={2100}
-                        />
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
+              <InteractiveCaseStudy caseStudies={[
+                {
+                  id: 'ecommerce-redesign',
+                  title: 'E-commerce Platform Redesign',
+                  client: 'TechStore Plus',
+                  category: 'Web Design',
+                  summary: 'Complete UI/UX overhaul resulting in 40% increase in conversions',
+                  beforeImage: '/portfolio/ecommerce-before.jpg',
+                  afterImage: '/portfolio/ecommerce-after.jpg',
+                  steps: [
+                    {
+                      title: 'Research & Analysis',
+                      description: 'Conducted user research and competitive analysis to identify pain points',
+                      metrics: [
+                        { label: 'User Interviews', value: '24', color: 'text-blue-600' },
+                        { label: 'Competitors Analyzed', value: '8', color: 'text-green-600' },
+                        { label: 'Pain Points Identified', value: '12', color: 'text-red-600' }
+                      ]
+                    },
+                    {
+                      title: 'Design System Creation',
+                      description: 'Built a comprehensive design system with reusable components',
+                      metrics: [
+                        { label: 'Components Created', value: '45', color: 'text-purple-600' },
+                        { label: 'Color Variations', value: '18', color: 'text-indigo-600' },
+                        { label: 'Typography Scales', value: '6', color: 'text-pink-600' }
+                      ]
+                    },
+                    {
+                      title: 'Implementation & Testing',
+                      description: 'Developed responsive interface with extensive A/B testing',
+                      metrics: [
+                        { label: 'Pages Redesigned', value: '23', color: 'text-orange-600' },
+                        { label: 'A/B Tests Run', value: '15', color: 'text-cyan-600' },
+                        { label: 'Performance Score', value: '94', color: 'text-green-600' }
+                      ]
+                    }
+                  ],
+                  results: [
+                    { metric: 'Conversion Rate', value: '+40%', improvement: '2.1% to 2.9%' },
+                    { metric: 'Page Load Speed', value: '+65%', improvement: '4.2s to 1.5s' },
+                    { metric: 'User Satisfaction', value: '+85%', improvement: '3.2/5 to 4.7/5' }
+                  ]
+                },
+                {
+                  id: 'mobile-app-development',
+                  title: 'Mobile App Development',
+                  client: 'FitTrack Pro',
+                  category: 'Mobile',
+                  summary: 'Custom fitness tracking app with real-time analytics',
+                  beforeImage: '/portfolio/mobile-before.jpg',
+                  afterImage: '/portfolio/mobile-after.jpg',
+                  steps: [
+                    {
+                      title: 'Requirements Gathering',
+                      description: 'Defined feature set and technical requirements with stakeholders',
+                      metrics: [
+                        { label: 'Features Defined', value: '32', color: 'text-blue-600' },
+                        { label: 'User Stories', value: '68', color: 'text-green-600' },
+                        { label: 'Technical Specs', value: '15', color: 'text-purple-600' }
+                      ]
+                    },
+                    {
+                      title: 'Development & Integration',
+                      description: 'Built native iOS/Android apps with cloud synchronization',
+                      metrics: [
+                        { label: 'API Endpoints', value: '28', color: 'text-orange-600' },
+                        { label: 'Database Tables', value: '12', color: 'text-cyan-600' },
+                        { label: 'Third-party Integrations', value: '7', color: 'text-pink-600' }
+                      ]
+                    },
+                    {
+                      title: 'Launch & Optimization',
+                      description: 'App store deployment with continuous performance monitoring',
+                      metrics: [
+                        { label: 'Beta Testers', value: '150', color: 'text-indigo-600' },
+                        { label: 'Bug Fixes', value: '23', color: 'text-red-600' },
+                        { label: 'Performance Optimizations', value: '8', color: 'text-green-600' }
+                      ]
+                    }
+                  ],
+                  results: [
+                    { metric: 'App Store Rating', value: '4.8/5', improvement: 'New launch' },
+                    { metric: 'Daily Active Users', value: '12K+', improvement: 'Month 1' },
+                    { metric: 'User Retention', value: '78%', improvement: '30-day retention' }
+                  ]
+                },
+                {
+                  id: 'enterprise-dashboard',
+                  title: 'Enterprise Analytics Dashboard',
+                  client: 'DataCorp Solutions',
+                  category: 'Web App',
+                  summary: 'Real-time business intelligence platform with advanced visualizations',
+                  beforeImage: '/portfolio/dashboard-before.jpg',
+                  afterImage: '/portfolio/dashboard-after.jpg',
+                  steps: [
+                    {
+                      title: 'Data Architecture Design',
+                      description: 'Designed scalable data pipeline and storage solution',
+                      metrics: [
+                        { label: 'Data Sources', value: '18', color: 'text-blue-600' },
+                        { label: 'Processing Speed', value: '10x', color: 'text-green-600' },
+                        { label: 'Storage Efficiency', value: '60%', color: 'text-purple-600' }
+                      ]
+                    },
+                    {
+                      title: 'Dashboard Development',
+                      description: 'Built interactive charts and real-time monitoring tools',
+                      metrics: [
+                        { label: 'Chart Types', value: '15', color: 'text-orange-600' },
+                        { label: 'Real-time Metrics', value: '45', color: 'text-cyan-600' },
+                        { label: 'Custom Widgets', value: '22', color: 'text-pink-600' }
+                      ]
+                    },
+                    {
+                      title: 'Security & Deployment',
+                      description: 'Enterprise-grade security implementation and cloud deployment',
+                      metrics: [
+                        { label: 'Security Audits', value: '3', color: 'text-red-600' },
+                        { label: 'Compliance Standards', value: '5', color: 'text-indigo-600' },
+                        { label: 'Uptime SLA', value: '99.9%', color: 'text-green-600' }
+                      ]
+                    }
+                  ],
+                  results: [
+                    { metric: 'Data Processing Time', value: '-80%', improvement: '2 hours to 24 minutes' },
+                    { metric: 'Decision Making Speed', value: '+120%', improvement: 'Real-time insights' },
+                    { metric: 'Operational Efficiency', value: '+45%', improvement: 'Automated reporting' }
+                  ]
+                }
+              ]} />
             </div>
+            </GeometricAccent>
           </section>
 
           {/* Contact Section - Dynamic based on service type */}
