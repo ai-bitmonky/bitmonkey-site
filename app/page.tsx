@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import ScrollAnimation from './components/ScrollAnimation';
 import CursorEffects from './components/CursorEffects';
+import GeometricAccent from './components/GeometricShapes';
 
 
 export default function Home() {
@@ -180,7 +181,10 @@ export default function Home() {
                               </h3>
                               <div className="space-y-1">
                                 <button
-                                  onClick={() => handleLeftNav('digital-transformation')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('digital-transformation');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -192,7 +196,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('enterprise-architecture')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('enterprise-architecture');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -204,7 +211,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('digital-strategy-roadmaps')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('digital-strategy-roadmaps');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -216,7 +226,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('governance')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('governance');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -228,7 +241,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('cloud-advisory')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('cloud-advisory');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -240,7 +256,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('security-compliance')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('security-compliance');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -263,7 +282,10 @@ export default function Home() {
                               </h3>
                               <div className="space-y-1">
                                 <button
-                                  onClick={() => handleLeftNav('app-dev-modernization')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('app-dev-modernization');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -275,7 +297,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('cloud-engineering')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('cloud-engineering');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -287,7 +312,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('ai-ml-automation')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('ai-ml-automation');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -299,7 +327,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('data-analytics')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('data-analytics');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -311,7 +342,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('devsecops')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('devsecops');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -323,7 +357,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('quality-assurance')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('quality-assurance');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -335,7 +372,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('sre-operations')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('sre-operations');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -347,7 +387,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('center-of-excellence')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('center-of-excellence');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -370,7 +413,10 @@ export default function Home() {
                               </h3>
                               <div className="space-y-1">
                                 <button
-                                  onClick={() => handleLeftNav('full-stack-developer')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('full-stack-developer');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -382,7 +428,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('devops-engineer')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('devops-engineer');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -394,7 +443,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('cloud-architect')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('cloud-architect');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -406,7 +458,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('ai-ml-engineer')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('ai-ml-engineer');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -418,7 +473,10 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                  onClick={() => handleLeftNav('certifications')}
+                                  onClick={() => {
+                                    setServicesDropdownOpen(false);
+                                    handleLeftNav('certifications');
+                                  }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
@@ -742,41 +800,36 @@ export default function Home() {
           {/* Right hero - changes based on context */}
           <div className="relative lg:col-span-9 min-h-[64vh] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black bg-cover bg-center">
             <video
-              className="absolute inset-0 w-full h-full object-contain"
+              className="absolute inset-0 w-full h-full object-cover z-10"
               autoPlay
               muted
+              loop
               playsInline
-              preload="auto"
-              poster={
-                // Development Services
-                contextSlug === 'development-services' ? "/development-poster.jpg" :
-                contextSlug === 'app-dev-modernization' ? "/app-dev-poster.jpg" :
-                contextSlug === 'cloud-engineering' ? "/cloud-engineering-poster.jpg" :
-                contextSlug === 'ai-ml-automation' ? "/ai-ml-poster.jpg" :
-                contextSlug === 'data-analytics' ? "/data-analytics-poster.jpg" :
-                contextSlug === 'devsecops' ? "/devsecops-poster.jpg" :
-                contextSlug === 'quality-assurance' ? "/qa-poster.jpg" :
-                contextSlug === 'sre-operations' ? "/sre-poster.jpg" :
-                contextSlug === 'center-of-excellence' ? "/coe-poster.jpg" :
-                // Consulting Services
-                contextSlug === 'consulting-services' ? "/consulting-poster.jpg" :
-                contextSlug === 'digital-transformation' ? "/digital-transformation-poster.jpg" :
-                contextSlug === 'enterprise-architecture' ? "/enterprise-architecture-poster.jpg" :
-                contextSlug === 'digital-strategy-roadmaps' ? "/digital-strategy-poster.jpg" :
-                contextSlug === 'governance' ? "/governance-poster.jpg" :
-                contextSlug === 'cloud-advisory' ? "/cloud-advisory-poster.jpg" :
-                contextSlug === 'security-compliance' ? "/security-compliance-poster.jpg" :
-                // Training Services
-                contextSlug === 'training-services' ? "/training-poster.jpg" :
-                contextSlug === 'full-stack-developer' ? "/fullstack-poster.jpg" :
-                contextSlug === 'devops-engineer' ? "/devops-poster.jpg" :
-                contextSlug === 'cloud-architect' ? "/cloud-architect-poster.jpg" :
-                contextSlug === 'ai-ml-engineer' ? "/ai-ml-engineer-poster.jpg" :
-                contextSlug === 'bootcamps' ? "/bootcamps-poster.jpg" :
-                contextSlug === 'certifications' ? "/certifications-poster.jpg" :
-                "/hero-poster.jpg"
-              }
+              preload="metadata"
+              controls={false}
               key={contextSlug || 'default'}
+              ref={(video) => {
+                if (video) {
+                  video.addEventListener('loadeddata', () => {
+                    console.log('Video loaded successfully');
+                    video.play().catch(e => {
+                      console.error('Auto-play failed:', e);
+                      // Show controls if autoplay fails
+                      video.controls = true;
+                    });
+                  });
+                }
+              }}
+              onError={(e) => {
+                console.error('Video error:', e);
+                // Show fallback background instead of hiding
+                e.currentTarget.style.opacity = '0';
+              }}
+              onLoadStart={() => console.log('Video loading started')}
+              onCanPlay={() => console.log('Video can play')}
+              style={{
+                backgroundColor: 'rgba(0,0,0,0.3)'
+              }}
             >
               <source src={
                 // Development Services
@@ -784,7 +837,7 @@ export default function Home() {
                 contextSlug === 'app-dev-modernization' ? "/app-dev.mp4" :
                 contextSlug === 'cloud-engineering' ? "/cloud-engineering.mp4" :
                 contextSlug === 'ai-ml-automation' ? "/ai-ml.mp4" :
-                contextSlug === 'data-analytics' ? "/data-analytics.mp4" :
+                contextSlug === 'data-analytics' ? "/services.mp4" :
                 contextSlug === 'devsecops' ? "/devsecops.mp4" :
                 contextSlug === 'quality-assurance' ? "/qa.mp4" :
                 contextSlug === 'sre-operations' ? "/sre.mp4" :
@@ -792,7 +845,7 @@ export default function Home() {
                 // Consulting Services
                 contextSlug === 'consulting-services' ? "/consulting.mp4" :
                 contextSlug === 'digital-transformation' ? "/digital-transformation.mp4" :
-                contextSlug === 'enterprise-architecture' ? "/enterprise-architecture.mp4" :
+                contextSlug === 'enterprise-architecture' ? "/consulting.mp4" :
                 contextSlug === 'digital-strategy-roadmaps' ? "/digital-strategy.mp4" :
                 contextSlug === 'governance' ? "/governance.mp4" :
                 contextSlug === 'cloud-advisory' ? "/cloud-advisory.mp4" :
@@ -803,12 +856,21 @@ export default function Home() {
                 contextSlug === 'devops-engineer' ? "/devops.mp4" :
                 contextSlug === 'cloud-architect' ? "/cloud-architect.mp4" :
                 contextSlug === 'ai-ml-engineer' ? "/ai-ml-engineer.mp4" :
-                contextSlug === 'bootcamps' ? "/bootcamps.mp4" :
+                contextSlug === 'bootcamps' ? "/training.mp4" :
                 contextSlug === 'certifications' ? "/certifications.mp4" :
                 "/hero.mp4"
               } type="video/mp4" />
             </video>
 
+            <GeometricAccent
+              className="absolute inset-0 z-0"
+              shapes={[
+                { type: 'blob', size: 'xl', color: 'rgba(147, 51, 234, 0.08)', position: 'top-left', animate: true },
+                { type: 'circle', size: 'lg', color: 'rgba(79, 70, 229, 0.06)', position: 'top-right', animate: true },
+                { type: 'dots', size: 'md', color: 'rgba(168, 85, 247, 0.05)', position: 'bottom-left', animate: true },
+                { type: 'lines', size: 'lg', color: 'rgba(59, 130, 246, 0.04)', position: 'bottom-right', animate: true }
+              ]}
+            />
           </div>
           </div> {/* end grid */}
         </div>   {/* end padded wrapper */}
@@ -818,7 +880,14 @@ export default function Home() {
       {!contextSlug ? (
         <>
           {/* Our Services Section */}
-          <section id="our-services" className="pt-32 pb-24 bg-white" style={{marginTop: '4rem'}}>
+          <section id="our-services" className="pt-32 pb-24 bg-white relative overflow-hidden" style={{marginTop: '4rem'}}>
+            <GeometricAccent
+              shapes={[
+                { type: 'grid', size: 'lg', color: 'rgba(99, 102, 241, 0.04)', position: 'top-left', animate: true },
+                { type: 'hexagon', size: 'md', color: 'rgba(147, 51, 234, 0.06)', position: 'top-right', animate: true },
+                { type: 'triangle', size: 'sm', color: 'rgba(79, 70, 229, 0.05)', position: 'bottom-right', animate: true }
+              ]}
+            >
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
@@ -1149,10 +1218,18 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </GeometricAccent>
           </section>
 
           {/* Our Portfolio Section */}
-          <section id="our-portfolio" className="pt-32 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
+          <section id="our-portfolio" className="pt-32 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '4rem'}}>
+            <GeometricAccent
+              shapes={[
+                { type: 'blob', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-right', animate: true },
+                { type: 'dots', size: 'xl', color: 'rgba(59, 130, 246, 0.03)', position: 'bottom-left', animate: true },
+                { type: 'circle', size: 'md', color: 'rgba(99, 102, 241, 0.04)', position: 'center', animate: true }
+              ]}
+            >
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
@@ -1216,6 +1293,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </GeometricAccent>
           </section>
 
           {/* Why BitMonkey Section */}
@@ -2708,7 +2786,15 @@ export default function Home() {
           </section>
 
           {/* Contact Section - Dynamic based on service type */}
-          <section id="contact" className="pt-80 pb-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white" style={{marginTop: '4rem'}}>
+          <section id="contact" className="pt-80 pb-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white relative overflow-hidden" style={{marginTop: '4rem'}}>
+            <GeometricAccent
+              shapes={[
+                { type: 'blob', size: 'xl', color: 'rgba(255, 255, 255, 0.08)', position: 'top-left', animate: true },
+                { type: 'lines', size: 'lg', color: 'rgba(255, 255, 255, 0.05)', position: 'top-right', animate: true },
+                { type: 'hexagon', size: 'md', color: 'rgba(255, 255, 255, 0.06)', position: 'bottom-left', animate: true },
+                { type: 'dots', size: 'lg', color: 'rgba(255, 255, 255, 0.04)', position: 'bottom-right', animate: true }
+              ]}
+            >
             <div className="container mx-auto max-w-7xl px-6 text-center" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
               <p className="text-lg mb-8 text-white/90">
@@ -2730,6 +2816,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
+            </GeometricAccent>
           </section>
         </>
       )}

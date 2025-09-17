@@ -180,3 +180,58 @@ a {
   width: 200px;
   height: 200px;
 }
+
+/* Geometric Shape Animations */
+@keyframes geometric-morph {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.9);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.05);
+  }
+}
+
+@keyframes geometric-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(240deg);
+  }
+}
+
+@keyframes geometric-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+.animate-geometric {
+  animation: geometric-float 8s ease-in-out infinite;
+}
+
+.animate-geometric-morph {
+  animation: geometric-morph 12s ease-in-out infinite;
+}
+
+.animate-geometric-pulse {
+  animation: geometric-pulse 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
