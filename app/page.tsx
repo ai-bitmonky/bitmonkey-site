@@ -100,7 +100,7 @@ export default function Home() {
       <CursorEffects />
       {/* Navigation */}
       <nav
-        className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg"
+        className="hologram-border iridescent fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg"
         style={{height: '88px'}}
       >
         <div className="mx-auto max-w-7xl px-6 h-full" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
@@ -752,7 +752,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
 
               {/* Service quick menu: Development */}
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/5 after:to-pink-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
+              <div className="hologram-card cyber-glow bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/5 after:to-pink-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -781,7 +781,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Consulting */}
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-blue-500/5 after:to-indigo-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
+              <div className="hologram-card iridescent bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-blue-500/5 after:to-indigo-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -803,7 +803,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Training */}
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-green-500/5 after:to-teal-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
+              <div className="hologram-card prism-effect bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-green-500/5 after:to-teal-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -1203,8 +1203,8 @@ export default function Home() {
                   </div>
 
                   <div className="pt-4">
-                    <button className="px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all">
-                      Explore Our Services
+                    <button className="hologram-button px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all">
+                      <span className="hologram-text" data-text="Explore Our Services">Explore Our Services</span>
                     </button>
                   </div>
                 </div>
@@ -1212,7 +1212,7 @@ export default function Home() {
                 {/* Morphing Image Content - 70% */}
                 <div className="lg:col-span-7">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover aspect-video">
+                    <div className="hologram-video relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover aspect-video">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay
@@ -1291,7 +1291,7 @@ export default function Home() {
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7 scroll-animate fade-in-right">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
+                    <div className="hologram-video hologram-border relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay
@@ -1569,7 +1569,7 @@ export default function Home() {
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
+                    <div className="hologram-video cyber-glow relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay

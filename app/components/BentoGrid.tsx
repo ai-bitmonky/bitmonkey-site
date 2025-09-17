@@ -21,7 +21,7 @@ interface BentoGridProps {
 
 export default function BentoGrid({ items, className = '' }: BentoGridProps) {
   const getSizeClasses = (size: string) => {
-    const baseClasses = "flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:bg-purple-50 cursor-pointer group magnetic-pull hover-highlight gradient-border gradient-border-hover";
+    const baseClasses = "hologram-card iridescent flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:bg-purple-50 cursor-pointer group magnetic-pull hover-highlight gradient-border gradient-border-hover";
 
     switch (size) {
       case 'xl':

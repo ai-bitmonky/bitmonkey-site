@@ -82,7 +82,7 @@ export default function AnimatedCounter({
   return (
     <div
       ref={elementRef}
-      className={`text-center p-6 ${bgGradient} rounded-xl relative overflow-hidden hover:scale-105 transition-all duration-300 group`}
+      className={`cyber-glow hologram-card text-center p-6 ${bgGradient} rounded-xl relative overflow-hidden hover:scale-105 transition-all duration-300 group`}
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-white/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
