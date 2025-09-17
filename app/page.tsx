@@ -542,18 +542,25 @@ export default function Home() {
                       } else if (item === 'Resources') {
                         e.preventDefault();
                         setContextSlug(null);
-                        // Wait for re-render before scrolling
-                        setTimeout(() => {
+                        // Wait for re-render before scrolling with multiple attempts
+                        const scrollToCaseStudies = (attempts = 0) => {
                           const element = document.getElementById('case-studies');
                           if (element) {
+                            console.log('Found case studies element at:', element.offsetTop);
                             const elementPosition = element.offsetTop;
-                            const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                            const offsetPosition = elementPosition - 100; // Account for nav height and positioning
                             window.scrollTo({
                               top: offsetPosition,
                               behavior: 'smooth'
                             });
+                          } else if (attempts < 5) {
+                            console.log('Case studies element not found, retrying...', attempts + 1);
+                            setTimeout(() => scrollToCaseStudies(attempts + 1), 100);
+                          } else {
+                            console.log('Case studies element not found after 5 attempts');
                           }
-                        }, 50);
+                        };
+                        setTimeout(() => scrollToCaseStudies(), 100);
                       } else if (item === 'Why BitMonkey?') {
                         e.preventDefault();
                         setContextSlug(null);
@@ -662,18 +669,26 @@ export default function Home() {
                         } else if (item === 'Resources') {
                           e.preventDefault();
                           setContextSlug(null);
-                          // Wait for re-render before scrolling
-                          setTimeout(() => {
+                          setMobileMenuOpen(false);
+                          // Wait for re-render before scrolling with multiple attempts
+                          const scrollToCaseStudies = (attempts = 0) => {
                             const element = document.getElementById('case-studies');
                             if (element) {
+                              console.log('Found case studies element at:', element.offsetTop);
                               const elementPosition = element.offsetTop;
-                              const offsetPosition = elementPosition - 80; // Account for nav height and positioning
+                              const offsetPosition = elementPosition - 100; // Account for nav height and positioning
                               window.scrollTo({
                                 top: offsetPosition,
                                 behavior: 'smooth'
                               });
+                            } else if (attempts < 5) {
+                              console.log('Case studies element not found, retrying...', attempts + 1);
+                              setTimeout(() => scrollToCaseStudies(attempts + 1), 100);
+                            } else {
+                              console.log('Case studies element not found after 5 attempts');
                             }
-                          }, 50);
+                          };
+                          setTimeout(() => scrollToCaseStudies(), 100);
                         } else if (item === 'Why BitMonkey?') {
                           e.preventDefault();
                           setContextSlug(null);
@@ -1283,12 +1298,25 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </GeometricAccent>
+          </section>
 
-            {/* Interactive Case Study Galleries */}
-            <div id="case-studies" className="mt-16 pt-8">
-              <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
-                <h3 className="text-3xl font-bold text-center mb-12">Interactive Case Studies</h3>
-                <InteractiveCaseStudy caseStudies={[
+          {/* Interactive Case Study Galleries Section */}
+          <section id="case-studies" className="pt-32 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '4rem'}}>
+            <GeometricAccent
+              shapes={[
+                { type: 'dots', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-left', animate: true },
+                { type: 'circle', size: 'md', color: 'rgba(59, 130, 246, 0.03)', position: 'bottom-right', animate: true }
+              ]}
+            >
+            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+              <div className="text-center mb-16">
+                <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Resources</span>
+                <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
+                  <span className="highlight-reveal">Interactive Case Studies</span>
+                </h2>
+              </div>
+              <InteractiveCaseStudy caseStudies={[
                 {
                   id: 'ecommerce-redesign',
                   title: 'E-commerce Platform Redesign',
@@ -1419,7 +1447,6 @@ export default function Home() {
                   ]
                 }
               ]} />
-              </div>
             </div>
             </GeometricAccent>
           </section>
