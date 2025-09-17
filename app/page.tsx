@@ -930,8 +930,11 @@ export default function Home() {
       {/* Sections */}
       {!contextSlug ? (
         <>
+          {/* Spacer between Hero and Services */}
+          <div className="h-10 bg-white"></div>
+
           {/* Our Services Section */}
-          <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '6rem', marginBottom: '3rem'}}>
+          <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'circuit-pattern', size: 'xl', color: 'rgba(99, 102, 241, 0.02)', position: 'center', animate: true, opacity: 0.4 },
@@ -1340,7 +1343,7 @@ export default function Home() {
           <div className="h-10 bg-gray-50"></div>
 
           {/* Interactive Case Study Galleries Section */}
-          <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '6rem', marginBottom: '3rem'}}>
+          <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'dots', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-left', animate: true },
@@ -2883,7 +2886,7 @@ export default function Home() {
           )}
 
           {/* Case Studies Section - Dynamic based on service type */}
-          <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '6rem', marginBottom: '3rem'}}>
+          <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'dots', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-left', animate: true },
