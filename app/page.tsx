@@ -702,20 +702,20 @@ export default function Home() {
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
-                <div className="lg:col-span-3 space-y-6">
-                  <div>
+                <div className="lg:col-span-3 space-y-6 animate-in fade-in slide-in-from-left-8 duration-700 delay-200">
+                  <div className="animate-in fade-in slide-in-from-left-6 duration-600 delay-300">
                     <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block" style={{fontSize: '2.2rem'}}>Our Services</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block" style={{fontSize: '1.75rem'}}>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block animate-in fade-in slide-in-from-left-4 duration-500 delay-500" style={{fontSize: '1.75rem'}}>
                       Comprehensive Digital Solutions
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 leading-relaxed hidden lg:block">
+                  <p className="text-lg text-gray-600 leading-relaxed hidden lg:block animate-in fade-in slide-in-from-left-4 duration-500 delay-700">
                     We deliver end-to-end technology solutions that drive business transformation and accelerate growth.
                   </p>
 
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
+                  <div className="space-y-4 animate-in fade-in slide-in-from-bottom-6 duration-600 delay-900">
+                    <div className="flex items-start gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-1000">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Development Services</h4>
@@ -1036,19 +1036,19 @@ export default function Home() {
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
-                <div className="lg:col-span-3 space-y-6">
+                <div className="lg:col-span-3 space-y-6 animate-in fade-in slide-in-from-left-8 duration-700 delay-200">
                   <div>
-                    <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Portfolio</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider animate-in fade-in slide-in-from-left-4 duration-500 delay-300" style={{fontSize: '2.2rem'}}>Our Portfolio</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 animate-in fade-in slide-in-from-left-4 duration-500 delay-500" style={{fontSize: '1.75rem'}}>
                       Showcase of Excellence
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-lg text-gray-600 leading-relaxed animate-in fade-in slide-in-from-left-4 duration-500 delay-700">
                     Explore our portfolio of successful digital transformations and innovative solutions across various industries.
                   </p>
 
-                  <div className="space-y-4">
+                  <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-1000">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div>
@@ -1077,7 +1077,7 @@ export default function Home() {
                 </div>
 
                 {/* Video Content - 70% */}
-                <div className="lg:col-span-7">
+                <div className="lg:col-span-7 animate-in fade-in slide-in-from-right-8 duration-700 delay-400">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
                     <video
                       className="w-full h-full object-contain aspect-video"
@@ -1103,19 +1103,19 @@ export default function Home() {
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
-                <div className="lg:col-span-3 space-y-6">
+                <div className="lg:col-span-3 space-y-6 animate-in fade-in slide-in-from-left-8 duration-700 delay-200">
                   <div>
-                    <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Why Choose Us</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6" style={{fontSize: '1.75rem'}}>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider animate-in fade-in slide-in-from-left-4 duration-500 delay-300" style={{fontSize: '2.2rem'}}>Why Choose Us</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 animate-in fade-in slide-in-from-left-4 duration-500 delay-500" style={{fontSize: '1.75rem'}}>
                       Why BitMonkey?
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-lg text-gray-600 leading-relaxed animate-in fade-in slide-in-from-left-4 duration-500 delay-700">
                     Customer-centric, data-driven approach with agile delivery and next-gen tech stack for fast outcomes.
                   </p>
 
-                  <div className="space-y-4">
+                  <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-1000">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div>
@@ -1166,7 +1166,7 @@ export default function Home() {
                   </div>
 
                   {/* Statistics */}
-                  <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="grid grid-cols-2 gap-4 pt-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-1200">
                     <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg">
                       <div className="text-2xl font-bold text-purple-600">500+</div>
                       <div className="text-xs text-gray-600">Projects</div>
@@ -1625,15 +1625,15 @@ export default function Home() {
           {contextSlug === 'development-services' && (
             <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
               <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
-                <div className="text-center mb-16">
-                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
-                  <h2 className="text-4xl font-bold mb-4 mt-4">Development Services Portfolio</h2>
-                  <p className="text-lg text-gray-600">Comprehensive development solutions across modern technology stacks</p>
+                <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-500">Development Services Portfolio</h2>
+                  <p className="text-lg text-gray-600 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-700">Comprehensive development solutions across modern technology stacks</p>
                 </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* App Dev & Modernization */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1000" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Code className="w-6 h-6" />
                   </div>
@@ -1648,7 +1648,7 @@ export default function Home() {
                 </div>
 
                 {/* Cloud Engineering */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1200" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Cloud className="w-6 h-6" />
                   </div>
@@ -1663,7 +1663,7 @@ export default function Home() {
                 </div>
 
                 {/* AI-ML & Automation */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1400" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Zap className="w-6 h-6" />
                   </div>
@@ -1678,7 +1678,7 @@ export default function Home() {
                 </div>
 
                 {/* Data & Analytics */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1600" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <TrendingUp className="w-6 h-6" />
                   </div>
@@ -1693,7 +1693,7 @@ export default function Home() {
                 </div>
 
                 {/* DevSecOps & SRE */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1800" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Target className="w-6 h-6" />
                   </div>
@@ -1710,7 +1710,7 @@ export default function Home() {
                 </div>
 
                 {/* Quality Assurance */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-2000" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <CheckCircle className="w-6 h-6" />
                   </div>
@@ -1732,15 +1732,15 @@ export default function Home() {
           {contextSlug === 'consulting-services' && (
             <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
               <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
-                <div className="text-center mb-16">
-                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
-                  <h2 className="text-4xl font-bold mb-4 mt-4">Consulting Services Portfolio</h2>
-                  <p className="text-lg text-gray-600">Strategic guidance for digital transformation and business innovation</p>
+                <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-500">Consulting Services Portfolio</h2>
+                  <p className="text-lg text-gray-600 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-700">Strategic guidance for digital transformation and business innovation</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {/* Digital Transformation */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1000" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Target className="w-6 h-6" />
                     </div>
@@ -1755,7 +1755,7 @@ export default function Home() {
                   </div>
 
                   {/* Enterprise Architecture */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1200" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Users className="w-6 h-6" />
                     </div>
@@ -1770,7 +1770,7 @@ export default function Home() {
                   </div>
 
                   {/* Digital Strategy & Roadmaps */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1400" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <TrendingUp className="w-6 h-6" />
                     </div>
@@ -1785,7 +1785,7 @@ export default function Home() {
                   </div>
 
                   {/* Governance */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1600" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Award className="w-6 h-6" />
                     </div>
@@ -2111,15 +2111,15 @@ export default function Home() {
           {contextSlug === 'training-services' && (
             <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
               <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
-                <div className="text-center mb-16">
-                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
-                  <h2 className="text-4xl font-bold mb-4 mt-4">Training Services Portfolio</h2>
-                  <p className="text-lg text-gray-600">Expert-led training programs and professional certifications</p>
+                <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300" style={{fontSize: '2.2rem'}}>Our Capabilities</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-500">Training Services Portfolio</h2>
+                  <p className="text-lg text-gray-600 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-700">Expert-led training programs and professional certifications</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {/* Full Stack Developer */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1000" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Code className="w-6 h-6" />
                     </div>
@@ -2134,7 +2134,7 @@ export default function Home() {
                   </div>
 
                   {/* DevOps Engineer */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-6 duration-500 delay-1200" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Target className="w-6 h-6" />
                     </div>
