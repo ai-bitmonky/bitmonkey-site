@@ -11,6 +11,7 @@ import {
   Lock, GraduationCap, Server, Brain
 } from 'lucide-react';
 import ScrollAnimation from './components/ScrollAnimation';
+import CursorEffects from './components/CursorEffects';
 
 
 export default function Home() {
@@ -90,6 +91,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <CursorEffects />
       {/* Navigation */}
       <nav
         className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg"
@@ -100,7 +102,7 @@ export default function Home() {
             {/* Brand */}
             <div className="flex items-center gap-3">
               {/* Logo placeholder */}
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center magnetic-pull hover-highlight click-ripple">
                 <span className="text-white font-bold text-lg">BM</span>
               </div>
               <div>
@@ -110,13 +112,13 @@ export default function Home() {
                 <p className="text-xs text-gray-500 mt-1">Friday, September 12 • New Delhi</p>
 
                 <div className="flex items-center gap-3 mt-2 text-gray-600">
-                  <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition">
+                  <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition magnetic-button">
                     <Menu className="w-3 h-3" />
                   </button>
-                  <a href="#" className="hover:text-gray-900 transition"><Twitter className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition"><Instagram className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition"><Github className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition"><Linkedin className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button"><Twitter className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button"><Instagram className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button"><Github className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button"><Linkedin className="w-3 h-3" /></a>
                 </div>
               </div>
             </div>
@@ -136,7 +138,7 @@ export default function Home() {
                       onMouseLeave={() => setServicesDropdownOpen(false)}
                     >
                       <button
-                        className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-all duration-300 flex items-center gap-1 hover:scale-105 active:scale-95 group"
+                        className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-all duration-300 flex items-center gap-1 hover:scale-105 active:scale-95 group magnetic-pull"
                         onClick={(e) => {
                           e.preventDefault();
                           setContextSlug(null);
@@ -439,7 +441,7 @@ export default function Home() {
                   <a
                     key={item}
                     href={`#${id}`}
-                    className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors"
+                    className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors magnetic-pull hover-highlight"
                     onClick={(e) => {
                       if (item === 'Home') {
                         e.preventDefault();
@@ -663,7 +665,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
 
               {/* Service quick menu: Development */}
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/5 after:to-pink-500/5 after:rounded-2xl after:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/5 after:to-pink-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -692,7 +694,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Consulting */}
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-blue-500/5 after:to-indigo-500/5 after:rounded-2xl after:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-blue-500/5 after:to-indigo-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -714,7 +716,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Training */}
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-green-500/5 after:to-teal-500/5 after:rounded-2xl after:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-green-500/5 after:to-teal-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -833,7 +835,7 @@ export default function Home() {
                   </p>
 
                   <div className="space-y-4 scroll-animate fade-in-up">
-                    <div className="flex items-start gap-3 scroll-animate fade-in-up-delay-1000">
+                    <div className="flex items-start gap-3 scroll-animate fade-in-up-delay-1000 hover-highlight magnetic-pull">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Development Services</h4>
@@ -950,7 +952,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-start gap-3 hover-highlight magnetic-pull">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Consulting Services</h4>
@@ -1041,7 +1043,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-start gap-3 hover-highlight magnetic-pull">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Training Services</h4>

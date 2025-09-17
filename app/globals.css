@@ -104,3 +104,79 @@ a {
     transform: translateY(0);
   }
 }
+
+/* Cursor-Based Effects */
+.magnetic-button {
+  transition: transform 0.1s ease-out;
+  cursor: pointer;
+}
+
+.magnetic-button:hover {
+  transform: scale(1.05);
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease-out;
+}
+
+.hover-highlight {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.hover-highlight:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.magnetic-pull {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-glow:hover {
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(147, 51, 234, 0.06),
+    rgba(79, 70, 229, 0.04),
+    transparent 40%);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.click-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.click-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(147, 51, 234, 0.3);
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease-out;
+}
+
+.click-ripple:active::before {
+  width: 200px;
+  height: 200px;
+}
