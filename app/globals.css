@@ -637,3 +637,47 @@ a {
     transform: translateY(0);
   }
 }
+
+/* 3D Tilt Card Effects */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1.02, 1.02, 1.02);
+}
+
+/* Enhanced card shadows for 3D depth */
+.card-3d-shadow {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-3d-shadow:hover {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Specular highlight overlay */
+.specular-highlight {
+  background: linear-gradient(135deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 55%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+/* Hardware acceleration for smooth animations */
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}

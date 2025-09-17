@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import TiltCard from './TiltCard';
 
 interface BentoItem {
   id: string;
@@ -71,21 +72,26 @@ export default function BentoGrid({ items, className = '' }: BentoGridProps) {
         const textClasses = getTextSize(item.size);
 
         return (
-          <button
+          <TiltCard
             key={item.id}
-            onClick={item.onClick}
-            className={sizeClasses}
+            intensity="subtle"
+            className="h-full"
           >
-            <div className={`${item.gradient} rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ${iconSize}`}>
-              {item.icon}
-            </div>
-            <div className={item.size === 'xl' ? 'mt-4 text-center' : 'text-left'}>
-              <h5 className={`text-gray-900 underline-reveal-text ${textClasses.title}`}>{item.title}</h5>
-              {item.subtitle && (
-                <p className={`text-gray-500 ${textClasses.subtitle}`}>{item.subtitle}</p>
-              )}
-            </div>
-          </button>
+            <button
+              onClick={item.onClick}
+              className={sizeClasses}
+            >
+              <div className={`${item.gradient} rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ${iconSize}`}>
+                {item.icon}
+              </div>
+              <div className={item.size === 'xl' ? 'mt-4 text-center' : 'text-left'}>
+                <h5 className={`text-gray-900 underline-reveal-text ${textClasses.title}`}>{item.title}</h5>
+                {item.subtitle && (
+                  <p className={`text-gray-500 ${textClasses.subtitle}`}>{item.subtitle}</p>
+                )}
+              </div>
+            </button>
+          </TiltCard>
         );
       })}
     </div>

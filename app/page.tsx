@@ -14,6 +14,7 @@ import ScrollAnimation from './components/ScrollAnimation';
 import CursorEffects from './components/CursorEffects';
 import GeometricAccent from './components/GeometricShapes';
 import BentoGrid from './components/BentoGrid';
+import TiltCard from './components/TiltCard';
 
 
 export default function Home() {
@@ -1255,21 +1256,23 @@ export default function Home() {
 
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7 scroll-animate fade-in-right">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
-                    <video
-                      className="w-full h-full object-contain aspect-video"
-                      autoPlay
-                      muted
-                      playsInline
-                      preload="auto"
-                      poster="/portfolio-poster.jpg"
-                    >
-                      <source src="/portfolio.mp4" type="video/mp4" />
-                      <div className="w-full h-96 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white text-xl font-semibold">
-                        Portfolio Video Placeholder
-                      </div>
-                    </video>
-                  </div>
+                  <TiltCard intensity="medium" className="w-full">
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow">
+                      <video
+                        className="w-full h-full object-contain aspect-video"
+                        autoPlay
+                        muted
+                        playsInline
+                        preload="auto"
+                        poster="/portfolio-poster.jpg"
+                      >
+                        <source src="/portfolio.mp4" type="video/mp4" />
+                        <div className="w-full h-96 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white text-xl font-semibold">
+                          Portfolio Video Placeholder
+                        </div>
+                      </video>
+                    </div>
+                  </TiltCard>
                 </div>
               </div>
             </div>
@@ -1367,21 +1370,23 @@ export default function Home() {
 
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
-                    <video
-                      className="w-full h-full object-contain aspect-video"
-                      autoPlay
-                      muted
-                      playsInline
-                      preload="auto"
-                      poster="/why-bitmonkey-poster.jpg"
-                    >
-                      <source src="/why-bitmonkey.mp4" type="video/mp4" />
-                      <div className="w-full h-96 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-semibold">
-                        Why BitMonkey Video Placeholder
-                      </div>
-                    </video>
-                  </div>
+                  <TiltCard intensity="medium" className="w-full">
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow">
+                      <video
+                        className="w-full h-full object-contain aspect-video"
+                        autoPlay
+                        muted
+                        playsInline
+                        preload="auto"
+                        poster="/why-bitmonkey-poster.jpg"
+                      >
+                        <source src="/why-bitmonkey.mp4" type="video/mp4" />
+                        <div className="w-full h-96 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-semibold">
+                          Why BitMonkey Video Placeholder
+                        </div>
+                      </video>
+                    </div>
+                  </TiltCard>
                 </div>
               </div>
             </div>
