@@ -105,7 +105,7 @@ export default function Home() {
             {/* Brand */}
             <div className="flex items-center gap-3">
               {/* Logo placeholder */}
-              <div className="w-14 h-14 rounded-lg flex items-center justify-center magnetic-pull hover-highlight click-ripple overflow-hidden">
+              <div className="w-16 h-16 rounded-lg flex items-center justify-center magnetic-pull hover-highlight click-ripple overflow-hidden">
                 <img
                   src="/bitmonkey-logo.JPG"
                   alt="BitMonkey IT Services Logo"
