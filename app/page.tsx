@@ -109,6 +109,11 @@ export default function Home() {
               <div>
                 <h1 className="text-xl font-extrabold tracking-tight text-gray-900">
                   BitMonkey IT Services Pvt Ltd
+                  <div className="word-swap text-sm text-purple-600 mt-1" style={{position: 'relative', height: '20px'}}>
+                    <span className="word">Digital Innovation</span>
+                    <span className="word">Tech Excellence</span>
+                    <span className="word">Future Ready</span>
+                  </div>
                 </h1>
                 <p className="text-xs text-gray-500 mt-1">Friday, September 12 • New Delhi</p>
 
@@ -893,9 +898,9 @@ export default function Home() {
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
                   <div className="scroll-animate fade-in-up">
-                    <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block" style={{fontSize: '2.2rem'}}>Our Services</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
-                      Comprehensive Digital Solutions
+                    <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter" style={{fontSize: '2.2rem'}}>Our Services</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block scroll-animate fade-in-up text-reveal" style={{fontSize: '1.75rem'}}>
+                      <span className="highlight-reveal">Comprehensive Digital Solutions</span>
                     </h2>
                   </div>
 
@@ -1235,9 +1240,9 @@ export default function Home() {
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
                   <div>
-                    <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up" style={{fontSize: '2.2rem'}}>Our Portfolio</span>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Our Portfolio</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
-                      Showcase of Excellence
+                      <span className="highlight-reveal">Showcase of Excellence</span>
                     </h2>
                   </div>
 
@@ -1303,9 +1308,9 @@ export default function Home() {
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
                   <div>
-                    <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up" style={{fontSize: '2.2rem'}}>Why Choose Us</span>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Why Choose Us</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
-                      Why BitMonkey?
+                      <span className="highlight-reveal">Why BitMonkey?</span>
                     </h2>
                   </div>
 
@@ -1416,8 +1421,8 @@ export default function Home() {
             <section id="capabilities" className="pt-80 pb-24 bg-gray-50" style={{marginTop: '4rem'}}>
               <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
                 <div className="text-center mb-16">
-                  <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
-                  <h2 className="text-4xl font-bold mb-4 mt-4">App Development & Modernization</h2>
+                  <span className="text-purple-600 font-bold uppercase tracking-wider typewriter" style={{fontSize: '2.2rem'}}>Our Expertise</span>
+                  <h2 className="text-4xl font-bold mb-4 mt-4"><span className="highlight-reveal">App Development & Modernization</span></h2>
                   <p className="text-lg text-gray-600">Transform your business with modern application development and legacy system modernization</p>
                 </div>
 
@@ -1507,7 +1512,7 @@ export default function Home() {
               <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
                 <div className="text-center mb-16">
                   <span className="text-purple-600 font-bold uppercase tracking-wider" style={{fontSize: '2.2rem'}}>Our Expertise</span>
-                  <h2 className="text-4xl font-bold mb-4 mt-4">AI-ML & Automation</h2>
+                  <h2 className="text-4xl font-bold mb-4 mt-4"><span className="glitch" data-text="AI-ML & Automation">AI-ML & Automation</span></h2>
                   <p className="text-lg text-gray-600">Harness the power of artificial intelligence and machine learning for intelligent automation</p>
                 </div>
 
