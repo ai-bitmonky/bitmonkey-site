@@ -1255,10 +1255,10 @@ export default function Home() {
           </section>
 
           {/* Spacer between Services and Portfolio */}
-          <div className="h-12 bg-gradient-to-b from-white to-gray-50"></div>
+          <div className="h-10 bg-gradient-to-b from-white to-gray-50"></div>
 
           {/* Our Portfolio Section */}
-          <section id="our-portfolio" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '3rem', marginBottom: '1.5rem'}}>
+          <section id="our-portfolio" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'blob', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-right', animate: true },
@@ -1337,7 +1337,7 @@ export default function Home() {
           </section>
 
           {/* Spacer between Portfolio and Case Studies */}
-          <div className="h-12 bg-gray-50"></div>
+          <div className="h-10 bg-gray-50"></div>
 
           {/* Interactive Case Study Galleries Section */}
           <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '6rem', marginBottom: '3rem'}}>
