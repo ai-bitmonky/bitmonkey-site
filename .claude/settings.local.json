@@ -8,7 +8,9 @@
       "Bash(lsof:*)",
       "Bash(xargs kill:*)",
       "Bash(git push:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(git revert:*)",
+      "Bash(git restore:*)"
     ],
     "deny": [],
     "ask": []
