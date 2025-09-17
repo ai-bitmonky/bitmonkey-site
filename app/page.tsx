@@ -1184,21 +1184,23 @@ export default function Home() {
 
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
-                    <video
-                      className="w-full h-full object-contain aspect-video"
-                      autoPlay
-                      muted
-                      playsInline
-                      preload="auto"
-                      poster="/services-poster.jpg"
-                    >
-                      <source src="/services.mp4" type="video/mp4" />
-                      <div className="w-full h-96 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-semibold">
-                        Services Video Placeholder
-                      </div>
-                    </video>
-                  </div>
+                  <TiltCard intensity="medium" className="w-full">
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
+                      <video
+                        className="w-full h-full object-contain aspect-video"
+                        autoPlay
+                        muted
+                        playsInline
+                        preload="auto"
+                        poster="/services-poster.jpg"
+                      >
+                        <source src="/services.mp4" type="video/mp4" />
+                        <div className="w-full h-96 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-semibold">
+                          Services Video Placeholder
+                        </div>
+                      </video>
+                    </div>
+                  </TiltCard>
                 </div>
               </div>
             </div>
