@@ -39,7 +39,8 @@ export default function Home() {
     // Small delay to ensure DOM is ready after contextSlug change
     setTimeout(() => {
       // Reset any existing animations and observe all elements with scroll-animate class
-      const animateElements = document.querySelectorAll('.scroll-animate');
+      // Exclude dropdown elements to prevent interference
+      const animateElements = document.querySelectorAll('.scroll-animate:not([data-dropdown])');
       animateElements.forEach((el) => {
         el.classList.remove('animate-in'); // Reset animation state
         observer.observe(el);
@@ -161,7 +162,10 @@ export default function Home() {
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 py-6 pl-6 pr-0 z-50 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none scroll-animate fade-in-up">
+                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 py-6 pl-6 pr-0 z-50 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none opacity-100 animate-in"
+                          style={{
+                            animation: 'fadeInUp 0.3s ease-out forwards'
+                          }}>
                           <div className="grid gap-3" style={{gridTemplateColumns: '0.211fr 0.218fr 0.165fr'}}>
 
                             {/* Consulting Services - Left Column */}

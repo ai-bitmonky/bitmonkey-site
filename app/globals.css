@@ -92,3 +92,15 @@ a {
 .scroll-animate.fade-in-up-delay-1000.animate-in {
   transform: translateY(0);
 }
+
+/* Dropdown Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
