@@ -116,10 +116,10 @@ export default function Home() {
                   <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition magnetic-button">
                     <Menu className="w-3 h-3" />
                   </button>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button"><Twitter className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button"><Instagram className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button"><Github className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button"><Linkedin className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal"><Twitter className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal"><Instagram className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal"><Github className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal"><Linkedin className="w-3 h-3" /></a>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function Home() {
                       onMouseLeave={() => setServicesDropdownOpen(false)}
                     >
                       <button
-                        className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-all duration-300 flex items-center gap-1 hover:scale-105 active:scale-95 group magnetic-pull"
+                        className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-all duration-300 flex items-center gap-1 hover:scale-105 active:scale-95 group magnetic-pull underline-reveal"
                         onClick={(e) => {
                           e.preventDefault();
                           setContextSlug(null);
@@ -206,7 +206,7 @@ export default function Home() {
                                     <Building className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Enterprise Architecture</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Enterprise Architecture</p>
                                   </div>
                                 </button>
 
@@ -221,7 +221,7 @@ export default function Home() {
                                     <Map className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Strategy & Roadmaps</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Strategy & Roadmaps</p>
                                   </div>
                                 </button>
 
@@ -236,7 +236,7 @@ export default function Home() {
                                     <Settings className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Governance</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Governance</p>
                                   </div>
                                 </button>
 
@@ -251,7 +251,7 @@ export default function Home() {
                                     <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Cloud Advisory</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Cloud Advisory</p>
                                   </div>
                                 </button>
 
@@ -266,7 +266,7 @@ export default function Home() {
                                     <Lock className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Security & Compliance</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Security & Compliance</p>
                                   </div>
                                 </button>
                               </div>
@@ -292,7 +292,7 @@ export default function Home() {
                                     <Code className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">App Dev & Modernization</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">App Dev & Modernization</p>
                                   </div>
                                 </button>
 
@@ -307,7 +307,7 @@ export default function Home() {
                                     <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Cloud Engineering</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Cloud Engineering</p>
                                   </div>
                                 </button>
 
@@ -322,7 +322,7 @@ export default function Home() {
                                     <Brain className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">AI-ML & Automation</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">AI-ML & Automation</p>
                                   </div>
                                 </button>
 
@@ -337,7 +337,7 @@ export default function Home() {
                                     <Database className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Data & Analytics</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Data & Analytics</p>
                                   </div>
                                 </button>
 
@@ -352,7 +352,7 @@ export default function Home() {
                                     <Shield className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">DevSecOps</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">DevSecOps</p>
                                   </div>
                                 </button>
 
@@ -367,7 +367,7 @@ export default function Home() {
                                     <TestTube className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Quality Assurance</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Quality Assurance</p>
                                   </div>
                                 </button>
 
@@ -382,7 +382,7 @@ export default function Home() {
                                     <Server className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">SRE & Operations</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">SRE & Operations</p>
                                   </div>
                                 </button>
 
@@ -397,7 +397,7 @@ export default function Home() {
                                     <Award className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Center of Excellence</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Center of Excellence</p>
                                   </div>
                                 </button>
                               </div>
@@ -423,7 +423,7 @@ export default function Home() {
                                     <Code className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Full-Stack Developer</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Full-Stack Developer</p>
                                   </div>
                                 </button>
 
@@ -438,7 +438,7 @@ export default function Home() {
                                     <Settings className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">DevOps Engineer</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">DevOps Engineer</p>
                                   </div>
                                 </button>
 
@@ -453,7 +453,7 @@ export default function Home() {
                                     <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Cloud Architect</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Cloud Architect</p>
                                   </div>
                                 </button>
 
@@ -468,7 +468,7 @@ export default function Home() {
                                     <Brain className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">AI/ML Engineer</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">AI/ML Engineer</p>
                                   </div>
                                 </button>
 
@@ -483,7 +483,7 @@ export default function Home() {
                                     <GraduationCap className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium text-gray-900">Certifications</p>
+                                    <p className="text-sm font-medium text-gray-900 underline-reveal">Certifications</p>
                                   </div>
                                 </button>
                               </div>
@@ -499,7 +499,7 @@ export default function Home() {
                   <a
                     key={item}
                     href={`#${id}`}
-                    className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors magnetic-pull hover-highlight"
+                    className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors magnetic-pull hover-highlight underline-reveal"
                     onClick={(e) => {
                       if (item === 'Home') {
                         e.preventDefault();
@@ -699,7 +699,7 @@ export default function Home() {
                         }
                         setMobileMenuOpen(false);
                       }}
-                      className="py-2 text-gray-700 hover:text-purple-600 transition"
+                      className="py-2 text-gray-700 hover:text-purple-600 transition underline-reveal"
                     >
                       {item}
                     </a>
@@ -2803,7 +2803,7 @@ export default function Home() {
                 {contextSlug === 'training-services' && "Let&apos;s design a training program for your team"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all">
+                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all underline-reveal">
                   {contextSlug === 'development-services' && 'Start Your Project'}
                   {contextSlug === 'consulting-services' && 'Schedule Consultation'}
                   {contextSlug === 'training-services' && 'Explore Training'}

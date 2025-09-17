@@ -235,3 +235,157 @@ a {
 .animate-spin-slow {
   animation: spin 8s linear infinite;
 }
+
+/* Underline Reveal Effects */
+.underline-reveal {
+  position: relative;
+  text-decoration: none !important;
+}
+
+.underline-reveal::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.underline-reveal:hover::after {
+  transform: translateX(0);
+}
+
+/* Gradient underline variant */
+.underline-reveal-gradient {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-reveal-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.underline-reveal-gradient:hover::after {
+  transform: translateX(0);
+}
+
+/* Center-out underline variant */
+.underline-reveal-center {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-reveal-center::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.underline-reveal-center:hover::after {
+  width: 100%;
+}
+
+/* Thick underline variant for emphasis */
+.underline-reveal-thick {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-reveal-thick::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: currentColor;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.underline-reveal-thick:hover::after {
+  transform: translateX(0);
+}
+
+/* Ensure underlines are hidden by default and only show on hover */
+.underline-reveal::after {
+  background: currentColor;
+  height: 2px;
+  transform: translateX(-100%) !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.underline-reveal:hover::after {
+  background: #8b5cf6;
+  height: 3px;
+  transform: translateX(0) !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.underline-reveal-gradient::after {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+  height: 2px;
+  transform: translateX(-100%) !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.underline-reveal-gradient:hover::after {
+  transform: translateX(0) !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.underline-reveal-center::after {
+  background: currentColor;
+  height: 2px;
+  width: 0 !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.underline-reveal-center:hover::after {
+  background: #8b5cf6;
+  height: 3px;
+  width: 100% !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.underline-reveal-thick::after {
+  background: currentColor;
+  height: 3px;
+  transform: translateX(-100%) !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.underline-reveal-thick:hover::after {
+  background: #8b5cf6;
+  transform: translateX(0) !important;
+  opacity: 1;
+  visibility: visible;
+}
