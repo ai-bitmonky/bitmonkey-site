@@ -104,33 +104,3 @@ a {
     transform: translateY(0);
   }
 }
-
-/* Dynamic Gradient Classes */
-.gradient-box {
-  @apply bg-gradient-to-br from-white/10 via-purple-50/20 to-pink-50/10 backdrop-blur-xl rounded-2xl border border-white/40 shadow-2xl hover:shadow-3xl hover:shadow-purple-500/10 hover:scale-[1.02] transition-all duration-500;
-}
-
-.gradient-button {
-  @apply bg-gradient-to-br from-purple-600 via-purple-500 to-pink-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 relative overflow-hidden;
-}
-
-.gradient-button::before {
-  content: '';
-  @apply absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 transition-opacity duration-300;
-}
-
-.gradient-button:hover::before {
-  @apply opacity-100;
-}
-
-.gradient-card {
-  @apply bg-gradient-to-br from-white to-gray-50/50 rounded-xl border border-gray-100 shadow-lg hover:shadow-xl hover:shadow-purple-500/10 hover:scale-[1.02] transition-all duration-300;
-}
-
-.gradient-text {
-  @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
-}
-
-.gradient-icon {
-  @apply bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300;
-}

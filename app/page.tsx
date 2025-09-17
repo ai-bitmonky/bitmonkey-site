@@ -92,21 +92,16 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav
-        className="fixed top-0 w-full z-[60] transition-all duration-300 bg-gradient-to-r from-white/95 via-purple-50/90 to-white/95 backdrop-blur-md shadow-xl border-b border-white/20"
-        style={{
-          height: '88px',
-          background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 50%, rgba(255,255,255,0.95) 100%)',
-          boxShadow: '0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.1)'
-        }}
+        className="fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg"
+        style={{height: '88px'}}
       >
         <div className="mx-auto max-w-7xl px-6 h-full" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="flex items-center justify-between h-full">
             {/* Brand */}
             <div className="flex items-center gap-3">
               {/* Logo placeholder */}
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 via-purple-500 to-pink-600 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="text-white font-bold text-lg relative z-10">BM</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">BM</span>
               </div>
               <div>
                 <h1 className="text-xl font-extrabold tracking-tight text-gray-900">
@@ -115,13 +110,13 @@ export default function Home() {
                 <p className="text-xs text-gray-500 mt-1">Friday, September 12 • New Delhi</p>
 
                 <div className="flex items-center gap-3 mt-2 text-gray-600">
-                  <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border border-gray-200 bg-gradient-to-br from-gray-50 to-white hover:from-purple-50 hover:to-pink-50 hover:border-purple-200 hover:shadow-md hover:scale-105 transition-all duration-300">
+                  <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition">
                     <Menu className="w-3 h-3" />
                   </button>
-                  <a href="#" className="p-1 rounded-md hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 hover:text-blue-600 hover:shadow-sm transition-all duration-300"><Twitter className="w-3 h-3" /></a>
-                  <a href="#" className="p-1 rounded-md hover:bg-gradient-to-br hover:from-pink-50 hover:to-pink-100 hover:text-pink-600 hover:shadow-sm transition-all duration-300"><Instagram className="w-3 h-3" /></a>
-                  <a href="#" className="p-1 rounded-md hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 hover:text-gray-900 hover:shadow-sm transition-all duration-300"><Github className="w-3 h-3" /></a>
-                  <a href="#" className="p-1 rounded-md hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 hover:text-blue-700 hover:shadow-sm transition-all duration-300"><Linkedin className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition"><Twitter className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition"><Instagram className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition"><Github className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition"><Linkedin className="w-3 h-3" /></a>
                 </div>
               </div>
             </div>
@@ -444,7 +439,7 @@ export default function Home() {
                   <a
                     key={item}
                     href={`#${id}`}
-                    className="text-sm font-medium text-gray-700 hover:text-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:bg-clip-text transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gradient-to-br hover:from-purple-50/50 hover:to-pink-50/50 hover:shadow-md hover:scale-105"
+                    className="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors"
                     onClick={(e) => {
                       if (item === 'Home') {
                         e.preventDefault();
@@ -658,10 +653,7 @@ export default function Home() {
 
       {/* Hero Section */}
       {/* Hero Section (Avada-style split layout) */}
-    <section id="home" className="relative bg-gradient-to-br from-white via-purple-50/30 to-pink-50/20" style={{
-      paddingTop: '104px',
-      background: 'linear-gradient(135deg, #ffffff 0%, #faf7ff 25%, #f8fafc 50%, #fef7f7 75%, #ffffff 100%)'
-    }}> 
+    <section id="home" style={{paddingTop: '104px'}}> 
         <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left rail column (adds outer padding from the page edge) */}
@@ -671,7 +663,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
 
               {/* Service quick menu: Development */}
-              <div className="bg-gradient-to-br from-white/10 via-purple-50/20 to-pink-50/10 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/40 shadow-2xl hover:shadow-3xl hover:shadow-purple-500/10 hover:scale-[1.02] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/30 before:via-purple-100/20 before:to-pink-100/10 before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/10 after:to-pink-500/8 after:rounded-2xl after:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/5 after:to-pink-500/5 after:rounded-2xl after:pointer-events-none" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -824,9 +816,7 @@ export default function Home() {
       {!contextSlug ? (
         <>
           {/* Our Services Section */}
-          <section id="our-services" className="pt-32 pb-24 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden" style={{marginTop: '4rem'}}>
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500"></div>
+          <section id="our-services" className="pt-32 pb-24 bg-white" style={{marginTop: '4rem'}}>
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
@@ -843,12 +833,10 @@ export default function Home() {
                   </p>
 
                   <div className="space-y-4 scroll-animate fade-in-up">
-                    <div className="flex items-start gap-3 scroll-animate fade-in-up-delay-1000 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-indigo-50/30 border border-blue-100/50 hover:shadow-lg hover:shadow-blue-500/10 hover:scale-[1.02] transition-all duration-300">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center shadow-md">
-                        <CheckCircle className="w-5 h-5 text-white" />
-                      </div>
+                    <div className="flex items-start gap-3 scroll-animate fade-in-up-delay-1000">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
-                        <h4 className="font-semibold bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent">Development Services</h4>
+                        <h4 className="font-semibold text-gray-900">Development Services</h4>
                         <p className="text-sm text-gray-600">Modern applications with cutting-edge technologies</p>
 
                         {/* Mobile service menu */}
@@ -962,12 +950,10 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 rounded-xl bg-gradient-to-r from-purple-50/50 to-pink-50/30 border border-purple-100/50 hover:shadow-lg hover:shadow-purple-500/10 hover:scale-[1.02] transition-all duration-300">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center shadow-md">
-                        <CheckCircle className="w-5 h-5 text-white" />
-                      </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
-                        <h4 className="font-semibold bg-gradient-to-r from-purple-700 to-pink-700 bg-clip-text text-transparent">Consulting Services</h4>
+                        <h4 className="font-semibold text-gray-900">Consulting Services</h4>
                         <p className="text-sm text-gray-600">Strategic guidance for digital transformation</p>
 
                         {/* Mobile service menu */}
@@ -1055,12 +1041,10 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 rounded-xl bg-gradient-to-r from-green-50/50 to-teal-50/30 border border-green-100/50 hover:shadow-lg hover:shadow-green-500/10 hover:scale-[1.02] transition-all duration-300">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center shadow-md">
-                        <CheckCircle className="w-5 h-5 text-white" />
-                      </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div className="w-full">
-                        <h4 className="font-semibold bg-gradient-to-r from-green-700 to-teal-700 bg-clip-text text-transparent">Training Services</h4>
+                        <h4 className="font-semibold text-gray-900">Training Services</h4>
                         <p className="text-sm text-gray-600">Expert-led training programs and certifications</p>
 
                         {/* Mobile service menu */}
