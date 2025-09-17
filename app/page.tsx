@@ -16,6 +16,7 @@ import GeometricAccent from './components/GeometricShapes';
 import BentoGrid from './components/BentoGrid';
 import TiltCard from './components/TiltCard';
 import AnimatedCounter from './components/AnimatedCounter';
+import InteractiveCaseStudy from './components/InteractiveCaseStudy';
 
 
 export default function Home() {
@@ -543,7 +544,7 @@ export default function Home() {
                         setContextSlug(null);
                         // Wait for re-render before scrolling
                         setTimeout(() => {
-                          const element = document.getElementById('contact');
+                          const element = document.getElementById('case-studies');
                           if (element) {
                             const elementPosition = element.offsetTop;
                             const offsetPosition = elementPosition - 80; // Account for nav height and positioning
@@ -663,7 +664,7 @@ export default function Home() {
                           setContextSlug(null);
                           // Wait for re-render before scrolling
                           setTimeout(() => {
-                            const element = document.getElementById('contact');
+                            const element = document.getElementById('case-studies');
                             if (element) {
                               const elementPosition = element.offsetTop;
                               const offsetPosition = elementPosition - 80; // Account for nav height and positioning
@@ -1282,6 +1283,144 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Interactive Case Study Galleries */}
+            <div id="case-studies" className="mt-16 pt-8">
+              <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+                <h3 className="text-3xl font-bold text-center mb-12">Interactive Case Studies</h3>
+                <InteractiveCaseStudy caseStudies={[
+                {
+                  id: 'ecommerce-redesign',
+                  title: 'E-commerce Platform Redesign',
+                  client: 'TechStore Plus',
+                  category: 'Web Design',
+                  summary: 'Complete UI/UX overhaul resulting in 40% increase in conversions',
+                  beforeImage: '/portfolio/ecommerce-before.jpg',
+                  afterImage: '/portfolio/ecommerce-after.jpg',
+                  steps: [
+                    {
+                      title: 'Research & Analysis',
+                      description: 'Conducted user research and competitive analysis to identify pain points',
+                      metrics: [
+                        { label: 'User Interviews', value: '24', color: 'text-blue-600' },
+                        { label: 'Competitors Analyzed', value: '8', color: 'text-green-600' },
+                        { label: 'Pain Points Identified', value: '12', color: 'text-red-600' }
+                      ]
+                    },
+                    {
+                      title: 'Design System Creation',
+                      description: 'Built a comprehensive design system with reusable components',
+                      metrics: [
+                        { label: 'Components Created', value: '45', color: 'text-purple-600' },
+                        { label: 'Color Variations', value: '18', color: 'text-indigo-600' },
+                        { label: 'Typography Scales', value: '6', color: 'text-pink-600' }
+                      ]
+                    },
+                    {
+                      title: 'Implementation & Testing',
+                      description: 'Developed responsive interface with extensive A/B testing',
+                      metrics: [
+                        { label: 'Pages Redesigned', value: '23', color: 'text-orange-600' },
+                        { label: 'A/B Tests Run', value: '15', color: 'text-cyan-600' },
+                        { label: 'Performance Score', value: '94', color: 'text-green-600' }
+                      ]
+                    }
+                  ],
+                  results: [
+                    { metric: 'Conversion Rate', value: '+40%', improvement: '2.1% to 2.9%' },
+                    { metric: 'Page Load Speed', value: '+65%', improvement: '4.2s to 1.5s' },
+                    { metric: 'User Satisfaction', value: '+85%', improvement: '3.2/5 to 4.7/5' }
+                  ]
+                },
+                {
+                  id: 'mobile-app-development',
+                  title: 'Mobile App Development',
+                  client: 'FitTrack Pro',
+                  category: 'Mobile',
+                  summary: 'Custom fitness tracking app with real-time analytics',
+                  beforeImage: '/portfolio/mobile-before.jpg',
+                  afterImage: '/portfolio/mobile-after.jpg',
+                  steps: [
+                    {
+                      title: 'Requirements Gathering',
+                      description: 'Defined feature set and technical requirements with stakeholders',
+                      metrics: [
+                        { label: 'Features Defined', value: '32', color: 'text-blue-600' },
+                        { label: 'User Stories', value: '68', color: 'text-green-600' },
+                        { label: 'Technical Specs', value: '15', color: 'text-purple-600' }
+                      ]
+                    },
+                    {
+                      title: 'Development & Integration',
+                      description: 'Built native iOS/Android apps with cloud synchronization',
+                      metrics: [
+                        { label: 'API Endpoints', value: '28', color: 'text-orange-600' },
+                        { label: 'Database Tables', value: '12', color: 'text-cyan-600' },
+                        { label: 'Third-party Integrations', value: '7', color: 'text-pink-600' }
+                      ]
+                    },
+                    {
+                      title: 'Launch & Optimization',
+                      description: 'App store deployment with continuous performance monitoring',
+                      metrics: [
+                        { label: 'Beta Testers', value: '150', color: 'text-indigo-600' },
+                        { label: 'Bug Fixes', value: '23', color: 'text-red-600' },
+                        { label: 'Performance Optimizations', value: '8', color: 'text-green-600' }
+                      ]
+                    }
+                  ],
+                  results: [
+                    { metric: 'App Store Rating', value: '4.8/5', improvement: 'New launch' },
+                    { metric: 'Daily Active Users', value: '12K+', improvement: 'Month 1' },
+                    { metric: 'User Retention', value: '78%', improvement: '30-day retention' }
+                  ]
+                },
+                {
+                  id: 'enterprise-dashboard',
+                  title: 'Enterprise Analytics Dashboard',
+                  client: 'DataCorp Solutions',
+                  category: 'Web App',
+                  summary: 'Real-time business intelligence platform with advanced visualizations',
+                  beforeImage: '/portfolio/dashboard-before.jpg',
+                  afterImage: '/portfolio/dashboard-after.jpg',
+                  steps: [
+                    {
+                      title: 'Data Architecture Design',
+                      description: 'Designed scalable data pipeline and storage solution',
+                      metrics: [
+                        { label: 'Data Sources', value: '18', color: 'text-blue-600' },
+                        { label: 'Processing Speed', value: '10x', color: 'text-green-600' },
+                        { label: 'Storage Efficiency', value: '60%', color: 'text-purple-600' }
+                      ]
+                    },
+                    {
+                      title: 'Dashboard Development',
+                      description: 'Built interactive charts and real-time monitoring tools',
+                      metrics: [
+                        { label: 'Chart Types', value: '15', color: 'text-orange-600' },
+                        { label: 'Real-time Metrics', value: '45', color: 'text-cyan-600' },
+                        { label: 'Custom Widgets', value: '22', color: 'text-pink-600' }
+                      ]
+                    },
+                    {
+                      title: 'Security & Deployment',
+                      description: 'Enterprise-grade security implementation and cloud deployment',
+                      metrics: [
+                        { label: 'Security Audits', value: '3', color: 'text-red-600' },
+                        { label: 'Compliance Standards', value: '5', color: 'text-indigo-600' },
+                        { label: 'Uptime SLA', value: '99.9%', color: 'text-green-600' }
+                      ]
+                    }
+                  ],
+                  results: [
+                    { metric: 'Data Processing Time', value: '-80%', improvement: '2 hours to 24 minutes' },
+                    { metric: 'Decision Making Speed', value: '+120%', improvement: 'Real-time insights' },
+                    { metric: 'Operational Efficiency', value: '+45%', improvement: 'Automated reporting' }
+                  ]
+                }
+              ]} />
+              </div>
+            </div>
             </GeometricAccent>
           </section>
 
@@ -1297,10 +1436,6 @@ export default function Home() {
                       <span className="highlight-reveal">Why BitMonkey?</span>
                     </h2>
                   </div>
-
-                  <p className="text-lg text-gray-600 leading-relaxed scroll-animate fade-in-up">
-                    Customer-centric, data-driven approach with agile delivery and next-gen tech stack for fast outcomes.
-                  </p>
 
                   <div className="space-y-4 scroll-animate fade-in-up-delay-1000">
                     <div className="flex items-start gap-3">
@@ -2683,7 +2818,7 @@ export default function Home() {
           )}
 
           {/* Case Studies Section - Dynamic based on service type */}
-          <section id="case-studies" className="pt-80 pb-24 bg-white" style={{marginTop: '4rem'}}>
+          <section className="pt-80 pb-24 bg-white" style={{marginTop: '4rem'}}>
             <div className="container mx-auto max-w-7xl px-6" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
