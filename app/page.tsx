@@ -9,7 +9,8 @@ import {
   Smartphone, Database, Shield, TestTube,
   Settings, Briefcase, Building, Map,
   Lock, GraduationCap, Server, Brain
-} from 'lucide-react';\nimport ScrollAnimation from './components/ScrollAnimation';
+} from 'lucide-react';
+import ScrollAnimation from './components/ScrollAnimation';
 
 
 export default function Home() {
