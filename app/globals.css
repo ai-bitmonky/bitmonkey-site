@@ -1907,3 +1907,274 @@ a {
     transition: none;
   }
 }
+
+/* Liquid Image Transitions */
+@keyframes liquid-flow {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  50% {
+    transform: translateX(0%) skewX(0deg);
+  }
+  100% {
+    transform: translateX(100%) skewX(15deg);
+  }
+}
+
+@keyframes liquid-wave {
+  0% {
+    transform: translateY(100%) scale(1, 0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%) scale(1, 1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%) scale(1, 0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes liquid-ripple {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(3) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes liquid-blob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: scale(1.05) rotate(90deg);
+  }
+  50% {
+    border-radius: 50% 30% 60% 70% / 30% 50% 40% 70%;
+    transform: scale(0.95) rotate(180deg);
+  }
+  75% {
+    border-radius: 70% 50% 40% 30% / 70% 40% 60% 50%;
+    transform: scale(1.02) rotate(270deg);
+  }
+}
+
+@keyframes liquid-morph {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  25% {
+    clip-path: polygon(0% 0%, 90% 10%, 100% 90%, 10% 100%);
+  }
+  50% {
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 90%);
+  }
+  75% {
+    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes liquid-spiral {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+    transform: rotate(0deg);
+  }
+  50% {
+    clip-path: circle(70% at 50% 50%);
+    transform: rotate(180deg);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+    transform: rotate(360deg);
+  }
+}
+
+/* Liquid Image Container */
+.liquid-image-container {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.liquid-image-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity, filter;
+}
+
+.liquid-image-layer img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-out;
+}
+
+/* Liquid Effect Variants */
+.liquid-effect-wave .liquid-overlay {
+  animation: liquid-wave 2s ease-in-out infinite;
+}
+
+.liquid-effect-ripple .liquid-overlay {
+  animation: liquid-ripple 1.5s ease-out infinite;
+}
+
+.liquid-effect-blob .liquid-overlay {
+  animation: liquid-blob 4s ease-in-out infinite;
+}
+
+.liquid-effect-morph .liquid-overlay {
+  animation: liquid-morph 3s ease-in-out infinite;
+}
+
+.liquid-effect-flow .liquid-overlay {
+  animation: liquid-flow 2s ease-in-out infinite;
+}
+
+.liquid-effect-spiral .liquid-overlay {
+  animation: liquid-spiral 3s ease-in-out infinite;
+}
+
+/* Liquid Overlay Effects */
+.liquid-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg,
+    rgba(139, 92, 246, 0.1),
+    rgba(79, 70, 229, 0.05),
+    transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
+
+/* Hover States */
+.liquid-image-container:hover .liquid-overlay {
+  opacity: 0.3;
+}
+
+.liquid-image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Transition States */
+.liquid-transitioning .liquid-overlay {
+  opacity: 0.6;
+}
+
+.liquid-transitioning img {
+  filter: blur(1px);
+}
+
+/* Distortion Effects */
+.liquid-distortion {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.liquid-image-container:hover .liquid-distortion {
+  opacity: 1;
+}
+
+/* Loading State */
+.liquid-loading {
+  background: linear-gradient(45deg,
+    #f0f0f0 25%,
+    transparent 25%,
+    transparent 75%,
+    #f0f0f0 75%,
+    #f0f0f0),
+    linear-gradient(45deg,
+    #f0f0f0 25%,
+    transparent 25%,
+    transparent 75%,
+    #f0f0f0 75%,
+    #f0f0f0);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  animation: liquid-loading-shimmer 1s linear infinite;
+}
+
+@keyframes liquid-loading-shimmer {
+  0% {
+    background-position: 0 0, 10px 10px;
+  }
+  100% {
+    background-position: 20px 20px, 30px 30px;
+  }
+}
+
+/* Responsive Liquid Transitions */
+@media (max-width: 768px) {
+  .liquid-image-container {
+    overflow: hidden;
+  }
+
+  .liquid-effect-wave,
+  .liquid-effect-ripple,
+  .liquid-effect-blob,
+  .liquid-effect-morph,
+  .liquid-effect-flow,
+  .liquid-effect-spiral {
+    animation-duration: 2s;
+  }
+
+  .liquid-image-layer img {
+    transform: none !important;
+  }
+}
+
+/* High Performance Mode */
+@media (max-width: 480px) {
+  .liquid-overlay {
+    display: none;
+  }
+
+  .liquid-distortion {
+    display: none;
+  }
+
+  .liquid-image-container {
+    transform: none !important;
+  }
+}
+
+/* Accessibility for Liquid Transitions */
+@media (prefers-reduced-motion: reduce) {
+  .liquid-effect-wave,
+  .liquid-effect-ripple,
+  .liquid-effect-blob,
+  .liquid-effect-morph,
+  .liquid-effect-flow,
+  .liquid-effect-spiral {
+    animation: none;
+  }
+
+  .liquid-image-layer {
+    transition: opacity 0.3s ease-out;
+  }
+
+  .liquid-loading {
+    animation: none;
+    background: #f0f0f0;
+  }
+}

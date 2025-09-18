@@ -24,6 +24,7 @@ import ParametricLight from './components/ParametricLight';
 import DataSculpture from './components/DataSculpture';
 import SpatialDesign from './components/SpatialDesign';
 import MorphingIcon from './components/MorphingIcon';
+import LiquidImageTransition from './components/LiquidImageTransition';
 
 
 export default function Home() {
