@@ -1936,7 +1936,7 @@ a {
   }
 }
 
-@keyframes liquid-ripple {
+@keyframes liquid-image-ripple {
   0% {
     transform: scale(0) rotate(0deg);
     opacity: 1;
@@ -2501,4 +2501,351 @@ a {
   .gradient-mesh-container {
     filter: none !important;
   }
+}
+
+/* Liquid Button Animations */
+@keyframes liquid-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes liquid-blob {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+  }
+  25% {
+    transform: scale(1.2) translate(10px, -5px);
+  }
+  50% {
+    transform: scale(0.8) translate(-10px, 10px);
+  }
+  75% {
+    transform: scale(1.1) translate(5px, -10px);
+  }
+}
+
+@keyframes liquid-wave {
+  0% {
+    transform: translateX(-100%) skew(-10deg);
+  }
+  100% {
+    transform: translateX(100%) skew(10deg);
+  }
+}
+
+@keyframes liquid-mercury {
+  0%, 100% {
+    border-radius: 50%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 60% 40% 60% 40%;
+    transform: rotate(5deg) scale(1.1);
+  }
+  50% {
+    border-radius: 40% 60% 40% 60%;
+    transform: rotate(-5deg) scale(0.9);
+  }
+  75% {
+    border-radius: 60% 40% 60% 40%;
+    transform: rotate(3deg) scale(1.05);
+  }
+}
+
+@keyframes liquid-deform {
+  0%, 100% {
+    transform: scale(1) skew(0deg);
+  }
+  50% {
+    transform: scale(1.05) skew(2deg);
+  }
+}
+
+@keyframes liquid-morph {
+  0%, 100% {
+    border-radius: 12px;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    border-radius: 20px 8px 20px 8px;
+    transform: scale(1.02) rotate(1deg);
+  }
+  50% {
+    border-radius: 8px 20px 8px 20px;
+    transform: scale(1.05) rotate(-1deg);
+  }
+  75% {
+    border-radius: 16px 12px 16px 12px;
+    transform: scale(1.01) rotate(0.5deg);
+  }
+}
+
+.liquid-button {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  isolation: isolate;
+  will-change: transform, background-color, filter;
+}
+
+.liquid-button:hover {
+  transform: translateY(-1px);
+}
+
+.liquid-button:active {
+  transform: translateY(0);
+}
+
+.liquid-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+}
+
+.liquid-button:disabled {
+  transform: none !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Liquid Button Variants */
+.liquid-button-primary {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  color: white;
+  border: none;
+}
+
+.liquid-button-primary:hover {
+  background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+.liquid-button-secondary {
+  background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+  color: white;
+  border: none;
+}
+
+.liquid-button-accent {
+  background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+  color: white;
+  border: none;
+}
+
+.liquid-button-accent:hover {
+  background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+}
+
+.liquid-button-ghost {
+  background: transparent;
+  color: #374151;
+  border: 2px solid #E5E7EB;
+}
+
+.liquid-button-ghost:hover {
+  background: #F3F4F6;
+  border-color: #D1D5DB;
+}
+
+.liquid-button-gradient {
+  background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 50%, #10B981 100%);
+  background-size: 200% 200%;
+  animation: liquid-gradient 3s ease infinite;
+  color: white;
+  border: none;
+}
+
+.liquid-button-gradient:hover {
+  animation-duration: 1.5s;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+@keyframes liquid-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Liquid Effect Layers */
+.liquid-effect-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Responsive Liquid Buttons */
+@media (max-width: 768px) {
+  .liquid-button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .liquid-button:active {
+    transform: scale(0.98);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .liquid-button {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .liquid-button {
+    animation: none;
+    transition: background-color 200ms ease;
+  }
+
+  .liquid-button:hover {
+    transform: none;
+  }
+
+  .liquid-button:active {
+    transform: none;
+  }
+
+  /* Liquid animations disabled for reduced motion - let the main definitions handle it */
+}
+
+/* Realistic Layered Shadow System */
+.shadow-realistic-sm {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    0 1px 1px rgba(0, 0, 0, 0.24),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-realistic {
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24),
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.10);
+}
+
+.shadow-realistic-lg {
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24),
+    0 8px 12px rgba(0, 0, 0, 0.20),
+    0 16px 24px rgba(0, 0, 0, 0.15),
+    0 24px 32px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-realistic-xl {
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.25),
+    0 16px 32px rgba(0, 0, 0, 0.15),
+    0 32px 64px rgba(0, 0, 0, 0.10),
+    0 48px 96px rgba(0, 0, 0, 0.05);
+}
+
+/* Colored Shadow Variants */
+.shadow-realistic-purple {
+  box-shadow:
+    0 1px 3px rgba(139, 92, 246, 0.12),
+    0 1px 2px rgba(139, 92, 246, 0.24),
+    0 4px 8px rgba(139, 92, 246, 0.15),
+    0 8px 16px rgba(139, 92, 246, 0.10);
+}
+
+.shadow-realistic-blue {
+  box-shadow:
+    0 1px 3px rgba(59, 130, 246, 0.12),
+    0 1px 2px rgba(59, 130, 246, 0.24),
+    0 4px 8px rgba(59, 130, 246, 0.15),
+    0 8px 16px rgba(59, 130, 246, 0.10);
+}
+
+.shadow-realistic-green {
+  box-shadow:
+    0 1px 3px rgba(16, 185, 129, 0.12),
+    0 1px 2px rgba(16, 185, 129, 0.24),
+    0 4px 8px rgba(16, 185, 129, 0.15),
+    0 8px 16px rgba(16, 185, 129, 0.10);
+}
+
+/* Hover Enhanced Shadows */
+.shadow-realistic:hover,
+.shadow-realistic-hover:hover {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.30),
+    0 8px 16px rgba(0, 0, 0, 0.20),
+    0 16px 24px rgba(0, 0, 0, 0.15),
+    0 24px 32px rgba(0, 0, 0, 0.10);
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shadow-realistic-lg:hover,
+.shadow-realistic-lg-hover:hover {
+  box-shadow:
+    0 8px 12px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.30),
+    0 16px 24px rgba(0, 0, 0, 0.25),
+    0 32px 48px rgba(0, 0, 0, 0.20),
+    0 48px 64px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Neumorphism Shadows */
+.shadow-neumorphism {
+  box-shadow:
+    8px 8px 16px rgba(0, 0, 0, 0.2),
+    -8px -8px 16px rgba(255, 255, 255, 0.7);
+}
+
+.shadow-neumorphism-inset {
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+}
+
+/* Transition Classes */
+.shadow-transition {
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shadow-transition-fast {
+  transition: box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation Classes */
+@keyframes shadow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 1px 2px rgba(0, 0, 0, 0.24),
+      0 4px 8px rgba(0, 0, 0, 0.15),
+      0 8px 16px rgba(0, 0, 0, 0.10);
+  }
+  50% {
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.15),
+      0 2px 4px rgba(0, 0, 0, 0.30),
+      0 8px 16px rgba(0, 0, 0, 0.20),
+      0 16px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.shadow-pulse {
+  animation: shadow-pulse 2s ease-in-out infinite;
 }

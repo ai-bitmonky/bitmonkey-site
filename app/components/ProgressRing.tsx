@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 
 interface ProgressRingProps {
   progress: number; // 0-100
@@ -38,6 +38,11 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (animatedProgress / 100) * circumference;
+
+  // Generate a stable ID for the gradient
+  const gradientId = useMemo(() => {
+    return `gradient-${progress}-${size}-${color.replace('#', '')}-${strokeWidth}`;
+  }, [progress, size, color, strokeWidth]);
 
   useEffect(() => {
     if (!animated) {
@@ -99,7 +104,7 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
         }}
       >
         <defs>
-          <linearGradient id={`gradient-${Math.random().toString(36).substr(2, 9)}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor={color} />
             <stop offset="100%" stopColor={color + '80'} />
           </linearGradient>
@@ -121,7 +126,7 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
           cx={size / 2}
           cy={size / 2}
           r={radius}
-          stroke={`url(#gradient-${Math.random().toString(36).substr(2, 9)})`}
+          stroke={`url(#${gradientId})`}
           strokeWidth={strokeWidth}
           fill="transparent"
           strokeLinecap="round"
@@ -217,7 +222,7 @@ export const ProgressRingGroup: React.FC<ProgressRingGroupProps> = ({
   description
 }) => {
   return (
-    <div className={`bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 ${className}`}>
+    <div className={`bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-realistic shadow-transition border border-white/20 ${className}`}>
       {title && (
         <h4 className="text-sm font-medium text-gray-800 mb-2 text-center">{title}</h4>
       )}

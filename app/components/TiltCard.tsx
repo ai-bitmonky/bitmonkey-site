@@ -97,7 +97,7 @@ export default function TiltCard({
   return (
     <div
       ref={cardRef}
-      className={`relative transition-all duration-200 ease-out transform-gpu ${className}`}
+      className={`relative transition-all duration-200 ease-out transform-gpu shadow-realistic shadow-transition ${className}`}
       style={{
         transformStyle: 'preserve-3d',
         willChange: 'transform'

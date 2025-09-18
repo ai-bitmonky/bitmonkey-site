@@ -76,11 +76,11 @@ export default function FloatingUIPanel({
 
   const currentIntensity = intensityMap[animation.intensity || 'medium'];
 
-  // Shadow intensity mapping
+  // Shadow intensity mapping - Enhanced with layered shadows
   const shadowMap = {
-    light: '0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
-    medium: '0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1)',
-    heavy: '0 20px 50px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.15)'
+    light: '0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.08)',
+    medium: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.10)',
+    heavy: '0 4px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24), 0 8px 12px rgba(0, 0, 0, 0.20), 0 16px 24px rgba(0, 0, 0, 0.15), 0 24px 32px rgba(0, 0, 0, 0.08)'
   };
 
   // Default styles with glass effect

@@ -65,14 +65,14 @@ export const AnimatedChart: React.FC<AnimatedChartProps> = ({
     return (
       <div
         ref={chartRef}
-        className={`bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-white/20 ${className}`}
+        className={`bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-realistic shadow-transition border border-white/20 ${className}`}
         style={{ width, height }}
       >
         <div className="flex items-end gap-3 h-full pb-12">
           {data.map((item, index) => (
             <div key={item.label} className="flex flex-col items-center flex-1">
               <div
-                className="w-full min-w-[40px] rounded-t-lg transition-all ease-out relative overflow-hidden shadow-lg"
+                className="w-full min-w-[40px] rounded-t-lg transition-all ease-out relative overflow-hidden shadow-realistic-sm"
                 style={{
                   height: animated ? `${Math.max(20, (item.value / maxValue) * 120)}px` : '0px',
                   minHeight: animated ? '20px' : '0px',
@@ -136,7 +136,7 @@ export const AnimatedChart: React.FC<AnimatedChartProps> = ({
     return (
       <div
         ref={chartRef}
-        className={`bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-white/20 ${className}`}
+        className={`bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-realistic shadow-transition border border-white/20 ${className}`}
         style={{ width, height }}
       >
         <svg width={width - 32} height={height - 32} className="overflow-visible">
@@ -222,7 +222,7 @@ export const AnimatedChart: React.FC<AnimatedChartProps> = ({
     return (
       <div
         ref={chartRef}
-        className={`bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-white/20 ${className}`}
+        className={`bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-realistic shadow-transition border border-white/20 ${className}`}
         style={{ width, height }}
       >
         <svg width={width - 32} height={height - 60}>

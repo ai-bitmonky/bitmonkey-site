@@ -31,6 +31,7 @@ import FloatingUIPanel from './components/FloatingUIPanel';
 import LiquidButton from './components/LiquidButton';
 import AnimatedChart from './components/AnimatedChart';
 import { ProgressRing, ProgressRingGroup } from './components/ProgressRing';
+import { ShadowCard, ShadowShowcase } from './components/RealisticShadows';
 
 
 export default function Home() {
@@ -253,14 +254,14 @@ export default function Home() {
 
                       {/* Services Dropdown */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 py-6 pl-6 pr-0 z-50 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none opacity-100 animate-in"
+                        <div className="absolute top-full left-0 transform -translate-x-[15%] mt-2 w-[1000px] bg-white/20 backdrop-blur-lg rounded-2xl shadow-realistic-xl border border-white/30 py-6 pl-6 pr-0 z-50 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none opacity-100 animate-in"
                           style={{
                             animation: 'fadeInUp 0.3s ease-out forwards'
                           }}>
                           <div className="grid gap-3" style={{gridTemplateColumns: '0.211fr 0.218fr 0.165fr'}}>
 
                             {/* Consulting Services - Left Column */}
-                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:bg-white/12 hover:shadow-xl hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/5 before:to-indigo-500/5 before:rounded-xl before:pointer-events-none group">
+                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-realistic hover:bg-white/12 hover:shadow-realistic-lg shadow-transition hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/5 before:to-indigo-500/5 before:rounded-xl before:pointer-events-none group">
                               <h3 className="text-base font-bold text-blue-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10 group-hover:text-blue-700 transition-colors duration-300">
                                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                                   <Briefcase className="w-4 h-4 text-white" />
@@ -273,7 +274,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('digital-transformation');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Target className="w-3 h-3 text-white" />
@@ -288,7 +289,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('enterprise-architecture');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Building className="w-3 h-3 text-white" />
@@ -303,7 +304,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('digital-strategy-roadmaps');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Map className="w-3 h-3 text-white" />
@@ -318,7 +319,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('governance');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Settings className="w-3 h-3 text-white" />
@@ -333,7 +334,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('cloud-advisory');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Cloud className="w-3 h-3 text-white" />
@@ -348,7 +349,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('security-compliance');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Lock className="w-3 h-3 text-white" />
@@ -361,9 +362,9 @@ export default function Home() {
                             </div>
 
                             {/* Development Services - Center Column (Primary) */}
-                            <div className="bg-white/15 backdrop-blur-md rounded-xl p-4 border-2 border-white/30 shadow-xl hover:bg-white/20 hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-purple-500/10 before:to-pink-500/10 before:rounded-xl before:pointer-events-none ring-2 ring-white/20 group">
+                            <div className="bg-white/15 backdrop-blur-md rounded-xl p-4 border-2 border-white/30 shadow-realistic-lg hover:bg-white/20 hover:shadow-realistic-xl hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-purple-500/10 before:to-pink-500/10 before:rounded-xl before:pointer-events-none ring-2 ring-white/20 group">
                               <h3 className="text-lg font-bold text-purple-900 mb-4 flex items-center gap-2 border-b-2 border-white/40 pb-2 relative z-10 group-hover:text-purple-700 transition-colors duration-300">
-                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-realistic group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                                   <Code className="w-5 h-5 text-white" />
                                 </div>
                                 Development Services
@@ -374,7 +375,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('app-dev-modernization');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Code className="w-3 h-3 text-white" />
@@ -389,7 +390,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('cloud-engineering');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Cloud className="w-3 h-3 text-white" />
@@ -404,7 +405,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('ai-ml-automation');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Brain className="w-3 h-3 text-white" />
@@ -419,7 +420,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('data-analytics');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Database className="w-3 h-3 text-white" />
@@ -434,7 +435,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('devsecops');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Shield className="w-3 h-3 text-white" />
@@ -449,7 +450,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('quality-assurance');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <TestTube className="w-3 h-3 text-white" />
@@ -464,7 +465,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('sre-operations');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Server className="w-3 h-3 text-white" />
@@ -479,7 +480,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('center-of-excellence');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Award className="w-3 h-3 text-white" />
@@ -492,7 +493,7 @@ export default function Home() {
                             </div>
 
                             {/* Training Services - Right Column */}
-                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:bg-white/12 hover:shadow-xl hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/5 before:to-teal-500/5 before:rounded-xl before:pointer-events-none group">
+                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-realistic hover:bg-white/12 hover:shadow-realistic-lg shadow-transition hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/5 before:to-teal-500/5 before:rounded-xl before:pointer-events-none group">
                               <h3 className="text-base font-bold text-green-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10 group-hover:text-green-700 transition-colors duration-300">
                                 <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                                   <GraduationCap className="w-4 h-4 text-white" />
@@ -505,7 +506,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('full-stack-developer');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Code className="w-3 h-3 text-white" />
@@ -520,7 +521,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('devops-engineer');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Settings className="w-3 h-3 text-white" />
@@ -535,7 +536,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('cloud-architect');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Cloud className="w-3 h-3 text-white" />
@@ -550,7 +551,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('ai-ml-engineer');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Brain className="w-3 h-3 text-white" />
@@ -565,7 +566,7 @@ export default function Home() {
                                     setServicesDropdownOpen(false);
                                     handleLeftNav('certifications');
                                   }}
-                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
+                                  className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
                                   <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <GraduationCap className="w-3 h-3 text-white" />
@@ -703,7 +704,7 @@ export default function Home() {
 
           {/* Mobile menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
+            <div className="lg:hidden mt-4 bg-white rounded-lg shadow-realistic p-4">
               <div className="flex flex-col">
                 {currentNav.map((item) => {
                   const id = item.toLowerCase().replace(/\s+/g, '-');
@@ -881,7 +882,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
 
               {/* Service quick menu: Development */}
-              <div className="hologram-card cyber-glow bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/5 after:to-pink-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
+              <div className="hologram-card cyber-glow bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-realistic-xl hover:bg-white/10 hover:shadow-realistic-xl shadow-transition transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-purple-500/5 after:to-pink-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -914,7 +915,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Consulting */}
-              <div className="hologram-card iridescent bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-blue-500/5 after:to-indigo-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
+              <div className="hologram-card iridescent bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-realistic-xl hover:bg-white/10 hover:shadow-realistic-xl shadow-transition transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-blue-500/5 after:to-indigo-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -936,7 +937,7 @@ export default function Home() {
               </div>
 
               {/* Service quick menu: Training */}
-              <div className="hologram-card prism-effect bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-2xl hover:bg-white/10 hover:shadow-3xl transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-green-500/5 after:to-teal-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
+              <div className="hologram-card prism-effect bg-white/5 backdrop-blur-xl rounded-2xl p-5 md:p-6 relative w-full border border-white/30 shadow-realistic-xl hover:bg-white/10 hover:shadow-realistic-xl shadow-transition transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/10 before:to-transparent before:rounded-2xl before:pointer-events-none after:absolute after:inset-[1px] after:bg-gradient-to-br after:from-green-500/5 after:to-teal-500/5 after:rounded-2xl after:pointer-events-none magnetic-pull hover-highlight content-glow" style={{paddingLeft: '0.75rem'}}>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -1430,7 +1431,7 @@ export default function Home() {
                   </div>
 
                   <div className="pt-4">
-                    <button className="hologram-button px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all relative group overflow-hidden">
+                    <button className="hologram-button px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-realistic transition-all relative group overflow-hidden">
                       <span className="hologram-text" data-text="Explore Our Services">Explore Our Services</span>
                       <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <NeuroLoader type="neuron-fire" size="sm" color="#FFFFFF" speed="fast" />
@@ -1442,7 +1443,7 @@ export default function Home() {
                 {/* Morphing Image Content - 70% */}
                 <div className="lg:col-span-7">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="hologram-video relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover aspect-video">
+                    <div className="hologram-video relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover aspect-video">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay
@@ -1560,7 +1561,7 @@ export default function Home() {
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7 scroll-animate fade-in-right">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="hologram-video hologram-border relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
+                    <div className="hologram-video hologram-border relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay
@@ -1866,7 +1867,7 @@ export default function Home() {
                 {/* Video Content - 70% */}
                 <div className="lg:col-span-7">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="hologram-video cyber-glow relative rounded-3xl overflow-hidden shadow-2xl bg-white card-3d-shadow gradient-border gradient-border-hover">
+                    <div className="hologram-video cyber-glow relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay
@@ -2103,7 +2104,7 @@ export default function Home() {
                 {/* Button Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {/* Ripple Effect Button */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Ripple Effect</h4>
                     <LiquidButton
                       variant="primary"
@@ -2119,7 +2120,7 @@ export default function Home() {
                   </div>
 
                   {/* Mercury Effect Button */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Mercury Effect</h4>
                     <LiquidButton
                       variant="accent"
@@ -2135,7 +2136,7 @@ export default function Home() {
                   </div>
 
                   {/* Blob Effect Button */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Blob Effect</h4>
                     <LiquidButton
                       variant="gradient"
@@ -2151,7 +2152,7 @@ export default function Home() {
                   </div>
 
                   {/* Wave Effect Button */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Wave Effect</h4>
                     <LiquidButton
                       variant="secondary"
@@ -2167,7 +2168,7 @@ export default function Home() {
                   </div>
 
                   {/* Deform Effect Button */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Deform Effect</h4>
                     <LiquidButton
                       variant="primary"
@@ -2183,7 +2184,7 @@ export default function Home() {
                   </div>
 
                   {/* Ghost with Morph Effect Button */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Morph Effect</h4>
                     <LiquidButton
                       variant="ghost"
@@ -2200,7 +2201,7 @@ export default function Home() {
                 </div>
 
                 {/* CTA Section with Large Liquid Button */}
-                <div className="mt-12 p-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl">
+                <div className="mt-12 p-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl shadow-realistic-lg shadow-transition">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Ready to Experience Liquid Interactions?</h4>
                   <p className="text-gray-600 mb-6">Enhance your user interface with cutting-edge liquid button effects</p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -2304,7 +2305,7 @@ export default function Home() {
                   {/* Individual Progress Rings */}
                   <div className="text-center">
                     <h4 className="text-sm font-medium text-gray-800 mb-4">Project Completion</h4>
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20">
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-realistic shadow-transition border border-white/20">
                       <ProgressRing
                         progress={87}
                         size={120}
@@ -2319,7 +2320,7 @@ export default function Home() {
 
                   <div className="text-center">
                     <h4 className="text-sm font-medium text-gray-800 mb-4">Code Quality</h4>
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20">
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-realistic shadow-transition border border-white/20">
                       <ProgressRing
                         progress={95}
                         size={120}
@@ -2334,7 +2335,7 @@ export default function Home() {
 
                   <div className="text-center">
                     <h4 className="text-sm font-medium text-gray-800 mb-4">Performance Score</h4>
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20">
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-realistic shadow-transition border border-white/20">
                       <ProgressRing
                         progress={92}
                         size={120}
@@ -2380,20 +2381,29 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Realistic Shadows Showcase */}
+              <div className="mt-16 scroll-animate fade-in-up">
+                <ShadowShowcase
+                  title="Realistic Shadow Effects"
+                  description="Advanced shadow systems with layered depth, color variations, and interactive hover states for authentic material design"
+                  className="px-4"
+                />
+              </div>
+
               {/* Technical Details */}
               <div className="mt-16 text-center scroll-animate fade-in-up">
                 <div className="max-w-4xl mx-auto">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Technical Implementation</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200 shadow-realistic shadow-transition">
                       <div className="text-purple-600 font-medium mb-2">React + TypeScript</div>
                       <p className="text-gray-600">Modern component architecture with full type safety</p>
                     </div>
-                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200 shadow-realistic shadow-transition">
                       <div className="text-blue-600 font-medium mb-2">CSS Transforms</div>
                       <p className="text-gray-600">Hardware-accelerated 3D effects and animations</p>
                     </div>
-                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200 shadow-realistic shadow-transition">
                       <div className="text-green-600 font-medium mb-2">Performance</div>
                       <p className="text-gray-600">RequestAnimationFrame with viewport optimization</p>
                     </div>
@@ -2786,7 +2796,7 @@ export default function Home() {
                 </div>
 
                 {/* Benefits Section */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg mb-8">
+                <div className="bg-white p-8 rounded-2xl shadow-realistic mb-8">
                   <h3 className="text-2xl font-bold mb-6 text-center">COE Benefits</h3>
                   <div className="grid md:grid-cols-3 gap-8">
                     <div className="text-center">
@@ -2827,7 +2837,7 @@ export default function Home() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* App Dev & Modernization */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Code className="w-6 h-6" />
                   </div>
@@ -2842,7 +2852,7 @@ export default function Home() {
                 </div>
 
                 {/* Cloud Engineering */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Cloud className="w-6 h-6" />
                   </div>
@@ -2857,7 +2867,7 @@ export default function Home() {
                 </div>
 
                 {/* AI-ML & Automation */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1400" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1400" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Zap className="w-6 h-6" />
                   </div>
@@ -2872,7 +2882,7 @@ export default function Home() {
                 </div>
 
                 {/* Data & Analytics */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1600" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1600" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <TrendingUp className="w-6 h-6" />
                   </div>
@@ -2887,7 +2897,7 @@ export default function Home() {
                 </div>
 
                 {/* DevSecOps & SRE */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1800" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1800" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Target className="w-6 h-6" />
                   </div>
@@ -2904,7 +2914,7 @@ export default function Home() {
                 </div>
 
                 {/* Quality Assurance */}
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-2000" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-2000" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <CheckCircle className="w-6 h-6" />
                   </div>
@@ -2934,7 +2944,7 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {/* Digital Transformation */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Target className="w-6 h-6" />
                     </div>
@@ -2949,7 +2959,7 @@ export default function Home() {
                   </div>
 
                   {/* Enterprise Architecture */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Users className="w-6 h-6" />
                     </div>
@@ -2964,7 +2974,7 @@ export default function Home() {
                   </div>
 
                   {/* Digital Strategy & Roadmaps */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1400" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1400" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <TrendingUp className="w-6 h-6" />
                     </div>
@@ -2979,7 +2989,7 @@ export default function Home() {
                   </div>
 
                   {/* Governance */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1600" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1600" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Award className="w-6 h-6" />
                     </div>
@@ -2994,7 +3004,7 @@ export default function Home() {
                   </div>
 
                   {/* Cloud Advisory */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Cloud className="w-6 h-6" />
                     </div>
@@ -3009,7 +3019,7 @@ export default function Home() {
                   </div>
 
                   {/* Security & Compliance */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <CheckCircle className="w-6 h-6" />
                     </div>
@@ -3313,7 +3323,7 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {/* Full Stack Developer */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Code className="w-6 h-6" />
                     </div>
@@ -3328,7 +3338,7 @@ export default function Home() {
                   </div>
 
                   {/* DevOps Engineer */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Target className="w-6 h-6" />
                     </div>
@@ -3343,7 +3353,7 @@ export default function Home() {
                   </div>
 
                   {/* Cloud Architect */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Cloud className="w-6 h-6" />
                     </div>
@@ -3358,7 +3368,7 @@ export default function Home() {
                   </div>
 
                   {/* AI/ML Engineer */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Zap className="w-6 h-6" />
                     </div>
@@ -3373,7 +3383,7 @@ export default function Home() {
                   </div>
 
                   {/* Bootcamps */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Users className="w-6 h-6" />
                     </div>
@@ -3388,7 +3398,7 @@ export default function Home() {
                   </div>
 
                   {/* Certifications */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Award className="w-6 h-6" />
                     </div>
@@ -3860,7 +3870,7 @@ export default function Home() {
                 {contextSlug === 'training-services' && "Let&apos;s design a training program for your team"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all underline-reveal gradient-border gradient-border-hover relative group overflow-hidden">
+                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-realistic-xl transition-all underline-reveal gradient-border gradient-border-hover relative group overflow-hidden">
                   <span className="relative z-10">
                     {contextSlug === 'development-services' && 'Start Your Project'}
                     {contextSlug === 'consulting-services' && 'Schedule Consultation'}
