@@ -155,60 +155,70 @@ export default function Home() {
                 <p className="text-xs text-gray-500 mt-1">Friday, September 12 • New Delhi</p>
 
                 <div className="flex items-center gap-3 mt-2 text-gray-600">
-                  <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition magnetic-button">
-                    <MorphingIcon
-                      fromIcon={MoreHorizontal}
-                      toIcon={Search}
-                      size={12}
-                      trigger="hover"
-                      speed="fast"
-                      color="currentColor"
-                    />
-                  </button>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
-                    <MorphingIcon
-                      fromIcon={Twitter}
-                      toIcon={Heart}
-                      size={12}
-                      trigger="hover"
-                      speed="normal"
-                      color="currentColor"
-                      glow={true}
-                    />
-                  </a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
-                    <MorphingIcon
-                      fromIcon={Instagram}
-                      toIcon={Star}
-                      size={12}
-                      trigger="hover"
-                      speed="normal"
-                      color="currentColor"
-                      glow={true}
-                    />
-                  </a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
-                    <MorphingIcon
-                      fromIcon={Github}
-                      toIcon={Code}
-                      size={12}
-                      trigger="hover"
-                      speed="normal"
-                      color="currentColor"
-                      glow={true}
-                    />
-                  </a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
-                    <MorphingIcon
-                      fromIcon={Linkedin}
-                      toIcon={Users}
-                      size={12}
-                      trigger="hover"
-                      speed="normal"
-                      color="currentColor"
-                      glow={true}
-                    />
-                  </a>
+                  <MagneticEffect strength={0.3} range={50}>
+                    <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition magnetic-button">
+                      <MorphingIcon
+                        fromIcon={MoreHorizontal}
+                        toIcon={Search}
+                        size={12}
+                        trigger="hover"
+                        speed="fast"
+                        color="currentColor"
+                      />
+                    </button>
+                  </MagneticEffect>
+                  <MagneticEffect strength={0.4} range={60}>
+                    <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                      <MorphingIcon
+                        fromIcon={Twitter}
+                        toIcon={Heart}
+                        size={12}
+                        trigger="hover"
+                        speed="normal"
+                        color="currentColor"
+                        glow={true}
+                      />
+                    </a>
+                  </MagneticEffect>
+                  <MagneticEffect strength={0.4} range={60}>
+                    <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                      <MorphingIcon
+                        fromIcon={Instagram}
+                        toIcon={Star}
+                        size={12}
+                        trigger="hover"
+                        speed="normal"
+                        color="currentColor"
+                        glow={true}
+                      />
+                    </a>
+                  </MagneticEffect>
+                  <MagneticEffect strength={0.4} range={60}>
+                    <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                      <MorphingIcon
+                        fromIcon={Github}
+                        toIcon={Code}
+                        size={12}
+                        trigger="hover"
+                        speed="normal"
+                        color="currentColor"
+                        glow={true}
+                      />
+                    </a>
+                  </MagneticEffect>
+                  <MagneticEffect strength={0.4} range={60}>
+                    <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                      <MorphingIcon
+                        fromIcon={Linkedin}
+                        toIcon={Users}
+                        size={12}
+                        trigger="hover"
+                        speed="normal"
+                        color="currentColor"
+                        glow={true}
+                      />
+                    </a>
+                  </MagneticEffect>
                 </div>
               </div>
             </div>
@@ -1432,12 +1442,14 @@ export default function Home() {
                   </div>
 
                   <div className="pt-4">
-                    <button className="hologram-button px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-realistic transition-all relative group overflow-hidden">
-                      <span className="hologram-text" data-text="Explore Our Services">Explore Our Services</span>
-                      <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <NeuroLoader type="neuron-fire" size="sm" color="#FFFFFF" speed="fast" />
-                      </div>
-                    </button>
+                    <MagneticEffect strength={0.6} range={140}>
+                      <button className="hologram-button px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-realistic transition-all relative group overflow-hidden">
+                        <span className="hologram-text" data-text="Explore Our Services">Explore Our Services</span>
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <NeuroLoader type="neuron-fire" size="sm" color="#FFFFFF" speed="fast" />
+                        </div>
+                      </button>
+                    </MagneticEffect>
                   </div>
                 </div>
 
@@ -3897,25 +3909,29 @@ export default function Home() {
                 {contextSlug === 'training-services' && "Let&apos;s design a training program for your team"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-realistic-xl transition-all underline-reveal gradient-border gradient-border-hover relative group overflow-hidden">
-                  <span className="relative z-10">
-                    {contextSlug === 'development-services' && 'Start Your Project'}
-                    {contextSlug === 'consulting-services' && 'Schedule Consultation'}
-                    {contextSlug === 'training-services' && 'Explore Training'}
-                  </span>
-                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <NeuroLoader type="synaptic" size="sm" color="#7C3AED" speed="fast" />
-                  </div>
-                </a>
-                <button
-                  onClick={() => setContextSlug(null)}
-                  className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all gradient-border gradient-border-hover relative group overflow-hidden"
-                >
-                  <span className="relative z-10">Back to Home</span>
-                  <div className="absolute left-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <NeuroLoader type="brain-wave" size="sm" color="#7C3AED" speed="normal" />
-                  </div>
-                </button>
+                <MagneticEffect strength={0.7} range={150}>
+                  <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-realistic-xl transition-all underline-reveal gradient-border gradient-border-hover relative group overflow-hidden">
+                    <span className="relative z-10">
+                      {contextSlug === 'development-services' && 'Start Your Project'}
+                      {contextSlug === 'consulting-services' && 'Schedule Consultation'}
+                      {contextSlug === 'training-services' && 'Explore Training'}
+                    </span>
+                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <NeuroLoader type="synaptic" size="sm" color="#7C3AED" speed="fast" />
+                    </div>
+                  </a>
+                </MagneticEffect>
+                <MagneticEffect strength={0.5} range={130}>
+                  <button
+                    onClick={() => setContextSlug(null)}
+                    className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all gradient-border gradient-border-hover relative group overflow-hidden"
+                  >
+                    <span className="relative z-10">Back to Home</span>
+                    <div className="absolute left-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <NeuroLoader type="brain-wave" size="sm" color="#7C3AED" speed="normal" />
+                    </div>
+                  </button>
+                </MagneticEffect>
               </div>
             </div>
             </GeometricAccent>
