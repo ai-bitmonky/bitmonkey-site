@@ -18,6 +18,7 @@ import TiltCard from './components/TiltCard';
 import AnimatedCounter from './components/AnimatedCounter';
 import InteractiveCaseStudy from './components/InteractiveCaseStudy';
 import NeuroLoader from './components/NeuroLoader';
+import ParametricLight from './components/ParametricLight';
 
 
 export default function Home() {
@@ -979,6 +980,17 @@ export default function Home() {
             >
               <div></div>
             </GeometricAccent>
+
+            {/* Parametric Light Effects */}
+            <div className="absolute top-4 left-4 z-30">
+              <ParametricLight type="spiral" size="md" color="#8B5CF6" speed="slow" intensity="subtle" glow={true} />
+            </div>
+            <div className="absolute top-4 right-4 z-30">
+              <ParametricLight type="infinity" size="sm" color="#6366F1" speed="normal" intensity="medium" glow={true} />
+            </div>
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30">
+              <ParametricLight type="rose" size="lg" color="#A855F7" speed="fast" intensity="bright" glow={true} trail={true} />
+            </div>
           </div>
           </div> {/* end grid */}
         </div>   {/* end padded wrapper */}
@@ -1001,6 +1013,13 @@ export default function Home() {
                 { type: 'coral-branch', size: 'sm', color: 'rgba(79, 70, 229, 0.16)', position: 'bottom-right', animate: true }
               ]}
             >
+              {/* Parametric Light Effects for Services */}
+              <div className="absolute top-8 right-8">
+                <ParametricLight type="wave" size="md" color="#6366F1" speed="normal" intensity="medium" glow={true} />
+              </div>
+              <div className="absolute bottom-8 left-8">
+                <ParametricLight type="lissajous" size="sm" color="#8B5CF6" speed="slow" intensity="subtle" glow={true} />
+              </div>
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
@@ -1341,6 +1360,16 @@ export default function Home() {
                 { type: 'flowing-wave', size: 'md', color: 'rgba(99, 102, 241, 0.16)', position: 'bottom-right', animate: true }
               ]}
             >
+              {/* Parametric Light Effects for Portfolio */}
+              <div className="absolute top-12 left-12">
+                <ParametricLight type="helix" size="lg" color="#A855F7" speed="normal" intensity="bright" glow={true} trail={true} />
+              </div>
+              <div className="absolute bottom-12 right-12">
+                <ParametricLight type="butterfly" size="md" color="#3B82F6" speed="fast" intensity="medium" glow={true} />
+              </div>
+              <div className="absolute top-1/2 right-16 transform -translate-y-1/2">
+                <ParametricLight type="orbit" size="sm" color="#6366F1" speed="slow" intensity="subtle" glow={true} />
+              </div>
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
@@ -1579,7 +1608,14 @@ export default function Home() {
           </section>
 
           {/* Why BitMonkey Section */}
-          <section id="why-bitmonkey" className="pt-32 pb-24 bg-white" style={{marginTop: '4rem'}}>
+          <section id="why-bitmonkey" className="pt-32 pb-24 bg-white relative overflow-hidden" style={{marginTop: '4rem'}}>
+            {/* Parametric Light Effects for Why BitMonkey */}
+            <div className="absolute top-8 left-8">
+              <ParametricLight type="wave" size="lg" color="#8B5CF6" speed="slow" intensity="medium" glow={true} />
+            </div>
+            <div className="absolute bottom-8 right-8">
+              <ParametricLight type="spiral" size="md" color="#6366F1" speed="normal" intensity="bright" glow={true} trail={true} />
+            </div>
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
@@ -3142,6 +3178,16 @@ export default function Home() {
                 { type: 'diagonal-lines', size: 'lg', color: 'rgba(255, 255, 255, 0.02)', position: 'bottom-right', animate: true, opacity: 0.7 }
               ]}
             >
+              {/* Parametric Light Effects for Contact */}
+              <div className="absolute top-16 left-16">
+                <ParametricLight type="infinity" size="xl" color="#FFFFFF" speed="slow" intensity="bright" glow={true} trail={true} />
+              </div>
+              <div className="absolute bottom-16 right-16">
+                <ParametricLight type="rose" size="lg" color="#FBBF24" speed="normal" intensity="medium" glow={true} />
+              </div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <ParametricLight type="butterfly" size="md" color="#F472B6" speed="fast" intensity="subtle" glow={true} />
+              </div>
             <div className="container mx-auto max-w-7xl px-6 text-center" style={{marginLeft: '1rem', marginRight: '1rem'}}>
               <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
               <p className="text-lg mb-8 text-white/90">

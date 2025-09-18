@@ -1333,3 +1333,122 @@ a {
 .animate-spin-slow {
   animation: animate-spin-slow 8s linear infinite;
 }
+
+/* Parametric Light Effects */
+@keyframes parametric-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px currentColor) brightness(1.2);
+  }
+}
+
+@keyframes parametric-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes parametric-spiral {
+  0% {
+    stroke-dasharray: 0 1000;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 500 500;
+    stroke-dashoffset: -250;
+  }
+  100% {
+    stroke-dasharray: 1000 0;
+    stroke-dashoffset: -1000;
+  }
+}
+
+@keyframes parametric-flow {
+  0% {
+    stroke-dasharray: 0 100;
+    opacity: 0.4;
+  }
+  50% {
+    stroke-dasharray: 50 50;
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 100 0;
+    opacity: 0.4;
+  }
+}
+
+@keyframes parametric-orbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(20px) rotate(-360deg);
+  }
+}
+
+@keyframes parametric-wave {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Utility classes for parametric lights */
+.parametric-glow {
+  animation: parametric-glow 2s ease-in-out infinite;
+}
+
+.parametric-pulse {
+  animation: parametric-pulse 1.5s ease-in-out infinite;
+}
+
+.parametric-spiral {
+  animation: parametric-spiral 3s linear infinite;
+}
+
+.parametric-flow {
+  animation: parametric-flow 2s ease-in-out infinite;
+}
+
+.parametric-orbit {
+  animation: parametric-orbit 4s linear infinite;
+}
+
+.parametric-wave {
+  animation: parametric-wave 2s ease-in-out infinite;
+}
+
+/* Parametric light container styles */
+.parametric-light-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parametric-light-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.parametric-light-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+  pointer-events: none;
+}
