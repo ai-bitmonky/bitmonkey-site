@@ -2110,104 +2110,116 @@ export default function Home() {
               {/* Liquid Buttons Showcase */}
               <div className="text-center mb-16 scroll-animate fade-in-up">
                 <h3 className="text-xl font-semibold text-gray-900 mb-6">Interactive Button Effects</h3>
-                <p className="text-gray-600 mb-8">Experience liquid button interactions with ripple, mercury, and morphing effects</p>
+                <p className="text-gray-600 mb-8">Experience magnetic liquid button interactions with ripple, mercury, and morphing effects that respond to your cursor</p>
 
                 {/* Button Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {/* Ripple Effect Button */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Ripple Effect</h4>
-                    <LiquidButton
-                      variant="primary"
-                      size="md"
-                      liquidEffect="ripple"
-                      intensity="medium"
-                      glowEffect={true}
-                      onClick={() => console.log('Ripple clicked!')}
-                    >
-                      Click for Ripples
-                    </LiquidButton>
-                    <p className="text-xs text-gray-500 mt-2">Classic liquid ripple animation</p>
+                    <MagneticEffect strength={0.4} range={100}>
+                      <LiquidButton
+                        variant="primary"
+                        size="md"
+                        liquidEffect="ripple"
+                        intensity="medium"
+                        glowEffect={true}
+                        onClick={() => console.log('Ripple clicked!')}
+                      >
+                        Click for Ripples
+                      </LiquidButton>
+                    </MagneticEffect>
+                    <p className="text-xs text-gray-500 mt-2">Magnetic liquid ripple animation</p>
                   </div>
 
                   {/* Mercury Effect Button */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Mercury Effect</h4>
-                    <LiquidButton
-                      variant="accent"
-                      size="md"
-                      liquidEffect="mercury"
-                      intensity="strong"
-                      glowEffect={false}
-                      onClick={() => console.log('Mercury clicked!')}
-                    >
-                      Liquid Mercury
-                    </LiquidButton>
-                    <p className="text-xs text-gray-500 mt-2">Fluid mercury-like morphing</p>
+                    <MagneticEffect strength={0.5} range={110}>
+                      <LiquidButton
+                        variant="accent"
+                        size="md"
+                        liquidEffect="mercury"
+                        intensity="strong"
+                        glowEffect={false}
+                        onClick={() => console.log('Mercury clicked!')}
+                      >
+                        Liquid Mercury
+                      </LiquidButton>
+                    </MagneticEffect>
+                    <p className="text-xs text-gray-500 mt-2">Magnetic mercury-like morphing</p>
                   </div>
 
                   {/* Blob Effect Button */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Blob Effect</h4>
-                    <LiquidButton
-                      variant="gradient"
-                      size="md"
-                      liquidEffect="blob"
-                      intensity="strong"
-                      glowEffect={true}
-                      onClick={() => console.log('Blob clicked!')}
-                    >
-                      Organic Blob
-                    </LiquidButton>
-                    <p className="text-xs text-gray-500 mt-2">Organic blob morphing with SVG</p>
+                    <MagneticEffect strength={0.6} range={120}>
+                      <LiquidButton
+                        variant="gradient"
+                        size="md"
+                        liquidEffect="blob"
+                        intensity="strong"
+                        glowEffect={true}
+                        onClick={() => console.log('Blob clicked!')}
+                      >
+                        Organic Blob
+                      </LiquidButton>
+                    </MagneticEffect>
+                    <p className="text-xs text-gray-500 mt-2">Magnetic organic blob morphing</p>
                   </div>
 
                   {/* Wave Effect Button */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Wave Effect</h4>
-                    <LiquidButton
-                      variant="secondary"
-                      size="md"
-                      liquidEffect="wave"
-                      intensity="medium"
-                      glowEffect={false}
-                      onClick={() => console.log('Wave clicked!')}
-                    >
-                      Wave Motion
-                    </LiquidButton>
-                    <p className="text-xs text-gray-500 mt-2">Smooth wave animation sweep</p>
+                    <MagneticEffect strength={0.4} range={105}>
+                      <LiquidButton
+                        variant="secondary"
+                        size="md"
+                        liquidEffect="wave"
+                        intensity="medium"
+                        glowEffect={false}
+                        onClick={() => console.log('Wave clicked!')}
+                      >
+                        Wave Motion
+                      </LiquidButton>
+                    </MagneticEffect>
+                    <p className="text-xs text-gray-500 mt-2">Magnetic wave animation sweep</p>
                   </div>
 
                   {/* Deform Effect Button */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Deform Effect</h4>
-                    <LiquidButton
-                      variant="primary"
-                      size="md"
-                      liquidEffect="deform"
-                      intensity="subtle"
-                      glowEffect={false}
-                      onClick={() => console.log('Deform clicked!')}
-                    >
-                      Shape Deform
-                    </LiquidButton>
-                    <p className="text-xs text-gray-500 mt-2">Subtle shape deformation</p>
+                    <MagneticEffect strength={0.3} range={95}>
+                      <LiquidButton
+                        variant="primary"
+                        size="md"
+                        liquidEffect="deform"
+                        intensity="subtle"
+                        glowEffect={false}
+                        onClick={() => console.log('Deform clicked!')}
+                      >
+                        Shape Deform
+                      </LiquidButton>
+                    </MagneticEffect>
+                    <p className="text-xs text-gray-500 mt-2">Magnetic shape deformation</p>
                   </div>
 
                   {/* Ghost with Morph Effect Button */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 shadow-realistic shadow-transition">
                     <h4 className="text-sm font-medium text-gray-800 mb-3">Morph Effect</h4>
-                    <LiquidButton
-                      variant="ghost"
-                      size="md"
-                      liquidEffect="morph"
-                      intensity="medium"
-                      glowEffect={false}
-                      onClick={() => console.log('Morph clicked!')}
-                    >
-                      Border Morph
-                    </LiquidButton>
-                    <p className="text-xs text-gray-500 mt-2">Dynamic border morphing</p>
+                    <MagneticEffect strength={0.45} range={115}>
+                      <LiquidButton
+                        variant="ghost"
+                        size="md"
+                        liquidEffect="morph"
+                        intensity="medium"
+                        glowEffect={false}
+                        onClick={() => console.log('Morph clicked!')}
+                      >
+                        Border Morph
+                      </LiquidButton>
+                    </MagneticEffect>
+                    <p className="text-xs text-gray-500 mt-2">Magnetic border morphing</p>
                   </div>
                 </div>
 
@@ -2216,26 +2228,30 @@ export default function Home() {
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Ready to Experience Liquid Interactions?</h4>
                   <p className="text-gray-600 mb-6">Enhance your user interface with cutting-edge liquid button effects</p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <LiquidButton
-                      variant="gradient"
-                      size="xl"
-                      liquidEffect="blob"
-                      intensity="strong"
-                      glowEffect={true}
-                      onClick={() => console.log('Main CTA clicked!')}
-                    >
-                      Get Started Today
-                    </LiquidButton>
-                    <LiquidButton
-                      variant="ghost"
-                      size="lg"
-                      liquidEffect="ripple"
-                      intensity="medium"
-                      glowEffect={false}
-                      onClick={() => console.log('Secondary CTA clicked!')}
-                    >
-                      Learn More
-                    </LiquidButton>
+                    <MagneticEffect strength={0.7} range={150}>
+                      <LiquidButton
+                        variant="gradient"
+                        size="xl"
+                        liquidEffect="blob"
+                        intensity="strong"
+                        glowEffect={true}
+                        onClick={() => console.log('Main CTA clicked!')}
+                      >
+                        Get Started Today
+                      </LiquidButton>
+                    </MagneticEffect>
+                    <MagneticEffect strength={0.5} range={130}>
+                      <LiquidButton
+                        variant="ghost"
+                        size="lg"
+                        liquidEffect="ripple"
+                        intensity="medium"
+                        glowEffect={false}
+                        onClick={() => console.log('Secondary CTA clicked!')}
+                      >
+                        Learn More
+                      </LiquidButton>
+                    </MagneticEffect>
                   </div>
                 </div>
               </div>

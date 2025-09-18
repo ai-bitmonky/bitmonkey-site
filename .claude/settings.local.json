@@ -10,7 +10,14 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git revert:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(npm run build:*)",
+      "Bash(kill:*)",
+      "Bash(curl:*)",
+      "Bash(grep:*)",
+      "Bash(npx eslint:*)",
+      "Bash(cat:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []
