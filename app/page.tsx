@@ -66,7 +66,7 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, [contextSlug]); // Re-run when contextSlug changes
-  const baseNav = ['Home', 'Services', 'Portfolio', 'Resources', 'Neural Processing', 'Why BitMonkey?'];
+  const baseNav = ['Home', 'Services', 'Portfolio', 'Resources', 'Why BitMonkey?'];
 
   const getContextNav = (slug: string | null) => {
     if (!slug) return baseNav;
@@ -3130,111 +3130,6 @@ export default function Home() {
             </GeometricAccent>
           </section>
 
-          <div className="h-10 bg-white"></div>
-
-          {/* Neuro-Inspired Loaders Showcase Section */}
-          <section id="neural-processing" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
-            <GeometricAccent
-              shapes={[
-                { type: 'neural-network', size: 'xl', color: 'rgba(99, 102, 241, 0.08)', position: 'center', animate: true },
-                { type: 'organic-blob', size: 'lg', color: 'rgba(168, 85, 247, 0.12)', position: 'top-left', animate: true },
-                { type: 'flowing-wave', size: 'md', color: 'rgba(147, 51, 234, 0.15)', position: 'top-right', animate: true },
-                { type: 'cell-structure', size: 'lg', color: 'rgba(79, 70, 229, 0.10)', position: 'bottom-left', animate: true },
-                { type: 'coral-branch', size: 'sm', color: 'rgba(99, 102, 241, 0.14)', position: 'bottom-right', animate: true }
-              ]}
-            >
-            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Neural Processing</span>
-                <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
-                  Neuro-Inspired Loading States
-                </h2>
-                <p className="text-gray-600 max-w-3xl mx-auto scroll-animate fade-in-up">
-                  Experience cutting-edge loading animations inspired by neural networks, brain waves, and synaptic activity.
-                  These loaders simulate the complexity and beauty of neural processing.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
-                {/* Neural Network Loader */}
-                <TiltCard intensity="subtle" className="text-center">
-                  <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 group">
-                    <div className="flex justify-center mb-4">
-                      <NeuroLoader type="neural-network" size="lg" color="#8B5CF6" speed="normal" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Neural Network</h3>
-                    <p className="text-sm text-gray-600">Animated nodes and synaptic connections simulating neural activity</p>
-                  </div>
-                </TiltCard>
-
-                {/* Brain Wave Loader */}
-                <TiltCard intensity="subtle" className="text-center">
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 group">
-                    <div className="flex justify-center mb-4">
-                      <NeuroLoader type="brain-wave" size="lg" color="#6366F1" speed="normal" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Brain Wave</h3>
-                    <p className="text-sm text-gray-600">EEG-inspired wave patterns with neural oscillations</p>
-                  </div>
-                </TiltCard>
-
-                {/* Synaptic Loader */}
-                <TiltCard intensity="subtle" className="text-center">
-                  <div className="bg-gradient-to-br from-indigo-50 to-pink-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 group">
-                    <div className="flex justify-center mb-4">
-                      <NeuroLoader type="synaptic" size="lg" color="#A855F7" speed="normal" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Synaptic</h3>
-                    <p className="text-sm text-gray-600">Synaptic vesicles and neurotransmitter release animation</p>
-                  </div>
-                </TiltCard>
-
-                {/* Dendrite Loader */}
-                <TiltCard intensity="subtle" className="text-center">
-                  <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 group">
-                    <div className="flex justify-center mb-4">
-                      <NeuroLoader type="dendrite" size="lg" color="#EC4899" speed="normal" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Dendrite</h3>
-                    <p className="text-sm text-gray-600">Branching dendrite structure with signal propagation</p>
-                  </div>
-                </TiltCard>
-
-                {/* Neuron Fire Loader */}
-                <TiltCard intensity="subtle" className="text-center">
-                  <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 group">
-                    <div className="flex justify-center mb-4">
-                      <NeuroLoader type="neuron-fire" size="lg" color="#7C3AED" speed="normal" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Neuron Fire</h3>
-                    <p className="text-sm text-gray-600">Action potential waves and electrical impulse visualization</p>
-                  </div>
-                </TiltCard>
-              </div>
-
-              {/* Interactive Demo Section */}
-              <div className="bg-gradient-to-br from-gray-50 to-purple-50 rounded-2xl p-8 scroll-animate fade-in-up">
-                <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Interactive Neural Processing Demo</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                  <div className="text-center">
-                    <NeuroLoader type="neural-network" size="xl" color="#8B5CF6" speed="slow" />
-                    <p className="mt-4 text-sm text-gray-600">Slow Processing<br/>Deep Learning Mode</p>
-                  </div>
-                  <div className="text-center">
-                    <NeuroLoader type="brain-wave" size="xl" color="#6366F1" speed="normal" />
-                    <p className="mt-4 text-sm text-gray-600">Normal Processing<br/>Real-time Analysis</p>
-                  </div>
-                  <div className="text-center">
-                    <NeuroLoader type="neuron-fire" size="xl" color="#EC4899" speed="fast" />
-                    <p className="mt-4 text-sm text-gray-600">Fast Processing<br/>Neural Burst Mode</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </GeometricAccent>
-          </section>
-
-          <div className="h-10 bg-white"></div>
 
           {/* Contact Section - Dynamic based on service type */}
           <section id="contact" className="pt-80 pb-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white relative overflow-hidden" style={{marginTop: '4rem'}}>
