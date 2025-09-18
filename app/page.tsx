@@ -30,6 +30,7 @@ import InteractiveConstellation from './components/InteractiveConstellation';
 import FloatingUIPanel from './components/FloatingUIPanel';
 import LiquidButton from './components/LiquidButton';
 import AnimatedChart from './components/AnimatedChart';
+import { ProgressRing, ProgressRingGroup } from './components/ProgressRing';
 
 
 export default function Home() {
@@ -2289,6 +2290,93 @@ export default function Home() {
 
                 <div className="text-center mt-6">
                   <p className="text-sm text-gray-500 italic">Charts animate on scroll with staggered timing for enhanced visual impact</p>
+                </div>
+              </div>
+
+              {/* Progress Rings Showcase */}
+              <div className="mt-16 scroll-animate fade-in-up">
+                <div className="text-center mb-8">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Progress Indicators</h3>
+                  <p className="text-gray-600 max-w-2xl mx-auto">Circular progress rings with smooth animations and customizable styling for tracking completion and performance metrics</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* Individual Progress Rings */}
+                  <div className="text-center">
+                    <h4 className="text-sm font-medium text-gray-800 mb-4">Project Completion</h4>
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20">
+                      <ProgressRing
+                        progress={87}
+                        size={120}
+                        color="#8B5CF6"
+                        label="Complete"
+                        subtitle="On Schedule"
+                        glowEffect={true}
+                        className="mx-auto"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="text-center">
+                    <h4 className="text-sm font-medium text-gray-800 mb-4">Code Quality</h4>
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20">
+                      <ProgressRing
+                        progress={95}
+                        size={120}
+                        color="#10B981"
+                        label="Excellent"
+                        subtitle="Tests Passing"
+                        glowEffect={true}
+                        className="mx-auto"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="text-center">
+                    <h4 className="text-sm font-medium text-gray-800 mb-4">Performance Score</h4>
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20">
+                      <ProgressRing
+                        progress={92}
+                        size={120}
+                        color="#F59E0B"
+                        label="Optimized"
+                        subtitle="Fast Loading"
+                        glowEffect={true}
+                        className="mx-auto"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Progress Ring Groups */}
+                <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <ProgressRingGroup
+                    title="Development Metrics"
+                    description="Key performance indicators for project health"
+                    size={90}
+                    rings={[
+                      { progress: 78, label: "Code Coverage", color: "#8B5CF6" },
+                      { progress: 91, label: "Build Success", color: "#10B981" },
+                      { progress: 85, label: "Deploy Rate", color: "#3B82F6" },
+                      { progress: 88, label: "Uptime", color: "#F59E0B" }
+                    ]}
+                  />
+
+                  <ProgressRingGroup
+                    title="Team Performance"
+                    description="Collaborative metrics and productivity indicators"
+                    size={90}
+                    rings={[
+                      { progress: 94, label: "Satisfaction", color: "#06B6D4" },
+                      { progress: 82, label: "Velocity", color: "#8B5CF6" },
+                      { progress: 89, label: "Quality", color: "#10B981" },
+                      { progress: 76, label: "Innovation", color: "#F59E0B" }
+                    ]}
+                  />
+                </div>
+
+                <div className="text-center mt-8">
+                  <p className="text-sm text-gray-500 italic">Progress rings animate on scroll with smooth easing and glow effects</p>
                 </div>
               </div>
 
