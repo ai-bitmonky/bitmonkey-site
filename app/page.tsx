@@ -8,7 +8,9 @@ import {
   Target, Zap, Award, TrendingUp,
   Smartphone, Database, Shield, TestTube,
   Settings, Briefcase, Building, Map,
-  Lock, GraduationCap, Server, Brain
+  Lock, GraduationCap, Server, Brain,
+  Heart, Star, Eye, Send, Download,
+  RefreshCw, Loader, Search, MoreHorizontal
 } from 'lucide-react';
 import ScrollAnimation from './components/ScrollAnimation';
 import CursorEffects from './components/CursorEffects';
@@ -21,6 +23,7 @@ import NeuroLoader from './components/NeuroLoader';
 import ParametricLight from './components/ParametricLight';
 import DataSculpture from './components/DataSculpture';
 import SpatialDesign from './components/SpatialDesign';
+import MorphingIcon from './components/MorphingIcon';
 
 
 export default function Home() {
@@ -144,12 +147,59 @@ export default function Home() {
 
                 <div className="flex items-center gap-3 mt-2 text-gray-600">
                   <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition magnetic-button">
-                    <Menu className="w-3 h-3" />
+                    <MorphingIcon
+                      fromIcon={MoreHorizontal}
+                      toIcon={Search}
+                      size={12}
+                      trigger="hover"
+                      speed="fast"
+                      color="currentColor"
+                    />
                   </button>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal"><Twitter className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal"><Instagram className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal"><Github className="w-3 h-3" /></a>
-                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal"><Linkedin className="w-3 h-3" /></a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                    <MorphingIcon
+                      fromIcon={Twitter}
+                      toIcon={Heart}
+                      size={12}
+                      trigger="hover"
+                      speed="normal"
+                      color="currentColor"
+                      glow={true}
+                    />
+                  </a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                    <MorphingIcon
+                      fromIcon={Instagram}
+                      toIcon={Star}
+                      size={12}
+                      trigger="hover"
+                      speed="normal"
+                      color="currentColor"
+                      glow={true}
+                    />
+                  </a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                    <MorphingIcon
+                      fromIcon={Github}
+                      toIcon={Code}
+                      size={12}
+                      trigger="hover"
+                      speed="normal"
+                      color="currentColor"
+                      glow={true}
+                    />
+                  </a>
+                  <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                    <MorphingIcon
+                      fromIcon={Linkedin}
+                      toIcon={Users}
+                      size={12}
+                      trigger="hover"
+                      speed="normal"
+                      color="currentColor"
+                      glow={true}
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -630,10 +680,17 @@ export default function Home() {
             {/* Mobile burger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-gray-900"
+              className="lg:hidden text-gray-900 morphing-container"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <MorphingIcon
+                fromIcon={Menu}
+                toIcon={X}
+                size={24}
+                trigger="click"
+                speed="fast"
+                className="hover:text-purple-600 transition-colors"
+              />
             </button>
           </div>
 
