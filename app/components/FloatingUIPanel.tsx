@@ -244,7 +244,7 @@ export default function FloatingUIPanel({
     // Apply position properties
     Object.entries(position).forEach(([key, value]) => {
       if (key !== 'transform' && value !== undefined) {
-        (positionStyle as any)[key] = typeof value === 'number' ? `${value}px` : value;
+        (positionStyle as Record<string, string>)[key] = typeof value === 'number' ? `${value}px` : value;
       }
     });
 

@@ -23,6 +23,7 @@ import NeuroLoader from './components/NeuroLoader';
 import ParametricLight from './components/ParametricLight';
 import DataSculpture from './components/DataSculpture';
 import SpatialDesign from './components/SpatialDesign';
+import MagneticEffect from './components/MagneticEffect';
 import MorphingIcon from './components/MorphingIcon';
 import LiquidImageTransition from './components/LiquidImageTransition';
 import AnimatedGradientMesh from './components/AnimatedGradientMesh';
@@ -1898,7 +1899,7 @@ export default function Home() {
               <ParametricLight type="helix" size="xl" color="#8B5CF6" speed="slow" intensity="bright" glow={true} trail={true} />
             </div>
             <div className="absolute bottom-12 right-12">
-              <ParametricLight type="pulse" size="lg" color="#06B6D4" speed="normal" intensity="medium" glow={true} />
+              <ParametricLight type="spiral" size="lg" color="#06B6D4" speed="normal" intensity="medium" glow={true} />
             </div>
 
             <div className="container mx-auto max-w-7xl relative z-10" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
@@ -1950,7 +1951,7 @@ export default function Home() {
 
                   <div className="pt-4">
                     <div className="text-sm text-gray-500 italic">
-                      Move your cursor around the panels to see interactive effects in action
+                      Move your cursor around the panels to experience magnetic attraction and interactive effects
                     </div>
                   </div>
                 </div>
@@ -1962,137 +1963,147 @@ export default function Home() {
                   {/* Floating UI Panels - Moved from global positioning to this section */}
 
                   {/* Status Panel - Top Right of Demo Area */}
-                  <FloatingUIPanel
-                    position={{ top: 20, right: 20 }}
-                    width={240}
-                    height={110}
-                    zIndex={20}
-                    delayMs={800}
-                    glassEffect={true}
-                    shadowIntensity="medium"
-                    animation={{ float: true, hover: true, parallax: false, intensity: 'subtle' }}
-                  >
-                    <div className="p-3 text-center">
-                      <div className="flex items-center justify-center gap-2 mb-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-xs font-medium text-gray-700">System Status</span>
+                  <MagneticEffect strength={0.4} range={120}>
+                    <FloatingUIPanel
+                      position={{ top: 20, right: 20 }}
+                      width={240}
+                      height={110}
+                      zIndex={20}
+                      delayMs={800}
+                      glassEffect={true}
+                      shadowIntensity="medium"
+                      animation={{ float: true, hover: true, parallax: false, intensity: 'subtle' }}
+                    >
+                      <div className="p-3 text-center">
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="text-xs font-medium text-gray-700">System Status</span>
+                        </div>
+                        <div className="text-xs text-gray-600 space-y-1">
+                          <div className="flex justify-between">
+                            <span>Performance</span>
+                            <span className="text-green-600 font-medium">Optimal</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Availability</span>
+                            <span className="text-green-600 font-medium">99.9%</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Response</span>
+                            <span className="text-green-600 font-medium">&lt;200ms</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-xs text-gray-600 space-y-1">
-                        <div className="flex justify-between">
-                          <span>Performance</span>
-                          <span className="text-green-600 font-medium">Optimal</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Availability</span>
-                          <span className="text-green-600 font-medium">99.9%</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Response</span>
-                          <span className="text-green-600 font-medium">&lt;200ms</span>
-                        </div>
-                      </div>
-                    </div>
-                  </FloatingUIPanel>
+                    </FloatingUIPanel>
+                  </MagneticEffect>
 
                   {/* Quick Stats Panel - Top Left of Demo Area */}
-                  <FloatingUIPanel
-                    position={{ top: 20, left: 20 }}
-                    width={220}
-                    height={130}
-                    zIndex={20}
-                    delayMs={1200}
-                    glassEffect={true}
-                    shadowIntensity="medium"
-                    animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
-                  >
-                    <div className="p-3">
-                      <h3 className="text-xs font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                        <TrendingUp className="w-3 h-3 text-purple-600" />
-                        Live Metrics
-                      </h3>
-                      <div className="space-y-2 text-xs text-gray-600">
-                        <div className="flex justify-between items-center">
-                          <span>Projects</span>
-                          <span className="font-bold text-purple-600">500+</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span>Satisfaction</span>
-                          <span className="font-bold text-green-600">98%</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span>Technologies</span>
-                          <span className="font-bold text-blue-600">50+</span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-1 mt-2">
-                          <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-1 rounded-full" style={{width: '85%'}}></div>
+                  <MagneticEffect strength={0.5} range={140}>
+                    <FloatingUIPanel
+                      position={{ top: 20, left: 20 }}
+                      width={220}
+                      height={130}
+                      zIndex={20}
+                      delayMs={1200}
+                      glassEffect={true}
+                      shadowIntensity="medium"
+                      animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
+                    >
+                      <div className="p-3">
+                        <h3 className="text-xs font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                          <TrendingUp className="w-3 h-3 text-purple-600" />
+                          Live Metrics
+                        </h3>
+                        <div className="space-y-2 text-xs text-gray-600">
+                          <div className="flex justify-between items-center">
+                            <span>Projects</span>
+                            <span className="font-bold text-purple-600">500+</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span>Satisfaction</span>
+                            <span className="font-bold text-green-600">98%</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span>Technologies</span>
+                            <span className="font-bold text-blue-600">50+</span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-1 mt-2">
+                            <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-1 rounded-full" style={{width: '85%'}}></div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </FloatingUIPanel>
+                    </FloatingUIPanel>
+                  </MagneticEffect>
 
                   {/* Tech Stack Indicator - Bottom Right of Demo Area */}
-                  <FloatingUIPanel
-                    position={{ bottom: 20, right: 20 }}
-                    width={180}
-                    height={90}
-                    zIndex={20}
-                    delayMs={1600}
-                    glassEffect={true}
-                    shadowIntensity="light"
-                    animation={{ float: true, hover: true, parallax: true, intensity: 'subtle' }}
-                  >
-                    <div className="p-3">
-                      <div className="text-xs font-medium text-gray-700 mb-2 flex items-center gap-1">
-                        <Code className="w-3 h-3" />
-                        Active Stack
+                  <MagneticEffect strength={0.3} range={100}>
+                    <FloatingUIPanel
+                      position={{ bottom: 20, right: 20 }}
+                      width={180}
+                      height={90}
+                      zIndex={20}
+                      delayMs={1600}
+                      glassEffect={true}
+                      shadowIntensity="light"
+                      animation={{ float: true, hover: true, parallax: true, intensity: 'subtle' }}
+                    >
+                      <div className="p-3">
+                        <div className="text-xs font-medium text-gray-700 mb-2 flex items-center gap-1">
+                          <Code className="w-3 h-3" />
+                          Active Stack
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          <span className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">React</span>
+                          <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">Node.js</span>
+                          <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">AWS</span>
+                          <span className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs">Docker</span>
+                        </div>
                       </div>
-                      <div className="flex flex-wrap gap-1">
-                        <span className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">React</span>
-                        <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">Node.js</span>
-                        <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">AWS</span>
-                        <span className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs">Docker</span>
-                      </div>
-                    </div>
-                  </FloatingUIPanel>
+                    </FloatingUIPanel>
+                  </MagneticEffect>
 
                   {/* Notification Panel - Bottom Left of Demo Area */}
-                  <FloatingUIPanel
-                    position={{ bottom: 20, left: 20 }}
-                    width={200}
-                    height={70}
-                    zIndex={15}
-                    delayMs={2000}
-                    glassEffect={true}
-                    shadowIntensity="medium"
-                    animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
-                  >
-                    <div className="p-2 flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                        <CheckCircle className="w-3 h-3 text-white" />
+                  <MagneticEffect strength={0.4} range={110}>
+                    <FloatingUIPanel
+                      position={{ bottom: 20, left: 20 }}
+                      width={200}
+                      height={70}
+                      zIndex={15}
+                      delayMs={2000}
+                      glassEffect={true}
+                      shadowIntensity="medium"
+                      animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
+                    >
+                      <div className="p-2 flex items-center gap-2">
+                        <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                          <CheckCircle className="w-3 h-3 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-medium text-gray-800">Ready to Connect</div>
+                          <div className="text-xs text-gray-600">Let&apos;s build together</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-xs font-medium text-gray-800">Ready to Connect</div>
-                        <div className="text-xs text-gray-600">Let's build together</div>
-                      </div>
-                    </div>
-                  </FloatingUIPanel>
+                    </FloatingUIPanel>
+                  </MagneticEffect>
 
                   {/* Center Info Panel - Appears on hover */}
-                  <FloatingUIPanel
-                    position={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-                    width={160}
-                    height={60}
-                    zIndex={25}
-                    delayMs={2400}
-                    glassEffect={true}
-                    shadowIntensity="heavy"
-                    animation={{ float: true, hover: true, parallax: true, intensity: 'strong' }}
-                  >
-                    <div className="p-3 text-center">
-                      <div className="text-xs font-semibold text-gray-800 mb-1">UI Innovation</div>
-                      <div className="text-xs text-gray-600">Hover & Interact</div>
-                    </div>
-                  </FloatingUIPanel>
+                  <MagneticEffect strength={0.6} range={160}>
+                    <FloatingUIPanel
+                      position={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+                      width={160}
+                      height={60}
+                      zIndex={25}
+                      delayMs={2400}
+                      glassEffect={true}
+                      shadowIntensity="heavy"
+                      animation={{ float: true, hover: true, parallax: true, intensity: 'strong' }}
+                    >
+                      <div className="p-3 text-center">
+                        <div className="text-xs font-semibold text-gray-800 mb-1">UI Innovation</div>
+                        <div className="text-xs text-gray-600">Magnetic & Interactive</div>
+                      </div>
+                    </FloatingUIPanel>
+                  </MagneticEffect>
                 </div>
               </div>
 
