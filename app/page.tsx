@@ -25,6 +25,7 @@ import DataSculpture from './components/DataSculpture';
 import SpatialDesign from './components/SpatialDesign';
 import MorphingIcon from './components/MorphingIcon';
 import LiquidImageTransition from './components/LiquidImageTransition';
+import AnimatedGradientMesh from './components/AnimatedGradientMesh';
 
 
 export default function Home() {
@@ -823,6 +824,25 @@ export default function Home() {
           )}
         </div>
       </nav>
+
+      {/* Animated Gradient Mesh Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <AnimatedGradientMesh
+          colors={['#8B5CF6', '#06B6D4', '#10B981', '#F59E0B', '#EF4444']}
+          height="100vh"
+          width="100vw"
+          speed="slow"
+          intensity="subtle"
+          pattern="organic"
+          direction="radial"
+          blur={true}
+          interactive={false}
+          autoPlay={true}
+          timeOfDay={true}
+          className="opacity-30"
+        />
+      </div>
+
     <section id="home" className="pt-[88px]"> 
         <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
