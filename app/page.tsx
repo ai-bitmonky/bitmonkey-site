@@ -26,6 +26,7 @@ import SpatialDesign from './components/SpatialDesign';
 import MorphingIcon from './components/MorphingIcon';
 import LiquidImageTransition from './components/LiquidImageTransition';
 import AnimatedGradientMesh from './components/AnimatedGradientMesh';
+import InteractiveConstellation from './components/InteractiveConstellation';
 
 
 export default function Home() {
@@ -840,6 +841,29 @@ export default function Home() {
           autoPlay={true}
           timeOfDay={true}
           className="opacity-30"
+        />
+      </div>
+
+      {/* Interactive Constellation Layer */}
+      <div className="fixed inset-0 -z-5 overflow-hidden">
+        <InteractiveConstellation
+          nodeCount={40}
+          maxConnections={3}
+          connectionDistance={140}
+          cursorRadius={200}
+          nodeSize={2}
+          colors={{
+            nodes: '#8B5CF6',
+            connections: '#06B6D4',
+            cursor: '#F59E0B'
+          }}
+          height="100vh"
+          width="100vw"
+          interactive={true}
+          autoMove={true}
+          pulseEffect={true}
+          networkEffect={true}
+          className="opacity-60"
         />
       </div>
 
