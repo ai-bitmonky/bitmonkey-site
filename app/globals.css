@@ -1452,3 +1452,92 @@ a {
   opacity: 0.1;
   pointer-events: none;
 }
+
+/* Data Sculpture Effects */
+@keyframes data-sculpture-rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateX(5deg) rotateY(90deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(180deg);
+  }
+  75% {
+    transform: rotateX(-5deg) rotateY(270deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(360deg);
+  }
+}
+
+@keyframes data-sculpture-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+@keyframes data-sculpture-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes data-sculpture-depth {
+  0% {
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    filter: brightness(1.2) contrast(1.1);
+  }
+  100% {
+    filter: brightness(1) contrast(1);
+  }
+}
+
+/* Utility classes for data sculptures */
+.data-sculpture-rotate {
+  animation: data-sculpture-rotate 8s linear infinite;
+}
+
+.data-sculpture-float {
+  animation: data-sculpture-float 3s ease-in-out infinite;
+}
+
+.data-sculpture-pulse {
+  animation: data-sculpture-pulse 2s ease-in-out infinite;
+}
+
+.data-sculpture-depth {
+  animation: data-sculpture-depth 4s ease-in-out infinite;
+}
+
+/* Data sculpture container styles */
+.data-sculpture-container {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.data-sculpture-wireframe {
+  stroke-dasharray: 4 2;
+  animation: data-sculpture-pulse 3s ease-in-out infinite;
+}
+
+.data-sculpture-solid {
+  fill-opacity: 0.1;
+  stroke-opacity: 0.8;
+}
+
+.data-sculpture-particles {
+  animation: data-sculpture-float 2s ease-in-out infinite;
+}
