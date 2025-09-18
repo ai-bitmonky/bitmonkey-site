@@ -2178,3 +2178,24 @@ a {
     background: #f0f0f0;
   }
 }
+
+/* Navigation Responsive Fixes */
+@media (min-width: 1024px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .desktop-menu {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .desktop-menu {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+}

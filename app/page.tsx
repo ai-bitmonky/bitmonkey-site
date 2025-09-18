@@ -206,7 +206,7 @@ export default function Home() {
             </div>
 
             {/* Desktop menu */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-8 desktop-menu">
               {currentNav.map((item) => {
                 const id = item.toLowerCase().replace(/\s+/g, '-');
 
@@ -681,7 +681,7 @@ export default function Home() {
             {/* Mobile burger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-gray-900 morphing-container"
+              className="lg:hidden text-gray-900 morphing-container mobile-menu-toggle"
               aria-label="Toggle menu"
             >
               <MorphingIcon
