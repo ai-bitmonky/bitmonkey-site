@@ -18,7 +18,12 @@ export default function NeuroLoader({
   className = ''
 }: NeuroLoaderProps) {
   const [progress, setProgress] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
   const componentId = React.useId();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const sizeClasses = {
     sm: 'w-12 h-12',
@@ -279,6 +284,15 @@ export default function NeuroLoader({
   );
 
   const renderLoader = () => {
+    if (!isMounted) {
+      // Render static placeholder during SSR
+      return (
+        <svg viewBox="0 0 100 100" className="w-full h-full">
+          <circle cx="50" cy="50" r="3" fill={color} opacity="0.5" />
+        </svg>
+      );
+    }
+
     switch (type) {
       case 'neural-network':
         return renderNeuralNetwork();
@@ -299,14 +313,16 @@ export default function NeuroLoader({
     <div className={`${sizeClasses[size]} ${className} flex items-center justify-center`}>
       <div className="relative w-full h-full">
         {renderLoader()}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="text-xs font-semibold opacity-70"
-            style={{ color }}
-          >
-            {Math.round(progress)}%
+        {isMounted && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div
+              className="text-xs font-semibold opacity-70"
+              style={{ color }}
+            >
+              {Math.round(progress)}%
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

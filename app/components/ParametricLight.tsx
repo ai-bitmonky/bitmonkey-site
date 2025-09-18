@@ -27,7 +27,12 @@ export default function ParametricLight({
 }: ParametricLightProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [time, setTime] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
   const componentId = React.useId();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const sizeMap = {
     sm: { width: 100, height: 100, strokeWidth: 1.5 },
@@ -168,8 +173,30 @@ export default function ParametricLight({
     return trailPoints;
   };
 
-  const pathData = generatePath();
-  const trailPoints = generateTrailPoints();
+  const pathData = isMounted ? generatePath() : "M 0 0";
+  const trailPoints = isMounted ? generateTrailPoints() : [];
+
+  if (!isMounted) {
+    return (
+      <div className={`relative ${className}`} style={{ width, height }}>
+        <svg
+          width={width}
+          height={height}
+          viewBox={`0 0 ${width} ${height}`}
+          className="absolute inset-0"
+        >
+          {/* Static placeholder while mounting */}
+          <circle
+            cx={width / 2}
+            cy={height / 2}
+            r={strokeWidth}
+            fill={color}
+            opacity={opacityFactor * 0.3}
+          />
+        </svg>
+      </div>
+    );
+  }
 
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
