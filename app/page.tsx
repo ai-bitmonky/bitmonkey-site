@@ -27,6 +27,7 @@ import MorphingIcon from './components/MorphingIcon';
 import LiquidImageTransition from './components/LiquidImageTransition';
 import AnimatedGradientMesh from './components/AnimatedGradientMesh';
 import InteractiveConstellation from './components/InteractiveConstellation';
+import FloatingUIPanel from './components/FloatingUIPanel';
 
 
 export default function Home() {
@@ -866,6 +867,128 @@ export default function Home() {
           className="opacity-60"
         />
       </div>
+
+      {/* Floating UI Panels */}
+
+      {/* Status Panel - Top Right */}
+      <FloatingUIPanel
+        position={{ top: 120, right: 20 }}
+        width={280}
+        height={120}
+        zIndex={20}
+        delayMs={800}
+        glassEffect={true}
+        shadowIntensity="medium"
+        animation={{ float: true, hover: true, parallax: false, intensity: 'subtle' }}
+        className="hidden lg:block"
+      >
+        <div className="p-4 text-center">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-gray-700">System Status</span>
+          </div>
+          <div className="text-xs text-gray-600">
+            <div className="flex justify-between mb-1">
+              <span>Performance</span>
+              <span className="text-green-600 font-medium">Optimal</span>
+            </div>
+            <div className="flex justify-between mb-1">
+              <span>Availability</span>
+              <span className="text-green-600 font-medium">99.9%</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Response Time</span>
+              <span className="text-green-600 font-medium">&lt;200ms</span>
+            </div>
+          </div>
+        </div>
+      </FloatingUIPanel>
+
+      {/* Quick Stats Panel - Top Left */}
+      <FloatingUIPanel
+        position={{ top: 120, left: 20 }}
+        width={260}
+        height={140}
+        zIndex={20}
+        delayMs={1200}
+        glassEffect={true}
+        shadowIntensity="medium"
+        animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
+        className="hidden lg:block"
+      >
+        <div className="p-4">
+          <h3 className="text-sm font-semibold text-gray-800 mb-3 flex items-center gap-2">
+            <TrendingUp className="w-4 h-4 text-purple-600" />
+            Live Metrics
+          </h3>
+          <div className="space-y-2 text-xs text-gray-600">
+            <div className="flex justify-between items-center">
+              <span>Projects Delivered</span>
+              <span className="font-bold text-purple-600">500+</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Client Satisfaction</span>
+              <span className="font-bold text-green-600">98%</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Technologies</span>
+              <span className="font-bold text-blue-600">50+</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-1 mt-2">
+              <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-1 rounded-full" style={{width: '85%'}}></div>
+            </div>
+          </div>
+        </div>
+      </FloatingUIPanel>
+
+      {/* Tech Stack Indicator - Bottom Right */}
+      <FloatingUIPanel
+        position={{ bottom: 40, right: 20 }}
+        width={200}
+        height={100}
+        zIndex={20}
+        delayMs={1600}
+        glassEffect={true}
+        shadowIntensity="light"
+        animation={{ float: true, hover: true, parallax: true, intensity: 'subtle' }}
+        className="hidden md:block"
+      >
+        <div className="p-3">
+          <div className="text-xs font-medium text-gray-700 mb-2 flex items-center gap-1">
+            <Code className="w-3 h-3" />
+            Active Stack
+          </div>
+          <div className="flex flex-wrap gap-1">
+            <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">React</span>
+            <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Node.js</span>
+            <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs">AWS</span>
+            <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs">Docker</span>
+          </div>
+        </div>
+      </FloatingUIPanel>
+
+      {/* Notification Panel - Mid Right (appears on scroll) */}
+      <FloatingUIPanel
+        position={{ top: '50%', right: 20, transform: 'translateY(-50%)' }}
+        width={240}
+        height={80}
+        zIndex={15}
+        delayMs={2000}
+        glassEffect={true}
+        shadowIntensity="medium"
+        animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
+        className="hidden xl:block"
+      >
+        <div className="p-3 flex items-center gap-3">
+          <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+            <CheckCircle className="w-4 h-4 text-white" />
+          </div>
+          <div>
+            <div className="text-xs font-medium text-gray-800">Ready to Connect</div>
+            <div className="text-xs text-gray-600">Let's build something amazing together</div>
+          </div>
+        </div>
+      </FloatingUIPanel>
 
     <section id="home" className="pt-[88px]"> 
         <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
