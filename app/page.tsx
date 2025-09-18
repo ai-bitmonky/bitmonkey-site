@@ -866,6 +866,7 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover z-10"
               autoPlay
               muted
+              {...(!contextSlug && { loop: true })}
               playsInline
               preload="metadata"
               controls={false}
