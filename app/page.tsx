@@ -993,16 +993,6 @@ export default function Home() {
               <ParametricLight type="rose" size="lg" color="#A855F7" speed="fast" intensity="bright" glow={true} trail={true} />
             </div>
 
-            {/* Data Sculpture Effects for Hero */}
-            <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-25">
-              <DataSculpture type="cube" size="md" color="#8B5CF6" speed="slow" intensity="subtle" wireframe={true} />
-            </div>
-            <div className="absolute top-1/4 right-8 z-25">
-              <DataSculpture type="pyramid" size="sm" color="#6366F1" speed="normal" intensity="medium" particles={true} />
-            </div>
-            <div className="absolute bottom-1/4 right-4 z-25">
-              <DataSculpture type="sphere" size="lg" color="#A855F7" speed="fast" intensity="bright" wireframe={true} />
-            </div>
           </div>
           </div> {/* end grid */}
         </div>   {/* end padded wrapper */}
