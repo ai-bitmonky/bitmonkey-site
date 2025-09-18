@@ -20,6 +20,7 @@ import InteractiveCaseStudy from './components/InteractiveCaseStudy';
 import NeuroLoader from './components/NeuroLoader';
 import ParametricLight from './components/ParametricLight';
 import DataSculpture from './components/DataSculpture';
+import SpatialDesign from './components/SpatialDesign';
 
 
 export default function Home() {
@@ -1779,6 +1780,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+
 
         </>
       ) : (
