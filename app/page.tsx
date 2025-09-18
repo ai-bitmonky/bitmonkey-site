@@ -28,6 +28,8 @@ import LiquidImageTransition from './components/LiquidImageTransition';
 import AnimatedGradientMesh from './components/AnimatedGradientMesh';
 import InteractiveConstellation from './components/InteractiveConstellation';
 import FloatingUIPanel from './components/FloatingUIPanel';
+import LiquidButton from './components/LiquidButton';
+import AnimatedChart from './components/AnimatedChart';
 
 
 export default function Home() {
@@ -867,128 +869,6 @@ export default function Home() {
           className="opacity-60"
         />
       </div>
-
-      {/* Floating UI Panels */}
-
-      {/* Status Panel - Top Right */}
-      <FloatingUIPanel
-        position={{ top: 120, right: 20 }}
-        width={280}
-        height={120}
-        zIndex={20}
-        delayMs={800}
-        glassEffect={true}
-        shadowIntensity="medium"
-        animation={{ float: true, hover: true, parallax: false, intensity: 'subtle' }}
-        className="hidden lg:block"
-      >
-        <div className="p-4 text-center">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-gray-700">System Status</span>
-          </div>
-          <div className="text-xs text-gray-600">
-            <div className="flex justify-between mb-1">
-              <span>Performance</span>
-              <span className="text-green-600 font-medium">Optimal</span>
-            </div>
-            <div className="flex justify-between mb-1">
-              <span>Availability</span>
-              <span className="text-green-600 font-medium">99.9%</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Response Time</span>
-              <span className="text-green-600 font-medium">&lt;200ms</span>
-            </div>
-          </div>
-        </div>
-      </FloatingUIPanel>
-
-      {/* Quick Stats Panel - Top Left */}
-      <FloatingUIPanel
-        position={{ top: 120, left: 20 }}
-        width={260}
-        height={140}
-        zIndex={20}
-        delayMs={1200}
-        glassEffect={true}
-        shadowIntensity="medium"
-        animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
-        className="hidden lg:block"
-      >
-        <div className="p-4">
-          <h3 className="text-sm font-semibold text-gray-800 mb-3 flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-purple-600" />
-            Live Metrics
-          </h3>
-          <div className="space-y-2 text-xs text-gray-600">
-            <div className="flex justify-between items-center">
-              <span>Projects Delivered</span>
-              <span className="font-bold text-purple-600">500+</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span>Client Satisfaction</span>
-              <span className="font-bold text-green-600">98%</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span>Technologies</span>
-              <span className="font-bold text-blue-600">50+</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-1 mt-2">
-              <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-1 rounded-full" style={{width: '85%'}}></div>
-            </div>
-          </div>
-        </div>
-      </FloatingUIPanel>
-
-      {/* Tech Stack Indicator - Bottom Right */}
-      <FloatingUIPanel
-        position={{ bottom: 40, right: 20 }}
-        width={200}
-        height={100}
-        zIndex={20}
-        delayMs={1600}
-        glassEffect={true}
-        shadowIntensity="light"
-        animation={{ float: true, hover: true, parallax: true, intensity: 'subtle' }}
-        className="hidden md:block"
-      >
-        <div className="p-3">
-          <div className="text-xs font-medium text-gray-700 mb-2 flex items-center gap-1">
-            <Code className="w-3 h-3" />
-            Active Stack
-          </div>
-          <div className="flex flex-wrap gap-1">
-            <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">React</span>
-            <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Node.js</span>
-            <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs">AWS</span>
-            <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs">Docker</span>
-          </div>
-        </div>
-      </FloatingUIPanel>
-
-      {/* Notification Panel - Mid Right (appears on scroll) */}
-      <FloatingUIPanel
-        position={{ top: '50%', right: 20, transform: 'translateY(-50%)' }}
-        width={240}
-        height={80}
-        zIndex={15}
-        delayMs={2000}
-        glassEffect={true}
-        shadowIntensity="medium"
-        animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
-        className="hidden xl:block"
-      >
-        <div className="p-3 flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-            <CheckCircle className="w-4 h-4 text-white" />
-          </div>
-          <div>
-            <div className="text-xs font-medium text-gray-800">Ready to Connect</div>
-            <div className="text-xs text-gray-600">Let's build something amazing together</div>
-          </div>
-        </div>
-      </FloatingUIPanel>
 
     <section id="home" className="pt-[88px]"> 
         <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
@@ -2006,6 +1886,434 @@ export default function Home() {
             </div>
           </section>
 
+          {/* UI Innovation Showcase Section */}
+          <section id="ui-showcase" className="pt-32 pb-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden" style={{marginTop: '4rem'}}>
+            {/* Background Effects */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-100/50 to-blue-100/50"></div>
+
+            {/* Parametric Light Effects */}
+            <div className="absolute top-12 left-12">
+              <ParametricLight type="helix" size="xl" color="#8B5CF6" speed="slow" intensity="bright" glow={true} trail={true} />
+            </div>
+            <div className="absolute bottom-12 right-12">
+              <ParametricLight type="pulse" size="lg" color="#06B6D4" speed="normal" intensity="medium" glow={true} />
+            </div>
+
+            <div className="container mx-auto max-w-7xl relative z-10" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+              <div className="text-center mb-16">
+                <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>UI Innovation</span>
+                <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
+                  <span className="highlight-reveal">Floating Interface Showcase</span>
+                </h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto scroll-animate fade-in-up-delay-500">
+                  Experience cutting-edge UI components with 3D depth, glass morphism effects, and intelligent positioning.
+                  These floating panels demonstrate advanced interface design capabilities.
+                </p>
+              </div>
+
+              {/* Showcase Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                {/* Description Side */}
+                <div className="space-y-6 scroll-animate fade-in-left">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Glass Morphism Design</h4>
+                        <p className="text-sm text-gray-600">Advanced backdrop-filter effects with gradient overlays creating premium depth perception</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Intelligent Positioning</h4>
+                        <p className="text-sm text-gray-600">Smart viewport detection with responsive breakpoints and auto-positioning algorithms</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Interactive Animations</h4>
+                        <p className="text-sm text-gray-600">Floating motion, hover effects, and parallax movement with performance optimization</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Strategic Content</h4>
+                        <p className="text-sm text-gray-600">Live metrics, system status, tech stack indicators, and engagement prompts</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4">
+                    <div className="text-sm text-gray-500 italic">
+                      Move your cursor around the panels to see interactive effects in action
+                    </div>
+                  </div>
+                </div>
+
+                {/* Interactive Demo Area */}
+                <div className="relative min-h-[500px] scroll-animate fade-in-right">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gray-100/80 rounded-3xl border border-gray-200 backdrop-blur-sm"></div>
+
+                  {/* Floating UI Panels - Moved from global positioning to this section */}
+
+                  {/* Status Panel - Top Right of Demo Area */}
+                  <FloatingUIPanel
+                    position={{ top: 20, right: 20 }}
+                    width={240}
+                    height={110}
+                    zIndex={20}
+                    delayMs={800}
+                    glassEffect={true}
+                    shadowIntensity="medium"
+                    animation={{ float: true, hover: true, parallax: false, intensity: 'subtle' }}
+                  >
+                    <div className="p-3 text-center">
+                      <div className="flex items-center justify-center gap-2 mb-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-xs font-medium text-gray-700">System Status</span>
+                      </div>
+                      <div className="text-xs text-gray-600 space-y-1">
+                        <div className="flex justify-between">
+                          <span>Performance</span>
+                          <span className="text-green-600 font-medium">Optimal</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Availability</span>
+                          <span className="text-green-600 font-medium">99.9%</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Response</span>
+                          <span className="text-green-600 font-medium">&lt;200ms</span>
+                        </div>
+                      </div>
+                    </div>
+                  </FloatingUIPanel>
+
+                  {/* Quick Stats Panel - Top Left of Demo Area */}
+                  <FloatingUIPanel
+                    position={{ top: 20, left: 20 }}
+                    width={220}
+                    height={130}
+                    zIndex={20}
+                    delayMs={1200}
+                    glassEffect={true}
+                    shadowIntensity="medium"
+                    animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
+                  >
+                    <div className="p-3">
+                      <h3 className="text-xs font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                        <TrendingUp className="w-3 h-3 text-purple-600" />
+                        Live Metrics
+                      </h3>
+                      <div className="space-y-2 text-xs text-gray-600">
+                        <div className="flex justify-between items-center">
+                          <span>Projects</span>
+                          <span className="font-bold text-purple-600">500+</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span>Satisfaction</span>
+                          <span className="font-bold text-green-600">98%</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span>Technologies</span>
+                          <span className="font-bold text-blue-600">50+</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-1 mt-2">
+                          <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-1 rounded-full" style={{width: '85%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </FloatingUIPanel>
+
+                  {/* Tech Stack Indicator - Bottom Right of Demo Area */}
+                  <FloatingUIPanel
+                    position={{ bottom: 20, right: 20 }}
+                    width={180}
+                    height={90}
+                    zIndex={20}
+                    delayMs={1600}
+                    glassEffect={true}
+                    shadowIntensity="light"
+                    animation={{ float: true, hover: true, parallax: true, intensity: 'subtle' }}
+                  >
+                    <div className="p-3">
+                      <div className="text-xs font-medium text-gray-700 mb-2 flex items-center gap-1">
+                        <Code className="w-3 h-3" />
+                        Active Stack
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        <span className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">React</span>
+                        <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">Node.js</span>
+                        <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">AWS</span>
+                        <span className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs">Docker</span>
+                      </div>
+                    </div>
+                  </FloatingUIPanel>
+
+                  {/* Notification Panel - Bottom Left of Demo Area */}
+                  <FloatingUIPanel
+                    position={{ bottom: 20, left: 20 }}
+                    width={200}
+                    height={70}
+                    zIndex={15}
+                    delayMs={2000}
+                    glassEffect={true}
+                    shadowIntensity="medium"
+                    animation={{ float: true, hover: true, parallax: false, intensity: 'medium' }}
+                  >
+                    <div className="p-2 flex items-center gap-2">
+                      <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <CheckCircle className="w-3 h-3 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-medium text-gray-800">Ready to Connect</div>
+                        <div className="text-xs text-gray-600">Let's build together</div>
+                      </div>
+                    </div>
+                  </FloatingUIPanel>
+
+                  {/* Center Info Panel - Appears on hover */}
+                  <FloatingUIPanel
+                    position={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+                    width={160}
+                    height={60}
+                    zIndex={25}
+                    delayMs={2400}
+                    glassEffect={true}
+                    shadowIntensity="heavy"
+                    animation={{ float: true, hover: true, parallax: true, intensity: 'strong' }}
+                  >
+                    <div className="p-3 text-center">
+                      <div className="text-xs font-semibold text-gray-800 mb-1">UI Innovation</div>
+                      <div className="text-xs text-gray-600">Hover & Interact</div>
+                    </div>
+                  </FloatingUIPanel>
+                </div>
+              </div>
+
+              {/* Liquid Buttons Showcase */}
+              <div className="text-center mb-16 scroll-animate fade-in-up">
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Interactive Button Effects</h3>
+                <p className="text-gray-600 mb-8">Experience liquid button interactions with ripple, mercury, and morphing effects</p>
+
+                {/* Button Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {/* Ripple Effect Button */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                    <h4 className="text-sm font-medium text-gray-800 mb-3">Ripple Effect</h4>
+                    <LiquidButton
+                      variant="primary"
+                      size="md"
+                      liquidEffect="ripple"
+                      intensity="medium"
+                      glowEffect={true}
+                      onClick={() => console.log('Ripple clicked!')}
+                    >
+                      Click for Ripples
+                    </LiquidButton>
+                    <p className="text-xs text-gray-500 mt-2">Classic liquid ripple animation</p>
+                  </div>
+
+                  {/* Mercury Effect Button */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                    <h4 className="text-sm font-medium text-gray-800 mb-3">Mercury Effect</h4>
+                    <LiquidButton
+                      variant="accent"
+                      size="md"
+                      liquidEffect="mercury"
+                      intensity="strong"
+                      glowEffect={false}
+                      onClick={() => console.log('Mercury clicked!')}
+                    >
+                      Liquid Mercury
+                    </LiquidButton>
+                    <p className="text-xs text-gray-500 mt-2">Fluid mercury-like morphing</p>
+                  </div>
+
+                  {/* Blob Effect Button */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                    <h4 className="text-sm font-medium text-gray-800 mb-3">Blob Effect</h4>
+                    <LiquidButton
+                      variant="gradient"
+                      size="md"
+                      liquidEffect="blob"
+                      intensity="strong"
+                      glowEffect={true}
+                      onClick={() => console.log('Blob clicked!')}
+                    >
+                      Organic Blob
+                    </LiquidButton>
+                    <p className="text-xs text-gray-500 mt-2">Organic blob morphing with SVG</p>
+                  </div>
+
+                  {/* Wave Effect Button */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                    <h4 className="text-sm font-medium text-gray-800 mb-3">Wave Effect</h4>
+                    <LiquidButton
+                      variant="secondary"
+                      size="md"
+                      liquidEffect="wave"
+                      intensity="medium"
+                      glowEffect={false}
+                      onClick={() => console.log('Wave clicked!')}
+                    >
+                      Wave Motion
+                    </LiquidButton>
+                    <p className="text-xs text-gray-500 mt-2">Smooth wave animation sweep</p>
+                  </div>
+
+                  {/* Deform Effect Button */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                    <h4 className="text-sm font-medium text-gray-800 mb-3">Deform Effect</h4>
+                    <LiquidButton
+                      variant="primary"
+                      size="md"
+                      liquidEffect="deform"
+                      intensity="subtle"
+                      glowEffect={false}
+                      onClick={() => console.log('Deform clicked!')}
+                    >
+                      Shape Deform
+                    </LiquidButton>
+                    <p className="text-xs text-gray-500 mt-2">Subtle shape deformation</p>
+                  </div>
+
+                  {/* Ghost with Morph Effect Button */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+                    <h4 className="text-sm font-medium text-gray-800 mb-3">Morph Effect</h4>
+                    <LiquidButton
+                      variant="ghost"
+                      size="md"
+                      liquidEffect="morph"
+                      intensity="medium"
+                      glowEffect={false}
+                      onClick={() => console.log('Morph clicked!')}
+                    >
+                      Border Morph
+                    </LiquidButton>
+                    <p className="text-xs text-gray-500 mt-2">Dynamic border morphing</p>
+                  </div>
+                </div>
+
+                {/* CTA Section with Large Liquid Button */}
+                <div className="mt-12 p-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Ready to Experience Liquid Interactions?</h4>
+                  <p className="text-gray-600 mb-6">Enhance your user interface with cutting-edge liquid button effects</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <LiquidButton
+                      variant="gradient"
+                      size="xl"
+                      liquidEffect="blob"
+                      intensity="strong"
+                      glowEffect={true}
+                      onClick={() => console.log('Main CTA clicked!')}
+                    >
+                      Get Started Today
+                    </LiquidButton>
+                    <LiquidButton
+                      variant="ghost"
+                      size="lg"
+                      liquidEffect="ripple"
+                      intensity="medium"
+                      glowEffect={false}
+                      onClick={() => console.log('Secondary CTA clicked!')}
+                    >
+                      Learn More
+                    </LiquidButton>
+                  </div>
+                </div>
+              </div>
+
+              {/* Animated Charts Showcase */}
+              <div className="mt-16 scroll-animate fade-in-up">
+                <div className="text-center mb-8">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Interactive Data Visualization</h3>
+                  <p className="text-gray-600 max-w-2xl mx-auto">Beautifully animated charts that bring your data to life with smooth transitions and engaging visual effects</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* Performance Metrics Bar Chart */}
+                  <div className="text-center">
+                    <h4 className="text-sm font-medium text-gray-800 mb-4">Performance Metrics</h4>
+                    <AnimatedChart
+                      type="bar"
+                      data={[
+                        { label: 'Speed', value: 95, color: 'text-blue-600' },
+                        { label: 'Quality', value: 98, color: 'text-green-600' },
+                        { label: 'UX', value: 92, color: 'text-purple-600' },
+                        { label: 'SEO', value: 89, color: 'text-orange-600' }
+                      ]}
+                      width={300}
+                      height={240}
+                      className="mx-auto"
+                    />
+                  </div>
+
+                  {/* Technology Stack Pie Chart */}
+                  <div className="text-center">
+                    <h4 className="text-sm font-medium text-gray-800 mb-4">Technology Distribution</h4>
+                    <AnimatedChart
+                      type="pie"
+                      data={[
+                        { label: 'React', value: 35, color: 'text-blue-600' },
+                        { label: 'Node.js', value: 25, color: 'text-green-600' },
+                        { label: 'TypeScript', value: 20, color: 'text-purple-600' },
+                        { label: 'AWS', value: 20, color: 'text-orange-600' }
+                      ]}
+                      width={280}
+                      height={220}
+                      className="mx-auto"
+                    />
+                  </div>
+
+                  {/* Growth Trends Line Chart */}
+                  <div className="text-center md:col-span-2 lg:col-span-1">
+                    <h4 className="text-sm font-medium text-gray-800 mb-4">Growth Trajectory</h4>
+                    <AnimatedChart
+                      type="line"
+                      data={[
+                        { label: 'Q1', value: 65, color: 'text-blue-600' },
+                        { label: 'Q2', value: 78, color: 'text-green-600' },
+                        { label: 'Q3', value: 85, color: 'text-purple-600' },
+                        { label: 'Q4', value: 95, color: 'text-orange-600' }
+                      ]}
+                      width={280}
+                      height={200}
+                      className="mx-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="text-center mt-6">
+                  <p className="text-sm text-gray-500 italic">Charts animate on scroll with staggered timing for enhanced visual impact</p>
+                </div>
+              </div>
+
+              {/* Technical Details */}
+              <div className="mt-16 text-center scroll-animate fade-in-up">
+                <div className="max-w-4xl mx-auto">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Technical Implementation</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                      <div className="text-purple-600 font-medium mb-2">React + TypeScript</div>
+                      <p className="text-gray-600">Modern component architecture with full type safety</p>
+                    </div>
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                      <div className="text-blue-600 font-medium mb-2">CSS Transforms</div>
+                      <p className="text-gray-600">Hardware-accelerated 3D effects and animations</p>
+                    </div>
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                      <div className="text-green-600 font-medium mb-2">Performance</div>
+                      <p className="text-gray-600">RequestAnimationFrame with viewport optimization</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
         </>
       ) : (
