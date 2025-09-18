@@ -128,10 +128,13 @@ export default function Home() {
               <div>
                 <h1 className="text-xl font-extrabold tracking-tight text-gray-900">
                   BitMonkey IT Services Pvt Ltd
-                  <div className="word-swap text-sm text-purple-600 mt-1" style={{position: 'relative', height: '20px'}}>
+                  <div className="word-swap text-sm text-purple-600 mt-1 flex items-center gap-2" style={{position: 'relative', height: '20px'}}>
                     <span className="word">Digital Innovation</span>
                     <span className="word">Tech Excellence</span>
                     <span className="word">Future Ready</span>
+                    <div className="absolute -right-6">
+                      <NeuroLoader type="brain-wave" size="sm" color="#7C3AED" speed="slow" />
+                    </div>
                   </div>
                 </h1>
                 <p className="text-xs text-gray-500 mt-1">Friday, September 12 • New Delhi</p>
@@ -849,6 +852,14 @@ export default function Home() {
 
           {/* Right hero - changes based on context */}
           <div className="relative lg:col-span-9 min-h-[64vh] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black bg-cover bg-center">
+
+            {/* Neural loading overlay for video */}
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm transition-opacity duration-500" id="video-loader">
+              <div className="text-center">
+                <NeuroLoader type="neural-network" size="xl" color="#8B5CF6" speed="normal" />
+                <p className="text-white/70 mt-4 text-sm font-medium" id="loader-text">Initializing Neural Interface...</p>
+              </div>
+            </div>
             <video
               className="absolute inset-0 w-full h-full object-cover z-10"
               autoPlay
@@ -859,13 +870,58 @@ export default function Home() {
               key={contextSlug || 'default'}
               ref={(video) => {
                 if (video) {
+                  // Update loading text after 1.5 seconds
+                  const textUpdateId = setTimeout(() => {
+                    const loaderText = document.getElementById('loader-text');
+                    if (loaderText) {
+                      loaderText.textContent = 'Neural pathways synchronized...';
+                    }
+                  }, 1500);
+
+                  // Auto-hide neural loader after 3 seconds regardless of video load status
+                  const timeoutId = setTimeout(() => {
+                    const loader = document.getElementById('video-loader');
+                    if (loader && loader.style.display !== 'none') {
+                      console.log('Auto-hiding neural loader after timeout');
+                      loader.style.opacity = '0';
+                      setTimeout(() => {
+                        loader.style.display = 'none';
+                      }, 500);
+                    }
+                  }, 3000);
+
                   video.addEventListener('loadeddata', () => {
                     console.log('Video loaded successfully');
+                    // Clear timeouts since video loaded
+                    clearTimeout(timeoutId);
+                    clearTimeout(textUpdateId);
+                    // Hide neural loader
+                    const loader = document.getElementById('video-loader');
+                    if (loader) {
+                      loader.style.opacity = '0';
+                      setTimeout(() => {
+                        loader.style.display = 'none';
+                      }, 500);
+                    }
                     video.play().catch(e => {
                       console.error('Auto-play failed:', e);
                       // Show controls if autoplay fails
                       video.controls = true;
                     });
+                  });
+
+                  // Also handle video load errors
+                  video.addEventListener('error', () => {
+                    console.log('Video failed to load, hiding neural loader');
+                    clearTimeout(timeoutId);
+                    clearTimeout(textUpdateId);
+                    const loader = document.getElementById('video-loader');
+                    if (loader) {
+                      loader.style.opacity = '0';
+                      setTimeout(() => {
+                        loader.style.display = 'none';
+                      }, 500);
+                    }
                   });
                 }
               }}
@@ -964,7 +1020,12 @@ export default function Home() {
                     <div
                       className="flex items-start gap-3 scroll-animate fade-in-up-delay-1000 hover-highlight magnetic-pull"
                     >
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div className="relative">
+                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                        <div className="absolute -top-1 -right-1">
+                          <NeuroLoader type="neural-network" size="sm" color="#10B981" speed="slow" />
+                        </div>
+                      </div>
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Development Services</h4>
                         <p className="text-sm text-gray-600">Modern applications with cutting-edge technologies</p>
@@ -1148,7 +1209,12 @@ export default function Home() {
                     <div
                       className="flex items-start gap-3 hover-highlight magnetic-pull"
                     >
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div className="relative">
+                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                        <div className="absolute -top-1 -right-1">
+                          <NeuroLoader type="brain-wave" size="sm" color="#059669" speed="normal" />
+                        </div>
+                      </div>
                       <div className="w-full">
                         <h4 className="font-semibold text-gray-900">Training Services</h4>
                         <p className="text-sm text-gray-600">Expert-led training programs and certifications</p>
@@ -1227,8 +1293,11 @@ export default function Home() {
                   </div>
 
                   <div className="pt-4">
-                    <button className="hologram-button px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all">
+                    <button className="hologram-button px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-lg transition-all relative group overflow-hidden">
                       <span className="hologram-text" data-text="Explore Our Services">Explore Our Services</span>
+                      <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <NeuroLoader type="neuron-fire" size="sm" color="#FFFFFF" speed="fast" />
+                      </div>
                     </button>
                   </div>
                 </div>
@@ -1289,7 +1358,12 @@ export default function Home() {
 
                   <div className="space-y-4 scroll-animate fade-in-up-delay-1000">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div className="relative">
+                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                        <div className="absolute -top-1 -right-1">
+                          <NeuroLoader type="synaptic" size="sm" color="#10B981" speed="slow" />
+                        </div>
+                      </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">Enterprise Solutions</h4>
                         <p className="text-sm text-gray-600">Large-scale applications for global organizations</p>
@@ -1297,7 +1371,12 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div className="relative">
+                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                        <div className="absolute -top-1 -right-1">
+                          <NeuroLoader type="dendrite" size="sm" color="#059669" speed="normal" />
+                        </div>
+                      </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">Startup Innovations</h4>
                         <p className="text-sm text-gray-600">Cutting-edge solutions for emerging businesses</p>
@@ -1305,7 +1384,12 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div className="relative">
+                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                        <div className="absolute -top-1 -right-1">
+                          <NeuroLoader type="neuron-fire" size="sm" color="#16A34A" speed="fast" />
+                        </div>
+                      </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">Digital Transformation</h4>
                         <p className="text-sm text-gray-600">Complete modernization of legacy systems</p>
@@ -1557,8 +1641,17 @@ export default function Home() {
                     </div>
                   </div>
 
+                  {/* Neural Processing Indicator */}
+                  <div className="flex items-center justify-center mb-4 pt-4">
+                    <div className="flex items-center gap-3 text-sm text-gray-500">
+                      <NeuroLoader type="brain-wave" size="sm" color="#6B7280" speed="normal" />
+                      <span>Processing Analytics...</span>
+                      <NeuroLoader type="neural-network" size="sm" color="#6B7280" speed="fast" />
+                    </div>
+                  </div>
+
                   {/* Statistics */}
-                  <div className="grid grid-cols-2 gap-4 pt-4 scroll-animate fade-in-up-delay-1200">
+                  <div className="grid grid-cols-2 gap-4 scroll-animate fade-in-up-delay-1200">
                     <AnimatedCounter
                       value={500}
                       suffix="+"
@@ -3162,16 +3255,24 @@ export default function Home() {
                 {contextSlug === 'training-services' && "Let&apos;s design a training program for your team"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all underline-reveal gradient-border gradient-border-hover">
-                  {contextSlug === 'development-services' && 'Start Your Project'}
-                  {contextSlug === 'consulting-services' && 'Schedule Consultation'}
-                  {contextSlug === 'training-services' && 'Explore Training'}
+                <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-2xl transition-all underline-reveal gradient-border gradient-border-hover relative group overflow-hidden">
+                  <span className="relative z-10">
+                    {contextSlug === 'development-services' && 'Start Your Project'}
+                    {contextSlug === 'consulting-services' && 'Schedule Consultation'}
+                    {contextSlug === 'training-services' && 'Explore Training'}
+                  </span>
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <NeuroLoader type="synaptic" size="sm" color="#7C3AED" speed="fast" />
+                  </div>
                 </a>
                 <button
                   onClick={() => setContextSlug(null)}
-                  className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all gradient-border gradient-border-hover"
+                  className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all gradient-border gradient-border-hover relative group overflow-hidden"
                 >
-                  Back to Home
+                  <span className="relative z-10">Back to Home</span>
+                  <div className="absolute left-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <NeuroLoader type="brain-wave" size="sm" color="#7C3AED" speed="normal" />
+                  </div>
                 </button>
               </div>
             </div>

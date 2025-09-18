@@ -2,6 +2,7 @@
 
 import React from 'react';
 import TiltCard from './TiltCard';
+import NeuroLoader from './NeuroLoader';
 
 interface BentoItem {
   id: string;
@@ -81,8 +82,11 @@ export default function BentoGrid({ items, className = '' }: BentoGridProps) {
               onClick={item.onClick}
               className={sizeClasses}
             >
-              <div className={`${item.gradient} rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ${iconSize}`}>
+              <div className={`${item.gradient} rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 ${iconSize} relative overflow-hidden`}>
                 {item.icon}
+                <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <NeuroLoader type="neural-network" size="sm" color="#FFFFFF" speed="fast" />
+                </div>
               </div>
               <div className={item.size === 'xl' ? 'mt-4 text-center' : 'text-left'}>
                 <h5 className={`text-gray-900 underline-reveal-text ${textClasses.title}`}>{item.title}</h5>
