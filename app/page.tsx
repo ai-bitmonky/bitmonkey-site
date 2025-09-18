@@ -33,6 +33,7 @@ import LiquidButton from './components/LiquidButton';
 import AnimatedChart from './components/AnimatedChart';
 import { ProgressRing, ProgressRingGroup } from './components/ProgressRing';
 import { ShadowCard, ShadowShowcase } from './components/RealisticShadows';
+import AIArtPattern from './components/AIArtPattern';
 
 
 export default function Home() {
@@ -1154,9 +1155,24 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
                 <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
-                  <div className="scroll-animate fade-in-up">
-                    <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter" style={{fontSize: '2.2rem'}}>Our Services</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block scroll-animate fade-in-up text-reveal" style={{fontSize: '1.75rem'}}>
+                  <div className="scroll-animate fade-in-up relative">
+                    {/* AI Art Pattern Background */}
+                    <div className="absolute -top-12 -left-12 -right-8 -bottom-8 pointer-events-none overflow-hidden">
+                      <AIArtPattern
+                        type="neural-network"
+                        size="lg"
+                        intensity="subtle"
+                        animate={true}
+                        colors={{
+                          primary: '#8b5cf6',
+                          secondary: '#3b82f6',
+                          accent: '#06b6d4'
+                        }}
+                        className="opacity-15"
+                      />
+                    </div>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Our Services</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
                       <span className="highlight-reveal">Comprehensive Digital Solutions</span>
                     </h2>
                   </div>
