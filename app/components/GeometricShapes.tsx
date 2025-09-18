@@ -3,7 +3,7 @@
 import React from 'react';
 
 interface GeometricShapeProps {
-  type: 'blob' | 'grid' | 'lines' | 'dots' | 'triangle' | 'circle' | 'hexagon' | 'geometric-grid' | 'diagonal-lines' | 'circuit-pattern' | 'mesh-grid';
+  type: 'blob' | 'grid' | 'lines' | 'dots' | 'triangle' | 'circle' | 'hexagon' | 'geometric-grid' | 'diagonal-lines' | 'circuit-pattern' | 'mesh-grid' | 'organic-blob' | 'flowing-wave' | 'cell-structure' | 'neural-network' | 'liquid-drop' | 'organic-spiral' | 'bio-membrane' | 'coral-branch';
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   color?: string;
@@ -21,6 +21,7 @@ const GeometricShape: React.FC<GeometricShapeProps> = ({
   position = 'center',
   opacity = 1
 }) => {
+  const componentId = React.useId();
   const sizeClasses = {
     sm: 'w-16 h-16',
     md: 'w-32 h-32',
@@ -247,6 +248,172 @@ const GeometricShape: React.FC<GeometricShapeProps> = ({
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#mesh)" className={animate ? 'animate-pulse' : ''} />
+          </svg>
+        );
+
+      case 'organic-blob':
+        return (
+          <svg viewBox="0 0 200 200" className="w-full h-full" style={{ opacity }}>
+            <path
+              d="M42.3,-73.1C55.1,-65.8,65.7,-52.4,73.8,-36.9C81.9,-21.4,87.5,-3.8,85.6,12.7C83.7,29.2,74.3,44.6,62.1,57.3C49.9,70,35,80,18.8,84.1C2.6,88.2,-15,86.4,-30.4,79.2C-45.8,72,-59,59.4,-67.8,44.2C-76.6,29,-81,11.2,-80.7,-7.1C-80.4,-25.4,-75.4,-44.2,-64.8,-58.7C-54.2,-73.2,-38,-83.4,-21.1,-86.3C-4.2,-89.2,13.4,-84.8,29.8,-77.9C46.2,-71,61.4,-61.6,42.3,-73.1Z"
+              fill={color}
+              className={animate ? 'animate-pulse' : ''}
+            />
+          </svg>
+        );
+
+      case 'flowing-wave':
+        return (
+          <svg viewBox="0 0 200 200" className="w-full h-full" style={{ opacity }}>
+            <path
+              d="M0,100 Q50,50 100,100 T200,100 Q150,150 100,100 T0,100"
+              fill="none"
+              stroke={color}
+              strokeWidth="3"
+              className={animate ? 'animate-pulse' : ''}
+            />
+            <path
+              d="M0,120 Q60,70 120,120 T200,120"
+              fill="none"
+              stroke={color}
+              strokeWidth="2"
+              opacity="0.7"
+              className={animate ? 'animate-pulse' : ''}
+              style={{ animationDelay: '0.5s' }}
+            />
+            <path
+              d="M0,80 Q40,130 80,80 T200,80"
+              fill="none"
+              stroke={color}
+              strokeWidth="2"
+              opacity="0.5"
+              className={animate ? 'animate-pulse' : ''}
+              style={{ animationDelay: '1s' }}
+            />
+          </svg>
+        );
+
+      case 'cell-structure':
+        return (
+          <svg viewBox="0 0 200 200" className="w-full h-full" style={{ opacity }}>
+            <defs>
+              <pattern id={`cell-pattern-${componentId}`} x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path
+                  d="M30,5 Q45,15 50,30 Q45,45 30,55 Q15,45 10,30 Q15,15 30,5"
+                  fill="none"
+                  stroke={color}
+                  strokeWidth="1"
+                />
+                <circle cx="30" cy="30" r="3" fill={color} opacity="0.6" />
+                <circle cx="20" cy="20" r="1.5" fill={color} opacity="0.4" />
+                <circle cx="40" cy="40" r="1.5" fill={color} opacity="0.4" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill={`url(#cell-pattern-${componentId})`} className={animate ? 'animate-pulse' : ''} />
+          </svg>
+        );
+
+      case 'neural-network':
+        return (
+          <svg viewBox="0 0 200 200" className="w-full h-full" style={{ opacity }}>
+            {/* Nodes */}
+            <circle cx="50" cy="50" r="4" fill={color} className={animate ? 'animate-ping' : ''} style={{ animationDelay: '0s' }} />
+            <circle cx="150" cy="50" r="4" fill={color} className={animate ? 'animate-ping' : ''} style={{ animationDelay: '0.3s' }} />
+            <circle cx="100" cy="100" r="5" fill={color} className={animate ? 'animate-ping' : ''} style={{ animationDelay: '0.6s' }} />
+            <circle cx="50" cy="150" r="4" fill={color} className={animate ? 'animate-ping' : ''} style={{ animationDelay: '0.9s' }} />
+            <circle cx="150" cy="150" r="4" fill={color} className={animate ? 'animate-ping' : ''} style={{ animationDelay: '1.2s' }} />
+
+            {/* Connections */}
+            <path d="M50,50 Q75,75 100,100" fill="none" stroke={color} strokeWidth="1.5" opacity="0.6" />
+            <path d="M150,50 Q125,75 100,100" fill="none" stroke={color} strokeWidth="1.5" opacity="0.6" />
+            <path d="M100,100 Q75,125 50,150" fill="none" stroke={color} strokeWidth="1.5" opacity="0.6" />
+            <path d="M100,100 Q125,125 150,150" fill="none" stroke={color} strokeWidth="1.5" opacity="0.6" />
+            <path d="M50,50 Q100,50 150,50" fill="none" stroke={color} strokeWidth="1" opacity="0.4" />
+            <path d="M50,150 Q100,150 150,150" fill="none" stroke={color} strokeWidth="1" opacity="0.4" />
+          </svg>
+        );
+
+      case 'liquid-drop':
+        return (
+          <svg viewBox="0 0 200 200" className="w-full h-full" style={{ opacity }}>
+            <path
+              d="M100,20 C100,20 160,80 160,120 C160,160 130,180 100,180 C70,180 40,160 40,120 C40,80 100,20 100,20Z"
+              fill={color}
+              className={animate ? 'animate-bounce' : ''}
+            />
+            <ellipse cx="85" cy="110" rx="15" ry="25" fill={color} opacity="0.3" />
+            <circle cx="120" cy="130" r="8" fill={color} opacity="0.2" />
+          </svg>
+        );
+
+      case 'organic-spiral':
+        return (
+          <svg viewBox="0 0 200 200" className="w-full h-full" style={{ opacity }}>
+            <path
+              d="M100,100 Q120,80 140,100 Q160,120 140,140 Q120,160 100,140 Q80,120 100,100"
+              fill="none"
+              stroke={color}
+              strokeWidth="3"
+              className={animate ? 'animate-spin' : ''}
+              style={{ transformOrigin: 'center', animationDuration: '8s' }}
+            />
+            <path
+              d="M100,100 Q110,90 120,100 Q130,110 120,120 Q110,130 100,120 Q90,110 100,100"
+              fill="none"
+              stroke={color}
+              strokeWidth="2"
+              opacity="0.7"
+              className={animate ? 'animate-spin' : ''}
+              style={{ transformOrigin: 'center', animationDuration: '6s', animationDirection: 'reverse' }}
+            />
+            <circle cx="100" cy="100" r="3" fill={color} />
+          </svg>
+        );
+
+      case 'bio-membrane':
+        return (
+          <svg viewBox="0 0 200 200" className="w-full h-full" style={{ opacity }}>
+            <defs>
+              <radialGradient id={`membrane-gradient-${componentId}`} cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor={color} stopOpacity="0.8" />
+                <stop offset="70%" stopColor={color} stopOpacity="0.3" />
+                <stop offset="100%" stopColor={color} stopOpacity="0.1" />
+              </radialGradient>
+            </defs>
+            <path
+              d="M20,100 Q60,40 100,80 Q140,120 180,100 Q140,160 100,120 Q60,80 20,100"
+              fill={`url(#membrane-gradient-${componentId})`}
+              className={animate ? 'animate-pulse' : ''}
+            />
+            <path
+              d="M20,100 Q60,40 100,80 Q140,120 180,100 Q140,160 100,120 Q60,80 20,100"
+              fill="none"
+              stroke={color}
+              strokeWidth="1.5"
+              opacity="0.6"
+            />
+          </svg>
+        );
+
+      case 'coral-branch':
+        return (
+          <svg viewBox="0 0 200 200" className="w-full h-full" style={{ opacity }}>
+            {/* Main branch */}
+            <path d="M100,180 Q95,140 100,100 Q105,60 100,20" fill="none" stroke={color} strokeWidth="4" opacity="0.8" />
+
+            {/* Side branches */}
+            <path d="M100,160 Q80,140 60,130" fill="none" stroke={color} strokeWidth="3" opacity="0.7" />
+            <path d="M100,140 Q120,120 140,110" fill="none" stroke={color} strokeWidth="3" opacity="0.7" />
+            <path d="M100,120 Q85,100 70,85" fill="none" stroke={color} strokeWidth="2.5" opacity="0.6" />
+            <path d="M100,100 Q115,80 130,65" fill="none" stroke={color} strokeWidth="2.5" opacity="0.6" />
+            <path d="M100,80 Q90,65 80,50" fill="none" stroke={color} strokeWidth="2" opacity="0.5" />
+            <path d="M100,60 Q110,45 120,30" fill="none" stroke={color} strokeWidth="2" opacity="0.5" />
+
+            {/* Small offshoots */}
+            <circle cx="60" cy="130" r="2" fill={color} opacity="0.6" className={animate ? 'animate-ping' : ''} style={{ animationDelay: '0s' }} />
+            <circle cx="140" cy="110" r="2" fill={color} opacity="0.6" className={animate ? 'animate-ping' : ''} style={{ animationDelay: '0.5s' }} />
+            <circle cx="70" cy="85" r="1.5" fill={color} opacity="0.5" className={animate ? 'animate-ping' : ''} style={{ animationDelay: '1s' }} />
+            <circle cx="130" cy="65" r="1.5" fill={color} opacity="0.5" className={animate ? 'animate-ping' : ''} style={{ animationDelay: '1.5s' }} />
           </svg>
         );
 

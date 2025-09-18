@@ -913,11 +913,11 @@ export default function Home() {
             <GeometricAccent
               className="absolute inset-0 z-0"
               shapes={[
-                { type: 'blob', size: 'xl', color: 'rgba(147, 51, 234, 0.08)', position: 'top-left', animate: true },
-                { type: 'circle', size: 'lg', color: 'rgba(79, 70, 229, 0.06)', position: 'top-right', animate: true },
-                { type: 'dots', size: 'md', color: 'rgba(168, 85, 247, 0.05)', position: 'bottom-left', animate: true },
-                { type: 'geometric-grid', size: 'xl', color: 'rgba(99, 102, 241, 0.03)', position: 'center', animate: true, opacity: 0.6 },
-                { type: 'diagonal-lines', size: 'lg', color: 'rgba(147, 51, 234, 0.04)', position: 'bottom-right', animate: true, opacity: 0.8 }
+                { type: 'organic-blob', size: 'xl', color: 'rgba(147, 51, 234, 0.2)', position: 'top-left', animate: true },
+                { type: 'liquid-drop', size: 'lg', color: 'rgba(79, 70, 229, 0.15)', position: 'top-right', animate: true },
+                { type: 'neural-network', size: 'md', color: 'rgba(168, 85, 247, 0.18)', position: 'bottom-left', animate: true },
+                { type: 'bio-membrane', size: 'xl', color: 'rgba(99, 102, 241, 0.12)', position: 'center', animate: true },
+                { type: 'flowing-wave', size: 'lg', color: 'rgba(147, 51, 234, 0.16)', position: 'bottom-right', animate: true }
               ]}
             >
               <div></div>
@@ -937,11 +937,11 @@ export default function Home() {
           <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
-                { type: 'circuit-pattern', size: 'xl', color: 'rgba(99, 102, 241, 0.02)', position: 'center', animate: true, opacity: 0.4 },
-                { type: 'grid', size: 'lg', color: 'rgba(99, 102, 241, 0.04)', position: 'top-left', animate: true },
-                { type: 'hexagon', size: 'md', color: 'rgba(147, 51, 234, 0.06)', position: 'top-right', animate: true },
-                { type: 'mesh-grid', size: 'lg', color: 'rgba(79, 70, 229, 0.03)', position: 'bottom-left', animate: true, opacity: 0.7 },
-                { type: 'triangle', size: 'sm', color: 'rgba(79, 70, 229, 0.05)', position: 'bottom-right', animate: true }
+                { type: 'circuit-pattern', size: 'xl', color: 'rgba(99, 102, 241, 0.08)', position: 'center', animate: true },
+                { type: 'organic-blob', size: 'lg', color: 'rgba(99, 102, 241, 0.15)', position: 'top-left', animate: true },
+                { type: 'flowing-wave', size: 'md', color: 'rgba(147, 51, 234, 0.18)', position: 'top-right', animate: true },
+                { type: 'cell-structure', size: 'lg', color: 'rgba(79, 70, 229, 0.12)', position: 'bottom-left', animate: true },
+                { type: 'coral-branch', size: 'sm', color: 'rgba(79, 70, 229, 0.16)', position: 'bottom-right', animate: true }
               ]}
             >
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
@@ -1264,11 +1264,11 @@ export default function Home() {
           <section id="our-portfolio" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
-                { type: 'blob', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-right', animate: true },
-                { type: 'dots', size: 'xl', color: 'rgba(59, 130, 246, 0.03)', position: 'bottom-left', animate: true },
-                { type: 'diagonal-lines', size: 'xl', color: 'rgba(99, 102, 241, 0.02)', position: 'center', animate: true, opacity: 0.5 },
-                { type: 'geometric-grid', size: 'lg', color: 'rgba(147, 51, 234, 0.03)', position: 'top-left', animate: true, opacity: 0.6 },
-                { type: 'circle', size: 'md', color: 'rgba(99, 102, 241, 0.04)', position: 'bottom-right', animate: true }
+                { type: 'liquid-drop', size: 'lg', color: 'rgba(168, 85, 247, 0.18)', position: 'top-right', animate: true },
+                { type: 'neural-network', size: 'xl', color: 'rgba(59, 130, 246, 0.15)', position: 'bottom-left', animate: true },
+                { type: 'bio-membrane', size: 'xl', color: 'rgba(99, 102, 241, 0.12)', position: 'center', animate: true },
+                { type: 'organic-spiral', size: 'lg', color: 'rgba(147, 51, 234, 0.14)', position: 'top-left', animate: true },
+                { type: 'flowing-wave', size: 'md', color: 'rgba(99, 102, 241, 0.16)', position: 'bottom-right', animate: true }
               ]}
             >
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
@@ -1346,8 +1346,9 @@ export default function Home() {
           <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
-                { type: 'dots', size: 'lg', color: 'rgba(168, 85, 247, 0.05)', position: 'top-left', animate: true },
-                { type: 'circle', size: 'md', color: 'rgba(59, 130, 246, 0.03)', position: 'bottom-right', animate: true }
+                { type: 'coral-branch', size: 'lg', color: 'rgba(168, 85, 247, 0.18)', position: 'top-left', animate: true },
+                { type: 'organic-blob', size: 'md', color: 'rgba(59, 130, 246, 0.15)', position: 'bottom-right', animate: true },
+                { type: 'cell-structure', size: 'xl', color: 'rgba(147, 51, 234, 0.12)', position: 'center', animate: true }
               ]}
             >
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
