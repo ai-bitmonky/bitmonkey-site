@@ -218,7 +218,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
             className="relative w-[700px] h-[700px]"
             style={{
               perspective: '1000px',
-              transform: 'translate(-10%, 5%)'
+              transform: 'translate(-5%, 5%)'
             }}
           >
             {/* Central Hub */}
@@ -474,9 +474,9 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
               let textAlignment = "";
 
               if (driver.angle === 0) {
-                // Top - text above icon
+                // Top - text above icon (10% farther away)
                 textStyle.left = iconPos.x;
-                textStyle.top = iconPos.y - 60;
+                textStyle.top = iconPos.y - 90;
                 textStyle.transform = 'translate(-50%, -100%)';
                 textAlignment = "text-center";
               } else if (driver.angle === 90) {
@@ -492,8 +492,8 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                 textStyle.transform = 'translate(-50%, 0%)';
                 textAlignment = "text-center";
               } else if (driver.angle === 270) {
-                // Left - text to the left of icon
-                textStyle.left = iconPos.x - 60;
+                // Left - text to the left of icon (10% farther away)
+                textStyle.left = iconPos.x - 90;
                 textStyle.top = iconPos.y;
                 textStyle.transform = 'translate(-100%, -50%)';
                 textAlignment = "text-right";
