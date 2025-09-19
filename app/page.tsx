@@ -622,7 +622,7 @@ export default function Home() {
                         setContextSlug(null);
                         // Wait for re-render before scrolling
                         setTimeout(() => {
-                          const element = document.getElementById('our-portfolio');
+                          const element = document.getElementById('portfolio');
                           if (element) {
                             const elementPosition = element.offsetTop;
                             const contentStart = elementPosition + 80; // Minimal padding to show section start
@@ -638,9 +638,9 @@ export default function Home() {
                         setContextSlug(null);
                         // Wait for re-render before scrolling with multiple attempts
                         const scrollToCaseStudies = (attempts = 0) => {
-                          const element = document.getElementById('case-studies');
+                          const element = document.getElementById('resources');
                           if (element) {
-                            console.log('Found case studies element at:', element.offsetTop);
+                            console.log('Found resources element at:', element.offsetTop);
                             const elementPosition = element.offsetTop;
                             const contentStart = elementPosition + 80; // Minimal padding to show section start
                             const offsetPosition = contentStart - 80; // Account for nav height and positioning
@@ -649,10 +649,10 @@ export default function Home() {
                               behavior: 'smooth'
                             });
                           } else if (attempts < 5) {
-                            console.log('Case studies element not found, retrying...', attempts + 1);
+                            console.log('Resources element not found, retrying...', attempts + 1);
                             setTimeout(() => scrollToCaseStudies(attempts + 1), 100);
                           } else {
-                            console.log('Case studies element not found after 5 attempts');
+                            console.log('Resources element not found after 5 attempts');
                           }
                         };
                         setTimeout(() => scrollToCaseStudies(), 100);
@@ -761,7 +761,7 @@ export default function Home() {
                           setContextSlug(null);
                           // Wait for re-render before scrolling
                           setTimeout(() => {
-                            const element = document.getElementById('our-portfolio');
+                            const element = document.getElementById('portfolio');
                             if (element) {
                               const elementPosition = element.offsetTop;
                               const contentStart = elementPosition + 80; // Minimal padding to show section start
@@ -778,9 +778,9 @@ export default function Home() {
                           setMobileMenuOpen(false);
                           // Wait for re-render before scrolling with multiple attempts
                           const scrollToCaseStudies = (attempts = 0) => {
-                            const element = document.getElementById('case-studies');
+                            const element = document.getElementById('resources');
                             if (element) {
-                              console.log('Found case studies element at:', element.offsetTop);
+                              console.log('Found resources element at:', element.offsetTop);
                               const elementPosition = element.offsetTop;
                               const contentStart = elementPosition + 80; // Minimal padding to show section start
                               const offsetPosition = contentStart - 80; // Account for nav height and positioning
@@ -789,10 +789,10 @@ export default function Home() {
                                 behavior: 'smooth'
                               });
                             } else if (attempts < 5) {
-                              console.log('Case studies element not found, retrying...', attempts + 1);
+                              console.log('Resources element not found, retrying...', attempts + 1);
                               setTimeout(() => scrollToCaseStudies(attempts + 1), 100);
                             } else {
-                              console.log('Case studies element not found after 5 attempts');
+                              console.log('Resources element not found after 5 attempts');
                             }
                           };
                           setTimeout(() => scrollToCaseStudies(), 100);
@@ -1982,275 +1982,6 @@ export default function Home() {
             </GeometricAccent>
           </section>
 
-          {/* Our Portfolio Section */}
-          <section id="our-portfolio" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
-            <GeometricAccent
-              shapes={[
-                { type: 'liquid-drop', size: 'lg', color: 'rgba(168, 85, 247, 0.18)', position: 'top-right', animate: true },
-                { type: 'neural-network', size: 'xl', color: 'rgba(59, 130, 246, 0.15)', position: 'bottom-left', animate: true },
-                { type: 'bio-membrane', size: 'xl', color: 'rgba(99, 102, 241, 0.12)', position: 'center', animate: true },
-                { type: 'organic-spiral', size: 'lg', color: 'rgba(147, 51, 234, 0.14)', position: 'top-left', animate: true },
-                { type: 'flowing-wave', size: 'md', color: 'rgba(99, 102, 241, 0.16)', position: 'bottom-right', animate: true }
-              ]}
-            >
-              {/* Parametric Light Effects for Portfolio */}
-              <div className="absolute top-12 left-12">
-                <ParametricLight type="helix" size="lg" color="#A855F7" speed="normal" intensity="bright" glow={true} trail={true} />
-              </div>
-              <div className="absolute bottom-12 right-12">
-                <ParametricLight type="butterfly" size="md" color="#3B82F6" speed="fast" intensity="medium" glow={true} />
-              </div>
-              <div className="absolute top-1/2 right-16 transform -translate-y-1/2">
-                <ParametricLight type="orbit" size="sm" color="#6366F1" speed="slow" intensity="subtle" glow={true} />
-              </div>
-
-              {/* Data Sculpture Effects for Portfolio */}
-              <div className="absolute top-8 left-8">
-                <DataSculpture type="sphere" size="md" color="#A855F7" speed="fast" intensity="bright" wireframe={true} particles={true} />
-              </div>
-              <div className="absolute bottom-8 left-1/4">
-                <DataSculpture type="pyramid" size="lg" color="#3B82F6" speed="normal" intensity="medium" wireframe={true} />
-              </div>
-              <div className="absolute top-1/3 right-8">
-                <DataSculpture type="helix" size="sm" color="#6366F1" speed="slow" intensity="subtle" particles={true} />
-              </div>
-            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
-              <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
-                {/* Text Content - 30% */}
-                <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
-                  <div>
-                    <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Our Portfolio</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
-                      <span className="highlight-reveal">Showcase of Excellence</span>
-                    </h2>
-                  </div>
-
-                  <p className="text-lg text-gray-600 leading-relaxed scroll-animate fade-in-up">
-                    Explore our portfolio of successful digital transformations and innovative solutions across various industries.
-                  </p>
-
-                  <div className="space-y-4 scroll-animate fade-in-up-delay-1000">
-                    <div className="flex items-start gap-3">
-                      <div className="relative">
-                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                        <div className="absolute -top-1 -right-1">
-                          <NeuroLoader type="synaptic" size="sm" color="#10B981" speed="slow" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Enterprise Solutions</h4>
-                        <p className="text-sm text-gray-600">Large-scale applications for global organizations</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="relative">
-                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                        <div className="absolute -top-1 -right-1">
-                          <NeuroLoader type="dendrite" size="sm" color="#059669" speed="normal" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Startup Innovations</h4>
-                        <p className="text-sm text-gray-600">Cutting-edge solutions for emerging businesses</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="relative">
-                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                        <div className="absolute -top-1 -right-1">
-                          <NeuroLoader type="neuron-fire" size="sm" color="#16A34A" speed="fast" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Digital Transformation</h4>
-                        <p className="text-sm text-gray-600">Complete modernization of legacy systems</p>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Video Content - 70% */}
-                <div className="lg:col-span-7 scroll-animate fade-in-right">
-                  <TiltCard intensity="medium" className="w-full">
-                    <div className="hologram-video hologram-border relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover">
-                      <video
-                        className="w-full h-full object-contain aspect-video"
-                        autoPlay
-                        muted
-                        playsInline
-                        preload="auto"
-                        poster="/portfolio-poster.jpg"
-                      >
-                        <source src="/portfolio.mp4" type="video/mp4" />
-                        <div className="w-full h-96 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white text-xl font-semibold">
-                          Portfolio Video Placeholder
-                        </div>
-                      </video>
-                    </div>
-                  </TiltCard>
-                </div>
-              </div>
-            </div>
-            </GeometricAccent>
-          </section>
-
-          {/* Spacer between Portfolio and Case Studies */}
-          <div className="h-10 bg-gray-50"></div>
-
-          {/* Interactive Case Study Galleries Section */}
-          <section id="case-studies" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
-            <GeometricAccent
-              shapes={[
-                { type: 'coral-branch', size: 'lg', color: 'rgba(168, 85, 247, 0.18)', position: 'top-left', animate: true },
-                { type: 'organic-blob', size: 'md', color: 'rgba(59, 130, 246, 0.15)', position: 'bottom-right', animate: true },
-                { type: 'cell-structure', size: 'xl', color: 'rgba(147, 51, 234, 0.12)', position: 'center', animate: true }
-              ]}
-            >
-            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
-              <div className="text-center mb-16">
-                <span className="text-purple-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Resources</span>
-                <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
-                  <span className="highlight-reveal">Interactive Case Studies</span>
-                </h2>
-              </div>
-              <InteractiveCaseStudy caseStudies={[
-                {
-                  id: 'ecommerce-redesign',
-                  title: 'E-commerce Platform Redesign',
-                  client: 'TechStore Plus',
-                  category: 'Web Design',
-                  summary: 'Complete UI/UX overhaul resulting in 40% increase in conversions',
-                  beforeImage: '/portfolio/ecommerce-before.jpg',
-                  afterImage: '/portfolio/ecommerce-after.jpg',
-                  steps: [
-                    {
-                      title: 'Research & Analysis',
-                      description: 'Conducted user research and competitive analysis to identify pain points',
-                      metrics: [
-                        { label: 'User Interviews', value: '24', color: 'text-blue-600' },
-                        { label: 'Competitors Analyzed', value: '8', color: 'text-green-600' },
-                        { label: 'Pain Points Identified', value: '12', color: 'text-red-600' }
-                      ]
-                    },
-                    {
-                      title: 'Design System Creation',
-                      description: 'Built a comprehensive design system with reusable components',
-                      metrics: [
-                        { label: 'Components Created', value: '45', color: 'text-purple-600' },
-                        { label: 'Color Variations', value: '18', color: 'text-indigo-600' },
-                        { label: 'Typography Scales', value: '6', color: 'text-pink-600' }
-                      ]
-                    },
-                    {
-                      title: 'Implementation & Testing',
-                      description: 'Developed responsive interface with extensive A/B testing',
-                      metrics: [
-                        { label: 'Pages Redesigned', value: '23', color: 'text-orange-600' },
-                        { label: 'A/B Tests Run', value: '15', color: 'text-cyan-600' },
-                        { label: 'Performance Score', value: '94', color: 'text-green-600' }
-                      ]
-                    }
-                  ],
-                  results: [
-                    { metric: 'Conversion Rate', value: '+40%', improvement: '2.1% to 2.9%' },
-                    { metric: 'Page Load Speed', value: '+65%', improvement: '4.2s to 1.5s' },
-                    { metric: 'User Satisfaction', value: '+85%', improvement: '3.2/5 to 4.7/5' }
-                  ]
-                },
-                {
-                  id: 'mobile-app-development',
-                  title: 'Mobile App Development',
-                  client: 'FitTrack Pro',
-                  category: 'Mobile',
-                  summary: 'Custom fitness tracking app with real-time analytics',
-                  beforeImage: '/portfolio/mobile-before.jpg',
-                  afterImage: '/portfolio/mobile-after.jpg',
-                  steps: [
-                    {
-                      title: 'Requirements Gathering',
-                      description: 'Defined feature set and technical requirements with stakeholders',
-                      metrics: [
-                        { label: 'Features Defined', value: '32', color: 'text-blue-600' },
-                        { label: 'User Stories', value: '68', color: 'text-green-600' },
-                        { label: 'Technical Specs', value: '15', color: 'text-purple-600' }
-                      ]
-                    },
-                    {
-                      title: 'Development & Integration',
-                      description: 'Built native iOS/Android apps with cloud synchronization',
-                      metrics: [
-                        { label: 'API Endpoints', value: '28', color: 'text-orange-600' },
-                        { label: 'Database Tables', value: '12', color: 'text-cyan-600' },
-                        { label: 'Third-party Integrations', value: '7', color: 'text-pink-600' }
-                      ]
-                    },
-                    {
-                      title: 'Launch & Optimization',
-                      description: 'App store deployment with continuous performance monitoring',
-                      metrics: [
-                        { label: 'Beta Testers', value: '150', color: 'text-indigo-600' },
-                        { label: 'Bug Fixes', value: '23', color: 'text-red-600' },
-                        { label: 'Performance Optimizations', value: '8', color: 'text-green-600' }
-                      ]
-                    }
-                  ],
-                  results: [
-                    { metric: 'App Store Rating', value: '4.8/5', improvement: 'New launch' },
-                    { metric: 'Daily Active Users', value: '12K+', improvement: 'Month 1' },
-                    { metric: 'User Retention', value: '78%', improvement: '30-day retention' }
-                  ]
-                },
-                {
-                  id: 'enterprise-dashboard',
-                  title: 'Enterprise Analytics Dashboard',
-                  client: 'DataCorp Solutions',
-                  category: 'Web App',
-                  summary: 'Real-time business intelligence platform with advanced visualizations',
-                  beforeImage: '/portfolio/dashboard-before.jpg',
-                  afterImage: '/portfolio/dashboard-after.jpg',
-                  steps: [
-                    {
-                      title: 'Data Architecture Design',
-                      description: 'Designed scalable data pipeline and storage solution',
-                      metrics: [
-                        { label: 'Data Sources', value: '18', color: 'text-blue-600' },
-                        { label: 'Processing Speed', value: '10x', color: 'text-green-600' },
-                        { label: 'Storage Efficiency', value: '60%', color: 'text-purple-600' }
-                      ]
-                    },
-                    {
-                      title: 'Dashboard Development',
-                      description: 'Built interactive charts and real-time monitoring tools',
-                      metrics: [
-                        { label: 'Chart Types', value: '15', color: 'text-orange-600' },
-                        { label: 'Real-time Metrics', value: '45', color: 'text-cyan-600' },
-                        { label: 'Custom Widgets', value: '22', color: 'text-pink-600' }
-                      ]
-                    },
-                    {
-                      title: 'Security & Deployment',
-                      description: 'Enterprise-grade security implementation and cloud deployment',
-                      metrics: [
-                        { label: 'Security Audits', value: '3', color: 'text-red-600' },
-                        { label: 'Compliance Standards', value: '5', color: 'text-indigo-600' },
-                        { label: 'Uptime SLA', value: '99.9%', color: 'text-green-600' }
-                      ]
-                    }
-                  ],
-                  results: [
-                    { metric: 'Data Processing Time', value: '-80%', improvement: '2 hours to 24 minutes' },
-                    { metric: 'Decision Making Speed', value: '+120%', improvement: 'Real-time insights' },
-                    { metric: 'Operational Efficiency', value: '+45%', improvement: 'Automated reporting' }
-                  ]
-                }
-              ]} />
-            </div>
-            </GeometricAccent>
-          </section>
-
           {/* Why BitMonkey Section */}
           <section id="why-bitmonkey" className="pt-32 pb-24 bg-white relative overflow-hidden" style={{marginTop: '4rem'}}>
             {/* Parametric Light Effects for Why BitMonkey */}
@@ -2266,8 +1997,9 @@ export default function Home() {
               <DataSculpture type="cube" size="lg" color="#8B5CF6" speed="slow" intensity="medium" wireframe={true} particles={true} />
             </div>
             <div className="absolute bottom-1/3 right-1/4">
-              <DataSculpture type="sphere" size="md" color="#6366F1" speed="normal" intensity="bright" wireframe={true} />
+              <DataSculpture type="pyramid" size="md" color="#6366F1" speed="fast" intensity="bright" particles={true} />
             </div>
+
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Text Content - 30% */}
@@ -2279,109 +2011,64 @@ export default function Home() {
                     </h2>
                   </div>
 
+                  <p className="text-lg text-gray-600 leading-relaxed scroll-animate fade-in-up">
+                    We're not just another tech company. We're your strategic partner in digital transformation, combining technical excellence with deep industry expertise.
+                  </p>
+
                   <div className="space-y-4 scroll-animate fade-in-up-delay-1000">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-gray-900">Customer-Centric & Data-Driven</h4>
-                        <p className="text-sm text-gray-600">Next-gen tech stack for rapid outcomes</p>
+                        <h4 className="font-semibold text-gray-900">Proven Track Record</h4>
+                        <p className="text-sm text-gray-600">500+ successful projects across diverse industries</p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-gray-900">API-First Architecture</h4>
-                        <p className="text-sm text-gray-600">Microservices/serverless for scalability</p>
+                        <h4 className="font-semibold text-gray-900">Expert Team</h4>
+                        <p className="text-sm text-gray-600">Senior developers with 10+ years experience</p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-gray-900">Multi/Hybrid-Cloud Ready</h4>
-                        <p className="text-sm text-gray-600">Reliable scaling across cloud environments</p>
+                        <h4 className="font-semibold text-gray-900">End-to-End Solutions</h4>
+                        <p className="text-sm text-gray-600">From strategy to implementation and support</p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-gray-900">Automation-First DevSecOps</h4>
-                        <p className="text-sm text-gray-600">Automated pipelines with built-in security</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Security & Quality Built-In</h4>
-                        <p className="text-sm text-gray-600">Day-one security with governance frameworks</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Center of Excellence (COE)</h4>
-                        <p className="text-sm text-gray-600">Tools, accelerators, and best practices</p>
+                        <h4 className="font-semibold text-gray-900">Innovation Focus</h4>
+                        <p className="text-sm text-gray-600">Cutting-edge technologies and methodologies</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Neural Processing Indicator */}
-                  <div className="flex items-center justify-center mb-4 pt-4">
-                    <div className="flex items-center gap-3 text-sm text-gray-500">
-                      <NeuroLoader type="brain-wave" size="sm" color="#6B7280" speed="normal" />
-                      <span>Processing Analytics...</span>
-                      <NeuroLoader type="neural-network" size="sm" color="#6B7280" speed="fast" />
-                    </div>
+                  <div className="pt-6">
+                    <LiquidButton
+                      variant="primary"
+                      size="lg"
+                      onClick={() => {
+                        const element = document.getElementById('contact');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                    >
+                      Partner With Us
+                    </LiquidButton>
                   </div>
-
-                  {/* Statistics */}
-                  <div className="grid grid-cols-2 gap-4 scroll-animate fade-in-up-delay-1200">
-                    <AnimatedCounter
-                      value={500}
-                      suffix="+"
-                      label="Projects Completed"
-                      color="text-purple-600"
-                      bgGradient="bg-gradient-to-br from-purple-50 to-pink-50"
-                      duration={2500}
-                    />
-                    <AnimatedCounter
-                      value={95}
-                      suffix="%"
-                      label="Client Satisfaction"
-                      color="text-blue-600"
-                      bgGradient="bg-gradient-to-br from-blue-50 to-indigo-50"
-                      showProgress={true}
-                      progressMax={100}
-                      duration={2000}
-                    />
-                    <AnimatedCounter
-                      value={15}
-                      suffix="+"
-                      label="Years Experience"
-                      color="text-green-600"
-                      bgGradient="bg-gradient-to-br from-green-50 to-teal-50"
-                      duration={1800}
-                    />
-                    <AnimatedCounter
-                      value={24}
-                      suffix="/7"
-                      label="Support Available"
-                      color="text-orange-600"
-                      bgGradient="bg-gradient-to-br from-orange-50 to-red-50"
-                      duration={1500}
-                    />
-                  </div>
-
                 </div>
 
                 {/* Video Content - 70% */}
-                <div className="lg:col-span-7">
+                <div className="lg:col-span-7 scroll-animate fade-in-right">
                   <TiltCard intensity="medium" className="w-full">
-                    <div className="hologram-video cyber-glow relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover">
+                    <div className="hologram-video relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover aspect-video">
                       <video
                         className="w-full h-full object-contain aspect-video"
                         autoPlay
@@ -2404,6 +2091,234 @@ export default function Home() {
 
           {/* Customer Benefits & Value Proposition */}
           <CustomerBenefits />
+
+          {/* Portfolio Section */}
+          <section id="portfolio" className="pt-32 pb-24 bg-white relative overflow-hidden" style={{marginTop: '4rem'}}>
+            {/* Parametric Light Effects for Portfolio */}
+            <div className="absolute top-8 left-8">
+              <ParametricLight type="spiral" size="lg" color="#10B981" speed="slow" intensity="medium" glow={true} />
+            </div>
+            <div className="absolute bottom-8 right-8">
+              <ParametricLight type="wave" size="md" color="#059669" speed="normal" intensity="bright" glow={true} trail={true} />
+            </div>
+
+            {/* Data Sculpture Effects for Portfolio */}
+            <div className="absolute top-1/3 left-1/4">
+              <DataSculpture type="pyramid" size="lg" color="#10B981" speed="slow" intensity="medium" wireframe={true} particles={true} />
+            </div>
+            <div className="absolute bottom-1/3 right-1/4">
+              <DataSculpture type="cube" size="md" color="#059669" speed="fast" intensity="bright" particles={true} />
+            </div>
+
+            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+              <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
+                {/* Text Content - 30% */}
+                <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
+                  <div>
+                    <span className="text-green-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Our Work</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
+                      <span className="highlight-reveal">Portfolio Showcase</span>
+                    </h2>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed scroll-animate fade-in-up">
+                    Explore our diverse portfolio of successful projects across industries, showcasing innovative solutions and measurable results.
+                  </p>
+
+                  <div className="space-y-4 scroll-animate fade-in-up-delay-1000">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">500+ Successful Projects</h4>
+                        <p className="text-sm text-gray-600">Delivered across multiple industries and technologies</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Industry Recognition</h4>
+                        <p className="text-sm text-gray-600">Award-winning solutions and client testimonials</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Diverse Case Studies</h4>
+                        <p className="text-sm text-gray-600">From startups to enterprise-level implementations</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Measurable Impact</h4>
+                        <p className="text-sm text-gray-600">Proven ROI and performance improvements</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Statistics */}
+                  <div className="grid grid-cols-2 gap-4 scroll-animate fade-in-up-delay-1200">
+                    <AnimatedCounter
+                      value={500}
+                      suffix="+"
+                      label="Projects Delivered"
+                      color="text-green-600"
+                      bgGradient="bg-gradient-to-br from-green-50 to-emerald-50"
+                      duration={2500}
+                    />
+                    <AnimatedCounter
+                      value={98}
+                      suffix="%"
+                      label="Client Retention"
+                      color="text-emerald-600"
+                      bgGradient="bg-gradient-to-br from-emerald-50 to-teal-50"
+                      showProgress={true}
+                      progressMax={100}
+                      duration={2000}
+                    />
+                  </div>
+                </div>
+
+                {/* Video Content - 70% */}
+                <div className="lg:col-span-7">
+                  <TiltCard intensity="medium" className="w-full">
+                    <div className="hologram-video cyber-glow relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover">
+                      <video
+                        className="w-full h-full object-contain aspect-video"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        poster="/portfolio-poster.jpg"
+                      >
+                        <source src="/portfolio.mp4" type="video/mp4" />
+                        <div className="w-full h-96 bg-gradient-to-br from-green-600 to-emerald-600 flex items-center justify-center text-white text-xl font-semibold">
+                          Portfolio Video Placeholder
+                        </div>
+                      </video>
+                    </div>
+                  </TiltCard>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Resources Section */}
+          <section id="resources" className="pt-32 pb-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden" style={{marginTop: '4rem'}}>
+            {/* Parametric Light Effects for Resources */}
+            <div className="absolute top-8 left-8">
+              <ParametricLight type="helix" size="lg" color="#F59E0B" speed="slow" intensity="medium" glow={true} />
+            </div>
+            <div className="absolute bottom-8 right-8">
+              <ParametricLight type="spiral" size="md" color="#D97706" speed="normal" intensity="bright" glow={true} trail={true} />
+            </div>
+
+            {/* Data Sculpture Effects for Resources */}
+            <div className="absolute top-1/3 left-1/4">
+              <DataSculpture type="sphere" size="lg" color="#F59E0B" speed="slow" intensity="medium" wireframe={true} particles={true} />
+            </div>
+            <div className="absolute bottom-1/3 right-1/4">
+              <DataSculpture type="pyramid" size="md" color="#D97706" speed="fast" intensity="bright" particles={true} />
+            </div>
+
+            <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+              <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
+                {/* Text Content - 30% */}
+                <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
+                  <div>
+                    <span className="text-amber-600 font-bold uppercase tracking-wider scroll-animate fade-in-up typewriter" style={{fontSize: '2.2rem'}}>Knowledge Hub</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 scroll-animate fade-in-up" style={{fontSize: '1.75rem'}}>
+                      <span className="highlight-reveal">Resources & Insights</span>
+                    </h2>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed scroll-animate fade-in-up">
+                    Access our comprehensive collection of resources, whitepapers, case studies, and industry insights to stay ahead in technology.
+                  </p>
+
+                  <div className="space-y-4 scroll-animate fade-in-up-delay-1000">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Technical Whitepapers</h4>
+                        <p className="text-sm text-gray-600">In-depth analysis and research papers</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Industry Case Studies</h4>
+                        <p className="text-sm text-gray-600">Real-world implementation examples</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Best Practices Guides</h4>
+                        <p className="text-sm text-gray-600">Proven methodologies and frameworks</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Technology Insights</h4>
+                        <p className="text-sm text-gray-600">Latest trends and emerging technologies</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Statistics */}
+                  <div className="grid grid-cols-2 gap-4 scroll-animate fade-in-up-delay-1200">
+                    <AnimatedCounter
+                      value={200}
+                      suffix="+"
+                      label="Resources Available"
+                      color="text-amber-600"
+                      bgGradient="bg-gradient-to-br from-amber-50 to-orange-50"
+                      duration={2500}
+                    />
+                    <AnimatedCounter
+                      value={50}
+                      suffix="+"
+                      label="Industry Reports"
+                      color="text-orange-600"
+                      bgGradient="bg-gradient-to-br from-orange-50 to-red-50"
+                      duration={2000}
+                    />
+                  </div>
+                </div>
+
+                {/* Video Content - 70% */}
+                <div className="lg:col-span-7">
+                  <TiltCard intensity="medium" className="w-full">
+                    <div className="hologram-video cyber-glow relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover">
+                      <video
+                        className="w-full h-full object-contain aspect-video"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        poster="/resources-poster.jpg"
+                      >
+                        <source src="/resources.mp4" type="video/mp4" />
+                        <div className="w-full h-96 bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center text-white text-xl font-semibold">
+                          Resources Video Placeholder
+                        </div>
+                      </video>
+                    </div>
+                  </TiltCard>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* UI Innovation Showcase Section */}
           <section id="ui-showcase" className="pt-32 pb-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden" style={{marginTop: '4rem'}}>
