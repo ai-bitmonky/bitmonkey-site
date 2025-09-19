@@ -34,7 +34,6 @@ import AnimatedChart from './components/AnimatedChart';
 import { ProgressRing, ProgressRingGroup } from './components/ProgressRing';
 import { ShadowCard, ShadowShowcase } from './components/RealisticShadows';
 import AIArtPattern from './components/AIArtPattern';
-import { ServicePortfolioTransition } from './components/ParallaxDepthLayers';
 import IndustryLandscape from './components/IndustryLandscape';
 import CustomerChallenges from './components/CustomerChallenges';
 import MarketDrivers from './components/MarketDrivers';
@@ -1509,9 +1508,6 @@ export default function Home() {
             </div>
             </GeometricAccent>
           </section>
-
-          {/* Service to Portfolio Transition with Parallax Depth Layers */}
-          <ServicePortfolioTransition className="relative" />
 
           {/* Our Portfolio Section */}
           <section id="our-portfolio" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
