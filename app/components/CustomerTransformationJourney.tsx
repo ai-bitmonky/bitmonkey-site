@@ -405,18 +405,19 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
               <div className={`absolute ${index % 2 === 0 ? 'left-40' : 'right-40'} top-1/2 transform -translate-y-1/2 transition-all duration-700 ${
                 index === activeCategory ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4'
               }`}>
-                <div className={`relative bg-gradient-to-br from-black/90 to-gray-900/90 backdrop-blur-lg rounded-2xl p-6 border-2 w-96 ${
+                <div className={`relative bg-gradient-to-br from-black/90 to-gray-900/90 backdrop-blur-lg rounded-2xl p-6 border-2 ${
                   index % 2 === 0 ? 'text-left' : 'text-right'
-                } ${category.color.replace('from-', 'border-').replace('to-', '').split(' ')[0]}/30 shadow-2xl`}>
+                } ${category.color.replace('from-', 'border-').replace('to-', '').split(' ')[0]}/30 shadow-2xl`}
+                     style={{ width: '322px' }}>
 
                   {/* Panel glow effect */}
                   <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${category.color} opacity-10 blur-sm`} />
 
                   {/* Content */}
                   <div className="relative">
-                    <div className="flex items-center mb-4">
+                    <div className={`flex items-center mb-4 ${category.id === 'security-regulatory' ? 'justify-start' : ''}`}>
                       <category.icon className={`w-6 h-6 mr-3 bg-gradient-to-br ${category.color} bg-clip-text text-transparent`} />
-                      <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                      <h3 className={`text-xl font-bold text-white ${category.id === 'security-regulatory' ? 'text-left' : ''}`}>{category.title}</h3>
                     </div>
 
                     <div className="space-y-3">
@@ -426,7 +427,7 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
                           <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg`}>
                             <CheckCircle className="w-3 h-3 text-white" />
                           </div>
-                          <span className="leading-relaxed whitespace-nowrap">{item}</span>
+                          <span className="leading-relaxed">{item}</span>
                         </div>
                       ))}
                     </div>
