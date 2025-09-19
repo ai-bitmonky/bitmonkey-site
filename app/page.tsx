@@ -1170,12 +1170,12 @@ export default function Home() {
 
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Enhanced Text Content - Service Ecosystem Pipeline - 30% */}
-                <div className="lg:col-span-3 space-y-6" style={{opacity: 1}}>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-reveal relative z-10" style={{fontSize: '1.75rem', opacity: 1}}>
+                <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
                     <span className="highlight-reveal">Consulting → Development → Training</span>
                   </h2>
                   {/* Service Pipeline Visualization */}
-                  <div className="space-y-4 relative z-10" style={{opacity: 1}}>
+                  <div className="space-y-4 scroll-animate fade-in-up relative z-10">
                     {/* Pipeline Flow Line */}
                     <div className="relative">
                       <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500"></div>
