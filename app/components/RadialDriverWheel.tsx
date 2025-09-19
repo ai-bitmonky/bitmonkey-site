@@ -216,7 +216,10 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
           <div
             ref={wheelRef}
             className="relative w-[700px] h-[700px]"
-            style={{ perspective: '1000px' }}
+            style={{
+              perspective: '1000px',
+              transform: 'translate(-10%, 5%)'
+            }}
           >
             {/* Central Hub */}
             <div className="absolute top-1/2 left-1/2 w-20 h-20 transform -translate-x-1/2 -translate-y-1/2 z-20">
@@ -361,7 +364,17 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
 
             {/* Driver Icons */}
             {drivers.map((driver, index) => {
-              const iconPos = getIconPosition(driver.angle, 240);
+              // Adjust radius based on position
+              let iconRadius = 200;
+              if (driver.angle === 0 || driver.angle === 270) {
+                // Top and left icons - 10% closer
+                iconRadius = 180;
+              } else if (driver.angle === 90 || driver.angle === 180) {
+                // Right and bottom icons - 10% farther
+                iconRadius = 220;
+              }
+
+              const iconPos = getIconPosition(driver.angle, iconRadius);
 
               // Same simplified logic as arcs
               let arcProgress = 0;
@@ -438,8 +451,17 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
 
               if (arcProgress <= 0) return null;
 
-              // Position labels precisely relative to icon position
-              const iconPos = getIconPosition(driver.angle, 240);
+              // Position labels precisely relative to icon position with same radius adjustments
+              let iconRadius = 200;
+              if (driver.angle === 0 || driver.angle === 270) {
+                // Top and left icons - 10% closer
+                iconRadius = 180;
+              } else if (driver.angle === 90 || driver.angle === 180) {
+                // Right and bottom icons - 10% farther
+                iconRadius = 220;
+              }
+
+              const iconPos = getIconPosition(driver.angle, iconRadius);
               const isHovered = hoveredDriver === index;
 
               // Calculate text position based on icon angle
@@ -459,7 +481,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                 textAlignment = "text-center";
               } else if (driver.angle === 90) {
                 // Right - text to the right of icon
-                textStyle.left = iconPos.x + 40;
+                textStyle.left = iconPos.x + 60;
                 textStyle.top = iconPos.y;
                 textStyle.transform = 'translate(0%, -50%)';
                 textAlignment = "text-left";
@@ -471,7 +493,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                 textAlignment = "text-center";
               } else if (driver.angle === 270) {
                 // Left - text to the left of icon
-                textStyle.left = iconPos.x - 40;
+                textStyle.left = iconPos.x - 60;
                 textStyle.top = iconPos.y;
                 textStyle.transform = 'translate(-100%, -50%)';
                 textAlignment = "text-right";
