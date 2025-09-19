@@ -278,19 +278,10 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
               <div className={`absolute ${index % 2 === 0 ? 'left-20' : 'right-20'} top-1/2 transform -translate-y-1/2 transition-all duration-500 ${
                 index === activeStage ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}>
-                <div className={`bg-black/80 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-sm ${
+                <div className={`bg-black/80 backdrop-blur-sm rounded-xl p-4 border border-white/20 max-w-xs ${
                   index % 2 === 0 ? 'text-left' : 'text-right'
                 }`}>
-                  <div className="text-sm text-gray-300 mb-1">{stage.subtitle}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{stage.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{stage.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {stage.technologies.slice(0, 2).map((tech, i) => (
-                      <span key={i} className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="text-lg font-bold text-white">{stage.title}</h3>
                 </div>
               </div>
             </div>
