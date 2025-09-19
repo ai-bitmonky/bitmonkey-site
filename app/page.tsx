@@ -278,7 +278,7 @@ export default function Home() {
                           <div className="grid gap-3" style={{gridTemplateColumns: '0.211fr 0.218fr 0.165fr'}}>
 
                             {/* Consulting Services - Left Column */}
-                            <div className="bg-white/8 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-realistic hover:bg-white/12 hover:shadow-realistic-lg shadow-transition hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/5 before:to-indigo-500/5 before:rounded-xl before:pointer-events-none group">
+                            <div className="bg-white/20 backdrop-blur-md rounded-xl p-4 border border-white/30 shadow-realistic hover:bg-white/25 hover:shadow-realistic-lg shadow-transition hover:scale-105 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/10 before:to-indigo-500/10 before:rounded-xl before:pointer-events-none group">
                               <h3 className="text-base font-bold text-blue-900 mb-4 flex items-center gap-2 border-b border-white/30 pb-2 relative z-10 group-hover:text-blue-700 transition-colors duration-300">
                                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                                   <Briefcase className="w-4 h-4 text-white" />
@@ -1170,26 +1170,24 @@ export default function Home() {
 
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Enhanced Text Content - Service Ecosystem Pipeline - 30% */}
-                <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
+                <div className="lg:col-span-3 space-y-6" style={{opacity: 1}}>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-reveal relative z-10" style={{fontSize: '1.75rem', opacity: 1}}>
                     <span className="highlight-reveal">Consulting → Development → Training</span>
                   </h2>
-
-
                   {/* Service Pipeline Visualization */}
-                  <div className="hidden lg:block space-y-4 scroll-animate fade-in-up relative z-10">
+                  <div className="space-y-4 relative z-10" style={{opacity: 1}}>
                     {/* Pipeline Flow Line */}
                     <div className="relative">
                       <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500"></div>
 
                       {/* Phase 1: Strategic Consulting */}
-                      <div className="flex items-start gap-4 mb-6 stagger-group stagger-entrance-1 transition-smooth-500">
+                      <div className="flex items-start gap-4 mb-6">
                         <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10 transition-smooth-400">
                           1
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 mb-1 motion-elegant">Strategic Consulting</h4>
-                          <p className="text-sm text-gray-600 mb-2 motion-smooth">Vision to Strategy</p>
+                          <h4 className="font-semibold text-gray-900 mb-1">Strategic Consulting</h4>
+                          <p className="text-sm text-gray-600 mb-2">Vision to Strategy</p>
                           <div className="space-y-1">
                             <button
                               onClick={() => handleLeftNav('digital-transformation')}
