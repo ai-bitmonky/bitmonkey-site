@@ -40,6 +40,7 @@ import MarketDrivers from './components/MarketDrivers';
 import SolutionApproach from './components/SolutionApproach';
 import CustomerBenefits from './components/CustomerBenefits';
 import EnhancedCallToAction from './components/EnhancedCallToAction';
+import CinematicTransformationEra from './components/CinematicTransformationEra';
 
 
 export default function Home() {
@@ -1128,6 +1129,9 @@ export default function Home() {
       {/* Sections */}
       {!contextSlug ? (
         <>
+          {/* The Digital Transformation Era - Cinematic Parallax Journey */}
+          <CinematicTransformationEra />
+
           {/* Industry Context & Market Landscape */}
           <IndustryLandscape />
 
