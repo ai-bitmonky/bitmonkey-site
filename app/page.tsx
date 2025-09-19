@@ -1358,9 +1358,9 @@ export default function Home() {
 
 
                   {/* Floating Our Methodology Interface */}
-                  <div className="hidden lg:block scroll-animate fade-in-up relative z-50 stagger-group stagger-entrance-3">
+                  <div className="hidden lg:block scroll-animate fade-in-up relative z-50 stagger-group stagger-entrance-3 scrollytelling-scene scrollytelling-timeline-stagger-1">
                     <div
-                      className="cursor-pointer hover:scale-105 transition-smooth-600 animate-pulse hover:animate-none motion-elegant parallax-layer atmosphere-near"
+                      className="cursor-pointer hover:scale-105 transition-smooth-600 animate-pulse hover:animate-none motion-elegant parallax-layer atmosphere-near scrollytelling-trigger scrollytelling-element-1"
                       style={{
                         background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%)',
                         border: '2px solid rgba(139, 92, 246, 0.4)',
@@ -1909,9 +1909,9 @@ export default function Home() {
                     </div>
 
                     {/* Floating What Sets Us Apart Interface */}
-                    <div className="hidden lg:block scroll-animate fade-in-up relative z-50 stagger-group stagger-entrance-4">
+                    <div className="hidden lg:block scroll-animate fade-in-up relative z-50 stagger-group stagger-entrance-4 scrollytelling-scene scrollytelling-timeline-stagger-2">
                       <div
-                        className="cursor-pointer hover:scale-105 transition-smooth-700 animate-pulse hover:animate-none motion-professional parallax-layer atmosphere-near"
+                        className="cursor-pointer hover:scale-105 transition-smooth-700 animate-pulse hover:animate-none motion-professional parallax-layer atmosphere-near scrollytelling-trigger scrollytelling-element-2"
                         style={{
                           background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%)',
                           border: '2px solid rgba(79, 70, 229, 0.4)',
@@ -3304,9 +3304,9 @@ export default function Home() {
                   <p className="text-lg text-gray-600 scroll-animate fade-in-up">Comprehensive development solutions across modern technology stacks</p>
                 </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scrollytelling-scene scrollytelling-timeline-stagger-3">
                 {/* App Dev & Modernization */}
-                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000 scrollytelling-element-1 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Code className="w-6 h-6" />
                   </div>
@@ -3321,7 +3321,7 @@ export default function Home() {
                 </div>
 
                 {/* Cloud Engineering */}
-                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200 scrollytelling-element-2 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Cloud className="w-6 h-6" />
                   </div>
@@ -3336,7 +3336,7 @@ export default function Home() {
                 </div>
 
                 {/* AI-ML & Automation */}
-                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1400" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1400 scrollytelling-element-3 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Zap className="w-6 h-6" />
                   </div>
@@ -3351,7 +3351,7 @@ export default function Home() {
                 </div>
 
                 {/* Data & Analytics */}
-                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1600" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1600 scrollytelling-element-4 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <TrendingUp className="w-6 h-6" />
                   </div>
@@ -3366,7 +3366,7 @@ export default function Home() {
                 </div>
 
                 {/* DevSecOps & SRE */}
-                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1800" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1800 scrollytelling-element-5 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <Target className="w-6 h-6" />
                   </div>
@@ -3383,7 +3383,7 @@ export default function Home() {
                 </div>
 
                 {/* Quality Assurance */}
-                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-2000" style={{paddingLeft: '2.5rem'}}>
+                <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-2000 scrollytelling-element-6 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                   <div className="w-14 h-14 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-6">
                     <CheckCircle className="w-6 h-6" />
                   </div>
@@ -3411,9 +3411,9 @@ export default function Home() {
                   <p className="text-lg text-gray-600 scroll-animate fade-in-up">Strategic guidance for digital transformation and business innovation</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scrollytelling-scene scrollytelling-timeline-stagger-3">
                   {/* Digital Transformation */}
-                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000 scrollytelling-element-1 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Target className="w-6 h-6" />
                     </div>
@@ -3428,7 +3428,7 @@ export default function Home() {
                   </div>
 
                   {/* Enterprise Architecture */}
-                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200 scrollytelling-element-2 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Users className="w-6 h-6" />
                     </div>
@@ -3443,7 +3443,7 @@ export default function Home() {
                   </div>
 
                   {/* Digital Strategy & Roadmaps */}
-                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1400" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1400 scrollytelling-element-3 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-yellow-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <TrendingUp className="w-6 h-6" />
                     </div>
@@ -3458,7 +3458,7 @@ export default function Home() {
                   </div>
 
                   {/* Governance */}
-                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1600" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1600 scrollytelling-element-4 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Award className="w-6 h-6" />
                     </div>
@@ -3790,9 +3790,9 @@ export default function Home() {
                   <p className="text-lg text-gray-600 scroll-animate fade-in-up">Expert-led training programs and professional certifications</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scrollytelling-scene scrollytelling-timeline-stagger-3">
                   {/* Full Stack Developer */}
-                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1000 scrollytelling-element-1 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Code className="w-6 h-6" />
                     </div>
@@ -3807,7 +3807,7 @@ export default function Home() {
                   </div>
 
                   {/* DevOps Engineer */}
-                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200" style={{paddingLeft: '2.5rem'}}>
+                  <div className="bg-white p-8 rounded-2xl shadow-realistic hover:shadow-realistic-lg shadow-transition transition-shadow scroll-animate fade-in-up-delay-1200 scrollytelling-element-2 enhanced-hover magnetic-element" style={{paddingLeft: '2.5rem'}}>
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mb-6">
                       <Target className="w-6 h-6" />
                     </div>
