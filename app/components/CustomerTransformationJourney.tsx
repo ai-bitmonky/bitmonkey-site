@@ -539,24 +539,6 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
         </div>
       </div>
 
-      {/* Category progress indicator */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="flex items-center gap-3 bg-black/80 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
-          <span className="text-white text-sm font-semibold">
-            Category {activeCategory + 1} of {transformationCategories.length}
-          </span>
-          <div className="flex gap-1">
-            {transformationCategories.map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index <= activeCategory ? 'bg-purple-400' : 'bg-white/30'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
 
       <style jsx>{`
         @keyframes parallaxFloat {
