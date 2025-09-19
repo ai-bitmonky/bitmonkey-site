@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { TrendingUp, Shield, Zap, Target, Award, DollarSign, Clock, Users, BarChart3, Lightbulb, Star, ArrowUpRight, CheckCircle, Rocket } from 'lucide-react';
+import { TrendingUp, Shield, Zap, Target, Award, DollarSign, Clock, Users, BarChart3, Lightbulb, Star, ArrowUpRight, CheckCircle, Rocket, Building } from 'lucide-react';
 
 interface Benefit {
   id: string;
