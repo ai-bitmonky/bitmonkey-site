@@ -241,7 +241,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
             </div>
 
             {/* SVG for Arcs */}
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 700 700">
+            <svg className="absolute inset-0 w-full h-full svg-morph-container" viewBox="0 0 700 700">
               <defs>
                 {/* Gradients for each driver */}
                 {drivers.map((driver, index) => {
@@ -317,9 +317,9 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                       fill={`url(#gradient-${index})`}
                       stroke="rgba(255,255,255,0.2)"
                       strokeWidth="2"
-                      className={`transition-all duration-1500 cursor-pointer ${
-                        isHovered ? 'filter brightness-125' : ''
-                      }`}
+                      className={`transition-all duration-1500 cursor-pointer svg-morph-arc ${
+                        isHovered ? 'filter brightness-125 svg-morph-hover' : ''
+                      } ${isExpanded ? 'svg-morph-expand' : ''}`}
                       style={{
                         opacity: isActive ? arcProgress * 0.9 + 0.1 : 0,
                         transform: `${isExpanded ? 'scale(1.1)' : 'scale(1)'} scale(${0.3 + arcProgress * 0.7})`,
@@ -337,7 +337,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                       <path
                         d={createArcPath(startAngle, endAngle, 200, 25)}
                         fill="url(#specular)"
-                        className="animate-specular-sweep pointer-events-none"
+                        className="animate-specular-sweep pointer-events-none svg-morph-highlight"
                         style={{
                           animationDelay: `${index * 0.5}s`,
                           opacity: arcProgress
@@ -416,10 +416,10 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                   onMouseLeave={() => setHoveredDriver(null)}
                   onClick={() => handleDriverClick(index)}
                 >
-                  <div className={`w-full h-full rounded-full bg-gradient-to-br ${driver.color} flex items-center justify-center border-4 border-white/30 shadow-lg ${
+                  <div className={`w-full h-full rounded-full bg-gradient-to-br ${driver.color} flex items-center justify-center border-4 border-white/30 shadow-lg svg-morph-container ${
                     isFullyVisible ? 'animate-icon-orbit' : ''
-                  }`}>
-                    <driver.icon className="w-8 h-8 text-white" />
+                  } ${isHovered ? 'svg-morph-hover' : ''}`}>
+                    <driver.icon className={`w-8 h-8 text-white svg-morph-icon ${isHovered ? 'svg-morph-active' : ''}`} />
                   </div>
 
                   {/* Icon Glow */}

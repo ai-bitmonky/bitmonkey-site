@@ -2894,10 +2894,45 @@ a {
   }
 }
 
-/* Enhanced Magnetic Cursor */
+/* Enhanced Magnetic Cursor with CSS Transforms */
 .signature-cursor {
   mix-blend-mode: difference;
   will-change: transform;
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, rgba(139, 92, 246, 0.3) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease-out;
+  transform: translate(-50%, -50%);
+}
+
+.magnetic-cursor-container {
+  position: relative;
+  cursor: none;
+}
+
+.magnetic-element {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+.magnetic-element:hover {
+  transform: scale(1.05) rotateZ(2deg);
+}
+
+/* Magnetic button with transform effect */
+.magnetic-button-transform {
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.magnetic-button-transform:hover {
+  transform: translateY(-3px) scale(1.02) rotateZ(1deg);
+  filter: drop-shadow(0 10px 20px rgba(139, 92, 246, 0.3));
 }
 
 /* Icon Micro-Rigs */
@@ -3313,5 +3348,416 @@ a:hover,
 
   * {
     transition: opacity 0.2s ease, background-color 0.2s ease !important;
+  }
+}
+
+/* Enhanced Hover States with Premium Shadows */
+.enhanced-hover {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 20px 60px rgba(139, 92, 246, 0.15),
+    0 10px 30px rgba(139, 92, 246, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.enhanced-hover-blue:hover {
+  box-shadow:
+    0 20px 60px rgba(59, 130, 246, 0.15),
+    0 10px 30px rgba(59, 130, 246, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.enhanced-hover-green:hover {
+  box-shadow:
+    0 20px 60px rgba(16, 185, 129, 0.15),
+    0 10px 30px rgba(16, 185, 129, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glass Light Sweeps with CSS Gradients */
+.glass-light-sweep {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.glass-light-sweep::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 100%
+  );
+  transition: left 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-light-sweep:hover::before {
+  left: 100%;
+}
+
+/* Diagonal sweep variant */
+.glass-light-sweep-diagonal::before {
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 100%
+  );
+  transform: skewX(-15deg);
+  width: 150%;
+  left: -150%;
+}
+
+.glass-light-sweep-diagonal:hover::before {
+  left: 150%;
+}
+
+/* Vertical sweep variant */
+.glass-light-sweep-vertical::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 100%
+  );
+  top: -100%;
+  left: 0;
+  transition: top 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glass-light-sweep-vertical:hover::before {
+  top: 100%;
+}
+
+/* Premium glass panel with light sweep */
+.premium-glass-panel {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 100%);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 12px 40px rgba(31, 38, 135, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.premium-glass-panel:hover {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.09) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 20px 60px rgba(31, 38, 135, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Advanced Staggered Animations */
+.stagger-animation-group .stagger-item {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.stagger-animation-group.animate .stagger-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.stagger-animation-group .stagger-item:nth-child(1) { transition-delay: 0ms; }
+.stagger-animation-group .stagger-item:nth-child(2) { transition-delay: 100ms; }
+.stagger-animation-group .stagger-item:nth-child(3) { transition-delay: 200ms; }
+.stagger-animation-group .stagger-item:nth-child(4) { transition-delay: 300ms; }
+.stagger-animation-group .stagger-item:nth-child(5) { transition-delay: 400ms; }
+.stagger-animation-group .stagger-item:nth-child(6) { transition-delay: 500ms; }
+.stagger-animation-group .stagger-item:nth-child(7) { transition-delay: 600ms; }
+.stagger-animation-group .stagger-item:nth-child(8) { transition-delay: 700ms; }
+
+/* Icon animation classes for Lottie-like effects with CSS */
+.icon-animate-bounce {
+  animation: icon-bounce 2s infinite;
+}
+
+.icon-animate-pulse {
+  animation: icon-pulse 2s infinite;
+}
+
+.icon-animate-spin {
+  animation: icon-spin 1s linear infinite;
+}
+
+.icon-animate-float {
+  animation: icon-float 3s ease-in-out infinite;
+}
+
+@keyframes icon-bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes icon-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+/* SVG Morphing for Driver Wheel */
+.svg-morph-path {
+  transition: d 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+              fill 0.4s ease-out,
+              stroke 0.4s ease-out,
+              transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.svg-morph-expand {
+  animation: svg-expand 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.svg-morph-contract {
+  animation: svg-contract 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes svg-expand {
+  0% {
+    transform: scale(1) translateZ(0);
+  }
+  100% {
+    transform: scale(1.1) translateZ(20px);
+  }
+}
+
+@keyframes svg-contract {
+  0% {
+    transform: scale(1.1) translateZ(20px);
+  }
+  100% {
+    transform: scale(1) translateZ(0);
+  }
+}
+
+/* Driver wheel segment morphing */
+.driver-segment {
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center;
+}
+
+.driver-segment:hover {
+  filter: brightness(1.2) saturate(1.3);
+  transform: scale(1.05);
+}
+
+.driver-segment.active {
+  filter: brightness(1.3) saturate(1.4);
+  transform: scale(1.1);
+  animation: driver-pulse 2s ease-in-out infinite;
+}
+
+@keyframes driver-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Scrollytelling Timeline Orchestration */
+.scroll-timeline {
+  position: relative;
+}
+
+.scroll-trigger {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.scroll-trigger.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-trigger.exit-view {
+  opacity: 0;
+  transform: translateY(-30px) scale(1.05);
+}
+
+/* Scroll-based morphing states */
+.scroll-morph-stage-1 {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+.scroll-morph-stage-2 {
+  transform: scale(1.1) rotate(5deg);
+  opacity: 0.9;
+}
+
+.scroll-morph-stage-3 {
+  transform: scale(1.2) rotate(10deg);
+  opacity: 0.8;
+}
+
+.scroll-morph-stage-4 {
+  transform: scale(1.1) rotate(15deg);
+  opacity: 0.9;
+}
+
+.scroll-morph-stage-5 {
+  transform: scale(1) rotate(20deg);
+  opacity: 1;
+}
+
+/* Timeline progress indicators */
+.timeline-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.timeline-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  border-radius: 2px;
+  width: var(--progress, 0%);
+  transition: width 0.3s ease-out;
+}
+
+/* Advanced morphing effects */
+.morph-on-scroll {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.morph-on-scroll[data-morph="expand"] {
+  transform: scale(1.2) rotate(5deg);
+  filter: brightness(1.2);
+}
+
+.morph-on-scroll[data-morph="contract"] {
+  transform: scale(0.9) rotate(-3deg);
+  filter: brightness(0.8);
+}
+
+.morph-on-scroll[data-morph="rotate"] {
+  transform: rotate(180deg) scale(1.1);
+  filter: hue-rotate(30deg);
+}
+
+/* Intersection-based animations */
+.intersection-animate {
+  opacity: 0;
+  transform: translateY(40px) rotateX(15deg);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.intersection-animate.visible {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+.intersection-animate.visible.enhanced {
+  transform: translateY(-5px) rotateX(-2deg);
+  filter: drop-shadow(0 10px 20px rgba(139, 92, 246, 0.2));
+}
+
+/* Performance optimizations for morphing */
+.morph-optimized {
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .svg-morph-path {
+    transition-duration: 0.4s;
+  }
+
+  .driver-segment:hover {
+    transform: scale(1.02);
+  }
+
+  .scroll-trigger {
+    transition-duration: 0.5s;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .svg-morph-path,
+  .driver-segment,
+  .scroll-trigger,
+  .morph-on-scroll,
+  .intersection-animate {
+    animation: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .driver-segment.active {
+    animation: none;
   }
 }
