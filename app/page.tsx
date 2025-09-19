@@ -1691,16 +1691,6 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="pt-4">
-                    <MagneticEffect strength={0.6} range={140}>
-                      <button className="hologram-button px-6 py-3 bg-gradient-to-br from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-realistic transition-all relative group overflow-hidden">
-                        <span className="hologram-text" data-text="Explore Our Services">Explore Our Services</span>
-                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <NeuroLoader type="neuron-fire" size="sm" color="#FFFFFF" speed="fast" />
-                        </div>
-                      </button>
-                    </MagneticEffect>
-                  </div>
                 </div>
 
                 {/* Morphing Image Content - 70% */}
@@ -1725,6 +1715,270 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </GeometricAccent>
+          </section>
+
+          {/* Our Proven Approach Section */}
+          <section id="our-approach" className="pt-48 pb-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
+            <GeometricAccent
+              shapes={[
+                { type: 'neural-network', size: 'xl', color: 'rgba(79, 70, 229, 0.08)', position: 'center', animate: true },
+                { type: 'bio-membrane', size: 'lg', color: 'rgba(99, 102, 241, 0.12)', position: 'top-left', animate: true },
+                { type: 'organic-spiral', size: 'md', color: 'rgba(147, 51, 234, 0.18)', position: 'top-right', animate: true },
+                { type: 'flowing-wave', size: 'lg', color: 'rgba(79, 70, 229, 0.12)', position: 'bottom-left', animate: true },
+                { type: 'circuit-pattern', size: 'sm', color: 'rgba(99, 102, 241, 0.16)', position: 'bottom-right', animate: true }
+              ]}
+            >
+              {/* Enhanced Parametric Light Effects for Methodology */}
+              <div className="absolute top-8 right-8">
+                <ParametricLight type="orbit" size="lg" color="#4F46E5" speed="normal" intensity="medium" glow={true} trail={true} />
+              </div>
+              <div className="absolute bottom-8 left-8">
+                <ParametricLight type="wave" size="md" color="#7C3AED" speed="slow" intensity="subtle" glow={true} />
+              </div>
+              <div className="absolute top-1/2 left-1/4 transform -translate-y-1/2">
+                <ParametricLight type="helix" size="sm" color="#6366F1" speed="fast" intensity="bright" glow={true} />
+              </div>
+
+              {/* Enhanced Data Sculpture Effects for Methodology */}
+              <div className="absolute top-1/4 left-12">
+                <DataSculpture type="pyramid" size="md" color="#4F46E5" speed="normal" intensity="medium" wireframe={true} particles={true} />
+              </div>
+              <div className="absolute bottom-1/4 right-12">
+                <DataSculpture type="helix" size="sm" color="#7C3AED" speed="slow" intensity="subtle" particles={true} />
+              </div>
+              <div className="absolute top-1/3 right-1/4">
+                <DataSculpture type="sphere" size="lg" color="#6366F1" speed="fast" intensity="bright" wireframe={true} />
+              </div>
+
+              <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+                <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
+                  {/* Enhanced Text Content - Methodology Framework - 30% */}
+                  <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
+                    <div className="scroll-animate fade-in-up relative">
+                      {/* AI Art Pattern Background */}
+                      <div className="absolute -top-12 -left-12 -right-8 -bottom-8 pointer-events-none overflow-hidden">
+                        <AIArtPattern
+                          type="circuit-pattern"
+                          size="lg"
+                          intensity="subtle"
+                          animate={true}
+                          colors={{
+                            primary: '#4f46e5',
+                            secondary: '#7c3aed',
+                            accent: '#06b6d4'
+                          }}
+                          className="opacity-15"
+                        />
+                      </div>
+                      <span className="text-indigo-600 font-bold uppercase tracking-wider hover:text-indigo-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Our Proven Approach</span>
+                      <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
+                        <span className="highlight-reveal">Solution Approach & Methodology</span>
+                      </h2>
+                    </div>
+
+                    <p className="text-lg text-gray-600 leading-relaxed hidden lg:block scroll-animate fade-in-up relative z-10">
+                      The digital transformation methodology consists of five key stages: understand the problem, define the solution, ideate and develop a prototype, implement and refine through testing and feedback.
+                    </p>
+
+                    {/* Methodology Framework Visualization */}
+                    <div className="hidden lg:block space-y-4 scroll-animate fade-in-up relative z-10">
+                      {/* Process Flow Line */}
+                      <div className="relative">
+                        <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-blue-500"></div>
+
+                        {/* Stage 1: Understand */}
+                        <div className="flex items-start gap-4 mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                            1
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-900 mb-1">Understand</h4>
+                            <p className="text-sm text-gray-600 mb-2">Problem Discovery</p>
+                            <div className="space-y-1">
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Current State Assessment</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Stakeholder Analysis</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Pain Point Identification</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Stage 2: Define */}
+                        <div className="flex items-start gap-4 mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                            2
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-900 mb-1">Define</h4>
+                            <p className="text-sm text-gray-600 mb-2">Solution Architecture</p>
+                            <div className="space-y-1">
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Requirements Gathering</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Technology Selection</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Solution Design</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Stage 3: Ideate */}
+                        <div className="flex items-start gap-4 mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                            3
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-900 mb-1">Ideate</h4>
+                            <p className="text-sm text-gray-600 mb-2">Prototype Development</p>
+                            <div className="space-y-1">
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Concept Validation</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Rapid Prototyping</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">User Experience Design</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Stage 4: Implement */}
+                        <div className="flex items-start gap-4 mb-6">
+                          <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                            4
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-900 mb-1">Implement</h4>
+                            <p className="text-sm text-gray-600 mb-2">Development & Deployment</p>
+                            <div className="space-y-1">
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Agile Development</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">CI/CD Pipeline</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Quality Assurance</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Stage 5: Refine */}
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                            5
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-900 mb-1">Refine</h4>
+                            <p className="text-sm text-gray-600 mb-2">Testing & Feedback</p>
+                            <div className="space-y-1">
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">User Testing</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Performance Optimization</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                                <span className="text-xs text-gray-700">Continuous Improvement</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Transition to Differentiators */}
+                    <div className="hidden lg:block scroll-animate fade-in-up relative z-10">
+                      <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-200">
+                        <h4 className="font-semibold text-gray-900 mb-2 text-sm">What Sets Us Apart</h4>
+                        <p className="text-xs text-gray-600 mb-3">Discover the key differentiators that make our methodology uniquely effective for digital transformation success.</p>
+                        <div className="flex items-center gap-2 text-indigo-600">
+                          <span className="text-xs font-medium">Explore Our Differentiators →</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Mobile Methodology */}
+                    <div className="space-y-6 scroll-animate fade-in-up lg:hidden">
+                      {/* Mobile Methodology Header */}
+                      <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-200">
+                        <h3 className="font-bold text-gray-900 mb-2">5-Stage Methodology</h3>
+                        <p className="text-sm text-gray-600">Understand → Define → Ideate → Implement → Refine</p>
+                      </div>
+
+                      {/* Mobile Methodology Overview */}
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <p className="text-sm text-gray-600">
+                          The digital transformation methodology consists of five key stages: understand the problem, define the solution, ideate and develop a prototype, implement and refine through testing and feedback.
+                        </p>
+                      </div>
+
+                      {/* Mobile Transition to Differentiators */}
+                      <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs">→</span>
+                          </div>
+                          <h4 className="font-semibold text-gray-900 text-sm">Next: Our Differentiators</h4>
+                        </div>
+                        <p className="text-xs text-gray-600 mb-3">Discover what sets our methodology apart for digital transformation success.</p>
+                        <div className="flex items-center gap-2 text-indigo-600">
+                          <span className="text-xs font-medium">Explore Differentiators</span>
+                          <span className="text-xs">→</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Video Content - 70% */}
+                  <div className="lg:col-span-7">
+                    <TiltCard intensity="medium" className="w-full">
+                      <div className="hologram-video relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover aspect-video">
+                        <video
+                          className="w-full h-full object-contain aspect-video"
+                          autoPlay
+                          muted
+                          playsInline
+                          preload="auto"
+                          poster="/approach-poster.jpg"
+                        >
+                          <source src="/approach.mp4" type="video/mp4" />
+                          <div className="w-full h-96 bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white text-xl font-semibold">
+                            Approach Video Placeholder
+                          </div>
+                        </video>
+                      </div>
+                    </TiltCard>
+                  </div>
+                </div>
+              </div>
             </GeometricAccent>
           </section>
 
