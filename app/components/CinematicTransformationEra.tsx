@@ -182,18 +182,145 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
       id: 'background-universe',
       speed: 0.1,
       zIndex: 1,
-      opacity: 0.4,
-      blur: 2,
+      opacity: 1,
       children: (
-        <div className="w-full h-full bg-gradient-to-br from-indigo-900 via-purple-900 to-black">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 40% 70%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.3) 0%, transparent 50%)
-            `
-          }} />
+        <div className="w-full h-full bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 relative overflow-hidden">
+          {/* Animated Aurora Layers */}
+          <div
+            className="absolute inset-0 opacity-60"
+            style={{
+              background: `
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 60% at 40% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)
+              `,
+              animation: 'aurora 20s ease-in-out infinite',
+            }}
+          />
+
+          {/* Secondary Aurora Layer */}
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              background: `
+                radial-gradient(ellipse 70% 60% at 60% 20%, rgba(147, 51, 234, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 80% at 90% 70%, rgba(16, 185, 129, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse 90% 50% at 10% 90%, rgba(236, 72, 153, 0.3) 0%, transparent 50%)
+              `,
+              animation: 'aurora 25s ease-in-out infinite reverse',
+            }}
+          />
+
+          {/* Enhanced Animated Orbs */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/40 to-cyan-500/40 rounded-full blur-3xl animate-pulse"
+                 style={{ animationDuration: '4s' }} />
+            <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/50 to-pink-500/50 rounded-full blur-3xl animate-pulse"
+                 style={{ animationDuration: '5s', animationDelay: '1s' }} />
+            <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-gradient-to-r from-indigo-500/45 to-violet-500/45 rounded-full blur-3xl animate-pulse"
+                 style={{ animationDuration: '6s', animationDelay: '2s' }} />
+          </div>
+
+          {/* Sparkle Layer 1 - Small Sparkles */}
+          <div className="absolute inset-0">
+            {Array.from({ length: 18 }, (_, i) => (
+              <div
+                key={`sparkle-large-${i}`}
+                className="absolute w-1 h-1 bg-white/22 rounded-full animate-sparkle"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 8}s`,
+                  animationDuration: `${4 + Math.random() * 6}s`,
+                  boxShadow: '0 0 2px rgba(255, 255, 255, 0.18), 0 0 4px rgba(255, 255, 255, 0.1)',
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Sparkle Layer 2 - Tiny Sparkles */}
+          <div className="absolute inset-0">
+            {Array.from({ length: 24 }, (_, i) => (
+              <div
+                key={`sparkle-medium-${i}`}
+                className="absolute w-0.5 h-0.5 bg-cyan-300/24 rounded-full animate-sparkle-slow"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 10}s`,
+                  animationDuration: `${5 + Math.random() * 8}s`,
+                  boxShadow: '0 0 1px rgba(34, 211, 238, 0.14), 0 0 3px rgba(34, 211, 238, 0.07)',
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Sparkle Layer 3 - Micro Twinkling Stars */}
+          <div className="absolute inset-0">
+            {Array.from({ length: 30 }, (_, i) => (
+              <div
+                key={`sparkle-small-${i}`}
+                className="absolute w-0.5 h-0.5 bg-purple-300/18 rounded-full animate-twinkle"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 12}s`,
+                  animationDuration: `${3 + Math.random() * 4}s`,
+                  boxShadow: '0 0 1px rgba(196, 181, 253, 0.14), 0 0 2px rgba(196, 181, 253, 0.09)',
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Floating Light Rays */}
+          <div className="absolute inset-0">
+            <div
+              className="absolute w-0.5 h-20 bg-gradient-to-t from-transparent via-white/7 to-transparent animate-light-ray"
+              style={{
+                left: '15%',
+                top: '10%',
+                transform: 'rotate(15deg)',
+                animationDelay: '3s',
+              }}
+            />
+            <div
+              className="absolute w-0.5 h-30 bg-gradient-to-t from-transparent via-cyan-300/7 to-transparent animate-light-ray"
+              style={{
+                left: '70%',
+                top: '20%',
+                transform: 'rotate(-25deg)',
+                animationDelay: '8s',
+              }}
+            />
+          </div>
+
+          {/* Glitter Dust Particles */}
+          <div className="absolute inset-0">
+            {Array.from({ length: 14 }, (_, i) => (
+              <div
+                key={`glitter-${i}`}
+                className="absolute rounded-full animate-float-glitter"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  width: `${0.3 + Math.random() * 0.4}px`,
+                  height: `${0.3 + Math.random() * 0.4}px`,
+                  backgroundColor: ['rgba(255,255,255,0.18)', 'rgba(34,211,238,0.14)', 'rgba(196,181,253,0.14)', 'rgba(251,191,36,0.12)'][Math.floor(Math.random() * 4)],
+                  animationDelay: `${Math.random() * 15}s`,
+                  animationDuration: `${12 + Math.random() * 10}s`,
+                  filter: 'blur(0.3px)',
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Subtle grain overlay */}
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E")`,
+            }}
+          />
         </div>
       )
     },
@@ -425,12 +552,126 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
           50% { opacity: 1; transform: scale(1.1); }
         }
 
+        @keyframes aurora {
+          0%, 100% {
+            transform: rotate(0deg) scale(1) translate(0, 0);
+            opacity: 0.3;
+          }
+          33% {
+            transform: rotate(0.5deg) scale(1.05) translate(10px, -5px);
+            opacity: 0.4;
+          }
+          66% {
+            transform: rotate(-0.3deg) scale(0.95) translate(-5px, 10px);
+            opacity: 0.35;
+          }
+        }
+
+        @keyframes sparkle {
+          0%, 100% {
+            opacity: 0.06;
+            transform: scale(0.9) rotate(0deg);
+          }
+          50% {
+            opacity: 0.36;
+            transform: scale(1.1) rotate(180deg);
+          }
+        }
+
+        @keyframes sparkle-slow {
+          0%, 100% {
+            opacity: 0.1;
+            transform: scale(0.8) rotate(0deg);
+          }
+          50% {
+            opacity: 0.3;
+            transform: scale(1.2) rotate(360deg);
+          }
+        }
+
+        @keyframes twinkle {
+          0%, 100% {
+            opacity: 0.04;
+            transform: scale(0.7);
+          }
+          25% {
+            opacity: 0.24;
+            transform: scale(1.0);
+          }
+          50% {
+            opacity: 0.1;
+            transform: scale(0.85);
+          }
+          75% {
+            opacity: 0.3;
+            transform: scale(1.1);
+          }
+        }
+
+        @keyframes light-ray {
+          0% {
+            opacity: 0;
+            transform: translateY(100px) scale(0.5);
+          }
+          50% {
+            opacity: 0.6;
+            transform: translateY(-50px) scale(1);
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(-200px) scale(0.3);
+          }
+        }
+
+        @keyframes float-glitter {
+          0% {
+            opacity: 0.2;
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+          }
+          25% {
+            opacity: 0.8;
+            transform: translateY(-20px) translateX(10px) rotate(90deg);
+          }
+          50% {
+            opacity: 0.4;
+            transform: translateY(-10px) translateX(-5px) rotate(180deg);
+          }
+          75% {
+            opacity: 1;
+            transform: translateY(-30px) translateX(15px) rotate(270deg);
+          }
+          100% {
+            opacity: 0.2;
+            transform: translateY(0px) translateX(0px) rotate(360deg);
+          }
+        }
+
         .animate-parallax-float {
           animation: parallaxFloat 6s ease-in-out infinite;
         }
 
         .animate-tech-pulse {
           animation: techPulse 3s ease-in-out infinite;
+        }
+
+        .animate-sparkle {
+          animation: sparkle ease-in-out infinite;
+        }
+
+        .animate-sparkle-slow {
+          animation: sparkle-slow ease-in-out infinite;
+        }
+
+        .animate-twinkle {
+          animation: twinkle ease-in-out infinite;
+        }
+
+        .animate-light-ray {
+          animation: light-ray 8s ease-in-out infinite;
+        }
+
+        .animate-float-glitter {
+          animation: float-glitter ease-in-out infinite;
         }
       `}</style>
     </section>
