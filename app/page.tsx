@@ -34,6 +34,8 @@ import AnimatedChart from './components/AnimatedChart';
 import { ProgressRing, ProgressRingGroup } from './components/ProgressRing';
 import { ShadowCard, ShadowShowcase } from './components/RealisticShadows';
 import AIArtPattern from './components/AIArtPattern';
+import { ServicePortfolioTransition } from './components/ParallaxDepthLayers';
+import IndustryLandscape from './components/IndustryLandscape';
 
 
 export default function Home() {
@@ -1122,8 +1124,8 @@ export default function Home() {
       {/* Sections */}
       {!contextSlug ? (
         <>
-          {/* Spacer between Hero and Services */}
-          <div className="h-10 bg-white"></div>
+          {/* Industry Context & Market Landscape */}
+          <IndustryLandscape />
 
           {/* Our Services Section */}
           <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
@@ -1494,8 +1496,8 @@ export default function Home() {
             </GeometricAccent>
           </section>
 
-          {/* Spacer between Services and Portfolio */}
-          <div className="h-10 bg-gradient-to-b from-white to-gray-50"></div>
+          {/* Service to Portfolio Transition with Parallax Depth Layers */}
+          <ServicePortfolioTransition className="relative" />
 
           {/* Our Portfolio Section */}
           <section id="our-portfolio" className="pt-48 pb-24 bg-gray-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
