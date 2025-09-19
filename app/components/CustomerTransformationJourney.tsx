@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   Users, Smartphone, Cloud, Shield, DollarSign, Zap, Target,
   CheckCircle, ArrowRight, TrendingUp, Globe, Database, Cpu,
-  ArrowDown, Play, Pause, FastForward, ChevronRight, Sparkles,
+  ArrowDown, Play, Pause, FastForward, Sparkles,
   Heart, Eye, Layers, RotateCcw, BarChart3, Lock, Settings,
   Rocket, Timer, Building, Code, Wrench, Activity, Star,
   Hexagon, Triangle, Circle, Square, Diamond
@@ -40,7 +40,6 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeCategory, setActiveCategory] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [userGuideStep, setUserGuideStep] = useState(0);
   const [journeyParticles, setJourneyParticles] = useState<Array<{x: number, y: number, delay: number, size: number, type: string}>>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -182,15 +181,7 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
       type: ['customer', 'tech', 'challenge', 'security', 'cost', 'driver'][Math.floor(Math.random() * 6)]
     }));
     setJourneyParticles(particles);
-
-    // Auto-advance user guide
-    if (isPlaying) {
-      const interval = setInterval(() => {
-        setUserGuideStep(prev => (prev + 1) % 4);
-      }, 3500);
-      return () => clearInterval(interval);
-    }
-  }, [isPlaying]);
+  }, []);
 
   const parallaxLayers: ParallaxLayer[] = [
     // Enhanced background with animated gradients
@@ -462,14 +453,14 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
         <div className="w-full flex justify-center pt-20">
           <div className="text-center text-white">
             <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-              Customer-Driven
+              Customer Challenges
               <br />
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Digital
+                &
               </span>
               <br />
               <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                Transformation
+                expectations
               </span>
             </h1>
           </div>
@@ -499,17 +490,6 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
               </button>
             </div>
 
-            {/* User guide indicator */}
-            <div className="flex items-center justify-center gap-3">
-              <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
-              <span className="text-purple-400 text-sm animate-pulse">
-                {userGuideStep === 0 && "Explore customer expectations driving transformation"}
-                {userGuideStep === 1 && "Navigate through technology evolution and complexity challenges"}
-                {userGuideStep === 2 && "Discover security, cost, and regulatory requirements"}
-                {userGuideStep === 3 && "Experience the drivers of successful digital transformation"}
-              </span>
-              <ChevronRight className="w-4 h-4 text-purple-400 animate-bounce" />
-            </div>
           </div>
         </div>
       )
