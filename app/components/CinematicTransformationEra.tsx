@@ -313,10 +313,6 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
                 Today
               </span>
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-12 max-w-3xl mx-auto">
-              Navigate through the critical enterprise forces and technology shifts driving digital transformation.
-              Each trend represents a fundamental change reshaping how businesses operate and compete.
-            </p>
 
             {/* Playback controls */}
             <div className="flex items-center justify-center gap-4 mb-8">
