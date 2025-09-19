@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Rocket, Zap, Brain, Cloud, Shield, Target, TrendingUp, Globe,
-  ArrowDown, Play, Pause, FastForward, ChevronRight, Sparkles,
+  ArrowDown, Play, Pause, FastForward,
   Monitor, Smartphone, Database, Cpu, Wifi, Settings, Users, Scale,
   AlertTriangle, BarChart, Building, Merge, UserCheck, Activity,
   Layers, RotateCcw, Zap as Lightning
@@ -39,7 +39,6 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeStage, setActiveStage] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [userGuideStep, setUserGuideStep] = useState(0);
   const [cinematicParticles, setCinematicParticles] = useState<Array<{x: number, y: number, delay: number, size: number, type: string}>>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const journeyRef = useRef<HTMLDivElement>(null);
@@ -167,13 +166,6 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
     }));
     setCinematicParticles(particles);
 
-    // Auto-advance user guide
-    if (isPlaying) {
-      const interval = setInterval(() => {
-        setUserGuideStep(prev => (prev + 1) % 4);
-      }, 3000);
-      return () => clearInterval(interval);
-    }
   }, [isPlaying]);
 
   const parallaxLayers: ParallaxLayer[] = [
@@ -462,17 +454,6 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
               </button>
             </div>
 
-            {/* User guide indicator */}
-            <div className="flex items-center justify-center gap-3">
-              <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
-              <span className="text-yellow-400 text-sm animate-pulse">
-                {userGuideStep === 0 && ""}
-                {userGuideStep === 1 && "Navigate through regulatory, customer, and market transformation pressures"}
-                {userGuideStep === 2 && "Discover technology shifts enabling new business capabilities"}
-                {userGuideStep === 3 && "Experience how these trends create competitive advantages"}
-              </span>
-              <ChevronRight className="w-4 h-4 text-yellow-400 animate-bounce" />
-            </div>
           </div>
         </div>
       )
@@ -519,25 +500,6 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
             />
           </div>
           <ArrowDown className="w-4 h-4 text-white/60 animate-bounce" />
-        </div>
-      </div>
-
-      {/* Stage progress indicator */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="flex items-center gap-3 bg-black/80 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
-          <span className="text-white text-sm font-semibold">
-            Stage {activeStage + 1} of {transformationStages.length}
-          </span>
-          <div className="flex gap-1">
-            {transformationStages.map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index <= activeStage ? 'bg-green-400' : 'bg-white/30'
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </div>
 
