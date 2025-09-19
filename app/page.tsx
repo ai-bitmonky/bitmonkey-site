@@ -34,16 +34,11 @@ import AnimatedChart from './components/AnimatedChart';
 import { ProgressRing, ProgressRingGroup } from './components/ProgressRing';
 import { ShadowCard, ShadowShowcase } from './components/RealisticShadows';
 import AIArtPattern from './components/AIArtPattern';
-import IndustryLandscape from './components/IndustryLandscape';
-import CustomerChallenges from './components/CustomerChallenges';
-import MarketDrivers from './components/MarketDrivers';
-import SolutionApproach from './components/SolutionApproach';
 import CustomerBenefits from './components/CustomerBenefits';
 import EnhancedCallToAction from './components/EnhancedCallToAction';
 import CinematicTransformationEra from './components/CinematicTransformationEra';
 import CustomerTransformationJourney from './components/CustomerTransformationJourney';
 import RadialDriverWheel from './components/RadialDriverWheel';
-import MicroInteractionsShowcase from './components/MicroInteractionsShowcase';
 
 
 export default function Home() {
@@ -1140,21 +1135,6 @@ export default function Home() {
 
           {/* Radial Driver Wheel - Market Drivers */}
           <RadialDriverWheel />
-
-          {/* Industry Context & Market Landscape */}
-          <IndustryLandscape />
-
-          {/* Customer Challenges & Pain Points */}
-          <CustomerChallenges />
-
-          {/* Key Market Drivers & Opportunities */}
-          <MarketDrivers />
-
-          {/* Signature Micro-Interactions Showcase */}
-          <MicroInteractionsShowcase />
-
-          {/* Solution Approach & Methodology */}
-          <SolutionApproach />
 
           {/* Our Services Section */}
           <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
