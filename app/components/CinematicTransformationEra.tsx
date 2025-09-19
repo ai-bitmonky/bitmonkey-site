@@ -4,7 +4,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   Rocket, Zap, Brain, Cloud, Shield, Target, TrendingUp, Globe,
   ArrowDown, Play, Pause, FastForward, ChevronRight, Sparkles,
-  Monitor, Smartphone, Database, Cpu, Wifi, Settings
+  Monitor, Smartphone, Database, Cpu, Wifi, Settings, Users, Scale,
+  AlertTriangle, BarChart, Building, Merge, UserCheck, Activity,
+  Layers, RotateCcw, Zap as Lightning
 } from 'lucide-react';
 
 interface ParallaxLayer {
@@ -26,6 +28,26 @@ interface TransformationStage {
   color: string;
   position: number; // 0-100 percentage along the journey
   technologies: string[];
+}
+
+interface EnterpriseForce {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ComponentType<any>;
+  color: string;
+  intensity: number; // 0-100 how strongly this force affects transformation
+  category: 'regulatory' | 'customer' | 'market' | 'disruption';
+}
+
+interface TechnologyShift {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ComponentType<any>;
+  color: string;
+  impact: string;
+  adoptionRate: number; // 0-100 percentage
 }
 
 interface CinematicTransformationEraProps {
@@ -101,6 +123,84 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
       color: 'from-green-500 to-teal-600',
       position: 100,
       technologies: ['Edge Computing', 'Quantum-Ready', 'Autonomous Systems', 'Adaptive Architecture']
+    }
+  ];
+
+  const enterpriseForces: EnterpriseForce[] = [
+    {
+      id: 'regulatory-norms',
+      title: 'Changing Regulatory Norms',
+      description: 'Evolving compliance requirements driving digital governance and transparency',
+      icon: Scale,
+      color: 'from-red-500 to-orange-500',
+      intensity: 85,
+      category: 'regulatory'
+    },
+    {
+      id: 'user-centricity',
+      title: 'Growing User-Centricity',
+      description: 'Customer experience becoming the primary competitive differentiator',
+      icon: UserCheck,
+      color: 'from-blue-500 to-cyan-500',
+      intensity: 92,
+      category: 'customer'
+    },
+    {
+      id: 'globalization-ma',
+      title: 'Globalization & Increasing M&A',
+      description: 'Market consolidation and global expansion driving integration complexity',
+      icon: Merge,
+      color: 'from-purple-500 to-pink-500',
+      intensity: 78,
+      category: 'market'
+    },
+    {
+      id: 'disruption-threat',
+      title: 'Increased Threat of Disruption',
+      description: 'Accelerating innovation cycles creating existential business risks',
+      icon: AlertTriangle,
+      color: 'from-yellow-500 to-red-500',
+      intensity: 95,
+      category: 'disruption'
+    }
+  ];
+
+  const technologyShifts: TechnologyShift[] = [
+    {
+      id: 'ubiquitous-mobility',
+      title: 'Ubiquitous Mobility',
+      description: 'Mobile-first experiences becoming the default across all touchpoints',
+      icon: Smartphone,
+      color: 'from-green-500 to-teal-500',
+      impact: 'Universal Access',
+      adoptionRate: 89
+    },
+    {
+      id: 'autonomous-systems',
+      title: 'Autonomous, Self-Learning Systems',
+      description: 'AI systems that adapt and improve without human intervention',
+      icon: Brain,
+      color: 'from-purple-500 to-indigo-500',
+      impact: 'Intelligent Automation',
+      adoptionRate: 67
+    },
+    {
+      id: 'big-fast-data',
+      title: 'Big & Fast Data Analytics',
+      description: 'Real-time processing of massive datasets for instant decision-making',
+      icon: BarChart,
+      color: 'from-orange-500 to-red-500',
+      impact: 'Instant Insights',
+      adoptionRate: 81
+    },
+    {
+      id: 'cloud-growth',
+      title: 'Growth of Cloud',
+      description: 'Cloud-native architectures enabling infinite scalability and agility',
+      icon: Cloud,
+      color: 'from-blue-500 to-cyan-500',
+      impact: 'Limitless Scale',
+      adoptionRate: 94
     }
   ];
 
@@ -204,18 +304,91 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
             </div>
           ))}
 
-          {/* Floating tech icons */}
-          <div className="absolute top-20 left-1/4 animate-pulse">
-            <Database className="w-8 h-8 text-blue-400/60" />
+          {/* Enterprise Forces - Left Side */}
+          {enterpriseForces.map((force, index) => (
+            <div
+              key={force.id}
+              className={`absolute transition-all duration-1000 ${
+                scrollProgress > (index + 1) * 0.2 ? 'opacity-100 scale-100' : 'opacity-30 scale-75'
+              }`}
+              style={{
+                left: '5%',
+                top: `${15 + index * 20}%`,
+                transform: `translateY(${scrollProgress * -50}px)`
+              }}
+            >
+              <div className={`group relative bg-gradient-to-br ${force.color} rounded-xl p-4 border border-white/20 backdrop-blur-sm max-w-xs hover:scale-105 transition-all duration-300`}>
+                <div className="flex items-center mb-2">
+                  <force.icon className="w-6 h-6 text-white mr-3" />
+                  <span className="text-white font-bold text-sm">FORCE</span>
+                </div>
+                <h4 className="text-white font-semibold text-sm mb-1">{force.title}</h4>
+                <p className="text-white/80 text-xs mb-2">{force.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-white/60 text-xs">Intensity</span>
+                  <div className="flex items-center">
+                    <div className="w-16 h-1 bg-white/20 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-white transition-all duration-1000"
+                        style={{ width: `${force.intensity}%` }}
+                      />
+                    </div>
+                    <span className="text-white text-xs ml-2">{force.intensity}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Technology Shifts - Right Side */}
+          {technologyShifts.map((shift, index) => (
+            <div
+              key={shift.id}
+              className={`absolute transition-all duration-1000 ${
+                scrollProgress > (index + 1) * 0.25 ? 'opacity-100 scale-100' : 'opacity-30 scale-75'
+              }`}
+              style={{
+                right: '5%',
+                top: `${10 + index * 22}%`,
+                transform: `translateY(${scrollProgress * -60}px)`
+              }}
+            >
+              <div className={`group relative bg-gradient-to-br ${shift.color} rounded-xl p-4 border border-white/20 backdrop-blur-sm max-w-xs hover:scale-105 transition-all duration-300`}>
+                <div className="flex items-center mb-2">
+                  <shift.icon className="w-6 h-6 text-white mr-3" />
+                  <span className="text-white font-bold text-xs">TECH SHIFT</span>
+                </div>
+                <h4 className="text-white font-semibold text-sm mb-1">{shift.title}</h4>
+                <p className="text-white/80 text-xs mb-2">{shift.description}</p>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-white/60">Impact: {shift.impact}</span>
+                  <div className="flex items-center">
+                    <Activity className="w-3 h-3 text-white/60 mr-1" />
+                    <span className="text-white">{shift.adoptionRate}%</span>
+                  </div>
+                </div>
+                <div className="mt-2">
+                  <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-white to-green-400 transition-all duration-1000"
+                      style={{ width: `${shift.adoptionRate}%` }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Central floating tech icons */}
+          <div className={`absolute top-20 left-1/2 transform -translate-x-1/2 animate-pulse transition-all duration-1000 ${
+            scrollProgress > 0.3 ? 'opacity-100' : 'opacity-30'
+          }`}>
+            <Database className="w-8 h-8 text-blue-400/80" />
           </div>
-          <div className="absolute top-40 right-1/3 animate-bounce">
-            <Wifi className="w-6 h-6 text-green-400/60" />
-          </div>
-          <div className="absolute bottom-32 left-1/3 animate-pulse">
-            <Settings className="w-10 h-10 text-purple-400/60" />
-          </div>
-          <div className="absolute bottom-20 right-1/4 animate-bounce">
-            <Smartphone className="w-7 h-7 text-cyan-400/60" />
+          <div className={`absolute bottom-32 left-1/2 transform -translate-x-1/2 animate-bounce transition-all duration-1000 ${
+            scrollProgress > 0.7 ? 'opacity-100' : 'opacity-30'
+          }`}>
+            <Settings className="w-10 h-10 text-purple-400/80" />
           </div>
         </div>
       )
@@ -300,7 +473,7 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed mb-12 max-w-3xl mx-auto">
               Experience the complete transformation journey from legacy systems to future-ready enterprises.
-              Each stage represents a critical milestone in the evolution of modern business.
+              Witness how enterprise forces and technology shifts drive each stage of digital evolution.
             </p>
 
             {/* Playback controls */}
@@ -322,10 +495,10 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
             <div className="flex items-center justify-center gap-3">
               <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
               <span className="text-yellow-400 text-sm animate-pulse">
-                {userGuideStep === 0 && "Scroll to begin your transformation journey"}
-                {userGuideStep === 1 && "Watch as your organization evolves through each stage"}
-                {userGuideStep === 2 && "See technologies transform business capabilities"}
-                {userGuideStep === 3 && "Reach the future-ready enterprise destination"}
+                {userGuideStep === 0 && "Scroll to begin your transformation journey and witness enterprise forces in action"}
+                {userGuideStep === 1 && "Watch as your organization evolves while enterprise forces reshape the landscape"}
+                {userGuideStep === 2 && "See technology shifts and disruption forces transform business capabilities"}
+                {userGuideStep === 3 && "Experience the complete digital transformation with all forces aligned"}
               </span>
               <ChevronRight className="w-4 h-4 text-yellow-400 animate-bounce" />
             </div>
