@@ -1163,30 +1163,17 @@ export default function Home() {
                 <DataSculpture type="cube" size="sm" color="#8B5CF6" speed="slow" intensity="subtle" particles={true} />
               </div>
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+              {/* Center-aligned title section */}
+              <div className="text-center mb-16 scroll-animate fade-in-up">
+                <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Service Ecosystem</span>
+              </div>
+
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Enhanced Text Content - Service Ecosystem Pipeline - 30% */}
                 <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
-                  <div className="scroll-animate fade-in-up relative">
-                    {/* AI Art Pattern Background */}
-                    <div className="absolute -top-12 -left-12 -right-8 -bottom-8 pointer-events-none overflow-hidden">
-                      <AIArtPattern
-                        type="neural-network"
-                        size="lg"
-                        intensity="subtle"
-                        animate={true}
-                        colors={{
-                          primary: '#8b5cf6',
-                          secondary: '#3b82f6',
-                          accent: '#06b6d4'
-                        }}
-                        className="opacity-15"
-                      />
-                    </div>
-                    <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Service Ecosystem</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
-                      <span className="highlight-reveal">Consulting → Development → Training</span>
-                    </h2>
-                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
+                    <span className="highlight-reveal">Consulting → Development → Training</span>
+                  </h2>
 
 
                   {/* Service Pipeline Visualization */}
@@ -1752,34 +1739,18 @@ export default function Home() {
               </div>
 
               <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
+                {/* Center-aligned title section */}
+                <div className="text-center mb-16 scroll-animate fade-in-up">
+                  <span className="text-indigo-600 font-bold uppercase tracking-wider hover:text-indigo-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Our Proven Approach</span>
+                </div>
+
                 <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                   {/* Enhanced Text Content - Methodology Framework - 30% */}
                   <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
-                    <div className="scroll-animate fade-in-up relative">
-                      {/* AI Art Pattern Background */}
-                      <div className="absolute -top-12 -left-12 -right-8 -bottom-8 pointer-events-none overflow-hidden">
-                        <AIArtPattern
-                          type="circuit-pattern"
-                          size="lg"
-                          intensity="subtle"
-                          animate={true}
-                          colors={{
-                            primary: '#4f46e5',
-                            secondary: '#7c3aed',
-                            accent: '#06b6d4'
-                          }}
-                          className="opacity-15"
-                        />
-                      </div>
-                      <span className="text-indigo-600 font-bold uppercase tracking-wider hover:text-indigo-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Our Proven Approach</span>
-                      <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
-                        <span className="highlight-reveal">Solution Approach & Methodology</span>
-                      </h2>
-                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
+                      <span className="highlight-reveal">Solution Approach & Methodology</span>
+                    </h2>
 
-                    <p className="text-lg text-gray-600 leading-relaxed hidden lg:block scroll-animate fade-in-up relative z-10">
-                      The digital transformation methodology consists of five key stages: understand the problem, define the solution, ideate and develop a prototype, implement and refine through testing and feedback.
-                    </p>
 
                     {/* Methodology Framework Visualization */}
                     <div className="hidden lg:block space-y-4 scroll-animate fade-in-up relative z-10">
@@ -1933,12 +1904,6 @@ export default function Home() {
                         <p className="text-sm text-gray-600">Understand → Define → Ideate → Implement → Refine</p>
                       </div>
 
-                      {/* Mobile Methodology Overview */}
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <p className="text-sm text-gray-600">
-                          The digital transformation methodology consists of five key stages: understand the problem, define the solution, ideate and develop a prototype, implement and refine through testing and feedback.
-                        </p>
-                      </div>
 
                       {/* Mobile Transition to Differentiators */}
                       <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-200">
@@ -1957,7 +1922,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Video Content - 70% */}
+                  {/* Morphing Image Content - 70% */}
                   <div className="lg:col-span-7">
                     <TiltCard intensity="medium" className="w-full">
                       <div className="hologram-video relative rounded-3xl overflow-hidden shadow-realistic-xl bg-white card-3d-shadow gradient-border gradient-border-hover aspect-video">
