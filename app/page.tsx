@@ -36,6 +36,7 @@ import { ShadowCard, ShadowShowcase } from './components/RealisticShadows';
 import AIArtPattern from './components/AIArtPattern';
 import { ServicePortfolioTransition } from './components/ParallaxDepthLayers';
 import IndustryLandscape from './components/IndustryLandscape';
+import CustomerChallenges from './components/CustomerChallenges';
 
 
 export default function Home() {
@@ -1126,6 +1127,9 @@ export default function Home() {
         <>
           {/* Industry Context & Market Landscape */}
           <IndustryLandscape />
+
+          {/* Customer Challenges & Pain Points */}
+          <CustomerChallenges />
 
           {/* Our Services Section */}
           <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
