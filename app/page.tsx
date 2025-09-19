@@ -41,6 +41,7 @@ import SolutionApproach from './components/SolutionApproach';
 import CustomerBenefits from './components/CustomerBenefits';
 import EnhancedCallToAction from './components/EnhancedCallToAction';
 import CinematicTransformationEra from './components/CinematicTransformationEra';
+import CustomerTransformationJourney from './components/CustomerTransformationJourney';
 
 
 export default function Home() {
@@ -1131,6 +1132,9 @@ export default function Home() {
         <>
           {/* The Digital Transformation Era - Cinematic Parallax Journey */}
           <CinematicTransformationEra />
+
+          {/* Customer-Driven Digital Transformation Journey */}
+          <CustomerTransformationJourney />
 
           {/* Industry Context & Market Landscape */}
           <IndustryLandscape />
