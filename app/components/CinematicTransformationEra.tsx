@@ -297,11 +297,6 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
       children: (
         <div className="w-full h-full flex items-center justify-center">
           <div className="text-center text-white max-w-4xl px-6">
-            <div className="mb-8">
-              <span className="text-blue-400 font-bold uppercase tracking-wider text-sm animate-pulse">
-                Market Trends Analysis
-              </span>
-            </div>
             <h1 className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-blue-200 to-green-200 bg-clip-text text-transparent">
               Forces Reshaping
               <br />
@@ -333,7 +328,7 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
             <div className="flex items-center justify-center gap-3">
               <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
               <span className="text-yellow-400 text-sm animate-pulse">
-                {userGuideStep === 0 && "Scroll to explore enterprise forces reshaping businesses today"}
+                {userGuideStep === 0 && ""}
                 {userGuideStep === 1 && "Navigate through regulatory, customer, and market transformation pressures"}
                 {userGuideStep === 2 && "Discover technology shifts enabling new business capabilities"}
                 {userGuideStep === 3 && "Experience how these trends create competitive advantages"}
