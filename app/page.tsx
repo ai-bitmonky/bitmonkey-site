@@ -42,6 +42,7 @@ import CustomerBenefits from './components/CustomerBenefits';
 import EnhancedCallToAction from './components/EnhancedCallToAction';
 import CinematicTransformationEra from './components/CinematicTransformationEra';
 import CustomerTransformationJourney from './components/CustomerTransformationJourney';
+import DriversOfDigitalTransformation from './components/DriversOfDigitalTransformation';
 
 
 export default function Home() {
@@ -1135,6 +1136,9 @@ export default function Home() {
 
           {/* Customer-Driven Digital Transformation Journey */}
           <CustomerTransformationJourney />
+
+          {/* Drivers of Digital Transformation */}
+          <DriversOfDigitalTransformation />
 
           {/* Industry Context & Market Landscape */}
           <IndustryLandscape />
