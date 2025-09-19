@@ -39,6 +39,7 @@ import IndustryLandscape from './components/IndustryLandscape';
 import CustomerChallenges from './components/CustomerChallenges';
 import MarketDrivers from './components/MarketDrivers';
 import SolutionApproach from './components/SolutionApproach';
+import CustomerBenefits from './components/CustomerBenefits';
 
 
 export default function Home() {
@@ -1930,6 +1931,9 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          {/* Customer Benefits & Value Proposition */}
+          <CustomerBenefits />
 
           {/* UI Innovation Showcase Section */}
           <section id="ui-showcase" className="pt-32 pb-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden" style={{marginTop: '4rem'}}>
