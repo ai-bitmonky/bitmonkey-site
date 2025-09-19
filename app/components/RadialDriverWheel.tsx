@@ -203,7 +203,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[144vh] py-24">
         {/* Title */}
-        <h1 className="text-5xl md:text-6xl font-bold mb-20 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-20 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent text-center">
           Drivers of
           <br />
           <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
@@ -535,13 +535,6 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="mt-16">
-          <div className="flex flex-col items-center text-gray-400">
-            <span className="text-sm mb-2">Scroll to explore drivers</span>
-            <ArrowDown className="w-6 h-6 animate-bounce" />
-          </div>
-        </div>
       </div>
 
       {/* Progress indicator */}
