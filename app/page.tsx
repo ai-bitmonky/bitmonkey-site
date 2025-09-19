@@ -1357,13 +1357,36 @@ export default function Home() {
                   </div>
 
 
-                  {/* Transition to Methodology */}
-                  <div className="hidden lg:block scroll-animate fade-in-up relative z-10">
-                    <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-xl border border-purple-200">
-                      <h4 className="font-semibold text-gray-900 mb-2 text-sm">Our Methodology</h4>
-                      <p className="text-xs text-gray-600 mb-3">Experience our proven approach to digital transformation through this integrated service ecosystem.</p>
-                      <div className="flex items-center gap-2 text-purple-600">
-                        <span className="text-xs font-medium">Explore Implementation →</span>
+                  {/* Floating Our Methodology Interface */}
+                  <div className="hidden lg:block scroll-animate fade-in-up relative z-50">
+                    <div
+                      className="cursor-pointer hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%)',
+                        border: '2px solid rgba(139, 92, 246, 0.4)',
+                        borderRadius: '16px',
+                        backdropFilter: 'blur(16px)',
+                        boxShadow: '0 12px 40px rgba(139, 92, 246, 0.3), 0 0 20px rgba(139, 92, 246, 0.1)',
+                        zIndex: 100,
+                        position: 'relative',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      {/* Animated background gradient */}
+                      <div
+                        className="absolute inset-0 opacity-30"
+                        style={{
+                          background: 'linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))',
+                          backgroundSize: '200% 200%',
+                          animation: 'gradient 3s ease infinite'
+                        }}
+                      />
+                      <div className="relative p-4">
+                        <h4 className="font-semibold text-gray-900 mb-2 text-sm">Our Methodology</h4>
+                        <p className="text-xs text-gray-600 mb-3">Experience our proven approach to digital transformation through this integrated service ecosystem.</p>
+                        <div className="flex items-center gap-2 text-purple-600">
+                          <span className="text-xs font-medium">Explore Implementation →</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1885,13 +1908,36 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Transition to Differentiators */}
-                    <div className="hidden lg:block scroll-animate fade-in-up relative z-10">
-                      <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-200">
-                        <h4 className="font-semibold text-gray-900 mb-2 text-sm">What Sets Us Apart</h4>
-                        <p className="text-xs text-gray-600 mb-3">Discover the key differentiators that make our methodology uniquely effective for digital transformation success.</p>
-                        <div className="flex items-center gap-2 text-indigo-600">
-                          <span className="text-xs font-medium">Explore Our Differentiators →</span>
+                    {/* Floating What Sets Us Apart Interface */}
+                    <div className="hidden lg:block scroll-animate fade-in-up relative z-50">
+                      <div
+                        className="cursor-pointer hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none"
+                        style={{
+                          background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%)',
+                          border: '2px solid rgba(79, 70, 229, 0.4)',
+                          borderRadius: '16px',
+                          backdropFilter: 'blur(16px)',
+                          boxShadow: '0 12px 40px rgba(79, 70, 229, 0.3), 0 0 20px rgba(79, 70, 229, 0.1)',
+                          zIndex: 100,
+                          position: 'relative',
+                          overflow: 'hidden'
+                        }}
+                      >
+                        {/* Animated background gradient */}
+                        <div
+                          className="absolute inset-0 opacity-30"
+                          style={{
+                            background: 'linear-gradient(45deg, rgba(79, 70, 229, 0.1), rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1))',
+                            backgroundSize: '200% 200%',
+                            animation: 'gradient 3s ease infinite'
+                          }}
+                        />
+                        <div className="relative p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 text-sm">What Sets Us Apart</h4>
+                          <p className="text-xs text-gray-600 mb-3">Discover the key differentiators that make our methodology uniquely effective for digital transformation success.</p>
+                          <div className="flex items-center gap-2 text-indigo-600">
+                            <span className="text-xs font-medium">Explore Our Differentiators →</span>
+                          </div>
                         </div>
                       </div>
                     </div>
