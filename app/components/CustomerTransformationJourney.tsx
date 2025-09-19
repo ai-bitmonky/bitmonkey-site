@@ -6,7 +6,8 @@ import {
   CheckCircle, ArrowRight, TrendingUp, Globe, Database, Cpu,
   ArrowDown, Play, Pause, FastForward, ChevronRight, Sparkles,
   Heart, Eye, Layers, RotateCcw, BarChart3, Lock, Settings,
-  Rocket, Timer, Building, Code, Wrench, Activity
+  Rocket, Timer, Building, Code, Wrench, Activity, Star,
+  Hexagon, Triangle, Circle, Square, Diamond
 } from 'lucide-react';
 
 interface ParallaxLayer {
@@ -192,75 +193,154 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
   }, [isPlaying]);
 
   const parallaxLayers: ParallaxLayer[] = [
-    // Background transformation landscape
+    // Enhanced background with animated gradients
     {
       id: 'background-landscape',
       speed: 0.1,
       zIndex: 1,
-      opacity: 0.4,
-      blur: 1,
+      opacity: 0.6,
+      blur: 0.5,
       children: (
-        <div className="w-full h-full bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-indigo-900/30">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 75% 50%, rgba(147, 51, 234, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 50% 75%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)
-            `
-          }} />
+        <div className="w-full h-full bg-gradient-to-br from-indigo-950 via-purple-950 to-blue-950 relative overflow-hidden">
+          {/* Animated gradient orbs */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-full blur-3xl animate-pulse"
+                 style={{ animationDuration: '4s' }} />
+            <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/40 to-pink-500/40 rounded-full blur-3xl animate-pulse"
+                 style={{ animationDuration: '5s', animationDelay: '1s' }} />
+            <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-gradient-to-r from-indigo-500/35 to-violet-500/35 rounded-full blur-3xl animate-pulse"
+                 style={{ animationDuration: '6s', animationDelay: '2s' }} />
+          </div>
+
+          {/* Geometric pattern overlay */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="w-full h-full" style={{
+              backgroundImage: `
+                linear-gradient(45deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(-45deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '60px 60px',
+              animation: 'backgroundShift 20s ease-in-out infinite'
+            }} />
+          </div>
+
+          {/* Floating geometric shapes */}
+          <div className="absolute top-20 left-10 animate-bounce" style={{ animationDuration: '3s' }}>
+            <Hexagon className="w-8 h-8 text-blue-400/40 animate-spin" style={{ animationDuration: '8s' }} />
+          </div>
+          <div className="absolute top-40 right-20 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+            <Triangle className="w-6 h-6 text-purple-400/40 animate-spin" style={{ animationDuration: '6s' }} />
+          </div>
+          <div className="absolute bottom-32 left-16 animate-bounce" style={{ animationDuration: '5s', animationDelay: '2s' }}>
+            <Diamond className="w-7 h-7 text-cyan-400/40 animate-spin" style={{ animationDuration: '10s' }} />
+          </div>
+          <div className="absolute bottom-20 right-32 animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>
+            <Square className="w-5 h-5 text-pink-400/40 animate-spin" style={{ animationDuration: '7s' }} />
+          </div>
         </div>
       )
     },
-    // Mid-layer particles and elements
+    // Enhanced particle system with variety
     {
       id: 'journey-elements',
       speed: 0.3,
       zIndex: 2,
-      opacity: 0.8,
+      opacity: 0.9,
       children: (
         <div className="w-full h-full relative">
+          {/* Enhanced particle system */}
           {journeyParticles.map((particle, i) => (
             <div
               key={i}
-              className="absolute animate-ping"
+              className="absolute"
               style={{
                 left: `${particle.x}%`,
                 top: `${particle.y}%`,
                 animationDelay: `${particle.delay}s`,
-                animationDuration: '4s'
               }}
             >
-              <div
-                className={`rounded-full ${
-                  particle.type === 'customer' ? 'bg-blue-400' :
-                  particle.type === 'tech' ? 'bg-purple-400' :
-                  particle.type === 'challenge' ? 'bg-orange-400' :
-                  particle.type === 'security' ? 'bg-red-400' :
-                  particle.type === 'cost' ? 'bg-green-400' : 'bg-indigo-400'
-                }`}
-                style={{
-                  width: `${particle.size}px`,
-                  height: `${particle.size}px`
-                }}
-              />
+              {/* Particle with glow effect */}
+              <div className="relative">
+                <div
+                  className={`rounded-full animate-ping ${
+                    particle.type === 'customer' ? 'bg-blue-400 shadow-lg shadow-blue-400/50' :
+                    particle.type === 'tech' ? 'bg-purple-400 shadow-lg shadow-purple-400/50' :
+                    particle.type === 'challenge' ? 'bg-orange-400 shadow-lg shadow-orange-400/50' :
+                    particle.type === 'security' ? 'bg-red-400 shadow-lg shadow-red-400/50' :
+                    particle.type === 'cost' ? 'bg-green-400 shadow-lg shadow-green-400/50' : 'bg-indigo-400 shadow-lg shadow-indigo-400/50'
+                  }`}
+                  style={{
+                    width: `${particle.size}px`,
+                    height: `${particle.size}px`,
+                    animationDuration: `${3 + Math.random() * 2}s`
+                  }}
+                />
+                {/* Secondary glow ring */}
+                <div
+                  className={`absolute inset-0 rounded-full animate-pulse ${
+                    particle.type === 'customer' ? 'bg-blue-300/20 ring-2 ring-blue-400/30' :
+                    particle.type === 'tech' ? 'bg-purple-300/20 ring-2 ring-purple-400/30' :
+                    particle.type === 'challenge' ? 'bg-orange-300/20 ring-2 ring-orange-400/30' :
+                    particle.type === 'security' ? 'bg-red-300/20 ring-2 ring-red-400/30' :
+                    particle.type === 'cost' ? 'bg-green-300/20 ring-2 ring-green-400/30' : 'bg-indigo-300/20 ring-2 ring-indigo-400/30'
+                  }`}
+                  style={{
+                    animationDuration: `${2 + Math.random() * 3}s`,
+                    animationDelay: `${Math.random()}s`
+                  }}
+                />
+              </div>
             </div>
           ))}
 
-          {/* Floating category icons */}
-          <div className={`absolute top-32 left-1/4 animate-pulse transition-all duration-1000 ${
-            scrollProgress > 0.2 ? 'opacity-100' : 'opacity-30'
+          {/* Enhanced floating category icons with trails */}
+          <div className={`absolute top-32 left-1/4 transition-all duration-1000 ${
+            scrollProgress > 0.2 ? 'opacity-100 scale-100' : 'opacity-30 scale-75'
           }`}>
-            <Heart className="w-8 h-8 text-blue-400/70" />
+            <div className="relative">
+              <Heart className="w-12 h-12 text-blue-400 animate-pulse drop-shadow-lg" />
+              <div className="absolute inset-0 animate-ping">
+                <Heart className="w-12 h-12 text-blue-300/40" />
+              </div>
+              <div className="absolute -inset-2 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
+            </div>
           </div>
-          <div className={`absolute top-1/2 right-1/4 animate-bounce transition-all duration-1000 ${
-            scrollProgress > 0.5 ? 'opacity-100' : 'opacity-30'
+
+          <div className={`absolute top-1/2 right-1/4 transition-all duration-1000 ${
+            scrollProgress > 0.5 ? 'opacity-100 scale-100' : 'opacity-30 scale-75'
           }`}>
-            <Eye className="w-10 h-10 text-purple-400/70" />
+            <div className="relative">
+              <Eye className="w-14 h-14 text-purple-400 animate-bounce drop-shadow-lg" />
+              <div className="absolute inset-0 animate-ping" style={{ animationDelay: '0.5s' }}>
+                <Eye className="w-14 h-14 text-purple-300/40" />
+              </div>
+              <div className="absolute -inset-3 bg-purple-400/20 rounded-full blur-xl animate-pulse" />
+            </div>
           </div>
-          <div className={`absolute bottom-32 left-1/3 animate-pulse transition-all duration-1000 ${
-            scrollProgress > 0.8 ? 'opacity-100' : 'opacity-30'
+
+          <div className={`absolute bottom-32 left-1/3 transition-all duration-1000 ${
+            scrollProgress > 0.8 ? 'opacity-100 scale-100' : 'opacity-30 scale-75'
           }`}>
-            <Target className="w-9 h-9 text-green-400/70" />
+            <div className="relative">
+              <Target className="w-13 h-13 text-green-400 animate-pulse drop-shadow-lg" />
+              <div className="absolute inset-0 animate-spin" style={{ animationDuration: '8s' }}>
+                <Target className="w-13 h-13 text-green-300/30" />
+              </div>
+              <div className="absolute -inset-2 bg-green-400/20 rounded-full blur-xl animate-pulse" />
+            </div>
+          </div>
+
+          {/* Additional floating elements */}
+          <div className={`absolute top-1/4 left-1/2 transition-all duration-1000 ${
+            scrollProgress > 0.3 ? 'opacity-100' : 'opacity-20'
+          }`}>
+            <Star className="w-8 h-8 text-yellow-400 animate-spin" style={{ animationDuration: '4s' }} />
+          </div>
+
+          <div className={`absolute bottom-1/4 right-1/3 transition-all duration-1000 ${
+            scrollProgress > 0.7 ? 'opacity-100' : 'opacity-20'
+          }`}>
+            <Sparkles className="w-10 h-10 text-cyan-400 animate-pulse" />
           </div>
         </div>
       )
@@ -280,36 +360,90 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
             />
           </div>
 
-          {/* Category markers */}
+          {/* Enhanced category markers with effects */}
           {transformationCategories.map((category, index) => (
             <div
               key={category.id}
-              className={`absolute left-1/2 w-16 h-16 transform -translate-x-1/2 transition-all duration-500 ${
-                index <= activeCategory ? 'scale-110 opacity-100' : 'scale-75 opacity-50'
+              className={`absolute left-1/2 w-20 h-20 transform -translate-x-1/2 transition-all duration-700 ${
+                index <= activeCategory ? 'scale-125 opacity-100' : 'scale-80 opacity-60'
               }`}
               style={{ top: `${category.position}%` }}
             >
-              <div className={`w-full h-full rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center border-4 ${
-                index === activeCategory ? 'border-cyan-400 shadow-2xl' : 'border-white/30'
-              }`}>
-                <category.icon className="w-8 h-8 text-white" />
+              {/* Enhanced marker with multiple effects */}
+              <div className="relative">
+                {/* Outer glow ring */}
+                <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${category.color} opacity-30 blur-lg ${
+                  index === activeCategory ? 'animate-pulse scale-150' : ''
+                }`} />
+
+                {/* Main marker */}
+                <div className={`relative w-full h-full rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center border-4 transition-all duration-500 ${
+                  index === activeCategory
+                    ? 'border-white shadow-2xl shadow-cyan-400/50 ring-4 ring-cyan-400/30'
+                    : 'border-white/40 shadow-lg'
+                } backdrop-blur-sm`}>
+                  <category.icon className={`w-10 h-10 text-white transition-all duration-300 ${
+                    index === activeCategory ? 'animate-pulse' : ''
+                  }`} />
+                </div>
+
+                {/* Rotating border effect for active category */}
+                {index === activeCategory && (
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-cyan-400/60 animate-spin"
+                       style={{ animationDuration: '8s' }} />
+                )}
+
+                {/* Success indicator */}
+                {index < activeCategory && (
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center animate-bounce">
+                    <CheckCircle className="w-4 h-4 text-white" />
+                  </div>
+                )}
               </div>
 
-              {/* Category info panel */}
-              <div className={`absolute ${index % 2 === 0 ? 'left-20' : 'right-20'} top-1/2 transform -translate-y-1/2 transition-all duration-500 ${
-                index === activeCategory ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              {/* Enhanced category info panel */}
+              <div className={`absolute ${index % 2 === 0 ? 'left-24' : 'right-24'} top-1/2 transform -translate-y-1/2 transition-all duration-700 ${
+                index === activeCategory ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4'
               }`}>
-                <div className={`bg-black/80 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-sm ${
+                <div className={`relative bg-gradient-to-br from-black/90 to-gray-900/90 backdrop-blur-lg rounded-2xl p-6 border-2 max-w-sm ${
                   index % 2 === 0 ? 'text-left' : 'text-right'
-                }`}>
-                  <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
-                  <div className="space-y-2">
-                    {category.items.map((item, i) => (
-                      <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                        <span>{item}</span>
+                } ${category.color.replace('from-', 'border-').replace('to-', '').split(' ')[0]}/30 shadow-2xl`}>
+
+                  {/* Panel glow effect */}
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${category.color} opacity-10 blur-sm`} />
+
+                  {/* Content */}
+                  <div className="relative">
+                    <div className="flex items-center mb-4">
+                      <category.icon className={`w-6 h-6 mr-3 bg-gradient-to-br ${category.color} bg-clip-text text-transparent`} />
+                      <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                    </div>
+
+                    <div className="space-y-3">
+                      {category.items.map((item, i) => (
+                        <div key={i} className={`flex items-start gap-3 text-sm text-gray-200 transition-all duration-300`}
+                             style={{ animationDelay: `${i * 0.1}s` }}>
+                          <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg`}>
+                            <CheckCircle className="w-3 h-3 text-white" />
+                          </div>
+                          <span className="leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Progress indicator for this category */}
+                    <div className="mt-4 pt-4 border-t border-white/10">
+                      <div className="flex items-center justify-between text-xs text-gray-400">
+                        <span>Progress</span>
+                        <span>{Math.round((index + 1) / transformationCategories.length * 100)}%</span>
                       </div>
-                    ))}
+                      <div className="w-full h-1 bg-white/10 rounded-full mt-1 overflow-hidden">
+                        <div
+                          className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000`}
+                          style={{ width: index <= activeCategory ? '100%' : '0%' }}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -445,21 +579,125 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
 
       <style jsx>{`
         @keyframes parallaxFloat {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+            opacity: 0.8;
+          }
+          25% {
+            transform: translateY(-15px) rotate(1deg);
+            opacity: 1;
+          }
+          50% {
+            transform: translateY(-25px) rotate(0deg);
+            opacity: 0.9;
+          }
+          75% {
+            transform: translateY(-10px) rotate(-1deg);
+            opacity: 1;
+          }
         }
 
         @keyframes categoryPulse {
-          0%, 100% { opacity: 0.6; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.05); }
+          0%, 100% {
+            opacity: 0.7;
+            transform: scale(1) rotate(0deg);
+            filter: brightness(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.08) rotate(1deg);
+            filter: brightness(1.2);
+          }
+        }
+
+        @keyframes backgroundShift {
+          0%, 100% {
+            transform: translate(0, 0) rotate(0deg);
+            opacity: 0.2;
+          }
+          25% {
+            transform: translate(10px, -5px) rotate(1deg);
+            opacity: 0.3;
+          }
+          50% {
+            transform: translate(5px, -10px) rotate(0deg);
+            opacity: 0.25;
+          }
+          75% {
+            transform: translate(-5px, -5px) rotate(-1deg);
+            opacity: 0.3;
+          }
+        }
+
+        @keyframes shimmer {
+          0% {
+            background-position: -200% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+
+        @keyframes glow {
+          0%, 100% {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(147, 51, 234, 0.4);
+          }
+        }
+
+        @keyframes breathe {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.8;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 1;
+          }
         }
 
         .animate-parallax-float {
-          animation: parallaxFloat 6s ease-in-out infinite;
+          animation: parallaxFloat 7s ease-in-out infinite;
         }
 
         .animate-category-pulse {
-          animation: categoryPulse 3s ease-in-out infinite;
+          animation: categoryPulse 4s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          background-size: 200% 100%;
+          animation: shimmer 3s infinite;
+        }
+
+        .animate-glow {
+          animation: glow 3s ease-in-out infinite;
+        }
+
+        .animate-breathe {
+          animation: breathe 4s ease-in-out infinite;
+        }
+
+        /* Enhanced particle animations */
+        @keyframes particleFloat {
+          0%, 100% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+          }
+          25% {
+            transform: translateY(-10px) translateX(5px) rotate(90deg);
+          }
+          50% {
+            transform: translateY(-20px) translateX(-5px) rotate(180deg);
+          }
+          75% {
+            transform: translateY(-10px) translateX(8px) rotate(270deg);
+          }
+        }
+
+        .animate-particle-float {
+          animation: particleFloat 8s ease-in-out infinite;
         }
       `}</style>
     </section>
