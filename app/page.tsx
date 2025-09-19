@@ -43,6 +43,7 @@ import EnhancedCallToAction from './components/EnhancedCallToAction';
 import CinematicTransformationEra from './components/CinematicTransformationEra';
 import CustomerTransformationJourney from './components/CustomerTransformationJourney';
 import RadialDriverWheel from './components/RadialDriverWheel';
+import MicroInteractionsShowcase from './components/MicroInteractionsShowcase';
 
 
 export default function Home() {
@@ -166,7 +167,7 @@ export default function Home() {
 
                 <div className="flex items-center gap-3 mt-2 text-gray-600">
                   <MagneticEffect strength={0.3} range={50}>
-                    <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition magnetic-button">
+                    <button className="inline-flex items-center justify-center w-6 h-6 rounded-lg border hover:bg-gray-50 transition magnetic-enhanced">
                       <MorphingIcon
                         fromIcon={MoreHorizontal}
                         toIcon={Search}
@@ -178,7 +179,7 @@ export default function Home() {
                     </button>
                   </MagneticEffect>
                   <MagneticEffect strength={0.4} range={60}>
-                    <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                    <a href="#" className="hover:text-gray-900 transition magnetic-enhanced underline-reveal">
                       <MorphingIcon
                         fromIcon={Twitter}
                         toIcon={Heart}
@@ -191,7 +192,7 @@ export default function Home() {
                     </a>
                   </MagneticEffect>
                   <MagneticEffect strength={0.4} range={60}>
-                    <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                    <a href="#" className="hover:text-gray-900 transition magnetic-enhanced underline-reveal">
                       <MorphingIcon
                         fromIcon={Instagram}
                         toIcon={Star}
@@ -204,7 +205,7 @@ export default function Home() {
                     </a>
                   </MagneticEffect>
                   <MagneticEffect strength={0.4} range={60}>
-                    <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                    <a href="#" className="hover:text-gray-900 transition magnetic-enhanced underline-reveal">
                       <MorphingIcon
                         fromIcon={Github}
                         toIcon={Code}
@@ -217,7 +218,7 @@ export default function Home() {
                     </a>
                   </MagneticEffect>
                   <MagneticEffect strength={0.4} range={60}>
-                    <a href="#" className="hover:text-gray-900 transition magnetic-button underline-reveal">
+                    <a href="#" className="hover:text-gray-900 transition magnetic-enhanced underline-reveal">
                       <MorphingIcon
                         fromIcon={Linkedin}
                         toIcon={Users}
@@ -1148,6 +1149,9 @@ export default function Home() {
 
           {/* Key Market Drivers & Opportunities */}
           <MarketDrivers />
+
+          {/* Signature Micro-Interactions Showcase */}
+          <MicroInteractionsShowcase />
 
           {/* Solution Approach & Methodology */}
           <SolutionApproach />
