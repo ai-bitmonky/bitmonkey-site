@@ -40,6 +40,7 @@ import CustomerChallenges from './components/CustomerChallenges';
 import MarketDrivers from './components/MarketDrivers';
 import SolutionApproach from './components/SolutionApproach';
 import CustomerBenefits from './components/CustomerBenefits';
+import EnhancedCallToAction from './components/EnhancedCallToAction';
 
 
 export default function Home() {
@@ -3903,73 +3904,11 @@ export default function Home() {
           </section>
 
 
-          {/* Contact Section - Dynamic based on service type */}
-          <section id="contact" className="pt-80 pb-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white relative overflow-hidden" style={{marginTop: '4rem'}}>
-            <GeometricAccent
-              shapes={[
-                { type: 'blob', size: 'xl', color: 'rgba(255, 255, 255, 0.08)', position: 'top-left', animate: true },
-                { type: 'circuit-pattern', size: 'xl', color: 'rgba(255, 255, 255, 0.03)', position: 'center', animate: true, opacity: 0.4 },
-                { type: 'geometric-grid', size: 'lg', color: 'rgba(255, 255, 255, 0.04)', position: 'top-right', animate: true, opacity: 0.6 },
-                { type: 'hexagon', size: 'md', color: 'rgba(255, 255, 255, 0.06)', position: 'bottom-left', animate: true },
-                { type: 'diagonal-lines', size: 'lg', color: 'rgba(255, 255, 255, 0.02)', position: 'bottom-right', animate: true, opacity: 0.7 }
-              ]}
-            >
-              {/* Parametric Light Effects for Contact */}
-              <div className="absolute top-16 left-16">
-                <ParametricLight type="infinity" size="xl" color="#FFFFFF" speed="slow" intensity="bright" glow={true} trail={true} />
-              </div>
-              <div className="absolute bottom-16 right-16">
-                <ParametricLight type="rose" size="lg" color="#FBBF24" speed="normal" intensity="medium" glow={true} />
-              </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <ParametricLight type="butterfly" size="md" color="#F472B6" speed="fast" intensity="subtle" glow={true} />
-              </div>
-
-              {/* Data Sculpture Effects for Contact */}
-              <div className="absolute top-1/4 left-1/4">
-                <DataSculpture type="pyramid" size="xl" color="#FFFFFF" speed="slow" intensity="bright" wireframe={true} particles={true} />
-              </div>
-              <div className="absolute bottom-1/4 right-1/4">
-                <DataSculpture type="cube" size="lg" color="#FBBF24" speed="normal" intensity="medium" wireframe={true} />
-              </div>
-              <div className="absolute top-2/3 right-1/3">
-                <DataSculpture type="helix" size="md" color="#F472B6" speed="fast" intensity="subtle" particles={true} />
-              </div>
-            <div className="container mx-auto max-w-7xl px-6 text-center" style={{marginLeft: '1rem', marginRight: '1rem'}}>
-              <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-              <p className="text-lg mb-8 text-white/90">
-                {contextSlug === 'development-services' && "Let&apos;s discuss your development services project needs"}
-                {contextSlug === 'consulting-services' && "Let&apos;s explore your digital transformation opportunities"}
-                {contextSlug === 'training-services' && "Let&apos;s design a training program for your team"}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <MagneticEffect strength={0.7} range={150}>
-                  <a href="mailto:hello@avada.com" className="px-8 py-4 rounded-full bg-white text-purple-600 font-semibold hover:shadow-realistic-xl transition-all underline-reveal gradient-border gradient-border-hover relative group overflow-hidden">
-                    <span className="relative z-10">
-                      {contextSlug === 'development-services' && 'Start Your Project'}
-                      {contextSlug === 'consulting-services' && 'Schedule Consultation'}
-                      {contextSlug === 'training-services' && 'Explore Training'}
-                    </span>
-                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <NeuroLoader type="synaptic" size="sm" color="#7C3AED" speed="fast" />
-                    </div>
-                  </a>
-                </MagneticEffect>
-                <MagneticEffect strength={0.5} range={130}>
-                  <button
-                    onClick={() => setContextSlug(null)}
-                    className="px-8 py-4 rounded-full border-2 border-white bg-transparent text-white font-semibold hover:bg-white hover:text-purple-600 transition-all gradient-border gradient-border-hover relative group overflow-hidden"
-                  >
-                    <span className="relative z-10">Back to Home</span>
-                    <div className="absolute left-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <NeuroLoader type="brain-wave" size="sm" color="#7C3AED" speed="normal" />
-                    </div>
-                  </button>
-                </MagneticEffect>
-              </div>
-            </div>
-            </GeometricAccent>
-          </section>
+          {/* Enhanced Call to Action */}
+          <EnhancedCallToAction
+            contextSlug={contextSlug}
+            onContextChange={setContextSlug}
+          />
         </>
       )}
 
