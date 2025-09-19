@@ -1183,13 +1183,13 @@ export default function Home() {
                       <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500"></div>
 
                       {/* Phase 1: Strategic Consulting */}
-                      <div className="flex items-start gap-4 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                      <div className="flex items-start gap-4 mb-6 stagger-group stagger-entrance-1 transition-smooth-500">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10 transition-smooth-400">
                           1
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 mb-1">Strategic Consulting</h4>
-                          <p className="text-sm text-gray-600 mb-2">Vision to Strategy</p>
+                          <h4 className="font-semibold text-gray-900 mb-1 motion-elegant">Strategic Consulting</h4>
+                          <p className="text-sm text-gray-600 mb-2 motion-smooth">Vision to Strategy</p>
                           <div className="space-y-1">
                             <button
                               onClick={() => handleLeftNav('digital-transformation')}
@@ -1358,9 +1358,9 @@ export default function Home() {
 
 
                   {/* Floating Our Methodology Interface */}
-                  <div className="hidden lg:block scroll-animate fade-in-up relative z-50">
+                  <div className="hidden lg:block scroll-animate fade-in-up relative z-50 stagger-group stagger-entrance-3">
                     <div
-                      className="cursor-pointer hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none"
+                      className="cursor-pointer hover:scale-105 transition-smooth-600 animate-pulse hover:animate-none motion-elegant parallax-layer atmosphere-near"
                       style={{
                         background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%)',
                         border: '2px solid rgba(139, 92, 246, 0.4)',
@@ -1909,9 +1909,9 @@ export default function Home() {
                     </div>
 
                     {/* Floating What Sets Us Apart Interface */}
-                    <div className="hidden lg:block scroll-animate fade-in-up relative z-50">
+                    <div className="hidden lg:block scroll-animate fade-in-up relative z-50 stagger-group stagger-entrance-4">
                       <div
-                        className="cursor-pointer hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none"
+                        className="cursor-pointer hover:scale-105 transition-smooth-700 animate-pulse hover:animate-none motion-professional parallax-layer atmosphere-near"
                         style={{
                           background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%)',
                           border: '2px solid rgba(79, 70, 229, 0.4)',

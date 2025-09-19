@@ -91,6 +91,18 @@ a {
   transform: translateY(0);
 }
 
+/* Enhanced Staggered Animation System (60-120ms delays) */
+.stagger-delay-1 { animation-delay: 60ms; transition-delay: 60ms; }
+.stagger-delay-2 { animation-delay: 120ms; transition-delay: 120ms; }
+.stagger-delay-3 { animation-delay: 180ms; transition-delay: 180ms; }
+.stagger-delay-4 { animation-delay: 240ms; transition-delay: 240ms; }
+.stagger-delay-5 { animation-delay: 300ms; transition-delay: 300ms; }
+.stagger-delay-6 { animation-delay: 360ms; transition-delay: 360ms; }
+.stagger-delay-7 { animation-delay: 420ms; transition-delay: 420ms; }
+.stagger-delay-8 { animation-delay: 480ms; transition-delay: 480ms; }
+.stagger-delay-9 { animation-delay: 540ms; transition-delay: 540ms; }
+.stagger-delay-10 { animation-delay: 600ms; transition-delay: 600ms; }
+
 /* Animation Delays */
 .scroll-animate.fade-in-up-delay-500 {
   transform: translateY(30px);
@@ -3012,11 +3024,106 @@ a {
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Multi-Layer Parallax System with Atmospheric Blur */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.parallax-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* 3-Layer Parallax Depths with Atmospheric Blur */
+.parallax-foreground {
+  transform: translateZ(100px);
+  filter: none;
+  z-index: 3;
+}
+
+.parallax-midground {
+  transform: translateZ(0px);
+  filter: blur(0.5px);
+  opacity: 0.95;
+  z-index: 2;
+}
+
+.parallax-background {
+  transform: translateZ(-100px);
+  filter: blur(2px);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+/* Parallax Movement Classes */
+.parallax-slow {
+  transform: translate3d(0, calc(var(--scroll-y, 0) * 0.2px), 0);
+}
+
+.parallax-medium {
+  transform: translate3d(0, calc(var(--scroll-y, 0) * 0.5px), 0);
+}
+
+.parallax-fast {
+  transform: translate3d(0, calc(var(--scroll-y, 0) * 0.8px), 0);
+}
+
+/* Enhanced Smooth Transitions (400-700ms) */
+.transition-smooth-400 {
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-smooth-500 {
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-smooth-600 {
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-smooth-700 {
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Atmospheric Depth Effects */
+.atmosphere-near {
+  filter: none;
+  opacity: 1;
+  transform: translateZ(50px);
+}
+
+.atmosphere-mid {
+  filter: blur(1px);
+  opacity: 0.9;
+  transform: translateZ(0px);
+}
+
+.atmosphere-far {
+  filter: blur(3px);
+  opacity: 0.7;
+  transform: translateZ(-50px);
+}
+
+.atmosphere-distant {
+  filter: blur(5px);
+  opacity: 0.5;
+  transform: translateZ(-100px);
+}
+
 /* Enhanced transitions for all interactive elements */
 * {
   transition-property: transform, opacity, background-color, border-color, color, fill, stroke, filter, box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
+  transition-duration: 500ms;
 }
 
 /* Hover state optimizations */
@@ -3104,6 +3211,64 @@ a:hover,
   }
 }
 
+/* Professional Staggered Entrance System */
+.stagger-group {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stagger-group.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Professional entrance timing (60-120ms intervals) */
+.stagger-entrance-1 { transition-delay: 0ms; }
+.stagger-entrance-2 { transition-delay: 80ms; }
+.stagger-entrance-3 { transition-delay: 160ms; }
+.stagger-entrance-4 { transition-delay: 240ms; }
+.stagger-entrance-5 { transition-delay: 320ms; }
+.stagger-entrance-6 { transition-delay: 400ms; }
+.stagger-entrance-7 { transition-delay: 480ms; }
+.stagger-entrance-8 { transition-delay: 560ms; }
+.stagger-entrance-9 { transition-delay: 640ms; }
+.stagger-entrance-10 { transition-delay: 720ms; }
+
+/* Smooth Motion Curves for Professional Feel */
+.motion-smooth {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.motion-elegant {
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.motion-professional {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Parallax Performance Optimizations */
+@media (max-width: 768px) {
+  .parallax-foreground,
+  .parallax-midground,
+  .parallax-background {
+    transform: none;
+    filter: none;
+    opacity: 1;
+  }
+
+  .parallax-slow,
+  .parallax-medium,
+  .parallax-fast {
+    transform: none;
+  }
+
+  .stagger-group {
+    transition-duration: 400ms;
+  }
+}
+
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
   .signature-cursor,
@@ -3127,6 +3292,23 @@ a:hover,
 
   .signature-button::before {
     display: none;
+  }
+
+  .parallax-foreground,
+  .parallax-midground,
+  .parallax-background,
+  .parallax-slow,
+  .parallax-medium,
+  .parallax-fast {
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  .stagger-group {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: opacity 0.2s ease !important;
   }
 
   * {
