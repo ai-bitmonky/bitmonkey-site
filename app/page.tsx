@@ -1164,7 +1164,7 @@ export default function Home() {
               </div>
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
-                {/* Text Content - 30% */}
+                {/* Enhanced Text Content - Service Ecosystem Pipeline - 30% */}
                 <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
                   <div className="scroll-animate fade-in-up relative">
                     {/* AI Art Pattern Background */}
@@ -1182,29 +1182,227 @@ export default function Home() {
                         className="opacity-15"
                       />
                     </div>
-                    <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Our Services</span>
+                    <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Service Ecosystem</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6 hidden lg:block scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
-                      <span className="highlight-reveal">Comprehensive Digital Solutions</span>
+                      <span className="highlight-reveal">Consulting → Development → Training</span>
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 leading-relaxed hidden lg:block scroll-animate fade-in-up">
-                    We deliver end-to-end technology solutions that drive business transformation and accelerate growth.
-                  </p>
 
-                  <div className="space-y-4 scroll-animate fade-in-up">
+                  {/* Service Pipeline Visualization */}
+                  <div className="hidden lg:block space-y-4 scroll-animate fade-in-up relative z-10">
+                    {/* Pipeline Flow Line */}
+                    <div className="relative">
+                      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500"></div>
+
+                      {/* Phase 1: Strategic Consulting */}
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                          1
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 mb-1">Strategic Consulting</h4>
+                          <p className="text-sm text-gray-600 mb-2">Vision to Strategy</p>
+                          <div className="space-y-1">
+                            <button
+                              onClick={() => handleLeftNav('digital-transformation')}
+                              className="flex items-center gap-2 hover:bg-blue-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-blue-700">Digital Transformation</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('enterprise-architecture')}
+                              className="flex items-center gap-2 hover:bg-blue-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-blue-700">Enterprise Architecture</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('digital-strategy-roadmaps')}
+                              className="flex items-center gap-2 hover:bg-blue-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-blue-700">Strategy Roadmaps</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('governance')}
+                              className="flex items-center gap-2 hover:bg-blue-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-blue-700">Governance Framework</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('cloud-advisory')}
+                              className="flex items-center gap-2 hover:bg-blue-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-blue-700">Cloud Advisory</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('security-compliance')}
+                              className="flex items-center gap-2 hover:bg-blue-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-blue-700">Security Compliance</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Phase 2: Expert Development */}
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                          2
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 mb-1">Expert Development</h4>
+                          <p className="text-sm text-gray-600 mb-2">Strategy to Reality</p>
+                          <div className="space-y-1">
+                            <button
+                              onClick={() => handleLeftNav('app-dev-modernization')}
+                              className="flex items-center gap-2 hover:bg-purple-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-purple-700">App Development</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('cloud-engineering')}
+                              className="flex items-center gap-2 hover:bg-purple-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-purple-700">Cloud Engineering</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('ai-ml-automation')}
+                              className="flex items-center gap-2 hover:bg-purple-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-purple-700">AI-ML Automation</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('data-analytics')}
+                              className="flex items-center gap-2 hover:bg-purple-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-purple-700">Data Analytics</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('devsecops')}
+                              className="flex items-center gap-2 hover:bg-purple-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-purple-700">DevSecOps</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('quality-assurance')}
+                              className="flex items-center gap-2 hover:bg-purple-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-purple-700">Quality Assurance</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('sre-operations')}
+                              className="flex items-center gap-2 hover:bg-purple-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-purple-700">SRE Operations</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('center-of-excellence')}
+                              className="flex items-center gap-2 hover:bg-purple-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-purple-700">Center of Excellence</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Phase 3: Comprehensive Training */}
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
+                          3
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 mb-1">Comprehensive Training</h4>
+                          <p className="text-sm text-gray-600 mb-2">Reality to Mastery</p>
+                          <div className="space-y-1">
+                            <button
+                              onClick={() => handleLeftNav('full-stack-developer')}
+                              className="flex items-center gap-2 hover:bg-green-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-green-700">Full-Stack Developer</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('devops-engineer')}
+                              className="flex items-center gap-2 hover:bg-green-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-green-700">DevOps Engineer</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('cloud-architect')}
+                              className="flex items-center gap-2 hover:bg-green-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-green-700">Cloud Architect</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('ai-ml-engineer')}
+                              className="flex items-center gap-2 hover:bg-green-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-green-700">AI-ML Engineer</span>
+                            </button>
+                            <button
+                              onClick={() => handleLeftNav('certifications')}
+                              className="flex items-center gap-2 hover:bg-green-50 rounded px-2 py-1 -mx-2 transition-colors w-full text-left"
+                            >
+                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                              <span className="text-xs text-gray-700 hover:text-green-700">Professional Certifications</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {/* Transition to Methodology */}
+                  <div className="hidden lg:block scroll-animate fade-in-up relative z-10">
+                    <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-xl border border-purple-200">
+                      <h4 className="font-semibold text-gray-900 mb-2 text-sm">Our Methodology</h4>
+                      <p className="text-xs text-gray-600 mb-3">Experience our proven approach to digital transformation through this integrated service ecosystem.</p>
+                      <div className="flex items-center gap-2 text-purple-600">
+                        <span className="text-xs font-medium">Explore Implementation →</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6 scroll-animate fade-in-up lg:hidden">
+                    {/* Mobile Pipeline Header */}
+                    <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-4 rounded-xl border border-gray-200">
+                      <h3 className="font-bold text-gray-900 mb-2">Service Pipeline</h3>
+                      <p className="text-sm text-gray-600">Consulting → Development → Training</p>
+                    </div>
+
+                    {/* Phase 2: Development Services (Mobile) */}
                     <div
                       className="flex items-start gap-3 scroll-animate fade-in-up-delay-1000 hover-highlight magnetic-pull"
                     >
                       <div className="relative">
-                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                        <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          2
+                        </div>
                         <div className="absolute -top-1 -right-1">
-                          <NeuroLoader type="neural-network" size="sm" color="#10B981" speed="slow" />
+                          <NeuroLoader type="neural-network" size="sm" color="#A855F7" speed="slow" />
                         </div>
                       </div>
                       <div className="w-full">
-                        <h4 className="font-semibold text-gray-900">Development Services</h4>
-                        <p className="text-sm text-gray-600">Modern applications with cutting-edge technologies</p>
+                        <h4 className="font-semibold text-gray-900">Expert Development</h4>
+                        <p className="text-sm text-gray-600">Strategy to Reality - Modern applications with cutting-edge technologies</p>
 
                         {/* Mobile service menu - Bento Grid */}
                         <div className="lg:hidden mt-4 bg-gray-50 rounded-lg p-4 border">
@@ -1289,13 +1487,18 @@ export default function Home() {
                       </div>
                     </div>
 
+                    {/* Phase 1: Consulting Services (Mobile) */}
                     <div
                       className="flex items-start gap-3 hover-highlight magnetic-pull"
                     >
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <div className="relative">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          1
+                        </div>
+                      </div>
                       <div className="w-full">
-                        <h4 className="font-semibold text-gray-900">Consulting Services</h4>
-                        <p className="text-sm text-gray-600">Strategic guidance for digital transformation</p>
+                        <h4 className="font-semibold text-gray-900">Strategic Consulting</h4>
+                        <p className="text-sm text-gray-600">Vision to Strategy - Strategic guidance for digital transformation</p>
 
                         {/* Mobile service menu */}
                         <div className="lg:hidden mt-4 bg-gray-50 rounded-lg p-4 border">
@@ -1382,18 +1585,21 @@ export default function Home() {
                       </div>
                     </div>
 
+                    {/* Phase 3: Training Services (Mobile) */}
                     <div
                       className="flex items-start gap-3 hover-highlight magnetic-pull"
                     >
                       <div className="relative">
-                        <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          3
+                        </div>
                         <div className="absolute -top-1 -right-1">
                           <NeuroLoader type="brain-wave" size="sm" color="#059669" speed="normal" />
                         </div>
                       </div>
                       <div className="w-full">
-                        <h4 className="font-semibold text-gray-900">Training Services</h4>
-                        <p className="text-sm text-gray-600">Expert-led training programs and certifications</p>
+                        <h4 className="font-semibold text-gray-900">Comprehensive Training</h4>
+                        <p className="text-sm text-gray-600">Reality to Mastery - Expert-led training programs and certifications</p>
 
                         {/* Mobile service menu */}
                         <div className="lg:hidden mt-4 bg-gray-50 rounded-lg p-4 border">
@@ -1463,6 +1669,23 @@ export default function Home() {
                               </div>
                             </button>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Mobile Transition to Methodology */}
+                    <div className="lg:hidden mt-6">
+                      <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-xl border border-purple-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs">→</span>
+                          </div>
+                          <h4 className="font-semibold text-gray-900 text-sm">Next: Our Methodology</h4>
+                        </div>
+                        <p className="text-xs text-gray-600 mb-3">Experience our proven approach to digital transformation through this integrated service ecosystem.</p>
+                        <div className="flex items-center gap-2 text-purple-600">
+                          <span className="text-xs font-medium">Explore Implementation</span>
+                          <span className="text-xs">→</span>
                         </div>
                       </div>
                     </div>
