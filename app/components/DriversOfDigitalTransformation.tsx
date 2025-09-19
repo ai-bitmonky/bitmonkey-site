@@ -80,12 +80,28 @@ export default function DriversOfDigitalTransformation({ className = '' }: Drive
       description: 'Accelerate product delivery through agile methodologies and automation',
       icon: Rocket,
       color: 'from-purple-500 to-indigo-500',
-      position: 75,
+      position: 60,
       items: [
         'Use agile methods for faster iterations',
         'Automate testing and deployment to minimize delays'
       ],
       category: 'speed'
+    },
+    // Summary of Key Drivers
+    {
+      id: 'key-drivers-summary',
+      title: 'Key Drivers of Digital Transformation',
+      subtitle: 'Strategic Focus Areas',
+      description: 'The three core drivers that enable successful digital transformation initiatives',
+      icon: Target,
+      color: 'from-indigo-500 to-violet-500',
+      position: 85,
+      items: [
+        'Improve Business agility',
+        'Improve return on investments',
+        'Faster Time to Market'
+      ],
+      category: 'agility'
     }
   ];
 
@@ -122,7 +138,7 @@ export default function DriversOfDigitalTransformation({ className = '' }: Drive
       y: Math.random() * 100,
       delay: Math.random() * 6,
       size: 1 + Math.random() * 4,
-      type: ['agility', 'investment', 'speed'][Math.floor(Math.random() * 3)]
+      type: ['agility', 'investment', 'speed', 'summary'][Math.floor(Math.random() * 4)]
     }));
     setDriversParticles(particles);
   }, []);
@@ -200,7 +216,8 @@ export default function DriversOfDigitalTransformation({ className = '' }: Drive
                   className={`rounded-full animate-ping ${
                     particle.type === 'agility' ? 'bg-blue-400 shadow-lg shadow-blue-400/50' :
                     particle.type === 'investment' ? 'bg-green-400 shadow-lg shadow-green-400/50' :
-                    'bg-purple-400 shadow-lg shadow-purple-400/50'
+                    particle.type === 'speed' ? 'bg-purple-400 shadow-lg shadow-purple-400/50' :
+                    'bg-indigo-400 shadow-lg shadow-indigo-400/50'
                   }`}
                   style={{
                     width: `${particle.size}px`,
@@ -213,7 +230,8 @@ export default function DriversOfDigitalTransformation({ className = '' }: Drive
                   className={`absolute inset-0 rounded-full animate-pulse ${
                     particle.type === 'agility' ? 'bg-blue-300/20 ring-2 ring-blue-400/30' :
                     particle.type === 'investment' ? 'bg-green-300/20 ring-2 ring-green-400/30' :
-                    'bg-purple-300/20 ring-2 ring-purple-400/30'
+                    particle.type === 'speed' ? 'bg-purple-300/20 ring-2 ring-purple-400/30' :
+                    'bg-indigo-300/20 ring-2 ring-indigo-400/30'
                   }`}
                   style={{
                     animationDuration: `${2 + Math.random() * 3}s`,
