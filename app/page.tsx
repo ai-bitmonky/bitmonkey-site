@@ -87,6 +87,81 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, [contextSlug]); // Re-run when contextSlug changes
+
+  // Scroll-Based Cinematography - Director's Cut Pacing
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let lastTimestamp = Date.now();
+    let scrollVelocity = 0;
+    let ticking = false;
+
+    const updateScrollIntensity = () => {
+      const cinematicSections = document.querySelectorAll('.cinematic-section');
+
+      cinematicSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const isVisible = rect.top < windowHeight && rect.bottom > 0;
+
+        if (isVisible) {
+          // Calculate scroll speed category based on velocity
+          let scrollSpeed = 'medium';
+          if (scrollVelocity > 15) {
+            scrollSpeed = 'fast';
+          } else if (scrollVelocity < 3) {
+            scrollSpeed = 'slow';
+          }
+
+          // Calculate scroll intensity based on position in viewport
+          const centerY = rect.top + rect.height / 2;
+          const intensity = Math.max(0, Math.min(1,
+            1 - Math.abs(centerY - windowHeight / 2) / (windowHeight / 2)
+          ));
+
+          section.setAttribute('data-scroll-speed', scrollSpeed);
+          section.style.setProperty('--scroll-intensity', intensity.toString());
+          section.style.setProperty('--scroll-velocity', (scrollVelocity / 20).toString());
+        }
+      });
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const currentTimestamp = Date.now();
+      const deltaTime = currentTimestamp - lastTimestamp;
+      const deltaY = Math.abs(currentScrollY - lastScrollY);
+
+      // Calculate velocity (pixels per millisecond, then scale)
+      scrollVelocity = deltaTime > 0 ? (deltaY / deltaTime) * 16.67 : 0; // ~60fps normalization
+
+      lastScrollY = currentScrollY;
+      lastTimestamp = currentTimestamp;
+
+      if (!ticking) {
+        requestAnimationFrame(updateScrollIntensity);
+        ticking = true;
+      }
+    };
+
+    // Throttled scroll listener for performance
+    let scrollTimeout: NodeJS.Timeout;
+    const throttledScroll = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(handleScroll, 8); // ~120fps max
+    };
+
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+
+    // Initial calculation
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, []);
   const baseNav = ['Home', 'Services', 'Portfolio', 'Resources', 'Why BitMonkey?'];
 
   const getContextNav = (slug: string | null) => {
@@ -1137,7 +1212,7 @@ export default function Home() {
           <RadialDriverWheel />
 
           {/* Our Services Section */}
-          <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
+          <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden cinematic-section narrative-chapter" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'circuit-pattern', size: 'xl', color: 'rgba(99, 102, 241, 0.08)', position: 'center', animate: true },
@@ -1165,14 +1240,14 @@ export default function Home() {
             <div className="container mx-auto max-w-7xl" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
               {/* Center-aligned title section */}
               <div className="text-center mb-16 scroll-animate fade-in-up">
-                <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10" style={{fontSize: '2.2rem'}}>Service Ecosystem</span>
+                <span className="text-purple-600 font-bold uppercase tracking-wider hover:text-purple-700 hover:scale-105 transition-all duration-300 cursor-default inline-block typewriter relative z-10 cinematic-element cinematic-text executive-focus" style={{fontSize: '2.2rem'}}>Service Ecosystem</span>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 items-center">
                 {/* Enhanced Text Content - Service Ecosystem Pipeline - 30% */}
-                <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-animate fade-in-up text-reveal relative z-10" style={{fontSize: '1.75rem'}}>
-                    <span className="highlight-reveal">Consulting → Development → Training</span>
+                <div className="lg:col-span-3 space-y-6 scroll-animate fade-in-left cinematic-focus-primary cinematic-depth-near">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-animate fade-in-up text-reveal relative z-10 cinematic-element value-emphasis" style={{fontSize: '1.75rem'}}>
+                    <span className="highlight-reveal cinematic-text">Consulting → Development → Training</span>
                   </h2>
                   {/* Service Pipeline Visualization */}
                   <div className="space-y-4 scroll-animate fade-in-up relative z-10">
@@ -1181,7 +1256,7 @@ export default function Home() {
                       <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500"></div>
 
                       {/* Phase 1: Strategic Consulting */}
-                      <div className="flex items-start gap-4 mb-6">
+                      <div className="flex items-start gap-4 mb-6 cinematic-element cinematic-scene-transition">
                         <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10 transition-smooth-400">
                           1
                         </div>
@@ -1236,7 +1311,7 @@ export default function Home() {
                       </div>
 
                       {/* Phase 2: Expert Development */}
-                      <div className="flex items-start gap-4 mb-6">
+                      <div className="flex items-start gap-4 mb-6 cinematic-element cinematic-scene-transition">
                         <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
                           2
                         </div>
@@ -1305,7 +1380,7 @@ export default function Home() {
                       </div>
 
                       {/* Phase 3: Comprehensive Training */}
-                      <div className="flex items-start gap-4">
+                      <div className="flex items-start gap-4 cinematic-element cinematic-scene-transition">
                         <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg flex-shrink-0 relative z-10">
                           3
                         </div>
@@ -1727,7 +1802,7 @@ export default function Home() {
           </section>
 
           {/* Our Proven Approach Section */}
-          <section id="our-approach" className="pt-48 pb-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
+          <section id="our-approach" className="pt-48 pb-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden cinematic-section narrative-chapter" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'neural-network', size: 'xl', color: 'rgba(79, 70, 229, 0.08)', position: 'center', animate: true },

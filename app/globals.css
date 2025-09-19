@@ -3747,17 +3747,185 @@ a:hover,
 }
 
 /* Reduced motion for accessibility */
+/* Scroll-Based Cinematography System */
+
+/* Director's Cut Pacing - Scroll Speed Controls Animation Intensity */
+.cinematic-section {
+  --scroll-intensity: 1;
+  --scroll-velocity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cinematic-element {
+  transition-duration: calc(0.3s + (var(--scroll-intensity) * 0.7s));
+  animation-duration: calc(1s + (var(--scroll-intensity) * 2s));
+  animation-play-state: running;
+}
+
+/* Slow Scroll - More Detail and Emphasis */
+.cinematic-section[data-scroll-speed="slow"] {
+  --scroll-intensity: 2;
+}
+
+.cinematic-section[data-scroll-speed="slow"] .cinematic-element {
+  transform: scale(calc(1 + (var(--scroll-intensity) * 0.02)));
+  filter: brightness(calc(1 + (var(--scroll-intensity) * 0.1)));
+}
+
+.cinematic-section[data-scroll-speed="slow"] .cinematic-text {
+  letter-spacing: calc(0.025em * var(--scroll-intensity));
+  text-shadow: 0 0 calc(2px * var(--scroll-intensity)) rgba(99, 102, 241, 0.3);
+}
+
+/* Medium Scroll - Balanced Narrative Flow */
+.cinematic-section[data-scroll-speed="medium"] {
+  --scroll-intensity: 1;
+}
+
+/* Fast Scroll - Smooth Transitions */
+.cinematic-section[data-scroll-speed="fast"] {
+  --scroll-intensity: 0.3;
+}
+
+.cinematic-section[data-scroll-speed="fast"] .cinematic-element {
+  filter: blur(calc(0.5px * (1 - var(--scroll-intensity))));
+  opacity: calc(0.7 + (var(--scroll-intensity) * 0.3));
+}
+
+/* Focus Pulling - Background Blur Based on Content Importance */
+.cinematic-focus-primary {
+  z-index: 100;
+  filter: blur(0px);
+  transform: translateZ(0);
+}
+
+.cinematic-focus-secondary {
+  z-index: 50;
+  filter: blur(calc(1px * (1 - var(--scroll-intensity))));
+  opacity: calc(0.8 + (var(--scroll-intensity) * 0.2));
+}
+
+.cinematic-focus-background {
+  z-index: 10;
+  filter: blur(calc(2px + (1px * (1 - var(--scroll-intensity)))));
+  opacity: calc(0.5 + (var(--scroll-intensity) * 0.3));
+}
+
+/* Depth of Field - Creates Cinematic Focus */
+.cinematic-depth-near {
+  transform: translateZ(50px) scale(calc(1 + (var(--scroll-intensity) * 0.05)));
+}
+
+.cinematic-depth-mid {
+  transform: translateZ(0px);
+}
+
+.cinematic-depth-far {
+  transform: translateZ(-50px) scale(calc(1 - (var(--scroll-intensity) * 0.05)));
+  opacity: calc(0.7 + (var(--scroll-intensity) * 0.3));
+}
+
+/* Camera Angle Shifts - Section Transitions Feel Like Scene Changes */
+.cinematic-scene-transition {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.cinematic-scene-enter {
+  transform: rotateX(calc(-5deg + (var(--scroll-intensity) * 5deg)))
+             translateY(calc(-20px + (var(--scroll-intensity) * 20px)));
+  opacity: var(--scroll-intensity);
+}
+
+.cinematic-scene-active {
+  transform: rotateX(0deg) translateY(0px);
+  opacity: 1;
+}
+
+.cinematic-scene-exit {
+  transform: rotateX(calc(5deg - (var(--scroll-intensity) * 5deg)))
+             translateY(calc(20px - (var(--scroll-intensity) * 20px)));
+  opacity: var(--scroll-intensity);
+}
+
+/* Narrative Flow Markers */
+.narrative-chapter {
+  position: relative;
+  overflow: hidden;
+}
+
+.narrative-chapter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(-100% + (var(--scroll-intensity) * 100%));
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.8) 50%,
+    transparent 100%);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Executive Engagement Markers */
+.executive-focus {
+  border-left: calc(2px * var(--scroll-intensity)) solid rgba(99, 102, 241, 0.6);
+  padding-left: calc(1rem * var(--scroll-intensity));
+  background: linear-gradient(90deg,
+    rgba(99, 102, 241, calc(0.05 * var(--scroll-intensity))) 0%,
+    transparent 100%);
+}
+
+.value-emphasis {
+  transform: scale(calc(1 + (var(--scroll-intensity) * 0.03)));
+  color: rgb(calc(55 + (var(--scroll-intensity) * 20)),
+             calc(65 + (var(--scroll-intensity) * 20)),
+             calc(81 + (var(--scroll-intensity) * 20)));
+}
+
+/* Smooth Animation Curves for Natural Movement */
+.cinematic-smooth {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinematic-bounce {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.cinematic-ease {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Responsive Cinematography */
+@media (max-width: 768px) {
+  .cinematic-element {
+    --scroll-intensity: calc(var(--scroll-intensity) * 0.7);
+  }
+
+  .cinematic-depth-near,
+  .cinematic-depth-far {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .svg-morph-path,
   .driver-segment,
   .scroll-trigger,
   .morph-on-scroll,
-  .intersection-animate {
+  .intersection-animate,
+  .cinematic-element,
+  .cinematic-section {
     animation: none;
     transition: opacity 0.2s ease;
   }
 
   .driver-segment.active {
     animation: none;
+  }
+
+  .cinematic-section {
+    --scroll-intensity: 1;
   }
 }
