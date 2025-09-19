@@ -128,21 +128,21 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
       ],
       category: 'cost'
     },
-    // Transformation Drivers
+    // Operating Cost Reduction
     {
-      id: 'transformation-drivers',
-      title: 'Drivers of Digital Transformation',
-      subtitle: 'Business Agility',
-      description: 'Key drivers enabling rapid adaptation and competitive advantage',
-      icon: Rocket,
-      color: 'from-indigo-500 to-purple-500',
+      id: 'reduce-operating-cost',
+      title: 'Reduce Operating Cost',
+      subtitle: 'Operational Efficiency',
+      description: 'Leveraging automation and cloud infrastructure to minimize operational expenses',
+      icon: Settings,
+      color: 'from-teal-500 to-green-500',
       position: 100,
       items: [
-        'Improve Business agility - Quickly adapt to market changes',
-        'Improve return on investments - Invest in scalable IT solutions',
-        'Faster Time to Market - Use agile methods for faster iterations'
+        'Use scalable cloud infrastructure',
+        'Automated CI/CD',
+        'Automate routine tasks thru AI'
       ],
-      category: 'drivers'
+      category: 'cost'
     }
   ];
 
@@ -402,10 +402,10 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
               </div>
 
               {/* Enhanced category info panel */}
-              <div className={`absolute ${index % 2 === 0 ? 'left-24' : 'right-24'} top-1/2 transform -translate-y-1/2 transition-all duration-700 ${
+              <div className={`absolute ${index % 2 === 0 ? 'left-40' : 'right-40'} top-1/2 transform -translate-y-1/2 transition-all duration-700 ${
                 index === activeCategory ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4'
               }`}>
-                <div className={`relative bg-gradient-to-br from-black/90 to-gray-900/90 backdrop-blur-lg rounded-2xl p-6 border-2 max-w-sm ${
+                <div className={`relative bg-gradient-to-br from-black/90 to-gray-900/90 backdrop-blur-lg rounded-2xl p-6 border-2 w-96 ${
                   index % 2 === 0 ? 'text-left' : 'text-right'
                 } ${category.color.replace('from-', 'border-').replace('to-', '').split(' ')[0]}/30 shadow-2xl`}>
 
@@ -426,7 +426,7 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
                           <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg`}>
                             <CheckCircle className="w-3 h-3 text-white" />
                           </div>
-                          <span className="leading-relaxed">{item}</span>
+                          <span className="leading-relaxed whitespace-nowrap">{item}</span>
                         </div>
                       ))}
                     </div>
