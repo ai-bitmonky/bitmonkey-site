@@ -526,15 +526,49 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
             })}
 
             {/* Expanded Driver Content */}
-            {expandedDriver !== null && (
-              <div
-                className="absolute z-30 bg-black/90 backdrop-blur-lg rounded-2xl p-6 border-2 border-white/20 max-w-sm animate-expand-in"
-                style={{
-                  left: expandedDriver % 2 === 0 ? '520px' : '-250px',
-                  top: '50%',
-                  transform: 'translateY(-50%)'
-                }}
-              >
+            {expandedDriver !== null && (() => {
+              const driver = drivers[expandedDriver];
+
+              // Calculate same positioning logic as text labels
+              let iconRadius = 200;
+              if (driver.angle === 0 || driver.angle === 270) {
+                iconRadius = 180;
+              } else if (driver.angle === 90 || driver.angle === 180) {
+                iconRadius = 220;
+              }
+
+              const iconPos = getIconPosition(driver.angle, iconRadius);
+
+              // Position detail box based on text position with additional offset
+              let detailStyle: any = {};
+
+              if (driver.angle === 0) {
+                // Top - position above text
+                detailStyle.left = iconPos.x;
+                detailStyle.top = iconPos.y - 200; // 90px for text + 110px for detail box
+                detailStyle.transform = 'translate(-50%, 0%)';
+              } else if (driver.angle === 90) {
+                // Right - position to the right of text
+                detailStyle.left = iconPos.x + 180; // 60px for text + 120px for detail box
+                detailStyle.top = iconPos.y;
+                detailStyle.transform = 'translate(0%, -50%)';
+              } else if (driver.angle === 180) {
+                // Bottom - position below text
+                detailStyle.left = iconPos.x;
+                detailStyle.top = iconPos.y + 180; // 60px for text + 120px for detail box
+                detailStyle.transform = 'translate(-50%, 0%)';
+              } else if (driver.angle === 270) {
+                // Left - position to the left of text
+                detailStyle.left = iconPos.x - 180; // 90px for text + 90px for detail box
+                detailStyle.top = iconPos.y;
+                detailStyle.transform = 'translate(-100%, -50%)';
+              }
+
+              return (
+                <div
+                  className="absolute z-30 bg-black/90 backdrop-blur-lg rounded-2xl p-6 border-2 border-white/20 max-w-sm animate-expand-in"
+                  style={detailStyle}
+                >
                 <div className="flex items-center mb-4">
                   {React.createElement(drivers[expandedDriver].icon, {
                     className: `w-6 h-6 mr-3 text-white`
@@ -553,7 +587,8 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                   ))}
                 </div>
               </div>
-            )}
+              );
+            })()}
           </div>
         </div>
 
