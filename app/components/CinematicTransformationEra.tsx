@@ -289,15 +289,15 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
         </div>
       )
     },
-    // Foreground content
+    // Header title at the beginning
     {
-      id: 'foreground-content',
-      speed: 0.8,
+      id: 'header-title',
+      speed: 0.2,
       zIndex: 4,
       children: (
-        <div className="w-full h-full flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl px-6">
-            <h1 className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-blue-200 to-green-200 bg-clip-text text-transparent">
+        <div className="w-full flex justify-center pt-20">
+          <div className="text-center text-white">
+            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-200 to-green-200 bg-clip-text text-transparent">
               Forces Reshaping
               <br />
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -308,7 +308,18 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
                 Today
               </span>
             </h1>
-
+          </div>
+        </div>
+      )
+    },
+    // Foreground controls
+    {
+      id: 'foreground-controls',
+      speed: 0.8,
+      zIndex: 4,
+      children: (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="text-center text-white max-w-4xl px-6">
             {/* Playback controls */}
             <div className="flex items-center justify-center gap-4 mb-8">
               <button
