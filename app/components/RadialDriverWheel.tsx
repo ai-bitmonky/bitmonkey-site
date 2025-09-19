@@ -139,7 +139,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
     return () => window.removeEventListener('scroll', handleScroll);
   }, [drivers.length]);
 
-  // Calculate arc path for each driver segment
+  // Calculate arc path for each driver segment (updated for 700x700 canvas)
   const createArcPath = (startAngle: number, endAngle: number, radius: number, thickness: number) => {
     const startAngleRad = (startAngle - 90) * Math.PI / 180;
     const endAngleRad = (endAngle - 90) * Math.PI / 180;
@@ -147,26 +147,31 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
     const outerRadius = radius + thickness / 2;
     const innerRadius = radius - thickness / 2;
 
-    const x1 = 250 + outerRadius * Math.cos(startAngleRad);
-    const y1 = 250 + outerRadius * Math.sin(startAngleRad);
-    const x2 = 250 + outerRadius * Math.cos(endAngleRad);
-    const y2 = 250 + outerRadius * Math.sin(endAngleRad);
+    const centerX = 350; // Updated center for 700px canvas
+    const centerY = 350;
 
-    const x3 = 250 + innerRadius * Math.cos(endAngleRad);
-    const y3 = 250 + innerRadius * Math.sin(endAngleRad);
-    const x4 = 250 + innerRadius * Math.cos(startAngleRad);
-    const y4 = 250 + innerRadius * Math.sin(startAngleRad);
+    const x1 = centerX + outerRadius * Math.cos(startAngleRad);
+    const y1 = centerY + outerRadius * Math.sin(startAngleRad);
+    const x2 = centerX + outerRadius * Math.cos(endAngleRad);
+    const y2 = centerY + outerRadius * Math.sin(endAngleRad);
+
+    const x3 = centerX + innerRadius * Math.cos(endAngleRad);
+    const y3 = centerY + innerRadius * Math.sin(endAngleRad);
+    const x4 = centerX + innerRadius * Math.cos(startAngleRad);
+    const y4 = centerY + innerRadius * Math.sin(startAngleRad);
 
     const largeArc = endAngle - startAngle > 180 ? 1 : 0;
 
     return `M ${x1} ${y1} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${x2} ${y2} L ${x3} ${y3} A ${innerRadius} ${innerRadius} 0 ${largeArc} 0 ${x4} ${y4} Z`;
   };
 
-  // Calculate icon position on tangent
+  // Calculate icon position on tangent (updated for 700x700 canvas)
   const getIconPosition = (angle: number, radius: number) => {
     const angleRad = (angle - 90) * Math.PI / 180;
-    const x = 250 + radius * Math.cos(angleRad);
-    const y = 250 + radius * Math.sin(angleRad);
+    const centerX = 350;
+    const centerY = 350;
+    const x = centerX + radius * Math.cos(angleRad);
+    const y = centerY + radius * Math.sin(angleRad);
     return { x, y };
   };
 
@@ -178,7 +183,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
   return (
     <section
       ref={containerRef}
-      className={`relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 ${className}`}
+      className={`relative min-h-[144vh] overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 ${className}`}
     >
       {/* Aurora Background */}
       <div className="absolute inset-0">
@@ -196,21 +201,21 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          {/* Title */}
-          <h1 className="text-6xl md:text-7xl font-bold mb-16 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-            Drivers of
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
-              Digital Transformation
-            </span>
-          </h1>
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[144vh] py-24">
+        {/* Title */}
+        <h1 className="text-5xl md:text-6xl font-bold mb-20 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent text-center">
+          Drivers of
+          <br />
+          <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+            Digital Transformation
+          </span>
+        </h1>
 
-          {/* Radial Driver Wheel */}
+        {/* Radial Driver Wheel Container */}
+        <div className="flex items-center justify-center w-full">
           <div
             ref={wheelRef}
-            className="relative w-[500px] h-[500px] mx-auto"
+            className="relative w-[700px] h-[700px]"
             style={{ perspective: '1000px' }}
           >
             {/* Central Hub */}
@@ -232,7 +237,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
             </div>
 
             {/* SVG for Arcs */}
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 500">
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 700 700">
               <defs>
                 {/* Gradients for each driver */}
                 {drivers.map((driver, index) => {
@@ -264,9 +269,9 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
 
                 {/* Arc sweep animation mask */}
                 <mask id="sweep-mask">
-                  <rect x="0" y="0" width="500" height="500" fill="black" />
+                  <rect x="0" y="0" width="700" height="700" fill="black" />
                   <path
-                    d="M 250 250 L 250 100 A 150 150 0 0 1 400 250 Z"
+                    d="M 350 350 L 350 150 A 200 200 0 0 1 550 350 Z"
                     fill="white"
                     className="animate-arc-sweep"
                   />
@@ -304,7 +309,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                   <g key={driver.id}>
                     {/* Main Arc */}
                     <path
-                      d={createArcPath(startAngle, endAngle, 150, 40)}
+                      d={createArcPath(startAngle, endAngle, 200, 50)}
                       fill={`url(#gradient-${index})`}
                       stroke="rgba(255,255,255,0.2)"
                       strokeWidth="2"
@@ -314,7 +319,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                       style={{
                         opacity: isActive ? arcProgress * 0.9 + 0.1 : 0,
                         transform: `${isExpanded ? 'scale(1.1)' : 'scale(1)'} scale(${0.3 + arcProgress * 0.7})`,
-                        transformOrigin: '250px 250px',
+                        transformOrigin: '350px 350px',
                         filter: isFullyVisible ? 'drop-shadow(0 0 20px rgba(59, 130, 246, 0.5))' : 'none',
                         transition: 'all 1.5s cubic-bezier(0.4, 0, 0.2, 1)'
                       }}
@@ -326,7 +331,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                     {/* Specular Highlight */}
                     {(isFullyVisible || isHovered) && (
                       <path
-                        d={createArcPath(startAngle, endAngle, 150, 20)}
+                        d={createArcPath(startAngle, endAngle, 200, 25)}
                         fill="url(#specular)"
                         className="animate-specular-sweep pointer-events-none"
                         style={{
@@ -339,7 +344,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                     {/* Arc Sweep Animation */}
                     {isActive && arcProgress > 0.5 && (
                       <path
-                        d={createArcPath(startAngle, endAngle, 150, 40)}
+                        d={createArcPath(startAngle, endAngle, 200, 50)}
                         fill="rgba(255,255,255,0.3)"
                         mask="url(#sweep-mask)"
                         className="animate-arc-reveal pointer-events-none"
@@ -356,7 +361,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
 
             {/* Driver Icons */}
             {drivers.map((driver, index) => {
-              const iconPos = getIconPosition(driver.angle, 180);
+              const iconPos = getIconPosition(driver.angle, 240);
 
               // Same simplified logic as arcs
               let arcProgress = 0;
@@ -416,7 +421,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
               );
             })}
 
-            {/* Driver Labels - Always Visible */}
+            {/* Driver Labels - Positioned Precisely Adjacent to Icons */}
             {drivers.map((driver, index) => {
               // Same visibility logic as arcs
               let arcProgress = 0;
@@ -433,31 +438,59 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
 
               if (arcProgress <= 0) return null;
 
-              // Position labels outside the wheel
-              const labelRadius = 220;
-              const labelPos = getIconPosition(driver.angle, labelRadius);
+              // Position labels precisely relative to icon position
+              const iconPos = getIconPosition(driver.angle, 240);
               const isHovered = hoveredDriver === index;
+
+              // Calculate text position based on icon angle
+              let textStyle: any = {
+                opacity: arcProgress,
+                transition: 'all 1.5s cubic-bezier(0.4, 0, 0.2, 1)'
+              };
+
+              let containerClass = "absolute transition-all duration-1000 cursor-pointer";
+              let textAlignment = "";
+
+              if (driver.angle === 0) {
+                // Top - text above icon
+                textStyle.left = iconPos.x;
+                textStyle.top = iconPos.y - 60;
+                textStyle.transform = 'translate(-50%, -100%)';
+                textAlignment = "text-center";
+              } else if (driver.angle === 90) {
+                // Right - text to the right of icon
+                textStyle.left = iconPos.x + 40;
+                textStyle.top = iconPos.y;
+                textStyle.transform = 'translate(0%, -50%)';
+                textAlignment = "text-left";
+              } else if (driver.angle === 180) {
+                // Bottom - text below icon
+                textStyle.left = iconPos.x;
+                textStyle.top = iconPos.y + 60;
+                textStyle.transform = 'translate(-50%, 0%)';
+                textAlignment = "text-center";
+              } else if (driver.angle === 270) {
+                // Left - text to the left of icon
+                textStyle.left = iconPos.x - 40;
+                textStyle.top = iconPos.y;
+                textStyle.transform = 'translate(-100%, -50%)';
+                textAlignment = "text-right";
+              }
 
               return (
                 <div
                   key={`label-${driver.id}`}
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 cursor-pointer"
-                  style={{
-                    left: labelPos.x,
-                    top: labelPos.y,
-                    opacity: arcProgress,
-                    transform: `translate(-50%, -50%) scale(${0.8 + arcProgress * 0.2})`,
-                    transition: 'all 1.5s cubic-bezier(0.4, 0, 0.2, 1)'
-                  }}
+                  className={containerClass}
+                  style={textStyle}
                   onMouseEnter={() => setHoveredDriver(index)}
                   onMouseLeave={() => setHoveredDriver(null)}
                   onClick={() => handleDriverClick(index)}
                 >
-                  <div className={`text-center max-w-40 ${isHovered ? 'scale-105' : ''} transition-transform`}>
+                  <div className={`max-w-48 ${textAlignment} ${isHovered ? 'scale-105' : ''} transition-transform`}>
                     <h3 className="text-lg font-bold text-white mb-2 leading-tight">
                       {driver.title}
                     </h3>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       {driver.subtitle}
                     </p>
                     {isHovered && (
@@ -500,13 +533,13 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
               </div>
             )}
           </div>
+        </div>
 
-          {/* Scroll Indicator */}
-          <div className="mt-16">
-            <div className="flex flex-col items-center text-gray-400">
-              <span className="text-sm mb-2">Scroll to explore drivers</span>
-              <ArrowDown className="w-6 h-6 animate-bounce" />
-            </div>
+        {/* Scroll Indicator */}
+        <div className="mt-16">
+          <div className="flex flex-col items-center text-gray-400">
+            <span className="text-sm mb-2">Scroll to explore drivers</span>
+            <ArrowDown className="w-6 h-6 animate-bounce" />
           </div>
         </div>
       </div>

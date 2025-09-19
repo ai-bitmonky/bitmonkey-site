@@ -452,7 +452,7 @@ export default function CustomerTransformationJourney({ className = '' }: Custom
       children: (
         <div className="w-full flex justify-center pt-20">
           <div className="text-center text-white">
-            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
               Customer Challenges
               <br />
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
