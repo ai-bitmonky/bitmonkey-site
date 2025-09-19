@@ -278,10 +278,10 @@ export default function CinematicTransformationEra({ className = '' }: Cinematic
               <div className={`absolute ${index % 2 === 0 ? 'left-20' : 'right-20'} top-1/2 transform -translate-y-1/2 transition-all duration-500 ${
                 index === activeStage ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}>
-                <div className={`bg-black/80 backdrop-blur-sm rounded-xl p-4 border border-white/20 max-w-xs ${
+                <div className={`bg-black/80 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 whitespace-nowrap ${
                   index % 2 === 0 ? 'text-left' : 'text-right'
                 }`}>
-                  <h3 className="text-lg font-bold text-white">{stage.title}</h3>
+                  <h3 className="text-lg font-bold text-white whitespace-nowrap">{stage.title}</h3>
                 </div>
               </div>
             </div>
