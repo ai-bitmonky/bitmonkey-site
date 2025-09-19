@@ -183,7 +183,8 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
   return (
     <section
       ref={containerRef}
-      className={`relative min-h-[144vh] overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 ${className}`}
+      className={`relative min-h-[174vh] overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 ${className}`}
+      style={{ transform: 'translateY(-15%)' }}
     >
       {/* Aurora Background */}
       <div className="absolute inset-0">
@@ -201,7 +202,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[144vh] py-24">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[174vh] py-24">
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-bold mb-20 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent text-center">
           Drivers of
@@ -564,9 +565,17 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                 detailStyle.transform = 'translate(-100%, -50%)';
               }
 
+              // Determine width based on position - right and left side boxes are narrower
+              let boxWidth = 'max-w-sm'; // Default size (384px)
+              if (driver.angle === 90) {
+                boxWidth = 'max-w-xs'; // Right side: ~20% smaller (320px)
+              } else if (driver.angle === 270) {
+                boxWidth = 'max-w-72'; // Left side: ~30% smaller (288px)
+              }
+
               return (
                 <div
-                  className="absolute z-30 bg-black/90 backdrop-blur-lg rounded-2xl p-6 border-2 border-white/20 max-w-sm animate-expand-in"
+                  className={`absolute z-30 bg-black/90 backdrop-blur-lg rounded-2xl p-6 border-2 border-white/20 ${boxWidth} animate-expand-in`}
                   style={detailStyle}
                 >
                 <div className="flex items-center mb-4">
