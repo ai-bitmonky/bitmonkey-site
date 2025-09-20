@@ -41,6 +41,7 @@ import CustomerTransformationJourney from './components/CustomerTransformationJo
 import RadialDriverWheel from './components/RadialDriverWheel';
 import HolographicEcosystem from './components/HolographicEcosystem';
 import ComparisonPrism from './components/ComparisonPrism';
+import ValueAurora from './components/ValueAurora';
 
 
 export default function Home() {
@@ -2949,6 +2950,9 @@ export default function Home() {
 
           {/* Differentiators Section - Comparison Prism */}
           <ComparisonPrism />
+
+          {/* Benefits Section - Value Aurora */}
+          <ValueAurora />
 
         </>
       ) : (
