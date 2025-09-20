@@ -39,6 +39,7 @@ import EnhancedCallToAction from './components/EnhancedCallToAction';
 import CinematicTransformationEra from './components/CinematicTransformationEra';
 import CustomerTransformationJourney from './components/CustomerTransformationJourney';
 import RadialDriverWheel from './components/RadialDriverWheel';
+import HolographicEcosystem from './components/HolographicEcosystem';
 
 
 export default function Home() {
@@ -4361,7 +4362,6 @@ export default function Home() {
             </GeometricAccent>
           </section>
 
-
           {/* Enhanced Call to Action */}
           <EnhancedCallToAction
             contextSlug={contextSlug}
@@ -4369,6 +4369,71 @@ export default function Home() {
           />
         </>
       )}
+
+      {/* Strategic Service Ecosystem Section */}
+      <section id="strategic-ecosystem" className="pt-24 pb-24 bg-gradient-to-br from-slate-50 to-indigo-50 relative overflow-hidden cinematic-section narrative-chapter">
+        <GeometricAccent
+          shapes={[
+            { type: 'neural-network', size: 'xl', color: 'rgba(79, 70, 229, 0.08)', position: 'center', animate: true },
+            { type: 'circuit-pattern', size: 'lg', color: 'rgba(99, 102, 241, 0.12)', position: 'top-left', animate: true },
+            { type: 'hexagonal-grid', size: 'md', color: 'rgba(147, 51, 234, 0.15)', position: 'bottom-right', animate: true },
+          ]}
+        />
+        <div className="container mx-auto max-w-7xl px-6">
+          <div className="text-center mb-16 scroll-animate fade-in-up">
+            <span className="text-indigo-600 font-bold uppercase tracking-wider hover:text-indigo-700 hover:scale-105 transition-all duration-300 cursor-default inline-block" style={{fontSize: '2.2rem'}}>Strategic Vision</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 mt-4 scroll-animate fade-in-up">
+              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Holographic Service Ecosystem
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Experience our interconnected service architecture through an immersive 3D visualization that demonstrates how consulting, development, and training work in perfect harmony.
+            </p>
+          </div>
+
+          {/* Full Width Holographic Ecosystem Visualization */}
+          <div className="w-full flex justify-center scroll-animate fade-in-up">
+            <div className="w-full max-w-6xl">
+              <div className="relative rounded-3xl overflow-hidden shadow-realistic-xl bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 border border-white/20 min-h-[900px]">
+                {/* Holographic Ecosystem Component */}
+                <HolographicEcosystem
+                  className="w-full h-full p-12"
+                  interactive={true}
+                />
+
+                {/* Overlay Information */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-center justify-between text-white">
+                    <span className="text-base font-medium">Interactive Service Ecosystem</span>
+                    <span className="text-sm opacity-75">3D Holographic Visualization</span>
+                  </div>
+                </div>
+
+                {/* Corner indicators */}
+                <div className="absolute top-6 right-6">
+                  <div className="flex items-center gap-2 text-white/60 text-sm">
+                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                    <span>Live System</span>
+                  </div>
+                </div>
+
+                {/* Interactive Instructions */}
+                <div className="absolute top-6 left-6">
+                  <div className="bg-black/50 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
+                    <p className="text-white/90 text-sm font-medium">Click orbs to explore services</p>
+                  </div>
+                </div>
+
+                {/* Center Focus Indicator */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                  <div className="w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 relative overflow-hidden">
