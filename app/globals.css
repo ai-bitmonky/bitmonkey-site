@@ -4839,3 +4839,306 @@ a:hover,
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
 }
+
+/* Market Drivers Energy Nexus Effects */
+@keyframes tesla-arc {
+  0% {
+    stroke-dasharray: 0, 100;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    stroke-dasharray: 50, 100;
+    opacity: 0.8;
+  }
+  100% {
+    stroke-dasharray: 100, 100;
+    opacity: 0;
+  }
+}
+
+@keyframes power-core-rotation {
+  0% {
+    transform: rotateY(0deg) rotateX(15deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(15deg);
+  }
+}
+
+@keyframes plasma-field {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes energy-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+}
+
+@keyframes magnetic-levitation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes aurora-wave {
+  0% {
+    transform: translateY(0px) skewX(0deg);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateY(-10px) skewX(2deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-5px) skewX(-1deg);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translateY(-15px) skewX(1deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0px) skewX(0deg);
+    opacity: 0.1;
+  }
+}
+
+@keyframes energy-packet-travel {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes plasma-particle {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1) rotate(90deg);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1) rotate(270deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes electric-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px currentColor) brightness(1.5);
+  }
+}
+
+@keyframes core-energy-ring {
+  0% {
+    transform: scale(0.8) rotateX(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2) rotateX(180deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.8) rotateX(360deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes holographic-rotation {
+  0% {
+    transform: rotateY(0deg) perspective(1000px);
+  }
+  100% {
+    transform: rotateY(360deg) perspective(1000px);
+  }
+}
+
+@keyframes energy-conduit {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Energy Nexus Classes */
+.tesla-arc {
+  animation: tesla-arc 0.5s ease-out forwards;
+}
+
+.power-core-rotation {
+  animation: power-core-rotation 20s linear infinite;
+}
+
+.plasma-field {
+  animation: plasma-field 2s ease-in-out infinite;
+}
+
+.energy-pulse {
+  animation: energy-pulse 1.5s ease-in-out infinite;
+}
+
+.magnetic-levitation {
+  animation: magnetic-levitation 3s ease-in-out infinite;
+}
+
+.aurora-wave {
+  animation: aurora-wave 8s ease-in-out infinite;
+}
+
+.energy-packet-travel {
+  animation: energy-packet-travel 2s linear forwards;
+}
+
+.plasma-particle {
+  animation: plasma-particle 2s ease-in-out infinite;
+}
+
+.electric-glow {
+  animation: electric-glow 1s ease-in-out infinite;
+}
+
+.core-energy-ring {
+  animation: core-energy-ring 4s ease-in-out infinite;
+}
+
+.holographic-rotation {
+  animation: holographic-rotation 30s linear infinite;
+}
+
+.energy-conduit {
+  background: linear-gradient(90deg, 
+    rgba(0, 255, 255, 0.1) 0%,
+    rgba(0, 255, 255, 0.5) 25%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(0, 255, 255, 0.5) 75%,
+    rgba(0, 255, 255, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: energy-conduit 3s linear infinite;
+}
+
+/* Enhanced electromagnetic effects */
+.electromagnetic-field {
+  position: relative;
+}
+
+.electromagnetic-field::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(0, 255, 255, 0.1) 0%,
+    rgba(0, 255, 255, 0.05) 30%,
+    transparent 70%
+  );
+  animation: plasma-field 3s ease-in-out infinite;
+}
+
+.electromagnetic-field::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  animation: energy-pulse 2s ease-in-out infinite reverse;
+}
+
+/* Energy transfer visualization */
+.energy-conduit-line {
+  stroke: url(#energyGradient);
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+  animation: tesla-arc 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.8));
+}
+
+/* Power core 3D effects */
+.power-core-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.power-core-ring {
+  position: absolute;
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: core-energy-ring 4s ease-in-out infinite;
+}
+
+.power-core-ring:nth-child(1) { animation-delay: 0s; }
+.power-core-ring:nth-child(2) { animation-delay: 0.5s; }
+.power-core-ring:nth-child(3) { animation-delay: 1s; }
+.power-core-ring:nth-child(4) { animation-delay: 1.5s; }
+
+/* Particle system enhancements */
+.plasma-particle-system {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.plasma-particle-system .particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: plasma-particle 2s ease-in-out infinite;
+}
+
+.plasma-particle-system .particle:nth-child(odd) {
+  animation-direction: reverse;
+}

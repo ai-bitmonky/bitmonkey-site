@@ -46,6 +46,7 @@ import dynamic from 'next/dynamic';
 import { useAmbientOcclusion } from './components/AmbientOcclusion';
 import CinematicHero from './components/CinematicHero';
 import AINeuraNetworkOverlay from './components/AINeuraNetworkOverlay';
+import MarketDriversEnergyNexus from './components/MarketDriversEnergyNexus';
 
 const AmbientOcclusion = dynamic(() => import('./components/AmbientOcclusion'), { ssr: false });
 const DepthLayers = dynamic(() => import('./components/DepthLayers'), { ssr: false });
@@ -4604,6 +4605,14 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Market Drivers — Energy Nexus Section */}
+      <section id="market-drivers-nexus" className="relative overflow-hidden">
+        <MarketDriversEnergyNexus
+          className="w-full"
+          interactive={true}
+        />
       </section>
 
       {/* Cinematic Hero Section */}
