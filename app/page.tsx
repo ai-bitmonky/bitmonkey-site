@@ -1162,20 +1162,37 @@ export default function Home() {
               key={contextSlug || 'default'}
               ref={(video) => {
                 if (video) {
-                  // Auto-hide neural network overlay after 5 seconds
-                  const hideNeuralNetwork = setTimeout(() => {
+                  // Hide neural network when video loads OR after 5 seconds, whichever comes first
+                  let neuralNetworkHidden = false;
+
+                  const hideNeuralNetwork = () => {
+                    if (neuralNetworkHidden) return;
+                    neuralNetworkHidden = true;
+
                     const neuralLoading = document.getElementById('neural-loading');
                     if (neuralLoading) {
-                      console.log('Dissolving neural network after 5 seconds');
+                      console.log('Dissolving neural network - video ready');
                       neuralLoading.style.opacity = '0';
                       setTimeout(() => {
                         neuralLoading.style.display = 'none';
                       }, 1000);
                     }
+                  };
+
+                  // Auto-hide after 5 seconds regardless of video load status
+                  const timeoutId = setTimeout(() => {
+                    if (!neuralNetworkHidden) {
+                      console.log('Dissolving neural network after 5 seconds timeout');
+                      hideNeuralNetwork();
+                    }
                   }, 5000);
 
                   video.addEventListener('loadeddata', () => {
                     console.log('Video loaded successfully');
+                    // Clear timeout since video loaded
+                    clearTimeout(timeoutId);
+                    // Hide neural network immediately when video is ready
+                    hideNeuralNetwork();
                     video.play().catch(e => {
                       console.error('Auto-play failed:', e);
                       // Show controls if autoplay fails
