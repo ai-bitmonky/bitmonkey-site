@@ -44,6 +44,8 @@ import ComparisonPrism from './components/ComparisonPrism';
 import ValueAurora from './components/ValueAurora';
 import dynamic from 'next/dynamic';
 import { useAmbientOcclusion } from './components/AmbientOcclusion';
+import CinematicHero from './components/CinematicHero';
+import AINeuraNetworkOverlay from './components/AINeuraNetworkOverlay';
 
 const AmbientOcclusion = dynamic(() => import('./components/AmbientOcclusion'), { ssr: false });
 const DepthLayers = dynamic(() => import('./components/DepthLayers'), { ssr: false });
@@ -292,7 +294,7 @@ export default function Home() {
         style={{height: '88px', boxSizing: 'border-box', boxShadow: 'none'}}
       >
         <div className="mx-auto max-w-7xl px-6 h-full" style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
-          <div className="flex items-center justify-between h-full">
+          <div className="flex items-center justify-between h-full relative">
             {/* Brand */}
             <div className="flex items-center gap-3">
               {/* Logo placeholder */}
@@ -859,6 +861,7 @@ export default function Home() {
               })}
             </div>
 
+
             {/* Mobile burger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -1136,6 +1139,16 @@ export default function Home() {
 
           {/* Right hero - changes based on context */}
           <div className="relative lg:col-span-9 min-h-[64vh] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black bg-cover bg-center">
+
+            {/* AI Neural Network Overlay - Top Right Corner */}
+            <div className="absolute top-4 right-4 z-30" style={{width: '443px', height: '333px'}}>
+              <AINeuraNetworkOverlay
+                words={['AI&ML', 'Cloud', 'API&Microservices', 'DevSecOps', 'Cybersecurity', 'Big Data & IOT', 'Blockchain']}
+                intensity="high"
+                autoPlay={true}
+                className="w-full h-full"
+              />
+            </div>
 
             {/* Neural loading overlay for video */}
             <div className="absolute inset-0 z-20 flex items-center justify-center bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm transition-opacity duration-500" id="video-loader">
@@ -4523,6 +4536,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Cinematic Hero Section */}
+      <CinematicHero
+        logoText="BitMonkey"
+        headline="Transform Your Digital Future"
+        tagline="AI-Powered Cloud Solutions for Enterprise Excellence"
+        menuItems={['Services', 'Solutions', 'Portfolio', 'About', 'Contact']}
+        enableAudio={true}
+        className="relative z-10"
+      />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 relative overflow-hidden">
