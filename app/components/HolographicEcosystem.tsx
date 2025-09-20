@@ -31,6 +31,7 @@ export default function HolographicEcosystem({
   const [rotationSpeed, setRotationSpeed] = useState(1);
   const [hoverEffect, setHoverEffect] = useState<string | null>(null);
   const [connectionPulse, setConnectionPulse] = useState(0);
+  const [floatingComments, setFloatingComments] = useState<Array<{id: string, text: string, x: number, y: number, opacity: number, delay: number}>>([]);
   const ecosystemRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
 
@@ -90,6 +91,53 @@ export default function HolographicEcosystem({
       connections: ['consulting', 'development']
     }
   ];
+
+  const comments = [
+    "Innovative solutions delivered",
+    "Client satisfaction: 99.2%",
+    "24/7 expert support",
+    "Agile methodology applied",
+    "Digital transformation accelerated",
+    "Cloud-native architecture",
+    "Security-first approach",
+    "Scalable solutions deployed",
+    "Industry best practices",
+    "ROI improvement: 340%"
+  ];
+
+  // Generate floating comments occasionally
+  useEffect(() => {
+    if (!interactive) return;
+
+    const generateComment = () => {
+      const comment = {
+        id: Math.random().toString(36).substr(2, 9),
+        text: comments[Math.floor(Math.random() * comments.length)],
+        x: Math.random() * 80 + 10, // 10% to 90% of container width
+        y: Math.random() * 60 + 20, // 20% to 80% of container height
+        opacity: 1,
+        delay: 0
+      };
+
+      setFloatingComments(prev => [...prev, comment]);
+
+      // Remove comment after animation
+      setTimeout(() => {
+        setFloatingComments(prev => prev.filter(c => c.id !== comment.id));
+      }, 8000);
+    };
+
+    // Generate comments every 3-7 seconds
+    const scheduleNext = () => {
+      const delay = 3000 + Math.random() * 4000; // 3-7 seconds
+      setTimeout(() => {
+        generateComment();
+        scheduleNext();
+      }, delay);
+    };
+
+    scheduleNext();
+  }, [interactive]);
 
   // Animation loop for orbital mechanics
   useEffect(() => {
@@ -410,6 +458,25 @@ export default function HolographicEcosystem({
         </div>
       )}
 
+      {/* Floating Comments */}
+      {interactive && floatingComments.map((comment) => (
+        <div
+          key={comment.id}
+          className="absolute pointer-events-none z-30 floating-comment"
+          style={{
+            left: `${comment.x}%`,
+            top: `${comment.y}%`,
+            animation: 'floatComment 8s ease-out forwards'
+          }}
+        >
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20 shadow-lg">
+            <span className="text-white/90 text-xs font-medium whitespace-nowrap">
+              {comment.text}
+            </span>
+          </div>
+        </div>
+      ))}
+
       <style jsx>{`
         @keyframes holographicGrid {
           0% { transform: translate(0, 0); }
@@ -441,6 +508,55 @@ export default function HolographicEcosystem({
             box-shadow:
               0 12px 40px 0 rgba(31, 38, 135, 0.45),
               inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+          }
+        }
+
+        @keyframes floatComment {
+          0% {
+            opacity: 0;
+            transform: translateY(0px) scale(0.8);
+          }
+          15% {
+            opacity: 1;
+            transform: translateY(-10px) scale(1);
+          }
+          85% {
+            opacity: 1;
+            transform: translateY(-20px) scale(1);
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(-30px) scale(0.9);
+          }
+        }
+
+        .floating-comet {
+          animation-fill-mode: forwards;
+        }
+
+        .comet-head {
+          animation: cometGlow 2s ease-in-out infinite alternate;
+        }
+
+        .comet-tail {
+          animation: tailFlicker 1.5s ease-in-out infinite;
+        }
+
+        @keyframes cometGlow {
+          0% {
+            filter: brightness(1);
+          }
+          100% {
+            filter: brightness(1.5);
+          }
+        }
+
+        @keyframes tailFlicker {
+          0%, 100% {
+            opacity: 0.8;
+          }
+          50% {
+            opacity: 0.4;
           }
         }
       `}</style>
