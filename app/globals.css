@@ -4151,3 +4151,195 @@ a:hover,
     background: rgba(255, 255, 255, 0.9);
   }
 }
+
+/* Ambient Occlusion and 3D Lighting Effects */
+.ao-enhanced {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.depth-enhanced {
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: auto;
+}
+
+.lit-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+/* Enhanced depth perception for cards and panels */
+.ao-enhanced .glass-2,
+.ao-enhanced .glass-premium,
+.ao-enhanced .glass-luxury,
+.ao-enhanced .glass-enterprise,
+.depth-enhanced .card,
+.depth-enhanced .panel {
+  transform: translateZ(10px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Crevice shadows for inset elements */
+.ao-enhanced .inset-element,
+.depth-enhanced .inset-element {
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Edge highlights for raised elements */
+.ao-enhanced .raised-element,
+.depth-enhanced .raised-element {
+  position: relative;
+}
+
+.ao-enhanced .raised-element::before,
+.depth-enhanced .raised-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+/* Contact shadows between elements */
+.depth-enhanced + .depth-enhanced {
+  position: relative;
+}
+
+.depth-enhanced + .depth-enhanced::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 4px;
+  right: 4px;
+  height: 4px;
+  background: radial-gradient(ellipse at center,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 3D button effects */
+.lit-3d button,
+.ao-enhanced button,
+.depth-enhanced button {
+  position: relative;
+  transform: translateZ(5px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lit-3d button:hover,
+.ao-enhanced button:hover,
+.depth-enhanced button:hover {
+  transform: translateZ(8px);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.15),
+    0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.lit-3d button:active,
+.ao-enhanced button:active,
+.depth-enhanced button:active {
+  transform: translateZ(2px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Layered depth for sections */
+.ao-enhanced {
+  z-index: 1;
+}
+
+.ao-enhanced.elevated {
+  z-index: 2;
+  transform: translateZ(20px);
+}
+
+.ao-enhanced.elevated-high {
+  z-index: 3;
+  transform: translateZ(40px);
+}
+
+/* Volumetric lighting effects */
+.lit-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lit-3d:hover::before {
+  opacity: 1;
+}
+
+/* Ambient occlusion canvas layers */
+.ambient-occlusion-layer {
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+}
+
+.depth-layers {
+  mix-blend-mode: normal;
+  opacity: 0.8;
+}
+
+.lighting-3d {
+  mix-blend-mode: overlay;
+  opacity: 0.7;
+}
+
+/* Performance optimizations */
+.ao-enhanced,
+.depth-enhanced,
+.lit-3d {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ao-enhanced,
+  .depth-enhanced,
+  .lit-3d {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .ambient-occlusion-layer,
+  .depth-layers,
+  .lighting-3d {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ao-enhanced .glass-2,
+  .ao-enhanced .glass-premium,
+  .depth-enhanced .card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}

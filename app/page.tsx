@@ -42,6 +42,12 @@ import RadialDriverWheel from './components/RadialDriverWheel';
 import HolographicEcosystem from './components/HolographicEcosystem';
 import ComparisonPrism from './components/ComparisonPrism';
 import ValueAurora from './components/ValueAurora';
+import dynamic from 'next/dynamic';
+import { useAmbientOcclusion } from './components/AmbientOcclusion';
+
+const AmbientOcclusion = dynamic(() => import('./components/AmbientOcclusion'), { ssr: false });
+const DepthLayers = dynamic(() => import('./components/DepthLayers'), { ssr: false });
+const Lighting3D = dynamic(() => import('./components/Lighting3D'), { ssr: false });
 
 
 export default function Home() {
@@ -50,6 +56,19 @@ export default function Home() {
 
   // Top navigation items: base vs context (left-menu-selected) views
   const [contextSlug, setContextSlug] = useState<string | null>(null);
+
+  // Ambient Occlusion Configuration
+  const { config: aoConfig, updateConfig: updateAoConfig } = useAmbientOcclusion({
+    samples: 32,
+    radius: 60,
+    intensity: 1.2,
+    falloff: 2.5,
+    bias: 0.03,
+    quality: 'high',
+    enableEdgeHighlights: true,
+    enableCreviceShadows: true,
+    adaptiveLighting: true
+  });
 
 
   // Initialize scroll animations
@@ -207,6 +226,66 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <CursorEffects />
+
+      {/* 3D Ambient Occlusion and Lighting System */}
+      <AmbientOcclusion
+        target=".ao-enhanced"
+        config={aoConfig}
+        lightSources={[
+          {
+            x: typeof window !== 'undefined' ? window.innerWidth * 0.2 : 400,
+            y: typeof window !== 'undefined' ? window.innerHeight * 0.1 : 100,
+            z: 300,
+            intensity: 1.5,
+            color: '#ffffff',
+            type: 'directional'
+          },
+          {
+            x: typeof window !== 'undefined' ? window.innerWidth * 0.8 : 1200,
+            y: typeof window !== 'undefined' ? window.innerHeight * 0.9 : 700,
+            z: 200,
+            intensity: 0.8,
+            color: '#e6f3ff',
+            type: 'point',
+            radius: 400
+          }
+        ]}
+        className="ambient-occlusion-layer"
+      />
+
+      <DepthLayers
+        selector=".depth-enhanced"
+        config={{
+          enableCreviceShadows: true,
+          enableEdgeHighlights: true,
+          enableContactShadows: true,
+          shadowIntensity: 0.9,
+          highlightIntensity: 0.7,
+          lightPosition: { x: 0.3, y: 0.2, z: 1 },
+          ambientLight: 0.3,
+          quality: 'quality'
+        }}
+        className="depth-layers"
+      />
+
+      <Lighting3D
+        selector=".lit-3d"
+        followMouse={true}
+        timeOfDay="auto"
+        config={{
+          enablePBR: true,
+          enableGlobalIllumination: false,
+          enableVolumetricLighting: true,
+          shadowQuality: 'high',
+          ambientIntensity: 0.25,
+          lightBounces: 2,
+          exposure: 1.1,
+          gamma: 2.2,
+          bloomThreshold: 0.8,
+          bloomIntensity: 0.4
+        }}
+        className="lighting-3d"
+      />
       {/* Navigation */}
       <nav
         className="iridescent fixed top-0 w-full z-[60] transition-all duration-300 bg-white/95 backdrop-blur-md"
@@ -1215,7 +1294,7 @@ export default function Home() {
           <RadialDriverWheel />
 
           {/* Our Services Section */}
-          <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden cinematic-section narrative-chapter" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
+          <section id="our-services" className="pt-48 pb-24 bg-white relative overflow-hidden cinematic-section narrative-chapter ao-enhanced depth-enhanced lit-3d" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'circuit-pattern', size: 'xl', color: 'rgba(99, 102, 241, 0.08)', position: 'center', animate: true },
@@ -1800,7 +1879,7 @@ export default function Home() {
           </section>
 
           {/* Our Proven Approach Section */}
-          <section id="our-approach" className="pt-48 pb-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden cinematic-section narrative-chapter" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
+          <section id="our-approach" className="pt-48 pb-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden cinematic-section narrative-chapter ao-enhanced depth-enhanced lit-3d" style={{marginTop: '2.4rem', marginBottom: '1.2rem'}}>
             <GeometricAccent
               shapes={[
                 { type: 'neural-network', size: 'xl', color: 'rgba(79, 70, 229, 0.08)', position: 'center', animate: true },
@@ -2060,7 +2139,7 @@ export default function Home() {
           </section>
 
           {/* Why BitMonkey Section */}
-          <section id="why-bitmonkey" className="pt-32 pb-24 bg-white relative overflow-hidden" style={{marginTop: '4rem'}}>
+          <section id="why-bitmonkey" className="pt-32 pb-24 bg-white relative overflow-hidden ao-enhanced depth-enhanced lit-3d" style={{marginTop: '4rem'}}>
             {/* Parametric Light Effects for Why BitMonkey */}
             <div className="absolute top-8 left-8">
               <ParametricLight type="wave" size="lg" color="#8B5CF6" speed="slow" intensity="medium" glow={true} />
@@ -2170,7 +2249,7 @@ export default function Home() {
           <CustomerBenefits />
 
           {/* Portfolio Section */}
-          <section id="portfolio" className="pt-32 pb-24 bg-white relative overflow-hidden" style={{marginTop: '4rem'}}>
+          <section id="portfolio" className="pt-32 pb-24 bg-white relative overflow-hidden ao-enhanced depth-enhanced lit-3d" style={{marginTop: '4rem'}}>
             {/* Parametric Light Effects for Portfolio */}
             <div className="absolute top-8 left-8">
               <ParametricLight type="spiral" size="lg" color="#10B981" speed="slow" intensity="medium" glow={true} />
