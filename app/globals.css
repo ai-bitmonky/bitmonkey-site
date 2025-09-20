@@ -339,6 +339,265 @@ a {
   animation: bg-audio-pulse 2s ease-in-out infinite;
 }
 
+/* Neural Connection Lines for Development Services */
+.neural-connection-line {
+  position: absolute;
+  left: 20px; /* Center of icon (icon is 24px wide, starts at 8px padding) */
+  width: 4px; /* Made thicker for better visibility */
+  background: linear-gradient(180deg,
+    rgba(139, 92, 246, 0.3) 0%,
+    rgba(139, 92, 246, 1) 20%,
+    rgba(139, 92, 246, 1) 50%,
+    rgba(139, 92, 246, 1) 80%,
+    rgba(139, 92, 246, 0.3) 100%
+  );
+  border-radius: 2px;
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 1),
+    0 0 40px rgba(139, 92, 246, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.5);
+  z-index: 50; /* Much higher z-index for visibility */
+  animation: neural-line-pulse 2s ease-in-out infinite alternate;
+}
+
+.neural-pulse {
+  position: absolute;
+  left: -4px; /* Center the pulse on the thicker line */
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(139, 92, 246, 1) 20%,
+    rgba(139, 92, 246, 0.9) 40%,
+    rgba(139, 92, 246, 0.5) 70%,
+    rgba(139, 92, 246, 0) 100%
+  );
+  border-radius: 50%;
+  animation: neural-pulse-travel 2.5s ease-in-out infinite;
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 1),
+    0 0 15px rgba(255, 255, 255, 1),
+    0 0 40px rgba(139, 92, 246, 0.6);
+  z-index: 51; /* Above the connection line */
+}
+
+@keyframes neural-pulse-travel {
+  0% {
+    top: 0;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.neural-connection-line:nth-child(2) .neural-pulse {
+  animation-delay: 0.5s;
+}
+
+.neural-connection-line:nth-child(3) .neural-pulse {
+  animation-delay: 1s;
+}
+
+.neural-connection-line:nth-child(4) .neural-pulse {
+  animation-delay: 1.5s;
+}
+
+.neural-connection-line:nth-child(5) .neural-pulse {
+  animation-delay: 2s;
+}
+
+.neural-connection-line:nth-child(6) .neural-pulse {
+  animation-delay: 2.5s;
+}
+
+.neural-connection-line:nth-child(7) .neural-pulse {
+  animation-delay: 3s;
+}
+
+.service-icon-glow {
+  box-shadow:
+    0 0 15px rgba(139, 92, 246, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: icon-pulse 2s ease-in-out infinite alternate;
+}
+
+.service-icon-glow:hover {
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.8),
+    0 0 40px rgba(139, 92, 246, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+  transform: scale(1.15) rotate(8deg);
+}
+
+@keyframes neural-line-pulse {
+  0% {
+    opacity: 0.8;
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 1),
+      0 0 40px rgba(139, 92, 246, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    opacity: 1;
+    box-shadow:
+      0 0 30px rgba(139, 92, 246, 1),
+      0 0 60px rgba(139, 92, 246, 1),
+      0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes icon-pulse {
+  0% {
+    box-shadow:
+      0 0 15px rgba(139, 92, 246, 0.5),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.7),
+      inset 0 0 12px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Blue variant for Consulting Services */
+.service-icon-glow-blue {
+  box-shadow:
+    0 0 15px rgba(59, 130, 246, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: icon-pulse-blue 2s ease-in-out infinite alternate;
+}
+
+.service-icon-glow-blue:hover {
+  box-shadow:
+    0 0 25px rgba(59, 130, 246, 0.8),
+    0 0 40px rgba(59, 130, 246, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+  transform: scale(1.15) rotate(8deg);
+}
+
+@keyframes icon-pulse-blue {
+  0% {
+    box-shadow:
+      0 0 15px rgba(59, 130, 246, 0.5),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 0.7),
+      inset 0 0 12px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Green variant for Training Services */
+.service-icon-glow-green {
+  box-shadow:
+    0 0 15px rgba(34, 197, 94, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: icon-pulse-green 2s ease-in-out infinite alternate;
+}
+
+.service-icon-glow-green:hover {
+  box-shadow:
+    0 0 25px rgba(34, 197, 94, 0.8),
+    0 0 40px rgba(34, 197, 94, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+  transform: scale(1.15) rotate(8deg);
+}
+
+@keyframes icon-pulse-green {
+  0% {
+    box-shadow:
+      0 0 15px rgba(34, 197, 94, 0.5),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow:
+      0 0 20px rgba(34, 197, 94, 0.7),
+      inset 0 0 12px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Neural Connection Lines - Blue variant for Consulting */
+.left-menu-consulting {
+  background: linear-gradient(180deg,
+    rgba(59, 130, 246, 0.3) 0%,
+    rgba(59, 130, 246, 1) 20%,
+    rgba(59, 130, 246, 1) 50%,
+    rgba(59, 130, 246, 1) 80%,
+    rgba(59, 130, 246, 0.3) 100%
+  );
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 1),
+    0 0 40px rgba(59, 130, 246, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.5);
+  animation: neural-line-pulse-blue 2s ease-in-out infinite alternate;
+}
+
+@keyframes neural-line-pulse-blue {
+  0% {
+    opacity: 0.8;
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 1),
+      0 0 40px rgba(59, 130, 246, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    opacity: 1;
+    box-shadow:
+      0 0 30px rgba(59, 130, 246, 1),
+      0 0 60px rgba(59, 130, 246, 1),
+      0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Neural Connection Lines - Green variant for Training */
+.left-menu-training {
+  background: linear-gradient(180deg,
+    rgba(34, 197, 94, 0.3) 0%,
+    rgba(34, 197, 94, 1) 20%,
+    rgba(34, 197, 94, 1) 50%,
+    rgba(34, 197, 94, 1) 80%,
+    rgba(34, 197, 94, 0.3) 100%
+  );
+  box-shadow:
+    0 0 20px rgba(34, 197, 94, 1),
+    0 0 40px rgba(34, 197, 94, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.5);
+  animation: neural-line-pulse-green 2s ease-in-out infinite alternate;
+}
+
+@keyframes neural-line-pulse-green {
+  0% {
+    opacity: 0.8;
+    box-shadow:
+      0 0 20px rgba(34, 197, 94, 1),
+      0 0 40px rgba(34, 197, 94, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    opacity: 1;
+    box-shadow:
+      0 0 30px rgba(34, 197, 94, 1),
+      0 0 60px rgba(34, 197, 94, 1),
+      0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
 .hover-highlight {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;

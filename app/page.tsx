@@ -545,7 +545,30 @@ export default function Home() {
                                 </div>
                                 Development Services
                               </h3>
-                              <div className="space-y-1">
+                              <div className="space-y-1 relative">
+                                {/* Neural Connection Lines - connecting between each button */}
+                                <div className="neural-connection-line" style={{top: '40px', height: '36px'}}>
+                                  <div className="neural-pulse"></div>
+                                </div>
+                                <div className="neural-connection-line" style={{top: '76px', height: '36px'}}>
+                                  <div className="neural-pulse"></div>
+                                </div>
+                                <div className="neural-connection-line" style={{top: '112px', height: '36px'}}>
+                                  <div className="neural-pulse"></div>
+                                </div>
+                                <div className="neural-connection-line" style={{top: '148px', height: '36px'}}>
+                                  <div className="neural-pulse"></div>
+                                </div>
+                                <div className="neural-connection-line" style={{top: '184px', height: '36px'}}>
+                                  <div className="neural-pulse"></div>
+                                </div>
+                                <div className="neural-connection-line" style={{top: '220px', height: '36px'}}>
+                                  <div className="neural-pulse"></div>
+                                </div>
+                                <div className="neural-connection-line" style={{top: '256px', height: '36px'}}>
+                                  <div className="neural-pulse"></div>
+                                </div>
+
                                 <button
                                   onClick={() => {
                                     setServicesDropdownOpen(false);
@@ -553,7 +576,7 @@ export default function Home() {
                                   }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Code className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -568,7 +591,7 @@ export default function Home() {
                                   }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Cloud className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -583,7 +606,7 @@ export default function Home() {
                                   }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Brain className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -598,7 +621,7 @@ export default function Home() {
                                   }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Database className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -613,7 +636,7 @@ export default function Home() {
                                   }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Shield className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -628,7 +651,7 @@ export default function Home() {
                                   }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <TestTube className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -643,7 +666,7 @@ export default function Home() {
                                   }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Server className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -658,7 +681,7 @@ export default function Home() {
                                   }}
                                   className="flex items-center gap-2 p-2 rounded-lg border border-transparent hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-realistic hover:border-white/30 hover:scale-102 hover:translate-x-1 w-full text-left transition-all duration-300 relative z-10 group"
                                 >
-                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                                     <Award className="w-3 h-3 text-white" />
                                   </div>
                                   <div>
@@ -1079,15 +1102,38 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-purple-900 tracking-tight">Development</span>
                   <span className="text-xl md:text-2xl font-extrabold text-purple-900 tracking-tight">Services</span>
                 </button>
-                <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">App Dev & Modernization</span></button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Engineering</span></button></li>
-                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">AI-ML & Automation</span></button></li>
-                  <li><button onClick={() => handleLeftNav('data-analytics')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Database className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Data & Analytics</span></button></li>
-                  <li><button onClick={() => handleLeftNav('devsecops')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Shield className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">DevSecOps</span></button></li>
-                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><TestTube className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Quality Assurance</span></button></li>
-                  <li><button onClick={() => handleLeftNav('sre-operations')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Server className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">SRE & Operations</span></button></li>
-                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Award className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Center Of Excellence</span></button></li>
+                <ul className="divide-y divide-white/20 relative">
+                  {/* Neural Connection Lines for Left Menu Development Services */}
+                  <div className="neural-connection-line left-menu-dev" style={{top: '50px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-dev" style={{top: '98px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-dev" style={{top: '146px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-dev" style={{top: '194px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-dev" style={{top: '242px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-dev" style={{top: '290px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-dev" style={{top: '338px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+
+                  <li><button onClick={() => handleLeftNav('app-dev-modernization')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">App Dev & Modernization</span></button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-engineering')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Engineering</span></button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-automation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">AI-ML & Automation</span></button></li>
+                  <li><button onClick={() => handleLeftNav('data-analytics')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Database className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Data & Analytics</span></button></li>
+                  <li><button onClick={() => handleLeftNav('devsecops')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Shield className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">DevSecOps</span></button></li>
+                  <li><button onClick={() => handleLeftNav('quality-assurance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><TestTube className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Quality Assurance</span></button></li>
+                  <li><button onClick={() => handleLeftNav('sre-operations')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Server className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">SRE & Operations</span></button></li>
+                  <li><button onClick={() => handleLeftNav('center-of-excellence')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-purple-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center service-icon-glow group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Award className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Center Of Excellence</span></button></li>
                 </ul>
               </div>
 
@@ -1103,13 +1149,30 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-blue-900 tracking-tight">Consulting</span>
                   <span className="text-xl md:text-2xl font-extrabold text-blue-900 tracking-tight">Services</span>
                 </button>
-                <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Target className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Digital Transformation</span></button></li>
-                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Building className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Enterprise Architecture</span></button></li>
-                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Map className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Digital Strategy & Roadmaps</span></button></li>
-                  <li><button onClick={() => handleLeftNav('governance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Governance</span></button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Advisory</span></button></li>
-                  <li><button onClick={() => handleLeftNav('security-compliance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Lock className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Security & Compliance</span></button></li>
+                <ul className="divide-y divide-white/20 relative">
+                  {/* Neural Connection Lines for Left Menu Consulting Services */}
+                  <div className="neural-connection-line left-menu-consulting" style={{top: '50px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-consulting" style={{top: '98px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-consulting" style={{top: '146px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-consulting" style={{top: '194px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-consulting" style={{top: '242px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+
+                  <li><button onClick={() => handleLeftNav('digital-transformation')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center service-icon-glow-blue group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Target className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Digital Transformation</span></button></li>
+                  <li><button onClick={() => handleLeftNav('enterprise-architecture')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center service-icon-glow-blue group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Building className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Enterprise Architecture</span></button></li>
+                  <li><button onClick={() => handleLeftNav('digital-strategy-roadmaps')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center service-icon-glow-blue group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Map className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Digital Strategy & Roadmaps</span></button></li>
+                  <li><button onClick={() => handleLeftNav('governance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center service-icon-glow-blue group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Governance</span></button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-advisory')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center service-icon-glow-blue group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Advisory</span></button></li>
+                  <li><button onClick={() => handleLeftNav('security-compliance')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-blue-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center service-icon-glow-blue group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Lock className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Security & Compliance</span></button></li>
                 </ul>
               </div>
 
@@ -1125,12 +1188,26 @@ export default function Home() {
                   <span className="text-xl md:text-2xl font-extrabold text-green-900 tracking-tight">Training</span>
                   <span className="text-xl md:text-2xl font-extrabold text-green-900 tracking-tight">Services</span>
                 </button>
-                <ul className="divide-y divide-white/20">
-                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Full‑Stack Developer</span></button></li>
-                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">DevOps Engineer</span></button></li>
-                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Architect</span></button></li>
-                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">AI/ML Engineer</span></button></li>
-                  <li><button onClick={() => handleLeftNav('certifications')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><GraduationCap className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Certifications</span></button></li>
+                <ul className="divide-y divide-white/20 relative">
+                  {/* Neural Connection Lines for Left Menu Training Services */}
+                  <div className="neural-connection-line left-menu-training" style={{top: '50px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-training" style={{top: '98px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-training" style={{top: '146px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+                  <div className="neural-connection-line left-menu-training" style={{top: '194px', height: '48px'}}>
+                    <div className="neural-pulse"></div>
+                  </div>
+
+                  <li><button onClick={() => handleLeftNav('full-stack-developer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center service-icon-glow-green group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Code className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Full‑Stack Developer</span></button></li>
+                  <li><button onClick={() => handleLeftNav('devops-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center service-icon-glow-green group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Settings className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">DevOps Engineer</span></button></li>
+                  <li><button onClick={() => handleLeftNav('cloud-architect')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center service-icon-glow-green group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Cloud className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Cloud Architect</span></button></li>
+                  <li><button onClick={() => handleLeftNav('ai-ml-engineer')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center service-icon-glow-green group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><Brain className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">AI/ML Engineer</span></button></li>
+                  <li><button onClick={() => handleLeftNav('certifications')} className="flex items-center gap-2 p-3 text-base text-gray-900 hover:text-green-900 hover:bg-white/8 hover:scale-102 hover:translate-x-1 rounded-lg transition-all duration-300 relative z-10 w-full text-left group"><div className="w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center service-icon-glow-green group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"><GraduationCap className="w-3 h-3 text-white" /></div><span className="underline-reveal-text">Certifications</span></button></li>
                 </ul>
               </div>
             </div>
