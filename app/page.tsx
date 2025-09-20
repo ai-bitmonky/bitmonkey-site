@@ -1141,7 +1141,7 @@ export default function Home() {
           <div className="relative lg:col-span-9 min-h-[64vh] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black bg-cover bg-center">
 
             {/* AI Neural Network Overlay - Top Right Corner */}
-            <div className="absolute top-4 right-4 z-30" style={{width: '443px', height: '333px'}}>
+            <div className="absolute z-30" style={{width: '443px', height: '333px', top: '0px', right: '0px'}}>
               <AINeuraNetworkOverlay
                 words={['Big Data & IOT', 'Cloud', 'AI & ML', 'DevSecOps', 'Cybersecurity', 'API & Microservices', 'Blockchain']}
                 intensity="high"
@@ -1159,6 +1159,7 @@ export default function Home() {
             </div>
             <video
               className="absolute inset-0 w-full h-full object-cover z-10"
+              style={{filter: 'blur(8px)'}}
               autoPlay
               muted
               {...(!contextSlug && { loop: true })}
