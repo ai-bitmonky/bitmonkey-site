@@ -40,6 +40,7 @@ import CinematicTransformationEra from './components/CinematicTransformationEra'
 import CustomerTransformationJourney from './components/CustomerTransformationJourney';
 import RadialDriverWheel from './components/RadialDriverWheel';
 import HolographicEcosystem from './components/HolographicEcosystem';
+import ComparisonPrism from './components/ComparisonPrism';
 
 
 export default function Home() {
@@ -2945,6 +2946,9 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          {/* Differentiators Section - Comparison Prism */}
+          <ComparisonPrism />
 
         </>
       ) : (
