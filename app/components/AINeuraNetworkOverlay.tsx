@@ -31,7 +31,7 @@ interface AINeuraNetworkOverlayProps {
 }
 
 const AINeuraNetworkOverlay: React.FC<AINeuraNetworkOverlayProps> = ({
-  words = ['Big Data & IOT', 'Cloud', 'AI&ML', 'DevSecOps', 'Cybersecurity', 'API&Microservices', 'Blockchain'],
+  words = ['Big Data & IOT', 'Cloud', 'AI & ML', 'DevSecOps', 'Cybersecurity', 'API & Microservices', 'Blockchain'],
   className = '',
   intensity = 'medium',
   autoPlay = true

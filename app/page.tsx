@@ -1143,7 +1143,7 @@ export default function Home() {
             {/* AI Neural Network Overlay - Top Right Corner */}
             <div className="absolute top-4 right-4 z-30" style={{width: '443px', height: '333px'}}>
               <AINeuraNetworkOverlay
-                words={['Big Data & IOT', 'Cloud', 'AI&ML', 'DevSecOps', 'Cybersecurity', 'API&Microservices', 'Blockchain']}
+                words={['Big Data & IOT', 'Cloud', 'AI & ML', 'DevSecOps', 'Cybersecurity', 'API & Microservices', 'Blockchain']}
                 intensity="high"
                 autoPlay={true}
                 className="w-full h-full"
