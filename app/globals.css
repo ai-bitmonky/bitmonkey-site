@@ -342,43 +342,48 @@ a {
 /* Neural Connection Lines for Development Services */
 .neural-connection-line {
   position: absolute;
-  left: 20px; /* Center of icon (icon is 24px wide, starts at 8px padding) */
-  width: 4px; /* Made thicker for better visibility */
+  left: 22px; /* Center on icon: padding(12px) + icon-center(12px) = 24px, adjusted to 22px for perfect alignment */
+  width: 3px;
   background: linear-gradient(180deg,
-    rgba(139, 92, 246, 0.3) 0%,
-    rgba(139, 92, 246, 1) 20%,
-    rgba(139, 92, 246, 1) 50%,
-    rgba(139, 92, 246, 1) 80%,
-    rgba(139, 92, 246, 0.3) 100%
+    rgba(139, 92, 246, 0.1) 0%,
+    rgba(139, 92, 246, 0.8) 10%,
+    rgba(139, 92, 246, 1) 25%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(139, 92, 246, 1) 75%,
+    rgba(139, 92, 246, 0.8) 90%,
+    rgba(139, 92, 246, 0.1) 100%
   );
-  border-radius: 2px;
+  border-radius: 1.5px;
   box-shadow:
-    0 0 20px rgba(139, 92, 246, 1),
-    0 0 40px rgba(139, 92, 246, 0.8),
-    0 0 10px rgba(255, 255, 255, 0.5);
-  z-index: 50; /* Much higher z-index for visibility */
-  animation: neural-line-pulse 2s ease-in-out infinite alternate;
+    0 0 30px rgba(139, 92, 246, 1),
+    0 0 60px rgba(139, 92, 246, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.8),
+    inset 0 0 6px rgba(255, 255, 255, 0.5);
+  z-index: 50;
+  animation: neural-line-pulse 1.2s ease-in-out infinite;
 }
 
 .neural-pulse {
   position: absolute;
-  left: -4px; /* Center the pulse on the thicker line */
-  width: 12px;
-  height: 12px;
+  left: -6px; /* Center the pulse perfectly on the line */
+  width: 15px;
+  height: 15px;
   background: radial-gradient(circle,
     rgba(255, 255, 255, 1) 0%,
-    rgba(139, 92, 246, 1) 20%,
-    rgba(139, 92, 246, 0.9) 40%,
-    rgba(139, 92, 246, 0.5) 70%,
+    rgba(255, 255, 255, 0.9) 15%,
+    rgba(139, 92, 246, 1) 30%,
+    rgba(139, 92, 246, 0.8) 50%,
+    rgba(139, 92, 246, 0.3) 80%,
     rgba(139, 92, 246, 0) 100%
   );
   border-radius: 50%;
-  animation: neural-pulse-travel 2.5s ease-in-out infinite;
+  animation: neural-pulse-travel 2s ease-in-out infinite;
   box-shadow:
+    0 0 40px rgba(255, 255, 255, 1),
     0 0 25px rgba(139, 92, 246, 1),
-    0 0 15px rgba(255, 255, 255, 1),
-    0 0 40px rgba(139, 92, 246, 0.6);
-  z-index: 51; /* Above the connection line */
+    0 0 60px rgba(139, 92, 246, 0.8),
+    inset 0 0 8px rgba(255, 255, 255, 0.6);
+  z-index: 51;
 }
 
 @keyframes neural-pulse-travel {
@@ -444,18 +449,31 @@ a {
 
 @keyframes neural-line-pulse {
   0% {
-    opacity: 0.8;
+    opacity: 0.6;
+    transform: scaleY(0.9);
     box-shadow:
-      0 0 20px rgba(139, 92, 246, 1),
-      0 0 40px rgba(139, 92, 246, 0.8),
-      0 0 10px rgba(255, 255, 255, 0.5);
+      0 0 15px rgba(139, 92, 246, 0.8),
+      0 0 30px rgba(139, 92, 246, 0.6),
+      0 0 8px rgba(255, 255, 255, 0.4),
+      inset 0 0 4px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+    box-shadow:
+      0 0 50px rgba(139, 92, 246, 1),
+      0 0 80px rgba(139, 92, 246, 0.9),
+      0 0 30px rgba(255, 255, 255, 1),
+      inset 0 0 10px rgba(255, 255, 255, 0.8);
   }
   100% {
-    opacity: 1;
+    opacity: 0.6;
+    transform: scaleY(0.9);
     box-shadow:
-      0 0 30px rgba(139, 92, 246, 1),
-      0 0 60px rgba(139, 92, 246, 1),
-      0 0 20px rgba(255, 255, 255, 0.8);
+      0 0 15px rgba(139, 92, 246, 0.8),
+      0 0 30px rgba(139, 92, 246, 0.6),
+      0 0 8px rgba(255, 255, 255, 0.4),
+      inset 0 0 4px rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -535,66 +553,98 @@ a {
 /* Neural Connection Lines - Blue variant for Consulting */
 .left-menu-consulting {
   background: linear-gradient(180deg,
-    rgba(59, 130, 246, 0.3) 0%,
-    rgba(59, 130, 246, 1) 20%,
-    rgba(59, 130, 246, 1) 50%,
-    rgba(59, 130, 246, 1) 80%,
-    rgba(59, 130, 246, 0.3) 100%
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(59, 130, 246, 0.8) 10%,
+    rgba(59, 130, 246, 1) 25%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(59, 130, 246, 1) 75%,
+    rgba(59, 130, 246, 0.8) 90%,
+    rgba(59, 130, 246, 0.1) 100%
   );
   box-shadow:
-    0 0 20px rgba(59, 130, 246, 1),
-    0 0 40px rgba(59, 130, 246, 0.8),
-    0 0 10px rgba(255, 255, 255, 0.5);
-  animation: neural-line-pulse-blue 2s ease-in-out infinite alternate;
+    0 0 30px rgba(59, 130, 246, 1),
+    0 0 60px rgba(59, 130, 246, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.8),
+    inset 0 0 6px rgba(255, 255, 255, 0.5);
+  animation: neural-line-pulse-blue 1.2s ease-in-out infinite;
 }
 
 @keyframes neural-line-pulse-blue {
   0% {
-    opacity: 0.8;
+    opacity: 0.6;
+    transform: scaleY(0.9);
     box-shadow:
-      0 0 20px rgba(59, 130, 246, 1),
-      0 0 40px rgba(59, 130, 246, 0.8),
-      0 0 10px rgba(255, 255, 255, 0.5);
+      0 0 15px rgba(59, 130, 246, 0.8),
+      0 0 30px rgba(59, 130, 246, 0.6),
+      0 0 8px rgba(255, 255, 255, 0.4),
+      inset 0 0 4px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+    box-shadow:
+      0 0 50px rgba(59, 130, 246, 1),
+      0 0 80px rgba(59, 130, 246, 0.9),
+      0 0 30px rgba(255, 255, 255, 1),
+      inset 0 0 10px rgba(255, 255, 255, 0.8);
   }
   100% {
-    opacity: 1;
+    opacity: 0.6;
+    transform: scaleY(0.9);
     box-shadow:
-      0 0 30px rgba(59, 130, 246, 1),
-      0 0 60px rgba(59, 130, 246, 1),
-      0 0 20px rgba(255, 255, 255, 0.8);
+      0 0 15px rgba(59, 130, 246, 0.8),
+      0 0 30px rgba(59, 130, 246, 0.6),
+      0 0 8px rgba(255, 255, 255, 0.4),
+      inset 0 0 4px rgba(255, 255, 255, 0.3);
   }
 }
 
 /* Neural Connection Lines - Green variant for Training */
 .left-menu-training {
   background: linear-gradient(180deg,
-    rgba(34, 197, 94, 0.3) 0%,
-    rgba(34, 197, 94, 1) 20%,
-    rgba(34, 197, 94, 1) 50%,
-    rgba(34, 197, 94, 1) 80%,
-    rgba(34, 197, 94, 0.3) 100%
+    rgba(34, 197, 94, 0.1) 0%,
+    rgba(34, 197, 94, 0.8) 10%,
+    rgba(34, 197, 94, 1) 25%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(34, 197, 94, 1) 75%,
+    rgba(34, 197, 94, 0.8) 90%,
+    rgba(34, 197, 94, 0.1) 100%
   );
   box-shadow:
-    0 0 20px rgba(34, 197, 94, 1),
-    0 0 40px rgba(34, 197, 94, 0.8),
-    0 0 10px rgba(255, 255, 255, 0.5);
-  animation: neural-line-pulse-green 2s ease-in-out infinite alternate;
+    0 0 30px rgba(34, 197, 94, 1),
+    0 0 60px rgba(34, 197, 94, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.8),
+    inset 0 0 6px rgba(255, 255, 255, 0.5);
+  animation: neural-line-pulse-green 1.2s ease-in-out infinite;
 }
 
 @keyframes neural-line-pulse-green {
   0% {
-    opacity: 0.8;
+    opacity: 0.6;
+    transform: scaleY(0.9);
     box-shadow:
-      0 0 20px rgba(34, 197, 94, 1),
-      0 0 40px rgba(34, 197, 94, 0.8),
-      0 0 10px rgba(255, 255, 255, 0.5);
+      0 0 15px rgba(34, 197, 94, 0.8),
+      0 0 30px rgba(34, 197, 94, 0.6),
+      0 0 8px rgba(255, 255, 255, 0.4),
+      inset 0 0 4px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+    box-shadow:
+      0 0 50px rgba(34, 197, 94, 1),
+      0 0 80px rgba(34, 197, 94, 0.9),
+      0 0 30px rgba(255, 255, 255, 1),
+      inset 0 0 10px rgba(255, 255, 255, 0.8);
   }
   100% {
-    opacity: 1;
+    opacity: 0.6;
+    transform: scaleY(0.9);
     box-shadow:
-      0 0 30px rgba(34, 197, 94, 1),
-      0 0 60px rgba(34, 197, 94, 1),
-      0 0 20px rgba(255, 255, 255, 0.8);
+      0 0 15px rgba(34, 197, 94, 0.8),
+      0 0 30px rgba(34, 197, 94, 0.6),
+      0 0 8px rgba(255, 255, 255, 0.4),
+      inset 0 0 4px rgba(255, 255, 255, 0.3);
   }
 }
 
