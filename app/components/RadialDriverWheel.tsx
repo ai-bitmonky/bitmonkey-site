@@ -246,7 +246,7 @@ export default function RadialDriverWheel({ className = '' }: RadialDriverWheelP
                 {/* Gradients for each driver */}
                 {drivers.map((driver, index) => {
                   const getGradientColors = (colorClass: string) => {
-                    const colorMap: { [key: string]: string } = {
+                    const colorMap: { [key: string]: { from: string; to: string } } = {
                       'from-blue-500 to-cyan-500': { from: '#3b82f6', to: '#06b6d4' },
                       'from-green-500 to-emerald-500': { from: '#10b981', to: '#059669' },
                       'from-purple-500 to-indigo-500': { from: '#8b5cf6', to: '#6366f1' },

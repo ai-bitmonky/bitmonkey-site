@@ -63,7 +63,16 @@ export default function MorphingSVG({
     const tempDiv = document.createElement('div');
     tempDiv.style.position = 'absolute';
     tempDiv.style.left = '-9999px';
-    tempDiv.innerHTML = `<svg>${IconComponent({ size: width }).props.children}</svg>`;
+    try {
+      const iconElement = React.createElement(IconComponent, { size: width });
+      if (React.isValidElement(iconElement) && iconElement.props.children) {
+        tempDiv.innerHTML = `<svg>${iconElement.props.children}</svg>`;
+      } else {
+        return '';
+      }
+    } catch (error) {
+      return '';
+    }
     document.body.appendChild(tempDiv);
 
     const paths = tempDiv.querySelectorAll('path, circle, rect, line, polyline, polygon');

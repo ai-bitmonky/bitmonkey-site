@@ -63,7 +63,7 @@ export default function FloatingUIPanel({
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
   const timeRef = useRef(0);
   const componentId = React.useId();
 

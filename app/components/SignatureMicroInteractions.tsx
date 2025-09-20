@@ -103,7 +103,7 @@ function MagneticCursor() {
       let finalY = e.clientY;
 
       if (closestElement && strongestMagnetism > 0) {
-        const rect = closestElement.getBoundingClientRect();
+        const rect = (closestElement as HTMLElement).getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
 

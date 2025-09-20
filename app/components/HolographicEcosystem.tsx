@@ -33,7 +33,7 @@ export default function HolographicEcosystem({
   const [connectionPulse, setConnectionPulse] = useState(0);
   const [floatingComments, setFloatingComments] = useState<Array<{id: string, text: string, x: number, y: number, opacity: number, delay: number}>>([]);
   const ecosystemRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
 
   const serviceOrbs: ServiceOrb[] = [
     {

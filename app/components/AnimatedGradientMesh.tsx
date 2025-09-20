@@ -40,7 +40,7 @@ export default function AnimatedGradientMesh({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
   const [isMounted, setIsMounted] = useState(false);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
   const timeRef = useRef(0);
   const componentId = React.useId();
 

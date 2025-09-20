@@ -122,8 +122,8 @@ export default function Home() {
           ));
 
           section.setAttribute('data-scroll-speed', scrollSpeed);
-          section.style.setProperty('--scroll-intensity', intensity.toString());
-          section.style.setProperty('--scroll-velocity', (scrollVelocity / 20).toString());
+          (section as HTMLElement).style.setProperty('--scroll-intensity', intensity.toString());
+          (section as HTMLElement).style.setProperty('--scroll-velocity', (scrollVelocity / 20).toString());
         }
       });
 
@@ -4384,9 +4384,11 @@ export default function Home() {
           shapes={[
             { type: 'neural-network', size: 'xl', color: 'rgba(79, 70, 229, 0.08)', position: 'center', animate: true },
             { type: 'circuit-pattern', size: 'lg', color: 'rgba(99, 102, 241, 0.12)', position: 'top-left', animate: true },
-            { type: 'hexagonal-grid', size: 'md', color: 'rgba(147, 51, 234, 0.15)', position: 'bottom-right', animate: true },
+            { type: 'hexagon', size: 'md', color: 'rgba(147, 51, 234, 0.15)', position: 'bottom-right', animate: true },
           ]}
-        />
+        >
+          <div></div>
+        </GeometricAccent>
         <div className="container mx-auto max-w-7xl px-6">
           <div className="text-center mb-16 scroll-animate fade-in-up">
             <span className="text-indigo-600 font-bold uppercase tracking-wider hover:text-indigo-700 hover:scale-105 transition-all duration-300 cursor-default inline-block" style={{fontSize: '2.2rem'}}>Strategic Vision</span>
