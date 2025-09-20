@@ -1140,26 +1140,19 @@ export default function Home() {
           {/* Right hero - changes based on context */}
           <div className="relative lg:col-span-9 min-h-[64vh] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black bg-cover bg-center">
 
-            {/* AI Neural Network Overlay - Top Right Corner */}
-            <div className="absolute z-30" style={{width: '443px', height: '333px', top: '0px', right: '0px'}}>
-              <AINeuraNetworkOverlay
-                words={['Big Data & IOT', 'Cloud', 'AI & ML', 'DevSecOps', 'Cybersecurity', 'API & Microservices', 'Blockchain']}
-                intensity="high"
-                autoPlay={true}
-                className="w-full h-full"
-              />
-            </div>
-
-            {/* Neural loading overlay for video */}
-            <div className="absolute inset-0 z-20 flex items-center justify-center bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm transition-opacity duration-500" id="video-loader">
-              <div className="text-center">
-                <NeuroLoader type="neural-network" size="xl" color="#8B5CF6" speed="normal" />
-                <p className="text-white/70 mt-4 text-sm font-medium" id="loader-text">Initializing Neural Interface...</p>
+            {/* AI Neural Network Overlay - Center Loading */}
+            <div className="absolute inset-0 z-30 flex items-center justify-center transition-opacity duration-1000" id="neural-loading" style={{backgroundColor: 'rgba(0,0,0,0.8)'}}>
+              <div style={{width: '600px', height: '400px'}}>
+                <AINeuraNetworkOverlay
+                  words={['Big Data & IOT', 'Cloud', 'AI & ML', 'DevSecOps', 'Cybersecurity', 'API & Microservices', 'Blockchain']}
+                  intensity="high"
+                  autoPlay={true}
+                  className="w-full h-full"
+                />
               </div>
             </div>
             <video
               className="absolute inset-0 w-full h-full object-cover z-10"
-              style={{filter: 'blur(8px)'}}
               autoPlay
               muted
               {...(!contextSlug && { loop: true })}
@@ -1169,39 +1162,20 @@ export default function Home() {
               key={contextSlug || 'default'}
               ref={(video) => {
                 if (video) {
-                  // Update loading text after 1.5 seconds
-                  const textUpdateId = setTimeout(() => {
-                    const loaderText = document.getElementById('loader-text');
-                    if (loaderText) {
-                      loaderText.textContent = 'Neural pathways synchronized...';
-                    }
-                  }, 1500);
-
-                  // Auto-hide neural loader after 3 seconds regardless of video load status
-                  const timeoutId = setTimeout(() => {
-                    const loader = document.getElementById('video-loader');
-                    if (loader && loader.style.display !== 'none') {
-                      console.log('Auto-hiding neural loader after timeout');
-                      loader.style.opacity = '0';
+                  // Auto-hide neural network overlay after 5 seconds
+                  const hideNeuralNetwork = setTimeout(() => {
+                    const neuralLoading = document.getElementById('neural-loading');
+                    if (neuralLoading) {
+                      console.log('Dissolving neural network after 5 seconds');
+                      neuralLoading.style.opacity = '0';
                       setTimeout(() => {
-                        loader.style.display = 'none';
-                      }, 500);
+                        neuralLoading.style.display = 'none';
+                      }, 1000);
                     }
-                  }, 3000);
+                  }, 5000);
 
                   video.addEventListener('loadeddata', () => {
                     console.log('Video loaded successfully');
-                    // Clear timeouts since video loaded
-                    clearTimeout(timeoutId);
-                    clearTimeout(textUpdateId);
-                    // Hide neural loader
-                    const loader = document.getElementById('video-loader');
-                    if (loader) {
-                      loader.style.opacity = '0';
-                      setTimeout(() => {
-                        loader.style.display = 'none';
-                      }, 500);
-                    }
                     video.play().catch(e => {
                       console.error('Auto-play failed:', e);
                       // Show controls if autoplay fails
